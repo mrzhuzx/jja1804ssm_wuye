@@ -14,7 +14,7 @@
           <element id="module-output" name="ssm_web" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="ssm-dao-1.0-SNAPSHOT.jar">
+          <element id="archive" name="ssm_dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ssm_dao" />
           </element>
           <element id="archive" name="ssm_appcomm-1.0-SNAPSHOT.jar">

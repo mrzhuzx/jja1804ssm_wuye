@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ssm-dao</artifactId>
+    <artifactId>ssm_dao</artifactId>
     <dependencies>
         <!--引入了工具包 -->
         <dependency>
