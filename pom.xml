@@ -11,10 +11,12 @@
 
     <!-- 所有的子模块 -->
     <modules>
+        <module>ssm_appcomm</module>
         <module>ssm_web</module>
         <module>ssm_dao</module>
         <module>ssm_service</module>
-        <module>ssm_appcomm</module>
+
+
     </modules>
 
 
