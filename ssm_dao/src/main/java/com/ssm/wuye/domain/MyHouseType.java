@@ -7,13 +7,13 @@ import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
 
 /**
- * house_type
+ * wy_house_type
  */
-@Table(name = "house_type")
-@Alias("houseType")
-public class HouseType extends BaseEntity {
+@Table(name = "wy_house_type")
+@Alias("myHouseType")
+public class MyHouseType extends BaseEntity {
     /**
-     * 
+     * 类型Id
      */
     @Id
     @Column(name = "hTypeId")
@@ -26,22 +26,22 @@ public class HouseType extends BaseEntity {
     private String htypename;
 
     /**
-     * 
+     * 类型产权年限
      */
     @Column(name = "htPropertyRight")
     private String htpropertyright;
 
     /**
-     * 
-     * @return hTypeId 
+     * 类型Id
+     * @return hTypeId 类型Id
      */
     public Integer getHtypeid() {
         return htypeid;
     }
 
     /**
-     * 
-     * @param htypeid 
+     * 类型Id
+     * @param htypeid 类型Id
      */
     public void setHtypeid(Integer htypeid) {
         this.htypeid = htypeid;
@@ -64,16 +64,16 @@ public class HouseType extends BaseEntity {
     }
 
     /**
-     * 
-     * @return htPropertyRight 
+     * 类型产权年限
+     * @return htPropertyRight 类型产权年限
      */
     public String getHtpropertyright() {
         return htpropertyright;
     }
 
     /**
-     * 
-     * @param htpropertyright 
+     * 类型产权年限
+     * @param htpropertyright 类型产权年限
      */
     public void setHtpropertyright(String htpropertyright) {
         this.htpropertyright = htpropertyright == null ? null : htpropertyright.trim();

@@ -1,32 +1,32 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.HouseType;
-import com.ssm.wuye.domain.HouseTypeExample.Criteria;
-import com.ssm.wuye.domain.HouseTypeExample.Criterion;
-import com.ssm.wuye.domain.HouseTypeExample;
+import com.ssm.wuye.domain.MyHouseType;
+import com.ssm.wuye.domain.MyHouseTypeExample.Criteria;
+import com.ssm.wuye.domain.MyHouseTypeExample.Criterion;
+import com.ssm.wuye.domain.MyHouseTypeExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class HouseTypeSqlProvider {
+public class MyHouseTypeSqlProvider {
 
-    public String countByExample(HouseTypeExample example) {
+    public String countByExample(MyHouseTypeExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("house_type");
+        sql.SELECT("count(*)").FROM("wy_house_type");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(HouseTypeExample example) {
+    public String deleteByExample(MyHouseTypeExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("house_type");
+        sql.DELETE_FROM("wy_house_type");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(HouseType record) {
+    public String insertSelective(MyHouseType record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("house_type");
+        sql.INSERT_INTO("wy_house_type");
         
         if (record.getHtypeid() != null) {
             sql.VALUES("hTypeId", "#{htypeid,jdbcType=INTEGER}");
@@ -43,7 +43,7 @@ public class HouseTypeSqlProvider {
         return sql.toString();
     }
 
-    public String selectByExample(HouseTypeExample example) {
+    public String selectByExample(MyHouseTypeExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
             sql.SELECT_DISTINCT("hTypeId");
@@ -52,7 +52,7 @@ public class HouseTypeSqlProvider {
         }
         sql.SELECT("hTypeName");
         sql.SELECT("htPropertyRight");
-        sql.FROM("house_type");
+        sql.FROM("wy_house_type");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -63,11 +63,11 @@ public class HouseTypeSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        HouseType record = (HouseType) parameter.get("record");
-        HouseTypeExample example = (HouseTypeExample) parameter.get("example");
+        MyHouseType record = (MyHouseType) parameter.get("record");
+        MyHouseTypeExample example = (MyHouseTypeExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("house_type");
+        sql.UPDATE("wy_house_type");
         
         if (record.getHtypeid() != null) {
             sql.SET("hTypeId = #{record.htypeid,jdbcType=INTEGER}");
@@ -87,20 +87,20 @@ public class HouseTypeSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("house_type");
+        sql.UPDATE("wy_house_type");
         
         sql.SET("hTypeId = #{record.htypeid,jdbcType=INTEGER}");
         sql.SET("hTypeName = #{record.htypename,jdbcType=VARCHAR}");
         sql.SET("htPropertyRight = #{record.htpropertyright,jdbcType=VARCHAR}");
         
-        HouseTypeExample example = (HouseTypeExample) parameter.get("example");
+        MyHouseTypeExample example = (MyHouseTypeExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(HouseType record) {
+    public String updateByPrimaryKeySelective(MyHouseType record) {
         SQL sql = new SQL();
-        sql.UPDATE("house_type");
+        sql.UPDATE("wy_house_type");
         
         if (record.getHtypename() != null) {
             sql.SET("hTypeName = #{htypename,jdbcType=VARCHAR}");
@@ -115,7 +115,7 @@ public class HouseTypeSqlProvider {
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, HouseTypeExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, MyHouseTypeExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }
