@@ -1,10 +1,11 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.NewstypeMapper;
-import com.ssm.wuye.domain.Newstype;
-import com.ssm.wuye.domain.NewstypeExample;
-import com.ssm.wuye.service.NewstypeService;
+import com.ssm.wuye.dao.NewsTypeMapper;
+import com.ssm.wuye.domain.NewsType;
+import com.ssm.wuye.domain.NewsTypeExample;
+import com.ssm.wuye.service.NewsTypeService;
 import org.apache.ibatis.session.RowBounds;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,11 +19,11 @@ import java.util.List;
  * version: 1.2.3
  */
 @Service
-public class NewstypeServiceImpl  implements NewstypeService {
+public class NewsTypeServiceImpl  implements NewsTypeService {
 
 
     @Resource
-    NewstypeMapper newstypeMapper;
+    NewsTypeMapper newsTypeMapper;
 
 
     /**
@@ -31,10 +32,10 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param example
      * @return
      */
-    public long countByExample(Newstype example) {
-        NewstypeExample newstypeExample=new NewstypeExample();
+    public long countByExample(NewsType example) {
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
 
-        return newstypeMapper.countByExample(newstypeExample);
+        return newsTypeMapper.countByExample(newsTypeExample);
     }
 
     /**
@@ -43,11 +44,11 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param example
      * @return
      */
-    public int deleteByExample(Newstype example) {
+    public int deleteByExample(NewsType example) {
 
-        NewstypeExample newstypeExample=new NewstypeExample();
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
 
-        return newstypeMapper.deleteByExample(newstypeExample);
+        return newsTypeMapper.deleteByExample(newsTypeExample);
     }
 
     /**
@@ -58,9 +59,9 @@ public class NewstypeServiceImpl  implements NewstypeService {
      */
 
     public int deleteByPrimaryKey(Integer id) {
-        NewstypeExample newstypeExample=new NewstypeExample();
-        newstypeExample.createCriteria().andNtidEqualTo(id);//where  ntid=?
-        return newstypeMapper.deleteByExample(newstypeExample);
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
+        newsTypeExample.createCriteria().andNtidEqualTo(id);//where  ntid=?
+        return newsTypeMapper.deleteByExample(newsTypeExample);
     }
 
     /**
@@ -69,9 +70,9 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param record
      * @return
      */
-    public int insert(Newstype record) {
+    public int insert(NewsType record) {
 
-        return newstypeMapper.insert(record);
+        return newsTypeMapper.insert(record);
     }
 
     /**
@@ -81,11 +82,11 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param rowBounds
      * @return
      */
-    public List<Newstype> selectByExampleWithRowbounds(Newstype example, RowBounds rowBounds) {
+    public List<NewsType> selectByExampleWithRowbounds(NewsType example, RowBounds rowBounds) {
 
-        NewstypeExample newstypeExample=new NewstypeExample();
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
 
-        return newstypeMapper.selectByExampleWithRowbounds(newstypeExample,rowBounds);
+        return newsTypeMapper.selectByExampleWithRowbounds(newsTypeExample,rowBounds);
     }
 
     /**
@@ -94,11 +95,11 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param example
      * @return
      */
-    public List<Newstype> selectByExample(Newstype example) {
+    public List<NewsType> selectByExample(NewsType example) {
 
-        NewstypeExample newstypeExample=new NewstypeExample();
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
 
-        return newstypeMapper.selectByExample(newstypeExample);
+        return newsTypeMapper.selectByExample(newsTypeExample);
     }
 
     /**
@@ -107,10 +108,10 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param ntid
      * @return
      */
-    public Newstype selectByPrimaryKey(Integer ntid) {
+    public NewsType selectByPrimaryKey(Integer ntid) {
 
 
-        return newstypeMapper.selectByPrimaryKey(ntid);
+        return newsTypeMapper.selectByPrimaryKey(ntid);
     }
 
     /**
@@ -120,11 +121,11 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param example
      * @return
      */
-    public int updateByExampleSelective(Newstype record, Newstype example) {
+    public int updateByExampleSelective(NewsType record, NewsType example) {
 
-        NewstypeExample newstypeExample=new NewstypeExample();
-        //  record,newstypeExample  ??
-        return newstypeMapper.updateByExampleSelective(record,newstypeExample);
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
+        //  record,newsTypeExample  ??
+        return newsTypeMapper.updateByExampleSelective(record,newsTypeExample);
     }
 
     /**
@@ -132,10 +133,10 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param example
      * @return
      */
-    public int updateByExample(Newstype record, Newstype example) {
-        NewstypeExample newstypeExample=new NewstypeExample();
-        //  record,newstypeExample  ??
-        return newstypeMapper.updateByExampleSelective(record,newstypeExample);
+    public int updateByExample(NewsType record, NewsType example) {
+        NewsTypeExample newsTypeExample=new NewsTypeExample();
+        //  record,newsTypeExample  ??
+        return newsTypeMapper.updateByExampleSelective(record,newsTypeExample);
     }
 
     /**
@@ -144,8 +145,8 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param record
      * @return
      */
-    public int updateByPrimaryKeySelective(Newstype record) {
-        return newstypeMapper.updateByPrimaryKeySelective(record);
+    public int updateByPrimaryKeySelective(NewsType record) {
+        return newsTypeMapper.updateByPrimaryKeySelective(record);
     }
 
     /**
@@ -154,8 +155,8 @@ public class NewstypeServiceImpl  implements NewstypeService {
      * @param record
      * @return
      */
-    public int updateByPrimaryKey(Newstype record) {
+    public int updateByPrimaryKey(NewsType record) {
 
-        return newstypeMapper.updateByPrimaryKey(record);
+        return newsTypeMapper.updateByPrimaryKey(record);
     }
 }

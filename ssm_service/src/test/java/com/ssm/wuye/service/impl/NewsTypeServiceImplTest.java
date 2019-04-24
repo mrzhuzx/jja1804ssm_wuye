@@ -19,7 +19,7 @@ import java.util.List;
  * version: 1.2.3
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring-mybatis.xml","spring-service.xml"})
+@ContextConfiguration(locations = {"classpath:spring-mybatis.xml","classpath:spring-service.xml"})
 public class NewsTypeServiceImplTest {
 
     @Resource
