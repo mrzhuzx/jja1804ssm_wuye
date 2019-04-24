@@ -3,23 +3,23 @@ package com.ssm.wuye.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HouseTypeExample {
+public class MyHouseTypeExample {
     /**
-     * house_type
+     * wy_house_type
      */
     protected String orderByClause;
 
     /**
-     * house_type
+     * wy_house_type
      */
     protected boolean distinct;
 
     /**
-     * house_type
+     * wy_house_type
      */
     protected List<Criteria> oredCriteria;
 
-    public HouseTypeExample() {
+    public MyHouseTypeExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -73,7 +73,7 @@ public class HouseTypeExample {
     }
 
     /**
-     * house_type 2019-04-23
+     * wy_house_type 2019-04-23
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -335,7 +335,7 @@ public class HouseTypeExample {
     }
 
     /**
-     * house_type 2019-04-23
+     * wy_house_type 2019-04-23
      */
     public static class Criterion {
         private String condition;

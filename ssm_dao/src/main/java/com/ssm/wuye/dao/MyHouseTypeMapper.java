@@ -1,7 +1,7 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.HouseType;
-import com.ssm.wuye.domain.HouseTypeExample;
+import com.ssm.wuye.domain.MyHouseType;
+import com.ssm.wuye.domain.MyHouseTypeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.DeleteProvider;
@@ -17,50 +17,50 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.JdbcType;
 
-public interface HouseTypeMapper {
-    @SelectProvider(type=HouseTypeSqlProvider.class, method="countByExample")
-    long countByExample(HouseTypeExample example);
+public interface MyHouseTypeMapper {
+    @SelectProvider(type=MyHouseTypeSqlProvider.class, method="countByExample")
+    long countByExample(MyHouseTypeExample example);
 
-    @DeleteProvider(type=HouseTypeSqlProvider.class, method="deleteByExample")
-    int deleteByExample(HouseTypeExample example);
+    @DeleteProvider(type=MyHouseTypeSqlProvider.class, method="deleteByExample")
+    int deleteByExample(MyHouseTypeExample example);
 
     @Delete({
-        "delete from house_type",
+        "delete from wy_house_type",
         "where hTypeId = #{htypeid,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer htypeid);
 
     @Insert({
-        "insert into house_type (hTypeId, hTypeName, ",
+        "insert into wy_house_type (hTypeId, hTypeName, ",
         "htPropertyRight)",
         "values (#{htypeid,jdbcType=INTEGER}, #{htypename,jdbcType=VARCHAR}, ",
         "#{htpropertyright,jdbcType=VARCHAR})"
     })
-    int insert(HouseType record);
+    int insert(MyHouseType record);
 
-    @InsertProvider(type=HouseTypeSqlProvider.class, method="insertSelective")
-    int insertSelective(HouseType record);
+    @InsertProvider(type=MyHouseTypeSqlProvider.class, method="insertSelective")
+    int insertSelective(MyHouseType record);
 
-    @SelectProvider(type=HouseTypeSqlProvider.class, method="selectByExample")
+    @SelectProvider(type=MyHouseTypeSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="hTypeId", property="htypeid", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="hTypeName", property="htypename", jdbcType=JdbcType.VARCHAR),
         @Result(column="htPropertyRight", property="htpropertyright", jdbcType=JdbcType.VARCHAR)
     })
-    List<HouseType> selectByExampleWithRowbounds(HouseTypeExample example, RowBounds rowBounds);
+    List<MyHouseType> selectByExampleWithRowbounds(MyHouseTypeExample example, RowBounds rowBounds);
 
-    @SelectProvider(type=HouseTypeSqlProvider.class, method="selectByExample")
+    @SelectProvider(type=MyHouseTypeSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="hTypeId", property="htypeid", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="hTypeName", property="htypename", jdbcType=JdbcType.VARCHAR),
         @Result(column="htPropertyRight", property="htpropertyright", jdbcType=JdbcType.VARCHAR)
     })
-    List<HouseType> selectByExample(HouseTypeExample example);
+    List<MyHouseType> selectByExample(MyHouseTypeExample example);
 
     @Select({
         "select",
         "hTypeId, hTypeName, htPropertyRight",
-        "from house_type",
+        "from wy_house_type",
         "where hTypeId = #{htypeid,jdbcType=INTEGER}"
     })
     @Results({
@@ -68,22 +68,22 @@ public interface HouseTypeMapper {
         @Result(column="hTypeName", property="htypename", jdbcType=JdbcType.VARCHAR),
         @Result(column="htPropertyRight", property="htpropertyright", jdbcType=JdbcType.VARCHAR)
     })
-    HouseType selectByPrimaryKey(Integer htypeid);
+    MyHouseType selectByPrimaryKey(Integer htypeid);
 
-    @UpdateProvider(type=HouseTypeSqlProvider.class, method="updateByExampleSelective")
-    int updateByExampleSelective(@Param("record") HouseType record, @Param("example") HouseTypeExample example);
+    @UpdateProvider(type=MyHouseTypeSqlProvider.class, method="updateByExampleSelective")
+    int updateByExampleSelective(@Param("record") MyHouseType record, @Param("example") MyHouseTypeExample example);
 
-    @UpdateProvider(type=HouseTypeSqlProvider.class, method="updateByExample")
-    int updateByExample(@Param("record") HouseType record, @Param("example") HouseTypeExample example);
+    @UpdateProvider(type=MyHouseTypeSqlProvider.class, method="updateByExample")
+    int updateByExample(@Param("record") MyHouseType record, @Param("example") MyHouseTypeExample example);
 
-    @UpdateProvider(type=HouseTypeSqlProvider.class, method="updateByPrimaryKeySelective")
-    int updateByPrimaryKeySelective(HouseType record);
+    @UpdateProvider(type=MyHouseTypeSqlProvider.class, method="updateByPrimaryKeySelective")
+    int updateByPrimaryKeySelective(MyHouseType record);
 
     @Update({
-        "update house_type",
+        "update wy_house_type",
         "set hTypeName = #{htypename,jdbcType=VARCHAR},",
           "htPropertyRight = #{htpropertyright,jdbcType=VARCHAR}",
         "where hTypeId = #{htypeid,jdbcType=INTEGER}"
     })
-    int updateByPrimaryKey(HouseType record);
+    int updateByPrimaryKey(MyHouseType record);
 }
