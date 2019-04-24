@@ -1,7 +1,7 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.domain.Newstype;
-import com.ssm.wuye.service.NewstypeService;
+import com.ssm.wuye.domain.NewsType;
+import com.ssm.wuye.service.NewsTypeService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,11 +19,11 @@ import java.util.List;
  * version: 1.2.3
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
-public class NewstypeServiceImplTest {
+@ContextConfiguration(locations = {"classpath:spring-mybatis.xml","spring-service.xml"})
+public class NewsTypeServiceImplTest {
 
     @Resource
-    NewstypeService newstypeService;
+    NewsTypeService newsTypeService;
 
     @Before
     public void setUp() throws Exception {
@@ -33,11 +33,11 @@ public class NewstypeServiceImplTest {
     @Test
     public void test() {
 
-        List<Newstype> newstypeList = newstypeService.selectByExample(null);
+        List<NewsType> newsTypeList = newsTypeService.selectByExample(null);
 
-        for (Newstype newstype : newstypeList) {
+        for (NewsType newsType : newsTypeList) {
 
-            System.out.println(newstype.getNtid()+" "+newstype.getNtypename());
+            System.out.println(newsType.getNtid()+" "+newsType.getNtypename());
         }
 
 

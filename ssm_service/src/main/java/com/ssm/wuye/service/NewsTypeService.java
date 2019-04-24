@@ -1,7 +1,7 @@
 package com.ssm.wuye.service;
 
 import com.ssm.wuye.appcomm.BaseService;
-import com.ssm.wuye.domain.Newstype;
+import com.ssm.wuye.domain.NewsType;
 
 /**
  * desc:  方法在
@@ -9,7 +9,7 @@ import com.ssm.wuye.domain.Newstype;
  * time :2019/4/18 0018
  * version: 1.2.3
  */
-public interface NewstypeService  extends BaseService<Newstype> {
+public interface NewsTypeService extends BaseService<NewsType> {
 
 
 
