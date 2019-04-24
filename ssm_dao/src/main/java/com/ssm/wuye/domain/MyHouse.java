@@ -276,4 +276,51 @@ public class MyHouse extends BaseEntity {
     public void setAaa(String aaa) {
         this.aaa = aaa == null ? null : aaa.trim();
     }
+
+    public MyHouse( String hnumber, String hstate, String hbulidingname, Integer hunitnumber, Integer hfloor, Integer htypeid, String hdirection, String harea, String hremarks, Integer olid, String aaa) {
+        this.hnumber = hnumber;
+        this.hstate = hstate;
+        this.hbulidingname = hbulidingname;
+        this.hunitnumber = hunitnumber;
+        this.hfloor = hfloor;
+        this.htypeid = htypeid;
+        this.hdirection = hdirection;
+        this.harea = harea;
+        this.hremarks = hremarks;
+        this.olid = olid;
+        this.aaa = aaa;
+    }
+
+    public MyHouse(Integer hid, String hnumber, String hstate, String hbulidingname, Integer hunitnumber, Integer hfloor, Integer htypeid, String hdirection, String harea, String hremarks, Integer olid, String aaa) {
+        this.hid = hid;
+        this.hnumber = hnumber;
+        this.hstate = hstate;
+        this.hbulidingname = hbulidingname;
+        this.hunitnumber = hunitnumber;
+        this.hfloor = hfloor;
+        this.htypeid = htypeid;
+        this.hdirection = hdirection;
+        this.harea = harea;
+        this.hremarks = hremarks;
+        this.olid = olid;
+        this.aaa = aaa;
+    }
+
+    @Override
+    public String toString() {
+        return "MyHouse{" +
+                "hid=" + hid +
+                ", hnumber='" + hnumber + '\'' +
+                ", hstate='" + hstate + '\'' +
+                ", hbulidingname='" + hbulidingname + '\'' +
+                ", hunitnumber=" + hunitnumber +
+                ", hfloor=" + hfloor +
+                ", htypeid=" + htypeid +
+                ", hdirection='" + hdirection + '\'' +
+                ", harea='" + harea + '\'' +
+                ", hremarks='" + hremarks + '\'' +
+                ", olid=" + olid +
+                ", aaa='" + aaa + '\'' +
+                '}';
+    }
 }
