@@ -21,7 +21,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 import java.util.List;
 
-import static javafx.scene.input.KeyCode.R;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -66,7 +65,7 @@ public class MyHouseServiceImplTest {
     @Test
     public void selectByExample() {
         MyHouseExample myHouseExample = new MyHouseExample();
-
+        myHouseExample.createCriteria().andHstateEqualTo("待售");//线性，and列名EqualTo（条件）
         List<MyHouse> myHouseList = myHouseService.selectByExample(myHouseExample);
         for (MyHouse myHouse : myHouseList) {
             System.out.println(myHouse.toString());
@@ -80,7 +79,6 @@ public class MyHouseServiceImplTest {
          * 方法二：RowBounds rowBounds = new RowBounds(offset:0,limit:5);// offset起始行 // limit是当前页显示多少条数据
          * List<MyHouse> myHouseList=myHouseService.selectByExampleWithRowbounds(myHouseExample,rowBounds)；
          */
-
         Integer pageNum=2;
         Integer Size=8;
         Integer Num =Size*(pageNum-1);
