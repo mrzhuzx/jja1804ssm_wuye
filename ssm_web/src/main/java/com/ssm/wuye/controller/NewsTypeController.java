@@ -1,7 +1,7 @@
 package com.ssm.wuye.controller;
 
-import com.ssm.wuye.domain.Newstype;
-import com.ssm.wuye.service.NewstypeService;
+import com.ssm.wuye.domain.NewsType;
+import com.ssm.wuye.service.NewsTypeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,7 +20,7 @@ import java.util.List;
 public class NewsTypeController {
 
    @Resource
-   NewstypeService newstypeService;
+   NewsTypeService newstypeService;
 
     public NewsTypeController() {
         System.out.println(" NewsTypeController springmvc is ok................................. ");
@@ -37,7 +37,7 @@ public class NewsTypeController {
     public ModelAndView search() {
         ModelAndView m = new ModelAndView("newstype");
         System.out.println("  查询全部分类   ");
-        List<Newstype> newstypeList = newstypeService.selectByExample(null);
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList",newstypeList);
         System.out.println(" newstypeList : "+newstypeList.size());
         return m;
