@@ -14,7 +14,6 @@
     <context:component-scan base-package="com.ssm.wuye.appcomm"/>
     <context:component-scan base-package="com.ssm.wuye.domain"/>
     <context:component-scan base-package="com.ssm.wuye.dao"/>
-    <context:component-scan base-package="com.ssm.wuye.service"/>
 
 
     <!-- 引入配置文件 -->

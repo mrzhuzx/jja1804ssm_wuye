@@ -18,30 +18,33 @@
 		<!--!!!  当前项目下的工具类位置 -->
 		<commentGenerator type="com.ssm.wuye.appcomm.MyCommentGenerator"/>
   	
-		<!-- 数据库链接URL、用户名、密码 -->
+		<!-- 数据库链接URL、用户名、密码  jja1804ssmwu-->
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
 			connectionURL="jdbc:mysql://teacherzhu.uicp.net:34626/jja1804_ssmwuye?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
-			userId="root" password="123123" />
+			userId="jja1804ssmwu" password="123123" />
 		<!--生成注解实体类，继承一个标准的父类  -->
 		<javaModelGenerator targetPackage="com.ssm.wuye.domain" targetProject="src">
 			<!-- 是否针对string类型的字段在set的时候进行trim调用 -->
 			<property name="trimStrings" value="true" />
-			<property name="rootClass" value="com.ssm.wuye.appcomm.BaseEntity" />
+			<!--<property name="rootClass" value="com.ssm.wuye.appcomm.BaseEntity" />-->
 		</javaModelGenerator>
 		
 		<!--生成注解接口  -->
 		<javaClientGenerator
 			targetPackage="com.ssm.wuye.dao" targetProject="src" type="ANNOTATEDMAPPER" />
 
+		<!-- 只关注自己的数据表 ，注意备份   -->
 
 		<!-- type="ANNOTATEDMAPPER",生成基于注解的Mapper接口 type="MIXEDMAPPER",生成最小的基于注解的Mapper接口 
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
 
+		<table tableName="wy_house" domainObjectName="WyHouse"/>
+		<table tableName="wy_house_type" domainObjectName="WyHousetype"/>
+		<!--
 		<table tableName="adminfo" domainObjectName="Adminfo" />
 		<table tableName="complaininfo" domainObjectName="Complaininfo"/>
 		<table tableName="electricmenter" domainObjectName="Electricmenter"/>
 		<table tableName="gasmeter" domainObjectName="Gasmeter"/>
-		<table tableName="house" domainObjectName="House"/>
 		<table tableName="housetype" domainObjectName="Housetype"/>
 		<table tableName="newscontent" domainObjectName="Newscontent"/>
 		<table tableName="newstype" domainObjectName="Newstype"/>
@@ -58,7 +61,7 @@
 		<table tableName="tb_matter_sort" domainObjectName="Tbmatter_sort"/>
 		<table tableName="tb_pay" domainObjectName="Tbpay"/>
 		<table tableName="watermeter" domainObjectName="Watermeter"/>
-
+-->
 
 <!--
 	<table tableName="guanggao" domainObjectName="Guanggao" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="true" />
