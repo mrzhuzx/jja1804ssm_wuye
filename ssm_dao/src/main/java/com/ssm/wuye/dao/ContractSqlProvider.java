@@ -1,30 +1,30 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.Contract;
-import com.ssm.wuye.domain.ContractExample.Criteria;
-import com.ssm.wuye.domain.ContractExample.Criterion;
-import com.ssm.wuye.domain.ContractExample;
+import com.ssm.wuye.domain.contract;
+import com.ssm.wuye.domain.contractExample.Criteria;
+import com.ssm.wuye.domain.contractExample.Criterion;
+import com.ssm.wuye.domain.contractExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class ContractSqlProvider {
+public class contractSqlProvider {
 
-    public String countByExample(ContractExample example) {
+    public String countByExample(contractExample example) {
         SQL sql = new SQL();
         sql.SELECT("count(*)").FROM("contract");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(ContractExample example) {
+    public String deleteByExample(contractExample example) {
         SQL sql = new SQL();
         sql.DELETE_FROM("contract");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(Contract record) {
+    public String insertSelective(contract record) {
         SQL sql = new SQL();
         sql.INSERT_INTO("contract");
         
@@ -60,10 +60,14 @@ public class ContractSqlProvider {
             sql.VALUES("signatoryTelephone", "#{signatorytelephone,jdbcType=VARCHAR}");
         }
         
+        if (record.getContractnum() != null) {
+            sql.VALUES("contractNum", "#{contractnum,jdbcType=VARCHAR}");
+        }
+        
         return sql.toString();
     }
 
-    public String selectByExample(ContractExample example) {
+    public String selectByExample(contractExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
             sql.SELECT_DISTINCT("contractId");
@@ -77,6 +81,7 @@ public class ContractSqlProvider {
         sql.SELECT("contractDes");
         sql.SELECT("signingPeople");
         sql.SELECT("signatoryTelephone");
+        sql.SELECT("contractNum");
         sql.FROM("contract");
         applyWhere(sql, example, false);
         
@@ -88,8 +93,8 @@ public class ContractSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Contract record = (Contract) parameter.get("record");
-        ContractExample example = (ContractExample) parameter.get("example");
+        contract record = (contract) parameter.get("record");
+        contractExample example = (contractExample) parameter.get("example");
         
         SQL sql = new SQL();
         sql.UPDATE("contract");
@@ -126,6 +131,10 @@ public class ContractSqlProvider {
             sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
         }
         
+        if (record.getContractnum() != null) {
+            sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
+        }
+        
         applyWhere(sql, example, true);
         return sql.toString();
     }
@@ -142,13 +151,14 @@ public class ContractSqlProvider {
         sql.SET("contractDes = #{record.contractdes,jdbcType=VARCHAR}");
         sql.SET("signingPeople = #{record.signingpeople,jdbcType=VARCHAR}");
         sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
+        sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
         
-        ContractExample example = (ContractExample) parameter.get("example");
+        contractExample example = (contractExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(Contract record) {
+    public String updateByPrimaryKeySelective(contract record) {
         SQL sql = new SQL();
         sql.UPDATE("contract");
         
@@ -180,12 +190,16 @@ public class ContractSqlProvider {
             sql.SET("signatoryTelephone = #{signatorytelephone,jdbcType=VARCHAR}");
         }
         
+        if (record.getContractnum() != null) {
+            sql.SET("contractNum = #{contractnum,jdbcType=VARCHAR}");
+        }
+        
         sql.WHERE("contractId = #{contractid,jdbcType=INTEGER}");
         
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, ContractExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, contractExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }
