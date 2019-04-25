@@ -34,11 +34,13 @@ public interface ContractMapper {
         "insert into contract (contractId, contractName, ",
         "contractType, contractStart, ",
         "contractEnd, contractDes, ",
-        "signingPeople, signatoryTelephone)",
+        "signingPeople, signatoryTelephone, ",
+        "contractNum)",
         "values (#{contractid,jdbcType=INTEGER}, #{contractname,jdbcType=VARCHAR}, ",
         "#{contracttype,jdbcType=VARCHAR}, #{contractstart,jdbcType=DATE}, ",
         "#{contractend,jdbcType=DATE}, #{contractdes,jdbcType=VARCHAR}, ",
-        "#{signingpeople,jdbcType=VARCHAR}, #{signatorytelephone,jdbcType=VARCHAR})"
+        "#{signingpeople,jdbcType=VARCHAR}, #{signatorytelephone,jdbcType=VARCHAR}, ",
+        "#{contractnum,jdbcType=VARCHAR})"
     })
     int insert(Contract record);
 
@@ -54,7 +56,8 @@ public interface ContractMapper {
         @Result(column="contractEnd", property="contractend", jdbcType=JdbcType.DATE),
         @Result(column="contractDes", property="contractdes", jdbcType=JdbcType.VARCHAR),
         @Result(column="signingPeople", property="signingpeople", jdbcType=JdbcType.VARCHAR),
-        @Result(column="signatoryTelephone", property="signatorytelephone", jdbcType=JdbcType.VARCHAR)
+        @Result(column="signatoryTelephone", property="signatorytelephone", jdbcType=JdbcType.VARCHAR),
+        @Result(column="contractNum", property="contractnum", jdbcType=JdbcType.VARCHAR)
     })
     List<Contract> selectByExampleWithRowbounds(ContractExample example, RowBounds rowBounds);
 
@@ -67,14 +70,15 @@ public interface ContractMapper {
         @Result(column="contractEnd", property="contractend", jdbcType=JdbcType.DATE),
         @Result(column="contractDes", property="contractdes", jdbcType=JdbcType.VARCHAR),
         @Result(column="signingPeople", property="signingpeople", jdbcType=JdbcType.VARCHAR),
-        @Result(column="signatoryTelephone", property="signatorytelephone", jdbcType=JdbcType.VARCHAR)
+        @Result(column="signatoryTelephone", property="signatorytelephone", jdbcType=JdbcType.VARCHAR),
+        @Result(column="contractNum", property="contractnum", jdbcType=JdbcType.VARCHAR)
     })
     List<Contract> selectByExample(ContractExample example);
 
     @Select({
         "select",
         "contractId, contractName, contractType, contractStart, contractEnd, contractDes, ",
-        "signingPeople, signatoryTelephone",
+        "signingPeople, signatoryTelephone, contractNum",
         "from contract",
         "where contractId = #{contractid,jdbcType=INTEGER}"
     })
@@ -86,7 +90,8 @@ public interface ContractMapper {
         @Result(column="contractEnd", property="contractend", jdbcType=JdbcType.DATE),
         @Result(column="contractDes", property="contractdes", jdbcType=JdbcType.VARCHAR),
         @Result(column="signingPeople", property="signingpeople", jdbcType=JdbcType.VARCHAR),
-        @Result(column="signatoryTelephone", property="signatorytelephone", jdbcType=JdbcType.VARCHAR)
+        @Result(column="signatoryTelephone", property="signatorytelephone", jdbcType=JdbcType.VARCHAR),
+        @Result(column="contractNum", property="contractnum", jdbcType=JdbcType.VARCHAR)
     })
     Contract selectByPrimaryKey(Integer contractid);
 
@@ -107,7 +112,8 @@ public interface ContractMapper {
           "contractEnd = #{contractend,jdbcType=DATE},",
           "contractDes = #{contractdes,jdbcType=VARCHAR},",
           "signingPeople = #{signingpeople,jdbcType=VARCHAR},",
-          "signatoryTelephone = #{signatorytelephone,jdbcType=VARCHAR}",
+          "signatoryTelephone = #{signatorytelephone,jdbcType=VARCHAR},",
+          "contractNum = #{contractnum,jdbcType=VARCHAR}",
         "where contractId = #{contractid,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Contract record);

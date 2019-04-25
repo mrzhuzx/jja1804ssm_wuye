@@ -1,5 +1,6 @@
 package com.ssm.wuye.controller;
 
+
 import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.service.NewsTypeService;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ import java.util.List;
  * version: 1.2.3
  */
 @Controller
-@RequestMapping("/nt")
+@RequestMapping("nt")
 public class NewsTypeController {
 
    @Resource
@@ -25,23 +26,34 @@ public class NewsTypeController {
     public NewsTypeController() {
         System.out.println(" NewsTypeController springmvc is ok................................. ");
     }
-
-
-
     /**
      * 查询全部分类
-     *
      * @return
      */
-    @RequestMapping("/search")
+    @RequestMapping("search")
     public ModelAndView search() {
-        ModelAndView m = new ModelAndView("newstype");
+        System.out.println("3##########################################");
+        ModelAndView m = new ModelAndView();
         System.out.println("  查询全部分类   ");
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList",newstypeList);
         System.out.println(" newstypeList : "+newstypeList.size());
+        m.setViewName("pages/gitqian/index");
         return m;
 
+    }    /**
+     * 根据id查询分类
+     * @return
+     */
+    @RequestMapping("search.do")
+    public ModelAndView searchone() {
+        ModelAndView m = new ModelAndView();
+        System.out.println("  查询全部分类   ");
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("newstypeList",newstypeList);
+        System.out.println(" newstypeList : "+newstypeList.size());
+        m.setViewName("/pages/gitqian/index");
+        return m;
 
     }
 

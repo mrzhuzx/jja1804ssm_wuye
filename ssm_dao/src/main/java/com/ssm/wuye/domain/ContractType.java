@@ -13,7 +13,8 @@ import org.apache.ibatis.type.Alias;
 @Alias("contractType")
 public class ContractType extends BaseEntity {
     /**
-     * 
+     *
+     * 合同类别
      */
     @Id
     @Column(name = "contypeId")
