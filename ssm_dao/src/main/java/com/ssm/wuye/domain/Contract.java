@@ -1,6 +1,5 @@
 package com.ssm.wuye.domain;
 
-import com.ssm.wuye.appcomm.BaseEntity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -12,7 +11,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "contract")
 @Alias("contract")
-public class Contract extends BaseEntity {
+public class Contract {
     /**
      * 
      */
@@ -61,6 +60,12 @@ public class Contract extends BaseEntity {
      */
     @Column(name = "signatoryTelephone")
     private String signatorytelephone;
+
+    /**
+     *  合同编号
+     */
+    @Column(name = "contractNum")
+    private String contractnum;
 
     /**
      * 
@@ -188,5 +193,21 @@ public class Contract extends BaseEntity {
      */
     public void setSignatorytelephone(String signatorytelephone) {
         this.signatorytelephone = signatorytelephone == null ? null : signatorytelephone.trim();
+    }
+
+    /**
+     *  合同编号
+     * @return contractNum  合同编号
+     */
+    public String getContractnum() {
+        return contractnum;
+    }
+
+    /**
+     *  合同编号
+     * @param contractnum  合同编号
+     */
+    public void setContractnum(String contractnum) {
+        this.contractnum = contractnum == null ? null : contractnum.trim();
     }
 }

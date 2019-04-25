@@ -38,9 +38,12 @@
 		<!-- type="ANNOTATEDMAPPER",生成基于注解的Mapper接口 type="MIXEDMAPPER",生成最小的基于注解的Mapper接口 
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
 
-		<table tableName="wy_house" domainObjectName="WyHouse"/>
-		<table tableName="wy_house_type" domainObjectName="WyHousetype"/>
+
+		<table tableName="contract" domainObjectName="contract"/>
 		<!--
+		<table tableName="wy_house_type" domainObjectName="WyHousetype"/>
+		<table tableName="wy_house" domainObjectName="WyHouse"/>
+		<table tableName="Contract" domainObjectName="Contract"/>
 		<table tableName="adminfo" domainObjectName="Adminfo" />
 		<table tableName="complaininfo" domainObjectName="Complaininfo"/>
 		<table tableName="electricmenter" domainObjectName="Electricmenter"/>
