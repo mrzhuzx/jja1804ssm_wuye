@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class ContractExample {
+public class contractExample {
     /**
      * contract
      */
@@ -21,7 +21,7 @@ public class ContractExample {
      */
     protected List<Criteria> oredCriteria;
 
-    public ContractExample() {
+    public contractExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -75,7 +75,7 @@ public class ContractExample {
     }
 
     /**
-     * contract 2019-04-23
+     * contract 2019-04-25
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -674,6 +674,76 @@ public class ContractExample {
             return (Criteria) this;
         }
 
+        public Criteria andContractnumIsNull() {
+            addCriterion("contractNum is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumIsNotNull() {
+            addCriterion("contractNum is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumEqualTo(String value) {
+            addCriterion("contractNum =", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumNotEqualTo(String value) {
+            addCriterion("contractNum <>", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumGreaterThan(String value) {
+            addCriterion("contractNum >", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumGreaterThanOrEqualTo(String value) {
+            addCriterion("contractNum >=", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumLessThan(String value) {
+            addCriterion("contractNum <", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumLessThanOrEqualTo(String value) {
+            addCriterion("contractNum <=", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumLike(String value) {
+            addCriterion("contractNum like", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumNotLike(String value) {
+            addCriterion("contractNum not like", value, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumIn(List<String> values) {
+            addCriterion("contractNum in", values, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumNotIn(List<String> values) {
+            addCriterion("contractNum not in", values, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumBetween(String value1, String value2) {
+            addCriterion("contractNum between", value1, value2, "contractnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andContractnumNotBetween(String value1, String value2) {
+            addCriterion("contractNum not between", value1, value2, "contractnum");
+            return (Criteria) this;
+        }
+
         public Criteria andContractnameLikeInsensitive(String value) {
             addCriterion("upper(contractName) like", value.toUpperCase(), "contractname");
             return (Criteria) this;
@@ -698,6 +768,11 @@ public class ContractExample {
             addCriterion("upper(signatoryTelephone) like", value.toUpperCase(), "signatorytelephone");
             return (Criteria) this;
         }
+
+        public Criteria andContractnumLikeInsensitive(String value) {
+            addCriterion("upper(contractNum) like", value.toUpperCase(), "contractnum");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
@@ -708,7 +783,7 @@ public class ContractExample {
     }
 
     /**
-     * contract 2019-04-23
+     * contract 2019-04-25
      */
     public static class Criterion {
         private String condition;
