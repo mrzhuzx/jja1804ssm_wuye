@@ -24,21 +24,13 @@ public class NewsTypeMapperTest {
 
     @Autowired
     NewsTypeMapper newsTypeMapper;
-
     @Test
     public void test() {
 
         List<NewsType> newsTypes = newsTypeMapper.selectByExample(null);
-
         for (NewsType newsType : newsTypes) {
-
             System.out.println(newsType.getNtid()+"  "+newsType.getNtypename());
-
         }
-
-
-
-
     }
 
 
