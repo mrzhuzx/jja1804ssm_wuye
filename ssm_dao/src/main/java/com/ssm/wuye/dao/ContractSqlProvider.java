@@ -1,30 +1,30 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.contract;
-import com.ssm.wuye.domain.contractExample.Criteria;
-import com.ssm.wuye.domain.contractExample.Criterion;
-import com.ssm.wuye.domain.contractExample;
+import com.ssm.wuye.domain.Contract;
+import com.ssm.wuye.domain.ContractExample.Criteria;
+import com.ssm.wuye.domain.ContractExample.Criterion;
+import com.ssm.wuye.domain.ContractExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class contractSqlProvider {
+public class ContractSqlProvider {
 
-    public String countByExample(contractExample example) {
+    public String countByExample(ContractExample example) {
         SQL sql = new SQL();
         sql.SELECT("count(*)").FROM("contract");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(contractExample example) {
+    public String deleteByExample(ContractExample example) {
         SQL sql = new SQL();
         sql.DELETE_FROM("contract");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(contract record) {
+    public String insertSelective(Contract record) {
         SQL sql = new SQL();
         sql.INSERT_INTO("contract");
         
@@ -67,7 +67,7 @@ public class contractSqlProvider {
         return sql.toString();
     }
 
-    public String selectByExample(contractExample example) {
+    public String selectByExample(ContractExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
             sql.SELECT_DISTINCT("contractId");
@@ -93,8 +93,8 @@ public class contractSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        contract record = (contract) parameter.get("record");
-        contractExample example = (contractExample) parameter.get("example");
+        Contract record = (Contract) parameter.get("record");
+        ContractExample example = (ContractExample) parameter.get("example");
         
         SQL sql = new SQL();
         sql.UPDATE("contract");
@@ -153,12 +153,12 @@ public class contractSqlProvider {
         sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
         sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
         
-        contractExample example = (contractExample) parameter.get("example");
+        ContractExample example = (ContractExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(contract record) {
+    public String updateByPrimaryKeySelective(Contract record) {
         SQL sql = new SQL();
         sql.UPDATE("contract");
         
@@ -199,7 +199,7 @@ public class contractSqlProvider {
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, contractExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, ContractExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }
