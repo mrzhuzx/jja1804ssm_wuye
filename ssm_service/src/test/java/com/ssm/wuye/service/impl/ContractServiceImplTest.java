@@ -35,7 +35,6 @@ public class ContractServiceImplTest {
         ContractExample contractExample=new ContractExample();
         Long li=contractService.countByExample(contractExample);
         System.out.println(li);
-
     }
 
 

@@ -213,4 +213,19 @@ public class SysAdminInfo extends BaseEntity {
     public void setRoleid(Integer roleid) {
         this.roleid = roleid;
     }
+
+    public SysAdminInfo(Integer userid, String username, String userpass, String userphone, String usermail, String userqqface, String userflag, String userstyle, Integer roleid) {
+        this.userid = userid;
+        this.username = username;
+        this.userpass = userpass;
+        this.userphone = userphone;
+        this.usermail = usermail;
+        this.userqqface = userqqface;
+        this.userflag = userflag;
+        this.userstyle = userstyle;
+        this.roleid = roleid;
+    }
+
+    public SysAdminInfo() {
+    }
 }
