@@ -39,7 +39,7 @@
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
 
 
-		<table tableName="contract" domainObjectName="Contract"/>
+		<table tableName="tb_matter" domainObjectName="Tbmatter"/>
 		<!--
 		<table tableName="wy_house_type" domainObjectName="WyHousetype"/>
 		<table tableName="wy_house" domainObjectName="WyHouse"/>
