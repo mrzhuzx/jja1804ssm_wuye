@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/4/23
-  Time: 18:48
-  To change this template use File | Settings | File Templates.
---%>
+<%@ include file="../../appcomm/basePath.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,13 +6,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
         <title>天能物业管理</title>
-        <link rel="stylesheet" href="css/index.css" type="text/css">
-        <link rel="stylesheet" href="css/zym.css" type="text/css">
+        <link rel="stylesheet" href="pages/gitqian/css/index.css" type="text/css">
+        <link rel="stylesheet" href="pages/gitqian/css/zym.css" type="text/css">
 
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/global.js"></script>
-        <script type="text/javascript" src="js/hm.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="pages/gitqian/js/jquery.js"></script>
+        <script type="text/javascript" src="pages/gitqian/js/global.js"></script>
+        <script type="text/javascript" src="pages/gitqian/js/hm.js"></script>
+        <script type="text/javascript" src="pages/gitqian/js/script.js"></script>
 
 
 
@@ -29,7 +23,7 @@
     <div class="top_gang">
         <div class="tou_zj">
             <div class="hy">
-                <img src="images/tou_tb_03.png">
+                <img src="pages/gitqian/images/tou_tb_03.png">
                 <span>欢迎来到贵州天能物业管理有限公司</span>
             </div>
             <div class="soucang">
@@ -40,7 +34,7 @@
     </div>
     <div class="top_main">
         <div class="top_logo">
-            <a href='./'><img src="images/logo.png"></a>
+            <a href='./'><img src="pages/gitqian/images/logo.png"></a>
         </div>
         <!--导航-->
         <div class="daohang">
@@ -103,15 +97,11 @@
                             </a>
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
-                                    <li>
-                                        <a href="news.html">公司新闻</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">行业新闻</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司大事记</a>
-                                    </li>
+                                    <c:forEach var="news" items="${newstypeList}">
+                                        <li>
+                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                        </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </li>
@@ -146,7 +136,7 @@
 <!--子页-->
 <div class="ziye_bj">
     <div class="ziye_tu">
-        <img src="images/zy1_02.jpg">
+        <img src="pages/gitqian/images/zy1_02.jpg">
     </div>
 </div>
 <!--关于我们-->
@@ -166,15 +156,17 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <li id="women"><img src="images/zy1_08.png"><a id="wenzidangq" href="#">公司新闻</a></li>
-                <li><img src="images/zy1_08_z.png"><a href="#">行业新闻</a></li>
-                <li><img src="images/zy1_08_z.png"><a href="#">公司大事记</a></li>
+                <c:forEach var="news" items="${newstypeList}">
+                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a></li>
+                </c:forEach>
             </ul>
+
         </div>
     </div>
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
+
             <h2>公司新闻</h2>
             <p>您的位置：首页 > 公司新闻</p>
         </div>
@@ -187,58 +179,31 @@
         <!--内容-->
         <div class="gsjj_nr">
             <ul class="xwlb_bj">
+                <c:forEach var="news"  items="${news1}">
                 <li>
-                    <h1><a href="newlist.html"><img src="images/zy1_12.jpg"></a></h1>
+
+                    <h1><a href="newlist.html"><img src="pages/gitqian/images/zy1_12.jpg"></a></h1>
                     <dl>
-                        <dt><a href="newlist.html">[集团要闻]姜锋利副省长一行来陕旅集团调研</a></dt>
-                        <dd>10月24日上午十分，姜锋利副省长一行来陕旅集团调研，就集团文化产业发展情况座谈，省政府副秘书长张宗科、省发改委常务副主任刘强...</dd>
+                        <dt><a href="newlist.html">${news.nctitle}</a></dt>
+
+                        <dd>${fn:length(news.nccontent) > 100 ? fn:substring(news.nccontent,0,100) : news.nccontent}${fn:length(news.nccontent) > 100 ? '...' : ''}</dd>
                         <span>来源：集团办公室</span>
-                        <span>日期：2016-10-25 </span>
-                        <span>阅读（152）</span>
+
+                        <span>日期：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" /> </span>
+
                     </dl>
                 </li>
-                <li>
-                    <h1><a href="newlist.html"><img src="images/zy1_12.jpg"></a></h1>
-                    <dl>
-                        <dt><a href="newlist.html">[集团要闻]姜锋利副省长一行来陕旅集团调研</a></dt>
-                        <dd>10月24日上午十分，姜锋利副省长一行来陕旅集团调研，就集团文化产业发展情况座谈，省政府副秘书长张宗科、省发改委常务副主任刘强...</dd>
-                        <span>来源：集团办公室</span>
-                        <span>日期：2016-10-25 </span>
-                        <span>阅读（152）</span>
-                    </dl>
-                </li>
-                <li>
-                    <h1><a href="newlist.html"><img src="images/zy1_12.jpg"></a></h1>
-                    <dl>
-                        <dt><a href="newlist.html">[集团要闻]姜锋利副省长一行来陕旅集团调研</a></dt>
-                        <dd>10月24日上午十分，姜锋利副省长一行来陕旅集团调研，就集团文化产业发展情况座谈，省政府副秘书长张宗科、省发改委常务副主任刘强...</dd>
-                        <span>来源：集团办公室</span>
-                        <span>日期：2016-10-25 </span>
-                        <span>阅读（152）</span>
-                    </dl>
-                </li>
-                <li>
-                    <h1><a href="newlist.html"><img src="images/zy1_12.jpg"></a></h1>
-                    <dl>
-                        <dt><a href="newlist.html">[集团要闻]姜锋利副省长一行来陕旅集团调研</a></dt>
-                        <dd>10月24日上午十分，姜锋利副省长一行来陕旅集团调研，就集团文化产业发展情况座谈，省政府副秘书长张宗科、省发改委常务副主任刘强...</dd>
-                        <span>来源：集团办公室</span>
-                        <span>日期：2016-10-25 </span>
-                        <span>阅读（152）</span>
-                    </dl>
-                </li>
+                </c:forEach>
             </ul>
             <div class="webdiyerCss">
-                <a disabled="disabled" style="margin-right:5px;">&lt;&lt;</a>
-                <a disabled="disabled" style="margin-right:5px;">&lt;</a>
-                <span class="redcss page_go" style="margin-right:5px;">1</span>
-                <a href="#" style="margin-right:5px;">2</a>
-                <a href="#" style="margin-right:5px;">3</a>
-                <a href="#" style="margin-right:5px;">4</a>
-                <a href="#" style="margin-right:5px;">5</a>
-                <a href="#" style="margin-right:5px;">...</a>
-                <a href="#" style="margin-right:5px;">&gt;</a>
-                <a href="#" style="margin-right:5px;">&gt;&gt;</a>
+                <%--<a href="" disabled="disabled" style="margin-right:5px;"></a>--%>
+                <%--<a disabled="disabled" style="margin-right:5px;">上一页</a>--%>
+                <%--<span class="redcss page_go" style="margin-right:5px;">1</span>--%>
+                <%--<a href="pagenum=1" style="margin-right:5px;">2</a>--%>
+                <a href="#" style="margin-right:5px;">首页</a>
+                <a href="#" style="margin-right:5px;">上一页</a>
+                <a href="#" style="margin-right:5px;">下一页</a>
+                <a href="#" style="margin-right:5px;">尾页</a>
             </div>
         </div>
     </div>
@@ -253,9 +218,9 @@
                 电 话：0851-85594612   传 真：0851-85594612<br></p>
             <ul>
                 <li><span>分享到：</span></li>
-                <li><a href="http://connect.qq.com/widget/shareqq/index.html?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-sqq-1-12217-9737f6f9e09dfaf5d3fd14d775bfee85&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&desc=&summary=&site=baidu" target="_black"><img src="images/dibu_06.png"></a></li>
-                <li><a href="http://service.weibo.com/share/share.php" target="_black"><img src="images/dibu_08.png"></a></li>
-                <li><a href="http://widget.renren.com/dialog/share?resourceUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&srcUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&description=" target="_black"><img src="images/dibu_10.png"></a></li>
+                <li><a href="http://connect.qq.com/widget/shareqq/index.html?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-sqq-1-12217-9737f6f9e09dfaf5d3fd14d775bfee85&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&desc=&summary=&site=baidu" target="_black"><img src="pages/gitqian/images/dibu_06.png"></a></li>
+                <li><a href="http://service.weibo.com/share/share.php" target="_black"><img src="pages/gitqian/images/dibu_08.png"></a></li>
+                <li><a href="http://widget.renren.com/dialog/share?resourceUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&srcUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&description=" target="_black"><img src="pages/gitqian/images/dibu_10.png"></a></li>
             </ul>
         </div>
         <div class="dibu_you">
@@ -266,7 +231,7 @@
                 <li><a href="#">意见反馈&nbsp;&nbsp;</a>｜</li>
                 <li><a href="#">联系我们</a></li>
             </ul>
-            <img class="dibu_logo" src="images/dibu_03.png">
+            <img class="dibu_logo" src="pages/gitqian/images/dibu_03.png">
         </div>
     </div>
 </div>

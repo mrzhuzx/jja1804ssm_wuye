@@ -93,16 +93,13 @@
                                 <b></b>
                             </a>
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
+
                                 <ul>
+                                    <c:forEach var="news" items="${newstypeList}">
                                     <li>
-                                        <a href="#">公司新闻</a>
+                                        <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">行业新闻</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司大事记</a>
-                                    </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </li>
