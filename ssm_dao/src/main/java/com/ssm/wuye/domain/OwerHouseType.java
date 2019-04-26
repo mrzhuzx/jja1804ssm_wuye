@@ -7,17 +7,16 @@ import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
 
 /**
- * wy_house
+ * ower_house_type
  */
-@Table(name = "wy_house")
-@Alias("myHouse")
-public class MyHouse extends BaseEntity {
+@Table(name = "ower_house_type")
+@Alias("owerHouseType")
+public class OwerHouseType extends BaseEntity {
     /**
-     * 编号
+     * 业主姓名
      */
-    @Id
-    @Column(name = "hid")
-    private Integer hid;
+    @Column(name = "olName")
+    private String olname;
 
     /**
      * 房屋编号
@@ -74,31 +73,43 @@ public class MyHouse extends BaseEntity {
     private String hremarks;
 
     /**
-     * 业主ID（外键应用）
-     */
-    @Column(name = "olid")
-    private Integer olid;
-
-    /**
-     * 出租状态
+     * 出租状态 0不租，1已租，2待租
      */
     @Column(name = "Loan")
     private Integer loan;
 
     /**
-     * 编号
-     * @return hid 编号
+     * 类型名字
      */
-    public Integer getHid() {
-        return hid;
+    @Column(name = "hTypeName")
+    private String htypename;
+
+    /**
+     * 类型产权年限
+     */
+    @Column(name = "htPropertyRight")
+    private String htpropertyright;
+
+    /**
+     * 业主手机号
+     */
+    @Column(name = "olPhone")
+    private String olphone;
+
+    /**
+     * 业主姓名
+     * @return olName 业主姓名
+     */
+    public String getOlname() {
+        return olname;
     }
 
     /**
-     * 编号
-     * @param hid 编号
+     * 业主姓名
+     * @param olname 业主姓名
      */
-    public void setHid(Integer hid) {
-        this.hid = hid;
+    public void setOlname(String olname) {
+        this.olname = olname == null ? null : olname.trim();
     }
 
     /**
@@ -246,73 +257,86 @@ public class MyHouse extends BaseEntity {
     }
 
     /**
-     * 业主ID（外键应用）
-     * @return olid 业主ID（外键应用）
-     */
-    public Integer getOlid() {
-        return olid;
-    }
-
-    /**
-     * 业主ID（外键应用）
-     * @param olid 业主ID（外键应用）
-     */
-    public void setOlid(Integer olid) {
-        this.olid = olid;
-    }
-
-    /**
-     * 出租状态
-     * @return Loan 出租状态
+     * 出租状态 0不租，1已租，2待租
+     * @return Loan 出租状态 0不租，1已租，2待租
      */
     public Integer getLoan() {
         return loan;
     }
 
     /**
-     * 出租状态
-     * @param loan 出租状态
+     * 出租状态 0不租，1已租，2待租
+     * @param loan 出租状态 0不租，1已租，2待租
      */
     public void setLoan(Integer loan) {
         this.loan = loan;
     }
 
-    public MyHouse(Integer hid, String hnumber, String hstate, String hbulidingname, Integer hunitnumber, Integer hfloor, Integer htypeid, String hdirection, String harea, String hremarks, Integer olid, Integer loan) {
-        this.hid = hid;
-        this.hnumber = hnumber;
-        this.hstate = hstate;
-        this.hbulidingname = hbulidingname;
-        this.hunitnumber = hunitnumber;
-        this.hfloor = hfloor;
-        this.htypeid = htypeid;
-        this.hdirection = hdirection;
-        this.harea = harea;
-        this.hremarks = hremarks;
-        this.olid = olid;
-        this.loan = loan;
+    /**
+     * 类型名字
+     * @return hTypeName 类型名字
+     */
+    public String getHtypename() {
+        return htypename;
     }
 
-    public MyHouse(String hnumber, String hstate, String hbulidingname, Integer hunitnumber, Integer hfloor, Integer htypeid, String hdirection, String harea, String hremarks, Integer olid, Integer loan) {
-        this.hnumber = hnumber;
-        this.hstate = hstate;
-        this.hbulidingname = hbulidingname;
-        this.hunitnumber = hunitnumber;
-        this.hfloor = hfloor;
-        this.htypeid = htypeid;
-        this.hdirection = hdirection;
-        this.harea = harea;
-        this.hremarks = hremarks;
-        this.olid = olid;
-        this.loan = loan;
+    /**
+     * 类型名字
+     * @param htypename 类型名字
+     */
+    public void setHtypename(String htypename) {
+        this.htypename = htypename == null ? null : htypename.trim();
     }
 
-    public MyHouse(Integer hid, String hstate) {
-        this.hid = hid;
-        this.hstate = hstate;
+    /**
+     * 类型产权年限
+     * @return htPropertyRight 类型产权年限
+     */
+    public String getHtpropertyright() {
+        return htpropertyright;
     }
 
-    public MyHouse(Integer hid, Integer loan) {
-        this.hid = hid;
-        this.loan = loan;
+    /**
+     * 类型产权年限
+     * @param htpropertyright 类型产权年限
+     */
+    public void setHtpropertyright(String htpropertyright) {
+        this.htpropertyright = htpropertyright == null ? null : htpropertyright.trim();
+    }
+
+    /**
+     * 业主手机号
+     * @return olPhone 业主手机号
+     */
+    public String getOlphone() {
+        return olphone;
+    }
+
+    /**
+     * 业主手机号
+     * @param olphone 业主手机号
+     */
+    public void setOlphone(String olphone) {
+        this.olphone = olphone == null ? null : olphone.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "OwerHouseType{" +
+                "olname='" + olname + '\'' +
+                ", hnumber='" + hnumber + '\'' +
+                ", hstate='" + hstate + '\'' +
+                ", hbulidingname='" + hbulidingname + '\'' +
+                ", hunitnumber=" + hunitnumber +
+                ", hfloor=" + hfloor +
+                ", htypeid=" + htypeid +
+                ", hdirection='" + hdirection + '\'' +
+                ", harea='" + harea + '\'' +
+                ", hremarks='" + hremarks + '\'' +
+                ", loan=" + loan +
+                ", htypename='" + htypename + '\'' +
+                ", htpropertyright='" + htpropertyright + '\'' +
+                ", olphone='" + olphone + '\'' +
+                '}';
     }
 }

@@ -29,4 +29,24 @@ public class IElectricServiceImpl implements IElectricService {
     public void delete(Integer id) {
         electricDao.delete(id);
     }
+
+    @Override
+    public Electric findById(String Id) {
+        return electricDao.findById(Id);
+    }
+
+    @Override
+    public void updata(Electric electric) {
+         electricDao.updata(electric);
+    }
+
+    @Override
+    public void add(Electric electric) {
+        electricDao.add(electric);
+    }
+
+    @Override
+    public List<Integer> findAllhouseid() {
+        return electricDao.findAllhouseid();
+    }
 }

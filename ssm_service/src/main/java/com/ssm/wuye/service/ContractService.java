@@ -31,7 +31,7 @@ public interface ContractService {
      */
     List<Contract> selectByExample(ContractExample example);
     /*
-     *带分页查询
+     *带条件分页查询
      */
     List<Contract> selectByExampleWithRowbounds(ContractExample example, RowBounds rowBounds);
     /*
