@@ -7,6 +7,7 @@ package com.ssm.wuye.domain;/*
 
 import com.ssm.wuye.appcomm.DateUtils;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -17,6 +18,7 @@ public class Electric {
     private String enumber;
     private Integer houseid;
     private Double electric;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date month;
     private String monthStr;
 
