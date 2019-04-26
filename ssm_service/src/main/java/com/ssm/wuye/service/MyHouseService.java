@@ -1,5 +1,6 @@
 package com.ssm.wuye.service;
 
+
 import com.ssm.wuye.domain.MyHouse;
 import com.ssm.wuye.domain.MyHouseExample;
 import org.apache.ibatis.session.RowBounds;

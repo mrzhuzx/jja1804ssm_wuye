@@ -7,15 +7,14 @@ import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
 
 /**
- * sys_ower_family
+ * sys_of_vo
  */
-@Table(name = "sys_ower_family")
-@Alias("sysOwerFamily")
-public class SysOwerFamily extends BaseEntity {
+@Table(name = "sys_of_vo")
+@Alias("sysOfVo")
+public class SysOfVo extends BaseEntity {
     /**
      * 业主成员编号(p)
      */
-    @Id
     @Column(name = "ofId")
     private Integer ofid;
 
@@ -50,10 +49,10 @@ public class SysOwerFamily extends BaseEntity {
     private String ofnexus;
 
     /**
-     * 业主ID
+     * 业主姓名
      */
-    @Column(name = "olId")
-    private Integer olid;
+    @Column(name = "olName")
+    private String olname;
 
     /**
      * 业主成员编号(p)
@@ -152,50 +151,31 @@ public class SysOwerFamily extends BaseEntity {
     }
 
     /**
-     * 业主ID
-     * @return olId 业主ID
+     * 业主姓名
+     * @return olName 业主姓名
      */
-    public Integer getOlid() {
-        return olid;
+    public String getOlname() {
+        return olname;
     }
 
     /**
-     * 业主ID
-     * @param olid 业主ID
+     * 业主姓名
+     * @param olname 业主姓名
      */
-    public void setOlid(Integer olid) {
-        this.olid = olid;
-    }
-
-    public SysOwerFamily(Integer ofid, String ofname, String ofsex, String ofhomeplace, String oftel, String ofnexus, Integer olid) {
-        this.ofid = ofid;
-        this.ofname = ofname;
-        this.ofsex = ofsex;
-        this.ofhomeplace = ofhomeplace;
-        this.oftel = oftel;
-        this.ofnexus = ofnexus;
-        this.olid = olid;
-    }
-
-    public SysOwerFamily(String ofname, String ofsex, String ofhomeplace, String oftel, String ofnexus, Integer olid) {
-        this.ofname = ofname;
-        this.ofsex = ofsex;
-        this.ofhomeplace = ofhomeplace;
-        this.oftel = oftel;
-        this.ofnexus = ofnexus;
-        this.olid = olid;
+    public void setOlname(String olname) {
+        this.olname = olname == null ? null : olname.trim();
     }
 
     @Override
     public String toString() {
-        return "SysOwerFamily{" +
+        return "SysOfVo{" +
                 "ofid=" + ofid +
                 ", ofname='" + ofname + '\'' +
                 ", ofsex='" + ofsex + '\'' +
                 ", ofhomeplace='" + ofhomeplace + '\'' +
                 ", oftel='" + oftel + '\'' +
                 ", ofnexus='" + ofnexus + '\'' +
-                ", olid=" + olid +
+                ", olname='" + olname + '\'' +
                 '}';
     }
 }

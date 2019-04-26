@@ -78,4 +78,24 @@ public class MyHouseType extends BaseEntity {
     public void setHtpropertyright(String htpropertyright) {
         this.htpropertyright = htpropertyright == null ? null : htpropertyright.trim();
     }
+
+    public MyHouseType(Integer htypeid, String htypename, String htpropertyright) {
+        this.htypeid = htypeid;
+        this.htypename = htypename;
+        this.htpropertyright = htpropertyright;
+    }
+
+    public MyHouseType(String htypename, String htpropertyright) {
+        this.htypename = htypename;
+        this.htpropertyright = htpropertyright;
+    }
+
+    @Override
+    public String toString() {
+        return "MyHouseType{" +
+                "htypeid=" + htypeid +
+                ", htypename='" + htypename + '\'' +
+                ", htpropertyright='" + htpropertyright + '\'' +
+                '}';
+    }
 }

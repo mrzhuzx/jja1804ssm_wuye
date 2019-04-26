@@ -210,4 +210,48 @@ public class SysOwer extends BaseEntity {
     public void setRoleid(Integer roleid) {
         this.roleid = roleid;
     }
+
+    public SysOwer(Integer olid, String olname, String powerid, String olphone, String olheadimg) {
+        this.olid = olid;
+        this.olname = olname;
+        this.powerid = powerid;
+        this.olphone = olphone;
+        this.olheadimg = olheadimg;
+    }
+
+    public SysOwer(String olname, String olaccount, String olpasswd, String powerid, String olphone, String olheadimg, Integer olmember, Integer roleid) {
+        this.olname = olname;
+        this.olaccount = olaccount;
+        this.olpasswd = olpasswd;
+        this.powerid = powerid;
+        this.olphone = olphone;
+        this.olheadimg = olheadimg;
+        this.olmember = olmember;
+        this.roleid = roleid;
+    }
+
+    public SysOwer(Integer olid, Integer olmember) {
+        this.olid = olid;
+        this.olmember = olmember;
+    }
+
+    public SysOwer(Integer olid, String olpasswd) {
+        this.olid = olid;
+        this.olpasswd = olpasswd;
+    }
+
+    @Override
+    public String toString() {
+        return "SysOwer{" +
+                "olid=" + olid +
+                ", olname='" + olname + '\'' +
+                ", olaccount='" + olaccount + '\'' +
+                ", olpasswd='" + olpasswd + '\'' +
+                ", powerid='" + powerid + '\'' +
+                ", olphone='" + olphone + '\'' +
+                ", olheadimg='" + olheadimg + '\'' +
+                ", olmember=" + olmember +
+                ", roleid=" + roleid +
+                '}';
+    }
 }
