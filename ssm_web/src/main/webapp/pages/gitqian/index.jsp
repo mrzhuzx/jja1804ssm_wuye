@@ -100,6 +100,7 @@
                                         <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
                                     </li>
                                     </c:forEach>
+
                                 </ul>
                             </div>
                         </li>
