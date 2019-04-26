@@ -7,7 +7,6 @@ package com.ssm.wuye.service.impl;
  * MyHouseService在dao层com.ssm.wuye.dao.MyHouseMapper查找关键语句
  */
 
-
 import com.ssm.wuye.domain.MyHouse;
 import com.ssm.wuye.domain.MyHouseExample;
 import com.ssm.wuye.service.MyHouseService;
@@ -18,8 +17,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 import java.util.List;
-
-
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml","classpath:spring-service.xml"})
@@ -38,7 +35,9 @@ public class MyHouseServiceImplTest {
         System.out.println(l);
     }
 
-
+    /**
+     * 删除
+     */
     @Test
     public void deleteByPrimaryKey() {
         int i = myHouseService.deleteByPrimaryKey(11170);
@@ -49,9 +48,13 @@ public class MyHouseServiceImplTest {
         }
     }
 
+
+    /**
+     * 增加
+     */
     @Test
     public void insertSelective() {
-        MyHouse r=new MyHouse("打","你","白话", 1,1,1,"腾讯","三菱","功夫",1,0);
+        MyHouse r=new MyHouse("打","你","白话", 1,1,1,"腾讯","三菱","功夫",1,"null");
         int i = myHouseService.insertSelective(r);
         if(i==0){
             System.out.println("增加失败");
@@ -60,7 +63,9 @@ public class MyHouseServiceImplTest {
         }
     }
 
-    //带条件查询
+    /**
+     * 带条件查询
+     */
     @Test
     public void selectByExample() {
         MyHouseExample myHouseExample = new MyHouseExample();
@@ -70,7 +75,10 @@ public class MyHouseServiceImplTest {
             System.out.println(myHouse.toString());
         }
     }
-    //带条件分页查询
+
+    /**
+     * 分页查询带有条件
+     */
     @Test
     public void selectByExampleWithRowbounds() {
         MyHouseExample myHouseExample=new MyHouseExample();
@@ -96,9 +104,13 @@ public class MyHouseServiceImplTest {
         System.out.println(myHouse.toString());
     }
 
+
+    /**
+     * 修改
+     */
     @Test
     public void updateByPrimaryKeySelective() {
-        MyHouse myHouse=new MyHouse(11171,"菜市场","篮球鞋","烤鸭蛋",1, 2, 2, "广电", "ct", "画",1 , 0);
+        MyHouse myHouse=new MyHouse(11171,"菜市场","篮球鞋","烤鸭蛋",1, 2, 2, "广电", "ct", "画",1 , "bb");
         int i = myHouseService.updateByPrimaryKeySelective(myHouse);
         if(i==0){
             System.out.println("修改失败");

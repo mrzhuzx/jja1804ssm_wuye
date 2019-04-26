@@ -22,18 +22,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Morris Chart Styles-->
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- TABLE STYLES-->
-    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -45,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -263,23 +267,23 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i>图表</a>
+                    <a href="index.jsp"><i class="fa fa-dashboard"></i>图表</a>
                 </li>
                 <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
+                    <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI元素</a>
                 </li>
                 <li>
-                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
+                    <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据表</a>
                 </li>
                 <li>
-                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
+                    <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
                 </li>
 
                 <li>
-                    <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
+                    <a href="table.jsp" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
                 </li>
                 <li>
-                    <a href="form.html"><i class="fa fa-edit"></i>表单 </a>
+                    <a href="form.jsp"><i class="fa fa-edit"></i>表单 </a>
                 </li>
 
 
@@ -311,7 +315,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
+                    <a href="empty.jsp"><i class="fa fa-fw fa-file"></i> 空白页</a>
                 </li>
             </ul>
 
@@ -1037,7 +1041,6 @@
             </div>
             <!-- /. ROW  -->
         </div>
-        <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
     </div>
     <!-- /. PAGE INNER  -->
 </div>
@@ -1045,21 +1048,21 @@
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
-<script src="assets/js/jquery.metisMenu.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
 <!-- DATA TABLE SCRIPTS -->
-<script src="assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
 <script>
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
     });
 </script>
 <!-- Custom Js -->
-<script src="assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
 
 </body>
