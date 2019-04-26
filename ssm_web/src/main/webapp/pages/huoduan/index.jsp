@@ -11,11 +11,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":"+ request.getServerPort() + path + "/";
-%>
-<base href="<%=basePath%>">
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,13 +20,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -264,30 +259,8 @@
         <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
-
                 <li>
-                    <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i>图表</a>
-                </li>
-                <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI 元素</a>
-                </li>
-                <li>
-                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据图表</a>
-                </li>
-                <li>
-                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
-                </li>
-
-                <li>
-                    <a href="table.html"><i class="fa fa-table"></i> 响应表</a>
-                </li>
-                <li>
-                    <a href="form.html"><i class="fa fa-edit"></i> 表单 </a>
-                </li>
-
-
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i> 下拉<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-desktop"></i> 人事管理 <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -296,22 +269,228 @@
                             <a href="#">Second Level Link</a>
                         </li>
                         <li>
-                            <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Link</a>
-                                </li>
-
-                            </ul>
-
+                            <a href="#">Second Level Link</a>
                         </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
                     </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 收费管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 能耗管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 新闻管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                <a href="#"><i class="fa fa-desktop"></i> 房屋管理 <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 业主管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 项目管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> null <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard"></i> 图表 </a>
+                </li>
+                <li>
+                    <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI 元素 </a>
+                </li>
+                <li>
+                    <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据图表 </a>
+                </li>
+
+                <li>
+                    <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板 </a>
+                </li>
+
+                <li>
+                <a href="table.jsp"><i class="fa fa-table"></i> 响应表 </a>
+            </li>
+
+                <li>
+                    <a href="form.jsp"><i class="fa fa-edit"></i> 表单 </a>
                 </li>
                 <li>
                     <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
@@ -429,7 +608,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body easypiechart-panel">
                             <h4>客户</h4>
-                            <div class="easypiechart" id="easypiechart-blue" data-percent="82" ><span class="percent">82%</span>
+                            <div class="easypiechart" id="easypiechart-blue" data-percent="50" ><span class="percent">50%</span>
                             </div>
                         </div>
                     </div>
@@ -611,10 +790,6 @@
             </div>
             <!-- /. ROW  -->
 
-
-            <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-
-
             </footer>
         </div>
         <!-- /. PAGE INNER  -->
@@ -624,24 +799,23 @@
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Js -->
-<script src="assets/js/jquery.metisMenu.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
 <!-- Morris Chart Js -->
-<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-<script src="assets/js/morris/morris.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/morris/raphael-2.1.0.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/morris/morris.js"></script>
 
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/easypiechart.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/easypiechart-data.js"></script>
 
-<script src="assets/js/easypiechart.js"></script>
-<script src="assets/js/easypiechart-data.js"></script>
-
-<script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/Lightweight-Chart/jquery.chart.js"></script>
 
 <!-- Custom Js -->
-<script src="assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
 
 </body>
