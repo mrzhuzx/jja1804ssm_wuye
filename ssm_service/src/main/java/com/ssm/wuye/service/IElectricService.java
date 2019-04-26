@@ -13,4 +13,13 @@ public interface IElectricService {
     List<Electric> findAll();
 
     void delete(Integer id);
+
+    Electric findById(String id);
+
+    void updata(Electric electric);
+
+    void add(Electric electric);
+
+
+    List<Integer> findAllhouseid();
 }
