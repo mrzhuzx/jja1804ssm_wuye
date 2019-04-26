@@ -67,6 +67,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资ID(P)
+     *
      * @return matterId 物资ID(P)
      */
     public Integer getMatterid() {
@@ -75,6 +76,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资ID(P)
+     *
      * @param matterid 物资ID(P)
      */
     public void setMatterid(Integer matterid) {
@@ -83,6 +85,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资名称
+     *
      * @return matterName 物资名称
      */
     public String getMattername() {
@@ -91,6 +94,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资名称
+     *
      * @param mattername 物资名称
      */
     public void setMattername(String mattername) {
@@ -99,6 +103,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资数量
+     *
      * @return matterNum 物资数量
      */
     public Integer getMatternum() {
@@ -107,6 +112,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资数量
+     *
      * @param matternum 物资数量
      */
     public void setMatternum(Integer matternum) {
@@ -115,6 +121,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资价格
+     *
      * @return matterPrice 物资价格
      */
     public Double getMatterprice() {
@@ -123,6 +130,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资价格
+     *
      * @param matterprice 物资价格
      */
     public void setMatterprice(Double matterprice) {
@@ -131,6 +139,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
+     *
      * @return matterSortId 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
      */
     public Integer getMattersortid() {
@@ -139,6 +148,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
+     *
      * @param mattersortid 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
      */
     public void setMattersortid(Integer mattersortid) {
@@ -147,6 +157,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 入库时间
+     *
      * @return inStorageTime 入库时间
      */
     public Date getInstoragetime() {
@@ -155,6 +166,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 入库时间
+     *
      * @param instoragetime 入库时间
      */
     public void setInstoragetime(Date instoragetime) {
@@ -163,6 +175,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 出库时间
+     *
      * @return outStorageTime 出库时间
      */
     public Date getOutstoragetime() {
@@ -171,6 +184,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 出库时间
+     *
      * @param outstoragetime 出库时间
      */
     public void setOutstoragetime(Date outstoragetime) {
@@ -179,6 +193,7 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资状态
+     *
      * @return matterState 物资状态
      */
     public String getMatterstate() {
@@ -187,9 +202,48 @@ public class TbMatter extends BaseEntity {
 
     /**
      * 物资状态
+     *
      * @param matterstate 物资状态
      */
     public void setMatterstate(String matterstate) {
         this.matterstate = matterstate == null ? null : matterstate.trim();
+    }
+
+    public TbMatter() {
+    }
+
+    public TbMatter(String mattername, Integer matternum, Double matterprice, Integer mattersortid, Date instoragetime, Date outstoragetime, String matterstate) {
+        this.mattername = mattername;
+        this.matternum = matternum;
+        this.matterprice = matterprice;
+        this.mattersortid = mattersortid;
+        this.instoragetime = instoragetime;
+        this.outstoragetime = outstoragetime;
+        this.matterstate = matterstate;
+    }
+
+    public TbMatter(Integer matterid, String mattername, Integer matternum, Double matterprice, Integer mattersortid, Date instoragetime, Date outstoragetime, String matterstate) {
+        this.matterid = matterid;
+        this.mattername = mattername;
+        this.matternum = matternum;
+        this.matterprice = matterprice;
+        this.mattersortid = mattersortid;
+        this.instoragetime = instoragetime;
+        this.outstoragetime = outstoragetime;
+        this.matterstate = matterstate;
+    }
+
+    @Override
+    public String toString() {
+        return "TbMatter{" +
+                "matterid=" + matterid +
+                ", mattername='" + mattername + '\'' +
+                ", matternum=" + matternum +
+                ", matterprice=" + matterprice +
+                ", mattersortid=" + mattersortid +
+                ", instoragetime=" + instoragetime +
+                ", outstoragetime=" + outstoragetime +
+                ", matterstate='" + matterstate + '\'' +
+                '}';
     }
 }
