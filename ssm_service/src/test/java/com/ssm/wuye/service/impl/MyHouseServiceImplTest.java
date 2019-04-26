@@ -54,7 +54,7 @@ public class MyHouseServiceImplTest {
      */
     @Test
     public void insertSelective() {
-        MyHouse r=new MyHouse("打","你","白话", 1,1,1,"腾讯","三菱","功夫",1,"null");
+        MyHouse r=new MyHouse("打","你","白话", 1,1,1,"腾讯","三菱","功夫",1,1);
         int i = myHouseService.insertSelective(r);
         if(i==0){
             System.out.println("增加失败");
@@ -110,7 +110,7 @@ public class MyHouseServiceImplTest {
      */
     @Test
     public void updateByPrimaryKeySelective() {
-        MyHouse myHouse=new MyHouse(11171,"菜市场","篮球鞋","烤鸭蛋",1, 2, 2, "广电", "ct", "画",1 , "bb");
+        MyHouse myHouse=new MyHouse(11171,"菜市场","篮球鞋","烤鸭蛋",1, 2, 2, "广电", "ct", "画",1 , 1);
         int i = myHouseService.updateByPrimaryKeySelective(myHouse);
         if(i==0){
             System.out.println("修改失败");
