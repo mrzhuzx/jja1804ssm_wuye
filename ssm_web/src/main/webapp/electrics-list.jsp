@@ -1,17 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2019/4/24 0024
-  Time: 下午 4:48
+  Date: 2019\4\25 0025
+  Time: 10:08
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
+<%--<%@include file="appcomm/basePath.jsp"%>--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -21,12 +17,14 @@
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
-
+    <!-- Morris Chart Styles-->
+    <%--D:\ideaworkspace\jja1804ssm_wuye3\ssm_web\src\main\webapp\${pageContext.request.contextPath}/pages\huoduan\assets\css--%>
     <!-- Custom Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <!-- TABLE STYLES-->
+    <link href="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 <div id="wrapper">
@@ -262,22 +260,22 @@
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
                 </li>
                 <li>
-                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i>数据表</a>
+                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
                 </li>
                 <li>
                     <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
                 </li>
 
                 <li>
-                    <a href="table.html"><i class="fa fa-table"></i>响应表</a>
+                    <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
                 </li>
                 <li>
-                    <a href="form.html"><i class="fa fa-edit"></i>表单</a>
+                    <a href="form.html"><i class="fa fa-edit"></i>表单 </a>
                 </li>
 
 
                 <li>
-                    <a href="#"><i class="fa fa-sitemap"></i>下单菜单<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -304,7 +302,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="active-menu" href="empty.html"><i class="fa fa-fw fa-file"></i>空白页</a>
+                    <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
                 </li>
             </ul>
 
@@ -317,22 +315,84 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        空白页 <small>创建新页面</small>
+                        表格页面 <small>响应表</small>
                     </h1>
                 </div>
+            </div>
+            <!-- /. ROW  -->
 
-        <!-- /. PAGE INNER  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            高级表
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>电表ID</th>
+                                        <th>电表编号</th>
+                                        <th>房屋号/引用house表的houseid</th>
+                                        <th>用电量/度</th>
+                                        <th>年月份</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${electricList}" var="electric">
+
+                                        <tr class="odd gradeX">
+                                            <td>${electric.electricid}</td>
+                                            <td>${electric.enumber}</td>
+                                            <td>${electric.houseid}</td>
+                                            <td>${electric.electric}</td>
+                                            <td>${electric.monthStr}</td>
+                                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/electric/findById.do?id=${electric.enumber}'"></i> 修改</button>
+                                                <button class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/electric/delete.do?id=${electric.electricid}'"></i> 删除</button></td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <!-- /. ROW  -->
+        </div>
+        <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
     </div>
-    <!-- /. PAGE WRAPPER  -->
+    <!-- /. PAGE INNER  -->
 </div>
+<!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
+                                              
 <script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
 <script src="${pageContext.request.contextPath}/pages/houduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
 <script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery.metisMenu.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
+    });
+</script>
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/houduan/assets/js/custom-scripts.js"></script>
 

@@ -1,17 +1,20 @@
 package com.ssm.wuye.domain;
 
+
 import com.ssm.wuye.appcomm.BaseEntity;
-import java.util.Date;
+import org.apache.ibatis.type.Alias;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.apache.ibatis.type.Alias;
+import java.util.Date;
 
 /**
  * tb_matter
  */
 @Table(name = "tb_matter")
 @Alias("tbMatter")
+
 public class TbMatter extends BaseEntity {
     /**
      * 物资ID(P)
@@ -39,7 +42,7 @@ public class TbMatter extends BaseEntity {
     private Double matterprice;
 
     /**
-     * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort 
+     * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
      */
     @Column(name = "matterSortId")
     private Integer mattersortid;
@@ -127,16 +130,16 @@ public class TbMatter extends BaseEntity {
     }
 
     /**
-     * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort 
-     * @return matterSortId 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort 
+     * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
+     * @return matterSortId 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
      */
     public Integer getMattersortid() {
         return mattersortid;
     }
 
     /**
-     * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort 
-     * @param mattersortid 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort 
+     * 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
+     * @param mattersortid 物资类别ID  为外键,连接的表为物资设备类别管理表tb_matter_sort
      */
     public void setMattersortid(Integer mattersortid) {
         this.mattersortid = mattersortid;

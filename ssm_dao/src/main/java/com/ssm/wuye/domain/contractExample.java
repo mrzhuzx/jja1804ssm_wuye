@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class contractExample {
+public class ContractExample {
     /**
      * contract
      */
@@ -21,7 +21,7 @@ public class contractExample {
      */
     protected List<Criteria> oredCriteria;
 
-    public contractExample() {
+    public ContractExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
