@@ -57,27 +57,10 @@ public class NewsTypeController {
         Integer id = Integer.valueOf(ntid);
         //根据类别id查询该类下的所有内容
         NewsExample newsExample = new NewsExample();
+
         newsExample.createCriteria().andNctypeidEqualTo(id);
-
-//        List<News> news1 = newsService.selectByExample(newsExample);
-//        m.addObject("news1", news1);
-
-        Integer pageNum = 1;
-        Integer pageSize = 2;
-        long countAll = newsService.countByExample(newsExample);
-
-        long pageAll=countAll%pageSize==0?countAll/pageSize:countAll/pageSize+1;
-        RowBounds rowBounds = new RowBounds(pageNum, pageSize);
-        List<News> news = newsService.selectByExampleWithRowbounds(newsExample, rowBounds);
-        long l = newsService.countByExample(newsExample);
-        System.out.println(l+"************************");
-        System.out.println(news.toString()+"...............................");
-        m.addObject("news1", news);
-
-
-//        NewsType newsType = newstypeService.selectByPrimaryKey(id);
-//        m.addObject("newsType", newsType);
-
+        List<News> news1 = newsService.selectByExample(newsExample);
+        m.addObject("news1", news1);
 
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);

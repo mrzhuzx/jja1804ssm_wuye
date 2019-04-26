@@ -2,7 +2,9 @@ package com.ssm.wuye.controller;
 
 import com.ssm.wuye.domain.News;
 import com.ssm.wuye.domain.NewsExample;
+import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.service.NewsService;
+import com.ssm.wuye.service.NewsTypeService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,17 +28,20 @@ public class NewsController {
 
     @Resource
     NewsService  newsService;
+    @Resource
+    NewsTypeService newstypeService;
 
     @RequestMapping("one")
-    public ModelAndView news(@RequestParam String   ntid){
+    public ModelAndView news(@RequestParam String   nid){
+        System.out.println(nid);
+        ModelAndView  m = new ModelAndView("pages/gitqian/new_list");
+        Integer id = Integer.valueOf(nid);
+        News news = newsService.selectByPrimaryKey(id);
+        m.addObject("news",news);
 
-        System.out.println(ntid);
-        ModelAndView  m = new ModelAndView("pages/gitqian/news");
-        Integer id = Integer.valueOf(ntid);
-        NewsExample newsExample = new NewsExample();
-        newsExample.createCriteria().andNctypeidBetween(id,id);
-        List<News> news1 = newsService.selectByExample(newsExample);
-        m.addObject("news1",news1);
+        //所有新闻类
+        List<NewsType> newsTypes = newstypeService.selectByExample(null);
+        m.addObject("newsTypes",newsTypes);
         return  m;
     }
 }

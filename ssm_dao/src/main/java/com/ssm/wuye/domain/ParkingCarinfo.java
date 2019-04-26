@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -12,6 +14,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "parking_carinfo")
 @Alias("parkingCarinfo")
+@Data
 public class ParkingCarinfo extends BaseEntity {
     /**
      * 
