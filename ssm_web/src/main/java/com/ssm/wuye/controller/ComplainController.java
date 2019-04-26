@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,17 +21,17 @@ import java.util.List;
 @RequestMapping("/complain")
 public class ComplainController {
 
-    @Autowired
+    @Resource
     ComplainService complainService;
-    @RequestMapping("/findAll.do")
-    public ModelAndView search(){
+    @RequestMapping("/findAll")
+    public ModelAndView search() {
         ModelAndView mv = new ModelAndView();
-         List<ComplainInfo> complainInfolist =complainService.selectByExample(null);
-         mv.addObject("complainInfolist",complainInfolist);
-        mv.setViewName("pages/huoduan/assets/complain");
+        List<ComplainInfo> complainInfolist = complainService.selectByExample(null);
+        System.out.println("客户投诉表："+complainInfolist.size());
 
+        mv.addObject("complainInfolist", complainInfolist);
+        System.out.println(complainInfolist.size());
+        mv.setViewName("pages/huoduan/complain.jsp");
         return mv;
     }
-
-
 }

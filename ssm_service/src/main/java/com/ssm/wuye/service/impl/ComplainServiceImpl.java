@@ -1,6 +1,4 @@
 package com.ssm.wuye.service.impl;
-
-
 import com.ssm.wuye.dao.ComplainInfoMapper;
 import com.ssm.wuye.domain.ComplainInfo;
 import com.ssm.wuye.domain.ComplainInfoExample;
@@ -8,7 +6,9 @@ import com.ssm.wuye.domain.NewsTypeExample;
 import com.ssm.wuye.service.ComplainService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -17,8 +17,9 @@ import java.util.List;
  * time:2019\4\25 0025
  * version:
  */
+@Service
 public class ComplainServiceImpl implements ComplainService {
-    @Autowired
+   @Resource
     ComplainInfoMapper complainInfoMapper;
 
 
@@ -44,7 +45,7 @@ public class ComplainServiceImpl implements ComplainService {
 
     public List<ComplainInfo> selectByExample(ComplainInfo example) {
         //NewsTypeExample newsTypeExample=new NewsTypeExample();
-       // return newsTypeMapper.selectByExample(newsTypeExample);
+        // return newsTypeMapper.selectByExample(newsTypeExample);
         ComplainInfoExample complainInfoExample = new ComplainInfoExample();
         return complainInfoMapper.selectByExample(complainInfoExample);
     }
