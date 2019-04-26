@@ -1,35 +1,35 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.MyHouse;
-import com.ssm.wuye.domain.MyHouseExample.Criteria;
-import com.ssm.wuye.domain.MyHouseExample.Criterion;
-import com.ssm.wuye.domain.MyHouseExample;
+import com.ssm.wuye.domain.OwerHouseType;
+import com.ssm.wuye.domain.OwerHouseTypeExample.Criteria;
+import com.ssm.wuye.domain.OwerHouseTypeExample.Criterion;
+import com.ssm.wuye.domain.OwerHouseTypeExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class MyHouseSqlProvider {
+public class OwerHouseTypeSqlProvider {
 
-    public String countByExample(MyHouseExample example) {
+    public String countByExample(OwerHouseTypeExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("wy_house");
+        sql.SELECT("count(*)").FROM("ower_house_type");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(MyHouseExample example) {
+    public String deleteByExample(OwerHouseTypeExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("wy_house");
+        sql.DELETE_FROM("ower_house_type");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(MyHouse record) {
+    public String insertSelective(OwerHouseType record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("wy_house");
+        sql.INSERT_INTO("ower_house_type");
         
-        if (record.getHid() != null) {
-            sql.VALUES("hid", "#{hid,jdbcType=INTEGER}");
+        if (record.getOlname() != null) {
+            sql.VALUES("olName", "#{olname,jdbcType=VARCHAR}");
         }
         
         if (record.getHnumber() != null) {
@@ -68,23 +68,31 @@ public class MyHouseSqlProvider {
             sql.VALUES("hRemarks", "#{hremarks,jdbcType=VARCHAR}");
         }
         
-        if (record.getOlid() != null) {
-            sql.VALUES("olid", "#{olid,jdbcType=INTEGER}");
-        }
-        
         if (record.getLoan() != null) {
             sql.VALUES("Loan", "#{loan,jdbcType=INTEGER}");
+        }
+        
+        if (record.getHtypename() != null) {
+            sql.VALUES("hTypeName", "#{htypename,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getHtpropertyright() != null) {
+            sql.VALUES("htPropertyRight", "#{htpropertyright,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getOlphone() != null) {
+            sql.VALUES("olPhone", "#{olphone,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(MyHouseExample example) {
+    public String selectByExample(OwerHouseTypeExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
-            sql.SELECT_DISTINCT("hid");
+            sql.SELECT_DISTINCT("olName");
         } else {
-            sql.SELECT("hid");
+            sql.SELECT("olName");
         }
         sql.SELECT("hNumber");
         sql.SELECT("hState");
@@ -95,9 +103,11 @@ public class MyHouseSqlProvider {
         sql.SELECT("hDirection");
         sql.SELECT("hArea");
         sql.SELECT("hRemarks");
-        sql.SELECT("olid");
         sql.SELECT("Loan");
-        sql.FROM("wy_house");
+        sql.SELECT("hTypeName");
+        sql.SELECT("htPropertyRight");
+        sql.SELECT("olPhone");
+        sql.FROM("ower_house_type");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -108,14 +118,14 @@ public class MyHouseSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        MyHouse record = (MyHouse) parameter.get("record");
-        MyHouseExample example = (MyHouseExample) parameter.get("example");
+        OwerHouseType record = (OwerHouseType) parameter.get("record");
+        OwerHouseTypeExample example = (OwerHouseTypeExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("wy_house");
+        sql.UPDATE("ower_house_type");
         
-        if (record.getHid() != null) {
-            sql.SET("hid = #{record.hid,jdbcType=INTEGER}");
+        if (record.getOlname() != null) {
+            sql.SET("olName = #{record.olname,jdbcType=VARCHAR}");
         }
         
         if (record.getHnumber() != null) {
@@ -154,12 +164,20 @@ public class MyHouseSqlProvider {
             sql.SET("hRemarks = #{record.hremarks,jdbcType=VARCHAR}");
         }
         
-        if (record.getOlid() != null) {
-            sql.SET("olid = #{record.olid,jdbcType=INTEGER}");
-        }
-        
         if (record.getLoan() != null) {
             sql.SET("Loan = #{record.loan,jdbcType=INTEGER}");
+        }
+        
+        if (record.getHtypename() != null) {
+            sql.SET("hTypeName = #{record.htypename,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getHtpropertyright() != null) {
+            sql.SET("htPropertyRight = #{record.htpropertyright,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getOlphone() != null) {
+            sql.SET("olPhone = #{record.olphone,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -168,9 +186,9 @@ public class MyHouseSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("wy_house");
+        sql.UPDATE("ower_house_type");
         
-        sql.SET("hid = #{record.hid,jdbcType=INTEGER}");
+        sql.SET("olName = #{record.olname,jdbcType=VARCHAR}");
         sql.SET("hNumber = #{record.hnumber,jdbcType=VARCHAR}");
         sql.SET("hState = #{record.hstate,jdbcType=VARCHAR}");
         sql.SET("hBulidingName = #{record.hbulidingname,jdbcType=VARCHAR}");
@@ -180,68 +198,17 @@ public class MyHouseSqlProvider {
         sql.SET("hDirection = #{record.hdirection,jdbcType=VARCHAR}");
         sql.SET("hArea = #{record.harea,jdbcType=VARCHAR}");
         sql.SET("hRemarks = #{record.hremarks,jdbcType=VARCHAR}");
-        sql.SET("olid = #{record.olid,jdbcType=INTEGER}");
         sql.SET("Loan = #{record.loan,jdbcType=INTEGER}");
+        sql.SET("hTypeName = #{record.htypename,jdbcType=VARCHAR}");
+        sql.SET("htPropertyRight = #{record.htpropertyright,jdbcType=VARCHAR}");
+        sql.SET("olPhone = #{record.olphone,jdbcType=VARCHAR}");
         
-        MyHouseExample example = (MyHouseExample) parameter.get("example");
+        OwerHouseTypeExample example = (OwerHouseTypeExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(MyHouse record) {
-        SQL sql = new SQL();
-        sql.UPDATE("wy_house");
-        
-        if (record.getHnumber() != null) {
-            sql.SET("hNumber = #{hnumber,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHstate() != null) {
-            sql.SET("hState = #{hstate,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHbulidingname() != null) {
-            sql.SET("hBulidingName = #{hbulidingname,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHunitnumber() != null) {
-            sql.SET("hUnitNumber = #{hunitnumber,jdbcType=INTEGER}");
-        }
-        
-        if (record.getHfloor() != null) {
-            sql.SET("hFloor = #{hfloor,jdbcType=INTEGER}");
-        }
-        
-        if (record.getHtypeid() != null) {
-            sql.SET("hTypeid = #{htypeid,jdbcType=INTEGER}");
-        }
-        
-        if (record.getHdirection() != null) {
-            sql.SET("hDirection = #{hdirection,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHarea() != null) {
-            sql.SET("hArea = #{harea,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHremarks() != null) {
-            sql.SET("hRemarks = #{hremarks,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getOlid() != null) {
-            sql.SET("olid = #{olid,jdbcType=INTEGER}");
-        }
-        
-        if (record.getLoan() != null) {
-            sql.SET("Loan = #{loan,jdbcType=INTEGER}");
-        }
-        
-        sql.WHERE("hid = #{hid,jdbcType=INTEGER}");
-        
-        return sql.toString();
-    }
-
-    protected void applyWhere(SQL sql, MyHouseExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, OwerHouseTypeExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

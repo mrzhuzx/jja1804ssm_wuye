@@ -32,22 +32,59 @@ public class ElectricController {
 
     //查询一条数据
     @RequestMapping("/findById.do")
-    public ModelAndView findById(String orderId){
-//        System.out.println("aaaaaaaaaaa");
+    public ModelAndView findById(String id){
         ModelAndView mv = new ModelAndView();
-//        Electric electrics=electricService.findById(orderId);
-//        System.out.println(electrics);
-//        mv.addObject("electrics",electrics);
-        mv.setViewName("newstype");
+        Electric electrics=electricService.findById(id);
+//        System.out.println(electrics.toString());
+        mv.addObject("electrics",electrics);
+        mv.setViewName("electrics-up-datetable");
         return mv;
 
     }
 
+
     @RequestMapping("delete.do")
     public String delete(@RequestParam(name = "id") Integer id){
-        ModelAndView mv = new ModelAndView();
+
         electricService.delete(id);
         return "redirect:findAll.do";
     }
+
+    @RequestMapping("/updata.do")
+    public String updata(Electric electric){
+
+        System.out.println(electric.toString());
+        System.out.println("aaaaa---------");
+        electricService.updata(electric);
+
+
+        return "redirect:findAll.do";
+
+    }
+    @RequestMapping("/add.do")
+    public String add(Electric electric){
+
+        System.out.println(electric.toString());
+        System.out.println("aaaaa---------");
+        electricService.add(electric);
+        List<Integer> allhouseid=electricService.findAllhouseid();
+
+
+        return "redirect:findAll.do";
+
+    }
+//    @RequestMapping("/add.do")
+//    public ModelAndView add(Electric electric){
+//        ModelAndView mv = new ModelAndView();
+//        System.out.println(electric.toString());
+//        System.out.println("aaaaa---------");
+//        electricService.add(electric);
+//        List<Integer> allhouseid=electricService.findAllhouseid();
+//        System.out.println(allhouseid.toString());
+//        mv.addObject("allhouseid",allhouseid);
+//        mv.setViewName("redirect:findAll.do");
+//        return mv;
+//
+//    }
 
 }
