@@ -60,6 +60,10 @@ public class ContractSqlProvider {
             sql.VALUES("signatoryTelephone", "#{signatorytelephone,jdbcType=VARCHAR}");
         }
         
+        if (record.getContractnum() != null) {
+            sql.VALUES("contractNum", "#{contractnum,jdbcType=VARCHAR}");
+        }
+        
         return sql.toString();
     }
 
@@ -77,6 +81,7 @@ public class ContractSqlProvider {
         sql.SELECT("contractDes");
         sql.SELECT("signingPeople");
         sql.SELECT("signatoryTelephone");
+        sql.SELECT("contractNum");
         sql.FROM("contract");
         applyWhere(sql, example, false);
         
@@ -126,6 +131,10 @@ public class ContractSqlProvider {
             sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
         }
         
+        if (record.getContractnum() != null) {
+            sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
+        }
+        
         applyWhere(sql, example, true);
         return sql.toString();
     }
@@ -142,6 +151,7 @@ public class ContractSqlProvider {
         sql.SET("contractDes = #{record.contractdes,jdbcType=VARCHAR}");
         sql.SET("signingPeople = #{record.signingpeople,jdbcType=VARCHAR}");
         sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
+        sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
         
         ContractExample example = (ContractExample) parameter.get("example");
         applyWhere(sql, example, true);
@@ -178,6 +188,10 @@ public class ContractSqlProvider {
         
         if (record.getSignatorytelephone() != null) {
             sql.SET("signatoryTelephone = #{signatorytelephone,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getContractnum() != null) {
+            sql.SET("contractNum = #{contractnum,jdbcType=VARCHAR}");
         }
         
         sql.WHERE("contractId = #{contractid,jdbcType=INTEGER}");

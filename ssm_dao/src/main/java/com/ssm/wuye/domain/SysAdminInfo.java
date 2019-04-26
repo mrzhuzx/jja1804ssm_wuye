@@ -4,6 +4,8 @@ import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -11,6 +13,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "sys_admin_info")
 @Alias("sysAdminInfo")
+@Data
 public class SysAdminInfo extends BaseEntity {
     /**
      * 
