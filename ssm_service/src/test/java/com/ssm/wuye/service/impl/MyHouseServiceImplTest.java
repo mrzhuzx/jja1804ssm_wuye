@@ -7,7 +7,7 @@ package com.ssm.wuye.service.impl;
  * MyHouseService在dao层com.ssm.wuye.dao.MyHouseMapper查找关键语句
  */
 
-import com.ssm.wuye.appcomm.Page;
+
 import com.ssm.wuye.domain.MyHouse;
 import com.ssm.wuye.domain.MyHouseExample;
 import com.ssm.wuye.service.MyHouseService;
@@ -51,7 +51,7 @@ public class MyHouseServiceImplTest {
 
     @Test
     public void insertSelective() {
-        MyHouse r=new MyHouse("打","你","白话", 1,1,1,"腾讯","三菱","功夫",1,"null");
+        MyHouse r=new MyHouse("打","你","白话", 1,1,1,"腾讯","三菱","功夫",1,0);
         int i = myHouseService.insertSelective(r);
         if(i==0){
             System.out.println("增加失败");
@@ -60,6 +60,7 @@ public class MyHouseServiceImplTest {
         }
     }
 
+    //带条件查询
     @Test
     public void selectByExample() {
         MyHouseExample myHouseExample = new MyHouseExample();
@@ -69,6 +70,7 @@ public class MyHouseServiceImplTest {
             System.out.println(myHouse.toString());
         }
     }
+    //带条件分页查询
     @Test
     public void selectByExampleWithRowbounds() {
         MyHouseExample myHouseExample=new MyHouseExample();
@@ -96,7 +98,7 @@ public class MyHouseServiceImplTest {
 
     @Test
     public void updateByPrimaryKeySelective() {
-        MyHouse myHouse=new MyHouse(11171,"菜市场","篮球鞋","烤鸭蛋",1, 2, 2, "广电", "ct", "画",1 , "bb");
+        MyHouse myHouse=new MyHouse(11171,"菜市场","篮球鞋","烤鸭蛋",1, 2, 2, "广电", "ct", "画",1 , 0);
         int i = myHouseService.updateByPrimaryKeySelective(myHouse);
         if(i==0){
             System.out.println("修改失败");

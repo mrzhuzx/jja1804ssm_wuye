@@ -3,23 +3,23 @@ package com.ssm.wuye.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyHouseExample {
+public class OwerHouseTypeExample {
     /**
-     * wy_house
+     * ower_house_type
      */
     protected String orderByClause;
 
     /**
-     * wy_house
+     * ower_house_type
      */
     protected boolean distinct;
 
     /**
-     * wy_house
+     * ower_house_type
      */
     protected List<Criteria> oredCriteria;
 
-    public MyHouseExample() {
+    public OwerHouseTypeExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -73,7 +73,7 @@ public class MyHouseExample {
     }
 
     /**
-     * wy_house 2019-04-25
+     * ower_house_type 2019-04-25
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -116,63 +116,73 @@ public class MyHouseExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andHidIsNull() {
-            addCriterion("hid is null");
+        public Criteria andOlnameIsNull() {
+            addCriterion("olName is null");
             return (Criteria) this;
         }
 
-        public Criteria andHidIsNotNull() {
-            addCriterion("hid is not null");
+        public Criteria andOlnameIsNotNull() {
+            addCriterion("olName is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHidEqualTo(Integer value) {
-            addCriterion("hid =", value, "hid");
+        public Criteria andOlnameEqualTo(String value) {
+            addCriterion("olName =", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidNotEqualTo(Integer value) {
-            addCriterion("hid <>", value, "hid");
+        public Criteria andOlnameNotEqualTo(String value) {
+            addCriterion("olName <>", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidGreaterThan(Integer value) {
-            addCriterion("hid >", value, "hid");
+        public Criteria andOlnameGreaterThan(String value) {
+            addCriterion("olName >", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("hid >=", value, "hid");
+        public Criteria andOlnameGreaterThanOrEqualTo(String value) {
+            addCriterion("olName >=", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidLessThan(Integer value) {
-            addCriterion("hid <", value, "hid");
+        public Criteria andOlnameLessThan(String value) {
+            addCriterion("olName <", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidLessThanOrEqualTo(Integer value) {
-            addCriterion("hid <=", value, "hid");
+        public Criteria andOlnameLessThanOrEqualTo(String value) {
+            addCriterion("olName <=", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidIn(List<Integer> values) {
-            addCriterion("hid in", values, "hid");
+        public Criteria andOlnameLike(String value) {
+            addCriterion("olName like", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidNotIn(List<Integer> values) {
-            addCriterion("hid not in", values, "hid");
+        public Criteria andOlnameNotLike(String value) {
+            addCriterion("olName not like", value, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidBetween(Integer value1, Integer value2) {
-            addCriterion("hid between", value1, value2, "hid");
+        public Criteria andOlnameIn(List<String> values) {
+            addCriterion("olName in", values, "olname");
             return (Criteria) this;
         }
 
-        public Criteria andHidNotBetween(Integer value1, Integer value2) {
-            addCriterion("hid not between", value1, value2, "hid");
+        public Criteria andOlnameNotIn(List<String> values) {
+            addCriterion("olName not in", values, "olname");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlnameBetween(String value1, String value2) {
+            addCriterion("olName between", value1, value2, "olname");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlnameNotBetween(String value1, String value2) {
+            addCriterion("olName not between", value1, value2, "olname");
             return (Criteria) this;
         }
 
@@ -776,66 +786,6 @@ public class MyHouseExample {
             return (Criteria) this;
         }
 
-        public Criteria andOlidIsNull() {
-            addCriterion("olid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidIsNotNull() {
-            addCriterion("olid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidEqualTo(Integer value) {
-            addCriterion("olid =", value, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidNotEqualTo(Integer value) {
-            addCriterion("olid <>", value, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidGreaterThan(Integer value) {
-            addCriterion("olid >", value, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("olid >=", value, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidLessThan(Integer value) {
-            addCriterion("olid <", value, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidLessThanOrEqualTo(Integer value) {
-            addCriterion("olid <=", value, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidIn(List<Integer> values) {
-            addCriterion("olid in", values, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidNotIn(List<Integer> values) {
-            addCriterion("olid not in", values, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidBetween(Integer value1, Integer value2) {
-            addCriterion("olid between", value1, value2, "olid");
-            return (Criteria) this;
-        }
-
-        public Criteria andOlidNotBetween(Integer value1, Integer value2) {
-            addCriterion("olid not between", value1, value2, "olid");
-            return (Criteria) this;
-        }
-
         public Criteria andLoanIsNull() {
             addCriterion("Loan is null");
             return (Criteria) this;
@@ -896,6 +846,221 @@ public class MyHouseExample {
             return (Criteria) this;
         }
 
+        public Criteria andHtypenameIsNull() {
+            addCriterion("hTypeName is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameIsNotNull() {
+            addCriterion("hTypeName is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameEqualTo(String value) {
+            addCriterion("hTypeName =", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameNotEqualTo(String value) {
+            addCriterion("hTypeName <>", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameGreaterThan(String value) {
+            addCriterion("hTypeName >", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameGreaterThanOrEqualTo(String value) {
+            addCriterion("hTypeName >=", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameLessThan(String value) {
+            addCriterion("hTypeName <", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameLessThanOrEqualTo(String value) {
+            addCriterion("hTypeName <=", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameLike(String value) {
+            addCriterion("hTypeName like", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameNotLike(String value) {
+            addCriterion("hTypeName not like", value, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameIn(List<String> values) {
+            addCriterion("hTypeName in", values, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameNotIn(List<String> values) {
+            addCriterion("hTypeName not in", values, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameBetween(String value1, String value2) {
+            addCriterion("hTypeName between", value1, value2, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypenameNotBetween(String value1, String value2) {
+            addCriterion("hTypeName not between", value1, value2, "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightIsNull() {
+            addCriterion("htPropertyRight is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightIsNotNull() {
+            addCriterion("htPropertyRight is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightEqualTo(String value) {
+            addCriterion("htPropertyRight =", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightNotEqualTo(String value) {
+            addCriterion("htPropertyRight <>", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightGreaterThan(String value) {
+            addCriterion("htPropertyRight >", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightGreaterThanOrEqualTo(String value) {
+            addCriterion("htPropertyRight >=", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightLessThan(String value) {
+            addCriterion("htPropertyRight <", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightLessThanOrEqualTo(String value) {
+            addCriterion("htPropertyRight <=", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightLike(String value) {
+            addCriterion("htPropertyRight like", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightNotLike(String value) {
+            addCriterion("htPropertyRight not like", value, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightIn(List<String> values) {
+            addCriterion("htPropertyRight in", values, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightNotIn(List<String> values) {
+            addCriterion("htPropertyRight not in", values, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightBetween(String value1, String value2) {
+            addCriterion("htPropertyRight between", value1, value2, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightNotBetween(String value1, String value2) {
+            addCriterion("htPropertyRight not between", value1, value2, "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneIsNull() {
+            addCriterion("olPhone is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneIsNotNull() {
+            addCriterion("olPhone is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneEqualTo(String value) {
+            addCriterion("olPhone =", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneNotEqualTo(String value) {
+            addCriterion("olPhone <>", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneGreaterThan(String value) {
+            addCriterion("olPhone >", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneGreaterThanOrEqualTo(String value) {
+            addCriterion("olPhone >=", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneLessThan(String value) {
+            addCriterion("olPhone <", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneLessThanOrEqualTo(String value) {
+            addCriterion("olPhone <=", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneLike(String value) {
+            addCriterion("olPhone like", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneNotLike(String value) {
+            addCriterion("olPhone not like", value, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneIn(List<String> values) {
+            addCriterion("olPhone in", values, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneNotIn(List<String> values) {
+            addCriterion("olPhone not in", values, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneBetween(String value1, String value2) {
+            addCriterion("olPhone between", value1, value2, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneNotBetween(String value1, String value2) {
+            addCriterion("olPhone not between", value1, value2, "olphone");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlnameLikeInsensitive(String value) {
+            addCriterion("upper(olName) like", value.toUpperCase(), "olname");
+            return (Criteria) this;
+        }
+
         public Criteria andHnumberLikeInsensitive(String value) {
             addCriterion("upper(hNumber) like", value.toUpperCase(), "hnumber");
             return (Criteria) this;
@@ -925,6 +1090,21 @@ public class MyHouseExample {
             addCriterion("upper(hRemarks) like", value.toUpperCase(), "hremarks");
             return (Criteria) this;
         }
+
+        public Criteria andHtypenameLikeInsensitive(String value) {
+            addCriterion("upper(hTypeName) like", value.toUpperCase(), "htypename");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtpropertyrightLikeInsensitive(String value) {
+            addCriterion("upper(htPropertyRight) like", value.toUpperCase(), "htpropertyright");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlphoneLikeInsensitive(String value) {
+            addCriterion("upper(olPhone) like", value.toUpperCase(), "olphone");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
@@ -935,7 +1115,7 @@ public class MyHouseExample {
     }
 
     /**
-     * wy_house 2019-04-25
+     * ower_house_type 2019-04-25
      */
     public static class Criterion {
         private String condition;

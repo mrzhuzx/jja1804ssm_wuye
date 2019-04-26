@@ -36,13 +36,13 @@ public interface MyHouseMapper {
         "hUnitNumber, hFloor, ",
         "hTypeid, hDirection, ",
         "hArea, hRemarks, ",
-        "olid, aaa)",
+        "olid, Loan)",
         "values (#{hid,jdbcType=INTEGER}, #{hnumber,jdbcType=VARCHAR}, ",
         "#{hstate,jdbcType=VARCHAR}, #{hbulidingname,jdbcType=VARCHAR}, ",
         "#{hunitnumber,jdbcType=INTEGER}, #{hfloor,jdbcType=INTEGER}, ",
         "#{htypeid,jdbcType=INTEGER}, #{hdirection,jdbcType=VARCHAR}, ",
         "#{harea,jdbcType=VARCHAR}, #{hremarks,jdbcType=VARCHAR}, ",
-        "#{olid,jdbcType=INTEGER}, #{aaa,jdbcType=VARCHAR})"
+        "#{olid,jdbcType=INTEGER}, #{loan,jdbcType=INTEGER})"
     })
     int insert(MyHouse record);
 
@@ -62,7 +62,7 @@ public interface MyHouseMapper {
         @Result(column="hArea", property="harea", jdbcType=JdbcType.VARCHAR),
         @Result(column="hRemarks", property="hremarks", jdbcType=JdbcType.VARCHAR),
         @Result(column="olid", property="olid", jdbcType=JdbcType.INTEGER),
-        @Result(column="aaa", property="aaa", jdbcType=JdbcType.VARCHAR)
+        @Result(column="Loan", property="loan", jdbcType=JdbcType.INTEGER)
     })
     List<MyHouse> selectByExampleWithRowbounds(MyHouseExample example, RowBounds rowBounds);
 
@@ -79,14 +79,14 @@ public interface MyHouseMapper {
         @Result(column="hArea", property="harea", jdbcType=JdbcType.VARCHAR),
         @Result(column="hRemarks", property="hremarks", jdbcType=JdbcType.VARCHAR),
         @Result(column="olid", property="olid", jdbcType=JdbcType.INTEGER),
-        @Result(column="aaa", property="aaa", jdbcType=JdbcType.VARCHAR)
+        @Result(column="Loan", property="loan", jdbcType=JdbcType.INTEGER)
     })
     List<MyHouse> selectByExample(MyHouseExample example);
 
     @Select({
         "select",
         "hid, hNumber, hState, hBulidingName, hUnitNumber, hFloor, hTypeid, hDirection, ",
-        "hArea, hRemarks, olid, aaa",
+        "hArea, hRemarks, olid, Loan",
         "from wy_house",
         "where hid = #{hid,jdbcType=INTEGER}"
     })
@@ -102,7 +102,7 @@ public interface MyHouseMapper {
         @Result(column="hArea", property="harea", jdbcType=JdbcType.VARCHAR),
         @Result(column="hRemarks", property="hremarks", jdbcType=JdbcType.VARCHAR),
         @Result(column="olid", property="olid", jdbcType=JdbcType.INTEGER),
-        @Result(column="aaa", property="aaa", jdbcType=JdbcType.VARCHAR)
+        @Result(column="Loan", property="loan", jdbcType=JdbcType.INTEGER)
     })
     MyHouse selectByPrimaryKey(Integer hid);
 
@@ -127,7 +127,7 @@ public interface MyHouseMapper {
           "hArea = #{harea,jdbcType=VARCHAR},",
           "hRemarks = #{hremarks,jdbcType=VARCHAR},",
           "olid = #{olid,jdbcType=INTEGER},",
-          "aaa = #{aaa,jdbcType=VARCHAR}",
+          "Loan = #{loan,jdbcType=INTEGER}",
         "where hid = #{hid,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(MyHouse record);

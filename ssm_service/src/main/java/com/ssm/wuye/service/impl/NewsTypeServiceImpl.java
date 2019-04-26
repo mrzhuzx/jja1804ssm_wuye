@@ -7,7 +7,7 @@ import com.ssm.wuye.service.NewsTypeService;
 import org.apache.ibatis.session.RowBounds;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.List;
  * version: 1.2.3
  */
 @Service
-public class NewsTypeServiceImpl  implements NewsTypeService {
+class NewsTypeServiceImpl  implements NewsTypeService {
 
 
     @Resource
