@@ -19,14 +19,13 @@ public class IElectricServiceImpl implements IElectricService {
     @Autowired
     private IElectricDao electricDao;
 
-
-    @Override
     public List<Electric> findAll() {
         return electricDao.findAll();
     }
 
-    @Override
     public void delete(Integer id) {
         electricDao.delete(id);
     }
+
+
 }
