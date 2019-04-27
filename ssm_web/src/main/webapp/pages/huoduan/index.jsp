@@ -5,10 +5,7 @@
   Time: 下午 4:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -433,6 +430,25 @@
                 </li>
 
                 <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 合同管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/con/consearch.do">合同查询</a>
+                        </li>
+                        <li>
+                            <a href="#">合同添加</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
                     <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -452,24 +468,7 @@
                 </li>
 
 
-                <li>
-                    <a href="#"><i class="fa fa-desktop"></i> null <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">Second Level Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Second Level Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Second Level Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Second Level Link</a>
-                        </li>
 
-                    </ul>
-                </li>
 
                 <li>
                     <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard"></i> 图表 </a>
