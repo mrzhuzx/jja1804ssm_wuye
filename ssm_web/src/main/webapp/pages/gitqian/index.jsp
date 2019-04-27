@@ -24,8 +24,8 @@
                 <span>欢迎来到贵州国贸物业管理有限公司</span>
             </div>
             <div class="soucang">
-                <a href="#">设为首页&nbsp;</a>｜
-                <a href="#">&nbsp;加入收藏</a>
+                <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">用户登入</a></c:if>
+                <c:if test="${ower ne null}"><img src="${ower.olheadimg}">&nbsp;${ower.olname}&nbsp;|&nbsp;<a href="ower/logout.do">注销</a></c:if>
             </div>
         </div>
     </div>
@@ -94,23 +94,39 @@
                             </a>
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
+                                    <c:forEach var="news" items="${newstypeList}">
                                     <li>
-                                        <a href="#">公司新闻</a>
+                                        <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">行业新闻</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司大事记</a>
-                                    </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </li>
                         <li class="narrow_wrap">
                             <a class="nav_btn" href="javascript:;">
-                                人才招聘
+                                业主信息
                                 <b></b>
                             </a>
+                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
+                                <ul>
+                                    <li>
+                                        <a href="ower/query.do?olid=${ower.olid}">个人信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">家庭成员</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">房屋信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">车位信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">缴费信息</a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </li>
                         <li class="narrow_wrap">
                             <a class="nav_btn" href="javascript:;">

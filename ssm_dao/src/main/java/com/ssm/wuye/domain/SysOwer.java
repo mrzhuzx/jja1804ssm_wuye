@@ -219,6 +219,9 @@ public class SysOwer extends BaseEntity {
         this.olheadimg = olheadimg;
     }
 
+    public SysOwer() {
+    }
+
     public SysOwer(String olname, String olaccount, String olpasswd, String powerid, String olphone, String olheadimg, Integer olmember, Integer roleid) {
         this.olname = olname;
         this.olaccount = olaccount;
@@ -238,6 +241,18 @@ public class SysOwer extends BaseEntity {
     public SysOwer(Integer olid, String olpasswd) {
         this.olid = olid;
         this.olpasswd = olpasswd;
+    }
+
+    public SysOwer(Integer olid, String olname, String olaccount, String olpasswd, String powerid, String olphone, String olheadimg, Integer olmember, Integer roleid) {
+        this.olid = olid;
+        this.olname = olname;
+        this.olaccount = olaccount;
+        this.olpasswd = olpasswd;
+        this.powerid = powerid;
+        this.olphone = olphone;
+        this.olheadimg = olheadimg;
+        this.olmember = olmember;
+        this.roleid = roleid;
     }
 
     @Override

@@ -4,13 +4,14 @@ package com.ssm.wuye.service.impl;/*
  * time:2019\4\25 0025
  */
 
+
 import com.ssm.wuye.dao.IElectricDao;
 import com.ssm.wuye.domain.Electric;
 import com.ssm.wuye.service.IElectricService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service

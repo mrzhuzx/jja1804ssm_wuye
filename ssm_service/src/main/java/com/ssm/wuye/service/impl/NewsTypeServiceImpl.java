@@ -7,6 +7,7 @@ import com.ssm.wuye.service.NewsTypeService;
 import org.apache.ibatis.session.RowBounds;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -32,7 +33,9 @@ public class NewsTypeServiceImpl implements NewsTypeService {
      * @return
      */
     public long countByExample(NewsType example) {
+
         NewsTypeExample newsTypeExample=new NewsTypeExample();
+
         return newsTypeMapper.countByExample(newsTypeExample);
     }
 

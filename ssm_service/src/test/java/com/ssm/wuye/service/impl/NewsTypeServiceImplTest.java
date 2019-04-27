@@ -34,9 +34,7 @@ public class NewsTypeServiceImplTest {
     public void test() {
 
         List<NewsType> newsTypeList = newsTypeService.selectByExample(null);
-
         for (NewsType newsType : newsTypeList) {
-
             System.out.println(newsType.getNtid()+" "+newsType.getNtypename());
         }
 
