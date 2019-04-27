@@ -98,7 +98,7 @@
 				<%--placeholder="请输入账号..."--%>
 			</div>
 			<div style="margin:5px 0px;">
-				<input type="text" name="phone" value="123123"/>
+				<input type="password" name="passwd" value="123123"/>
 			</div>
 			<button type="submit" >登<span style="width:20px;"></span>录</button>
 		</form>
