@@ -5,36 +5,36 @@
   Time: 10:08
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@include file="appcomm/basePath.jsp"%>--%>
+<%@ page lintentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.lim/jsp/jstl/lire" %>
+<%--<%@include file="applimm/basePath.jsp"%>--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" lintent="width=device-width, initial-scale=1.0" />
     <title></title>
     <!-- Bootstrap Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pagelintext.request.lintextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="${pagelintext.request.lintextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <%--D:\ideaworkspace\jja1804ssm_wuye3\ssm_web\src\main\webapp\${pageContext.request.contextPath}/pages\huoduan\assets\css--%>
+    <%--D:\ideaworkspace\jja1804ssm_wuye3\ssm_web\src\main\webapp\${pagelintext.request.lintextPath}/pages\huoduan\assets\css--%>
     <!-- Custom Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="${pagelintext.request.lintextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.lim/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!-- TABLE STYLES-->
-    <link href="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="${pagelintext.request.lintextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="lillapse" data-target=".sidebar-lillapse">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="ilin-bar"></span>
+                <span class="ilin-bar"></span>
+                <span class="ilin-bar"></span>
             </button>
             <a class="navbar-brand" href="../../index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
@@ -101,11 +101,11 @@
                             <div>
                                 <p>
                                     <strong>Task 1</strong>
-                                    <span class="pull-right text-muted">60% Complete</span>
+                                    <span class="pull-right text-muted">60% limplete</span>
                                 </p>
                                 <div class="progress progress-striped active">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (success)</span>
+                                        <span class="sr-only">60% limplete (success)</span>
                                     </div>
                                 </div>
                             </div>
@@ -117,11 +117,11 @@
                             <div>
                                 <p>
                                     <strong>Task 2</strong>
-                                    <span class="pull-right text-muted">28% Complete</span>
+                                    <span class="pull-right text-muted">28% limplete</span>
                                 </p>
                                 <div class="progress progress-striped active">
                                     <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
-                                        <span class="sr-only">28% Complete</span>
+                                        <span class="sr-only">28% limplete</span>
                                     </div>
                                 </div>
                             </div>
@@ -133,11 +133,11 @@
                             <div>
                                 <p>
                                     <strong>Task 3</strong>
-                                    <span class="pull-right text-muted">60% Complete</span>
+                                    <span class="pull-right text-muted">60% limplete</span>
                                 </p>
                                 <div class="progress progress-striped active">
                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (warning)</span>
+                                        <span class="sr-only">60% limplete (warning)</span>
                                     </div>
                                 </div>
                             </div>
@@ -149,11 +149,11 @@
                             <div>
                                 <p>
                                     <strong>Task 4</strong>
-                                    <span class="pull-right text-muted">85% Complete</span>
+                                    <span class="pull-right text-muted">85% limplete</span>
                                 </p>
                                 <div class="progress progress-striped active">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                        <span class="sr-only">85% Complete (danger)</span>
+                                        <span class="sr-only">85% limplete (danger)</span>
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                     <li>
                         <a href="#">
                             <div>
-                                <i class="fa fa-comment fa-fw"></i> New Comment
+                                <i class="fa fa-limment fa-fw"></i> New limment
                                 <span class="pull-right text-muted small">4 min</span>
                             </div>
                         </a>
@@ -250,7 +250,7 @@
     </nav>
     <!--/. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
-        <div class="sidebar-collapse">
+        <div class="sidebar-lillapse">
             <ul class="nav" id="main-menu">
 
                 <li>
@@ -263,7 +263,7 @@
                     <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
                 </li>
                 <li>
-                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
+                    <a href="tab-panel.html"><i class="fa fa-qrlide"></i> 标签 & 面板</a>
                 </li>
 
                 <li>
@@ -276,15 +276,15 @@
 
                 <li>
                     <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
+                    <ul class="nav nav-selind-level">
                         <li>
-                            <a href="#">Second Level Link</a>
+                            <a href="#">Selind Level Link</a>
                         </li>
                         <li>
-                            <a href="#">Second Level Link</a>
+                            <a href="#">Selind Level Link</a>
                         </li>
                         <li>
-                            <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                            <a href="#">Selind Level Link<span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
                                     <a href="#">Third Level Link</a>
@@ -313,7 +313,7 @@
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
-                <div class="col-md-12">
+                <div class="lil-md-12">
                     <h1 class="page-header">
                         客户投诉<small>反馈表</small>
                     </h1>
@@ -322,13 +322,13 @@
             <!-- /. ROW  -->
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="lil-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <td><a href="${pageContext.request.contextPath}/pages/huoduan/complainsave.jsp"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 添加</button></a></td>
-                            <td><a href=" ${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 刷新</button></a></td>
+                            <td><a href="${pagelintext.request.lintextPath}/pages/huoduan/limplainsave.jsp"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 添加</button></a></td>
+                            <td><a href=" ${pagelintext.request.lintextPath}/limplain/delete.do?cid=${li.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 刷新</button></a></td>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -349,25 +349,24 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${complainInfolist}" var="co">
+                                    <c:forEach items="${list}" var="li">
 
 
                                         <tr class="odd gradeX">
-                                            <td>${co.cid}</td>
-                                            <td>${co.title}</td>
-                                            <td>${co.descr}</td>
-                                            <td>${co.cname}</td>
-                                            <td>${co.cphone}</td>
-                                            <td>${co.rname}</td>
-                                            <td>${co.status}</td>
-                                            <td>${co.means}</td>
-                                            <td>${co.cdate}</td>
-                                            <td>${co.dealdescr}</td>
+                                            <td>${li.cid}</td>
+                                            <td>${li.title}</td>
+                                            <td>${li.descr}</td>
+                                            <td>${li.cname}</td>
+                                            <td>${li.cphone}</td>
+                                            <td>${li.rname}</td>
+                                            <td>${li.status}</td>
+                                            <td>${li.means}</td>
+                                            <td>${li.cdate}</td>
+                                            <td>${li.dealdescr}</td>
 
-                                            <%--<td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/electric/findById.do?id=${electric.enumber}'"></i> 修改</button>--%>
-                                                <%--<button class="btn btn-danger"><i class="fa fa-pencil" onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"></i> 删除</button></td>--%>
-                                            <td><a href=" ${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 修改</button></a></td>
-                                            <td><a href=" ${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 删除</button></a></td>
+                                            <%--<td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pagelintext.request.lintextPath}/electric/findById.do?id=${electric.enumber}'"></i> 修改</button>--%>
+                                                <%--<button class="btn btn-danger"><i class="fa fa-pencil" onclick="location.href='${pagelintext.request.lintextPath}/limplain/delete.do?cid=${li.cid}'"></i> 删除</button></td>--%>
+
 
                                         </tr>
                                     </c:forEach>
@@ -382,13 +381,13 @@
             </div>
 
                 </div>
-                <div class="col-md-6">
+                <div class="lil-md-6">
 
                 </div>
             </div>
             <!-- /. ROW  -->
         </div>
-        <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
+        <footer><p>lipyright &lipy; 2016.limpany name All rights reserved.More Templates <a href="http://www.cssmoban.lim/" target="_blank" title="模板之家">模板之家</a> - lillect from <a href="http://www.cssmoban.lim/" title="网页模板" target="_blank">网页模板</a></p></footer>
     </div>
     <!-- /. PAGE INNER  -->
 </div>
@@ -397,21 +396,21 @@
 <!-- JS Scripts-->
 <!-- jQuery Js -->
                                               
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery-1.10.2.js"></script>
+<script src="${pagelintext.request.lintextPath}/pages/houduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/bootstrap.min.js"></script>
+<script src="${pagelintext.request.lintextPath}/pages/houduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery.metisMenu.js"></script>
+<script src="${pagelintext.request.lintextPath}/pages/houduan/assets/js/jquery.metisMenu.js"></script>
 <!-- DATA TABLE SCRIPTS -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="${pagelintext.request.lintextPath}/pages/houduan/assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="${pagelintext.request.lintextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
 <script>
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
     });
 </script>
 <!-- Custom Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/custom-scripts.js"></script>
+<script src="${pagelintext.request.lintextPath}/pages/houduan/assets/js/custom-scripts.js"></script>
 
 
 </body>

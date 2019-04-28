@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * complain_info
@@ -65,6 +66,7 @@ public class ComplainInfo extends BaseEntity {
     /**
      * 投诉时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "cdate")
     private Date cdate;
 

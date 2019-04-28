@@ -1,30 +1,27 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2019\4\25 0025
-  Time: 10:08
+  Date: 2019\4\26 0026
+  Time: 9:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@include file="appcomm/basePath.jsp"%>--%>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <!-- Bootstrap Styles-->
+
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Morris Chart Styles-->
-    <%--D:\ideaworkspace\jja1804ssm_wuye3\ssm_web\src\main\webapp\${pageContext.request.contextPath}/pages\huoduan\assets\css--%>
     <!-- Custom Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/huoduan/plugins/datepicker3.css">
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- TABLE STYLES-->
-    <link href="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 <div id="wrapper">
@@ -36,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../../index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -254,10 +251,10 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="../../index.html"><i class="fa fa-dashboard"></i>图表</a>
+                    <a href="index.html"><i class="fa fa-dashboard"></i> 图表</a>
                 </li>
                 <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
+                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI 元素</a>
                 </li>
                 <li>
                     <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
@@ -267,15 +264,15 @@
                 </li>
 
                 <li>
-                    <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
+                    <a href="table.html"><i class="fa fa-table"></i>响应表</a>
                 </li>
                 <li>
-                    <a href="form.html"><i class="fa fa-edit"></i>表单 </a>
+                    <a href="form.html" class="active-menu"><i class="fa fa-edit"></i> 表单 </a>
                 </li>
 
 
                 <li>
-                    <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap"></i> 下单菜单<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -315,104 +312,125 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        客户投诉<small>反馈表</small>
+                        Forms Page <small>最好的表单元素</small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
+            <div class="row" style="width: 600px;">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
-                            <td><a href="${pageContext.request.contextPath}/pages/huoduan/complainsave.jsp"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 添加</button></a></td>
-                            <td><a href=" ${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 刷新</button></a></td>
+                            基本表单元素
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                    <tr>
-                                        <th>cid</th>
-                                        <th>title</th>
-                                        <th>descr</th>
-                                        <th>cname</th>
-                                        <th>cphone</th>
-                                        <th>rname</th>
-                                        <th>status</th>
-                                        <th>means</th>
-                                        <th>cdate</th>
-                                        <th>dealdescr</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach items="${complainInfolist}" var="co">
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                    <form action="${pageContext.request.contextPath}/complain/update.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="" name=""  >
+
+                                        <div  >
+                                            <label>cid</label>
+                                            <input class="form-control" placeholder="cid" value="${com.cid}" name="cid" >
+                                        </div>
+                                        <div  >
+                                            <label>title 内容</label>
+                                            <input class="form-control" placeholder="title"  value="${com.title}" name="title" readonly="readonly">
+                                        </div>
+                                        <div>
+                                            <label>descr 描述</label>
+                                            <input class="form-control" placeholder="descr" value="${com.descr}" name="descr">
+                                        </div>
+                                        <div>
+                                            <label>cname</label>
+                                            <input class="form-control" placeholder="cname" value="${com.cname}" name="cname">
+                                        </div>
+                                        <div>
+                                            <label>cphone</label>
+                                            <input class="form-control" placeholder="cname" value="${co.cphone}" name="cphone">
+                                        </div>
+                                        <div>
+                                            <label>rname</label>
+                                            <input class="form-control" placeholder="cname" value="${com.rname}" name="rname">
+                                        </div>
+                                        <div>
+                                            <label>status</label>
+                                            <input class="form-control" placeholder="status" value="${com.status}" name="status">
+                                        </div>
+                                        <div>
+                                            <label>means</label>
+                                            <input class="form-control" placeholder="means" value="${com.means}" name="means">
+                                        </div>
+
+                                        <div>
+                                            <label>cdate</label>
+                                            <input class="form-control" placeholder="cdate" id="dateid" value="${com.cdate}" name="cdate">
+                                        </div>
+                                        <div>
+                                            <label>dealdescr</label>
+                                            <input class="form-control" placeholder="dealdescr" value="${com.dealdescr}" name="dealdescr">
+                                        </div>
+                                        <br>
+                                        <div>
+
+                                        <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 保存</button>
+
+                                            <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+
+                                        </div>
 
 
-                                        <tr class="odd gradeX">
-                                            <td>${co.cid}</td>
-                                            <td>${co.title}</td>
-                                            <td>${co.descr}</td>
-                                            <td>${co.cname}</td>
-                                            <td>${co.cphone}</td>
-                                            <td>${co.rname}</td>
-                                            <td>${co.status}</td>
-                                            <td>${co.means}</td>
-                                            <td>${co.cdate}</td>
-                                            <td>${co.dealdescr}</td>
 
-                                            <%--<td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/electric/findById.do?id=${electric.enumber}'"></i> 修改</button>--%>
-                                                <%--<button class="btn btn-danger"><i class="fa fa-pencil" onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"></i> 删除</button></td>--%>
-                                            <td><a href=" ${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 修改</button></a></td>
-                                            <td><a href=" ${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 删除</button></a></td>
+                                    </form>
 
-                                        </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
+                                </div>
+
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
-
+                            <!-- /.row (nested) -->
                         </div>
+                        <!-- /.panel-body -->
                     </div>
-                    <!--End Advanced Tables -->
+                    <!-- /.panel -->
                 </div>
+                <!-- /.col-lg-12 -->
             </div>
-
-                </div>
-                <div class="col-md-6">
-
-                </div>
-            </div>
-            <!-- /. ROW  -->
+            <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
         </div>
-        <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
+        <!-- /. PAGE INNER  -->
     </div>
-    <!-- /. PAGE INNER  -->
+    <!-- /. PAGE WRAPPER  -->
 </div>
-<!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-                                              
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery-1.10.2.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery.metisMenu.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
+<!-- Custom Js -->
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
 <script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
+    $(document).ready(function() {
+        $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
     });
 </script>
-<!-- Custom Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/custom-scripts.js"></script>
+
 
 
 </body>
 </html>
+
