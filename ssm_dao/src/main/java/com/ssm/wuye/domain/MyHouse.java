@@ -315,4 +315,7 @@ public class MyHouse extends BaseEntity {
         this.hid = hid;
         this.loan = loan;
     }
+
+    public MyHouse() {
+    }
 }

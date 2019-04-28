@@ -92,21 +92,17 @@
                             </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="news.html">
+                            <a class="nav_btn" href="nt/searchnes.do?ntid=1">
                                 公司动态
                                 <b></b>
                             </a>
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
-                                    <li>
-                                        <a href="news.html">公司新闻</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">行业新闻</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司大事记</a>
-                                    </li>
+                                    <c:forEach var="news" items="${newsTypes}">
+                                        <li>
+                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                        </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </li>
@@ -161,8 +157,9 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <c:forEach items="${newsTypes}" var="news">
-                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a></li>
+                <c:forEach items="${newsTypes}" var="newsTypes">
+                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}">${newsTypes.ntypename}</a></li>
+
                 </c:forEach>
             </ul>
         </div>
@@ -181,20 +178,17 @@
 
         <!--内容-->
         <div class="gsjj_nr">
+
+
             <div class="al_biaoti">
-
-                <c:forEach items="${news}" var="news">
-
                 <h3>${news.nctitle}</h3>
-                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />　　　来源：公司办公室</span>
+                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />　　来源：公司办公室</span>
             </div>
             <div class="xian_xw"></div>
             <img src="pages/gitqian/images/zy1_12.jpg">
             <div class="wzsm">
-                    ${news.nccontent}
+               <p style="size: 15px"> &nbsp;&nbsp;${news.nccontent}</p>
             </div>
-
-            </c:forEach>
 
             <div>
                 <div class="div_list_item">
@@ -244,7 +238,14 @@
                 <a href="#">上一篇：哪个快递号刚刚才把你当回事</a>
             </div>
             <div class="fanhui">
-                <a href="news.html"><img src="pages/gitqian/images/fanhui_03.png"> <span>返回列表</span></a>
+
+
+                <a href="nt/searchnes.do?ntid=${news.nctypeid}"><img src="pages/gitqian/images/fanhui_03.png">
+
+                    <span>返回列表</span>
+                </a>
+
+
             </div>
         </div>
     </div>
