@@ -123,4 +123,15 @@ public class ChWaterMeter extends BaseEntity {
     public void setMonth(Date month) {
         this.month = month;
     }
+
+    @Override
+    public String toString() {
+        return "ChWaterMeter{" +
+                "waterid=" + waterid +
+                ", wnumber='" + wnumber + '\'' +
+                ", houseid=" + houseid +
+                ", watervolume=" + watervolume +
+                ", month=" + month +
+                '}';
+    }
 }

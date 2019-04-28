@@ -122,4 +122,15 @@ public class TbCharge extends BaseEntity {
     public void setChargeyear(String chargeyear) {
         this.chargeyear = chargeyear == null ? null : chargeyear.trim();
     }
+
+    @Override
+    public String toString() {
+        return "TbCharge{" +
+                "chargeid=" + chargeid +
+                ", chargename='" + chargename + '\'' +
+                ", chargestandard=" + chargestandard +
+                ", chargedescription='" + chargedescription + '\'' +
+                ", chargeyear='" + chargeyear + '\'' +
+                '}';
+    }
 }
