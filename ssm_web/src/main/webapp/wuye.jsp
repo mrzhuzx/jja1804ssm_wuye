@@ -3,22 +3,15 @@
 
 <html>
 <body>
-<h2>SSM框架测试</h2>
+
+<h2>小区物业管理</h2>
+
+
+<h3><a href="pages/gitqian/index.jsp" >前台页面</a><br>
+<a href="pages/huoduan/index.jsp" >后台管理页面</a></h3>
 
 
 
-<h1><a href="pages/qiantai/index.html" >前台页面</a></h1>
-<h1><a href="pages/huoduan/githou/pages/all-admin-index.html" >后台管理页面</a></h1>
-
-
-<H3>
-
-    <a href="nt/search.do">查询新闻类型</a>
-
-    <a href="nt/search.do">asdfsdaf</a>
-
-
-</H3>
 
 </body>
 </html>
