@@ -120,7 +120,7 @@ public class SysAdminInfoServiceImplTest {
 
         Integer pageNum = 2; // 第几页
         Integer Size = 3; // 每页的个数
-        Integer Num = Size * (pageNum - 1);
+        Integer Num = Size * (pageNum - 1); //从哪条数据分页
         List<SysAdminInfo> sysAdminInfoList = sysAdminInfoService.selectByExampleWithRowbounds(sysAdminInfoExample,new RowBounds(Num, Size));
 
         for (SysAdminInfo ai : sysAdminInfoList){
