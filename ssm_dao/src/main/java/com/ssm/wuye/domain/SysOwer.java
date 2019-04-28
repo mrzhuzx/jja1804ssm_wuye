@@ -211,12 +211,11 @@ public class SysOwer extends BaseEntity {
         this.roleid = roleid;
     }
 
-    public SysOwer(Integer olid, String olname, String powerid, String olphone, String olheadimg) {
+    public SysOwer(Integer olid, String olname, String powerid, String olphone) {
         this.olid = olid;
         this.olname = olname;
         this.powerid = powerid;
         this.olphone = olphone;
-        this.olheadimg = olheadimg;
     }
 
     public SysOwer() {
