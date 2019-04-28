@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,15 +48,14 @@ public class ContractController {
      */
     @RequestMapping("consave")
     public ModelAndView contractsave(@ModelAttribute Contract con ){
-        ModelAndView m = new ModelAndView("pages/houduan/hetong");
+        ModelAndView m = new ModelAndView("forward:/con/consearch.do");
         int i=contractService.insertSelective(con);
        if(i==0){
             System.out.println("增加失败");
         }else {
             System.out.println("增加成功:"+i+"条数据");
         }
-        List<Contract> contractList = contractService.selectByExample(null);
-        m.addObject("contractList",contractList);
+
         return  m;
     }
 
@@ -82,7 +80,7 @@ public class ContractController {
      */
     @RequestMapping("conupdate")
     public ModelAndView conupdate(@ModelAttribute Contract con){
-        ModelAndView m=new ModelAndView("pages/houduan/hetong");
+        ModelAndView m=new ModelAndView("forward:/con/consearch.do");
         int i=contractService.updateByPrimaryKeySelective(con);
         if(i==0){
             System.out.println("修改失败");
@@ -94,12 +92,21 @@ public class ContractController {
         return  m;
     }
 
-
-
-
-
-
-
+    /**
+     *根据主键ID删除
+     * @return
+     */
+    @RequestMapping("condelete")
+     public  ModelAndView condelete(@ModelAttribute Integer contractid){
+        ModelAndView m=new ModelAndView("forward:/con/consearch.do");
+        int i=contractService.deleteByPrimaryKey(contractid);
+        if(i==0){
+            System.out.println("删除失败");
+        }else {
+            System.out.println("删除成功:"+i+"条数据");
+        }
+        return m;
+    }
 
 
     private List<Contract> serchall() {

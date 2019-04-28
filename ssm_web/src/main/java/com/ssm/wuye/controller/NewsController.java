@@ -3,9 +3,6 @@ package com.ssm.wuye.controller;
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
-import com.ssm.wuye.service.NewsTypeVoiwService;
-import org.apache.ibatis.session.RowBounds;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,8 +26,6 @@ public class NewsController {
     NewsService  newsService;
     @Resource
     NewsTypeService newstypeService;
-    @Resource
-    NewsTypeVoiwService newsTypeVoiwService;
 
     @RequestMapping("one")
     public ModelAndView news(@RequestParam String   ncid){

@@ -46,9 +46,9 @@ public class SysOwerController {
     }
     @RequestMapping("oi")//业主修改个人信息
     public ModelAndView ownerInformation(@RequestParam Integer olid,@RequestParam String olname,@RequestParam String powerid,@RequestParam String olphone
-    ,@RequestParam String olheadimg){
+   ){
         ModelAndView m=new ModelAndView("");
-        SysOwer sysOwer=new SysOwer(olid,olname,powerid, olphone, olheadimg);
+        SysOwer sysOwer=new SysOwer(olid,olname,powerid, olphone);
         sysOwerService.updateByPrimaryKeySelective(sysOwer);
         return m;
     }

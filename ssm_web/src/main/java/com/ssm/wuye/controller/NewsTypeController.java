@@ -4,7 +4,7 @@ package com.ssm.wuye.controller;
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
-import com.ssm.wuye.service.NewsTypeVoiwService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,8 +27,6 @@ public class NewsTypeController {
     NewsTypeService newstypeService;
     @Resource
     NewsService newsService;
-    @Resource
-    NewsTypeVoiwService newsTypeVoiwService;
 
     public NewsTypeController() {
         System.out.println(" NewsTypeController springmvc is ok................................. ");
