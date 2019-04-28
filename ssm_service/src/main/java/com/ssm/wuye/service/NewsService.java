@@ -24,16 +24,12 @@ public interface NewsService {
      */
     int deleteByExample(Integer cid);
 
-
-
-
     /**
      * 添加
      * @param record
      * @return
      */
     int insert(News record);
-
 
     /**
      * 查询带分页
@@ -42,7 +38,6 @@ public interface NewsService {
      * @return
      */
     List<News> selectByExampleWithRowbounds(NewsExample example, RowBounds rowBounds);
-
 
     /**
      * 多条件查询
