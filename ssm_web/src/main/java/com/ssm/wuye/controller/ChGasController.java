@@ -4,6 +4,7 @@ import com.ssm.wuye.domain.ChElectricMeter;
 import com.ssm.wuye.domain.ChGasMeter;
 import com.ssm.wuye.service.ChElectricSercice;
 import com.ssm.wuye.service.ChGasService;
+import com.ssm.wuye.vo.GasAndOwer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,9 +30,10 @@ public class ChGasController {
      */
     @RequestMapping("searchAll")
     public ModelAndView searchAll(){
-        ModelAndView view=new ModelAndView("");
-        List<ChGasMeter> meterList = chGasService.selectByExample(null);
-        view.addObject("meterList",meterList);
+        ModelAndView view=new ModelAndView("pages/huoduan/shoufei/gasAll");
+        List<GasAndOwer> gasAndOwers = chGasService.selectAll();
+        System.out.println("_______________________________________________"+gasAndOwers.toString());
+        view.addObject("gasAndOwers",gasAndOwers);
         return view;
     }
 }

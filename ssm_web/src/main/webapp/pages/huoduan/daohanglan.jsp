@@ -34,16 +34,19 @@
                 <a href="#"><i class="fa fa-desktop"></i> 收费管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/water/searchAll.do">水务管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ele/searchAll.do">电力管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/gas/searchAll.do">燃气管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">收费管理</a>
+                    </li>
+                    <li>
+                        <a href="#">收费标准管理</a>
                     </li>
 
                 </ul>

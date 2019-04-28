@@ -30,8 +30,9 @@ public class ChWaterController {
      */
     @RequestMapping("searchAll")
     public ModelAndView searchAll(){
-        ModelAndView view=new ModelAndView("");
+        ModelAndView view=new ModelAndView("pages/huoduan/shoufei/waterAll");
         List<WaterAndOwer> waterAndOwerList = chWaterService.selectAll();
+
         view.addObject("waterAndOwerList",waterAndOwerList);
         return view;
     }
