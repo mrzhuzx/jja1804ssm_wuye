@@ -91,7 +91,7 @@
                             </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="news.html">
+                            <a class="nav_btn" href="nt/searchnes.do?ntid=1">
                                 公司动态
                                 <b></b>
                             </a>
@@ -99,7 +99,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                         <li>
-                                            <a href="nt/searchnes.do">${news.ntypename}</a>
+                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -156,8 +156,8 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <c:forEach var="news" items="${newstypeList}">
-                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a></li>
+                <c:forEach var="newstype" items="${newstypeList}">
+                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newstype.ntid}">${newstype.ntypename}</a></li>
                 </c:forEach>
             </ul>
 
@@ -179,17 +179,22 @@
         <!--内容-->
         <div class="gsjj_nr">
             <ul class="xwlb_bj">
+
                 <c:forEach var="news"  items="${news1}">
                 <li>
 
-                    <h1><a href="news/one.do?nid=${news.ncid}"><img src="pages/gitqian/images/zy1_12.jpg"></a></h1>
+                    <h1><a href="news/one.do?ncid=${news.ncid}"><img src="pages/gitqian/images/zy1_12.jpg"></a></h1>
                     <dl>
 
-                        <dt><a href="news/one.do?nid=${news.ncid}">${news.nctitle}</a></dt>
+                        <dt><a href="news/one.do?ncid=${news.ncid}">${news.nctitle}</a></dt>
 
 
                         <dd>${fn:length(news.nccontent) > 100 ? fn:substring(news.nccontent,0,100) : news.nccontent}${fn:length(news.nccontent) > 100 ? '...' : ''}</dd>
-                        <span>来源：集团办公室</span>
+
+                        <c:forEach items="${newst}"  var="newst">
+                        <span>来源：${newst.ntypename}</span>
+                        </c:forEach>
+
 
                         <span>日期：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" /> </span>
 
