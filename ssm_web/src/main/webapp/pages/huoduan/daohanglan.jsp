@@ -150,7 +150,7 @@
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">所有工作人员</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
