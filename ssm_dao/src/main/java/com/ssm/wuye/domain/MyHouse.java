@@ -318,4 +318,5 @@ public class MyHouse extends BaseEntity {
 
     public MyHouse() {
     }
+
 }
