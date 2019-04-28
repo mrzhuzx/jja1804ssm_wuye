@@ -40,4 +40,8 @@ public class SysOwerServiceImpl implements SysOwerService {
     public int updateByPrimaryKeySelective(SysOwer record) {
         return sysOwerMapper.updateByPrimaryKeySelective(record);
     }
+
+    public SysOwer selectByNamePassword(String olaccount, String olpasswd) {
+        return sysOwerMapper.selectByNamePassword(olaccount, olpasswd);
+    }
 }

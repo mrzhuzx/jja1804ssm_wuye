@@ -1,5 +1,6 @@
-<%@ include file="../../appcomm/basePath.jsp"%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="../../appcomm/basePath.jsp"%>
 <html>
 <head>
     <head>
@@ -82,7 +83,7 @@
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="#">经典案例</a>
+                                        <a href="products.html">经典案例</a>
                                     </li>
                                     <li>
                                         <a href="#">公司项目</a>
@@ -97,7 +98,7 @@
                             </a>
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
-                                    <c:forEach var="news" items="${newstypeList}">
+                                    <c:forEach var="news" items="${newsTypes}">
                                         <li>
                                             <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
                                         </li>
@@ -156,17 +157,16 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <c:forEach var="newstype" items="${newstypeList}">
-                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newstype.ntid}">${newstype.ntypename}</a></li>
+                <c:forEach items="${newsTypes}" var="newsTypes">
+                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}">${newsTypes.ntypename}</a></li>
+
                 </c:forEach>
             </ul>
-
         </div>
     </div>
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-
             <h2>公司新闻</h2>
             <p>您的位置：首页 > 公司新闻</p>
         </div>
@@ -178,39 +178,74 @@
 
         <!--内容-->
         <div class="gsjj_nr">
-            <ul class="xwlb_bj">
-
-                <c:forEach var="news"  items="${news1}">
-                <li>
-
-                    <h1><a href="news/one.do?ncid=${news.ncid}"><img src="pages/gitqian/images/zy1_12.jpg"></a></h1>
-                    <dl>
-
-                        <dt><a href="news/one.do?ncid=${news.ncid}">${news.nctitle}</a></dt>
 
 
-                        <dd>${fn:length(news.nccontent) > 100 ? fn:substring(news.nccontent,0,100) : news.nccontent}${fn:length(news.nccontent) > 100 ? '...' : ''}</dd>
+            <div class="al_biaoti">
+                <h3>${news.nctitle}</h3>
+                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />　　来源：公司办公室</span>
+            </div>
+            <div class="xian_xw"></div>
+            <img src="pages/gitqian/images/zy1_12.jpg">
+            <div class="wzsm">
+               <p style="size: 15px"> &nbsp;&nbsp;${news.nccontent}</p>
+            </div>
 
-                        <c:forEach items="${newst}"  var="newst">
-                        <span>来源：${newst.ntypename}</span>
-                        </c:forEach>
+            <div>
+                <div class="div_list_item">
+                    <div class="bdsharebuttonbox">
+                        <a class="bds_more" href="#" data-cmd="more"></a>
+                        <a title="分享到QQ空间" class="bds_qzone" href="#" data-cmd="qzone" data-id="635623857208296120"></a>
+                        <a title="分享到新浪微博" class="bds_tsina" href="#" data-cmd="tsina" data-id="635623857208296120"></a>
+                        <a title="分享到腾讯微博" class="bds_tqq" href="#" data-cmd="tqq" data-id="635623857208296120"></a>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                //全局变量，动态的文章ID
+                var ShareId = "";
+                //绑定所有分享按钮所在A标签的鼠标移入事件，从而获取动态ID
+                $(function () {
+                    $(".bdsharebuttonbox a").mouseover(function () {
+                        ShareId = $(this).attr("data-id");
+                    });
+                });
+
+                /*
+                * 动态设置百度分享URL的函数,具体参数
+                * cmd为分享目标id,此id指的是插件中分析按钮的ID
+                *，我们自己的文章ID要通过全局变量获取
+                * config为当前设置，返回值为更新后的设置。
+                */
+                function SetShareUrl(cmd, config) {
+                    if (ShareId) {
+                        config.bdUrl = "http://shiyousan.com/post/" + ShareId;
+                    }
+                    return config;
+                }
+
+                //插件的配置部分，注意要记得设置onBeforeClick事件，主要用于获取动态的文章ID
+                window._bd_share_config = {
+                    "common": {
+                        onBeforeClick:SetShareUrl,"bdSnsKey":{},"bdText":"","bdMini":"2"
+                        ,"bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"
+                    }, "share": {}
+                };
+                //插件的JS加载部分
+                with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+ ~(-new Date() / 36e5)];
+            </script>
+            <div class="sx_pian">
+                <a href="#">上一篇：多少个多少个手嘎哈</a>
+                <a href="#">上一篇：哪个快递号刚刚才把你当回事</a>
+            </div>
+            <div class="fanhui">
 
 
-                        <span>日期：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" /> </span>
+                <a href="nt/searchnes.do?ntid=${news.nctypeid}"><img src="pages/gitqian/images/fanhui_03.png">
 
-                    </dl>
-                </li>
-                </c:forEach>
-            </ul>
-            <div class="webdiyerCss">
-                <%--<a href="" disabled="disabled" style="margin-right:5px;"></a>--%>
-                <%--<a disabled="disabled" style="margin-right:5px;">上一页</a>--%>
-                <%--<span class="redcss page_go" style="margin-right:5px;">1</span>--%>
-                <%--<a href="pagenum=1" style="margin-right:5px;">2</a>--%>
-                <%--<a href="#" style="margin-right:5px;">首页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">下一页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">下一页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">尾页</a>--%>
+                    <span>返回列表</span>
+                </a>
+
+
             </div>
         </div>
     </div>

@@ -116,4 +116,26 @@ public interface SysOwerMapper {
         "where olId = #{olid,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(SysOwer record);
+
+    @Select({
+            "select",
+            "olId, olName, olAccount, olPasswd, powerId, olPhone, olHeadimg, olMember, roleId",
+            "from sys_ower",
+            "where olAccount = #{olaccount,jdbcType=VARCHAR}",
+            "and olPasswd = #{olpasswd,jdbcType=VARCHAR}"
+
+    })
+    @Results({
+            @Result(column="olId", property="olid", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="olName", property="olname", jdbcType=JdbcType.VARCHAR),
+            @Result(column="olAccount", property="olaccount", jdbcType=JdbcType.VARCHAR),
+            @Result(column="olPasswd", property="olpasswd", jdbcType=JdbcType.VARCHAR),
+            @Result(column="powerId", property="powerid", jdbcType=JdbcType.VARCHAR),
+            @Result(column="olPhone", property="olphone", jdbcType=JdbcType.VARCHAR),
+            @Result(column="olHeadimg", property="olheadimg", jdbcType=JdbcType.VARCHAR),
+            @Result(column="olMember", property="olmember", jdbcType=JdbcType.INTEGER),
+            @Result(column="roleId", property="roleid", jdbcType=JdbcType.INTEGER)
+    })
+    SysOwer selectByNamePassword(@Param("olaccount")String olaccount,@Param("olpasswd")String olpasswd);
+
 }

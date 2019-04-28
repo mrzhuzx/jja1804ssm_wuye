@@ -1,24 +1,22 @@
 package com.ssm.wuye.service;
 
-import com.ssm.wuye.appcomm.BaseService;
-import com.ssm.wuye.domain.NewsType;
-import com.ssm.wuye.domain.NewsTypeExample;
+import com.ssm.wuye.domain.ParkingCarinfo;
+import com.ssm.wuye.domain.ParkingCarinfoExample;
+import com.ssm.wuye.domain.ParkingPlaceinfo;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
 /**
- * desc:  方法在
- * author : tzhu
- * time :2019/4/18 0018
- * version: 1.2.3
+ * desc:
+ * author:zhs
+ * time:2019-04-25  18:02:49
  */
-public interface NewsTypeService {
-
+public interface ParkingCarinfoService {
     /*
      *查询总 条数
      */
-    long countByExample(NewsTypeExample example);
+    long countByExample(ParkingCarinfoExample example);
     /**
      * 删除数据
      * @param cid
@@ -26,12 +24,16 @@ public interface NewsTypeService {
      */
     int deleteByExample(Integer cid);
 
+
+
+
     /**
      * 添加
      * @param record
      * @return
      */
-    int insert(NewsType record);
+    int insert(ParkingCarinfo record);
+
 
     /**
      * 查询带分页
@@ -39,22 +41,23 @@ public interface NewsTypeService {
      * @param rowBounds
      * @return
      */
-    List<NewsType> selectByExampleWithRowbounds(NewsTypeExample example, RowBounds rowBounds);
+    List<ParkingCarinfo> selectByExampleWithRowbounds(ParkingCarinfoExample example, RowBounds rowBounds);
+
 
     /**
      * 多条件查询
      * @param example
      * @return
      */
-    List<NewsType> selectByExample(NewsTypeExample example);
+    List<ParkingCarinfo> selectByExample(ParkingCarinfoExample example);
 
 
     /**
      * 主键返回一条数据
-     * @param tid
+     * @param hid
      * @return
      */
-    NewsType selectByPrimaryKey(Integer tid);
+    ParkingCarinfo selectByPrimaryKey(Integer hid);
 
     /**
      * 修改
@@ -62,9 +65,7 @@ public interface NewsTypeService {
      * @param record
      * @return
      */
-    int updateByPrimaryKeySelective(NewsType record);
-
-
+    int updateByPrimaryKeySelective(ParkingCarinfo record);
 
 
 

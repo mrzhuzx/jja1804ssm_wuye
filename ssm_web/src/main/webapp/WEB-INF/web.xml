@@ -6,7 +6,7 @@
     <display-name>Archetype Created Web Application</display-name>
     <welcome-file-list>
 
-        <!--<welcome-file>/welcome.jsp</welcome-file>-->
+        <welcome-file>/welcome.jsp</welcome-file>
         <welcome-file>/index.jsp</welcome-file>
         <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
@@ -47,6 +47,8 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>
                 classpath:spring-mvc.xml
+                <!--classpath:spring-service.xml-->
+                <!--classpath:spring-mvc.xml-->
 
             </param-value>
         </init-param>

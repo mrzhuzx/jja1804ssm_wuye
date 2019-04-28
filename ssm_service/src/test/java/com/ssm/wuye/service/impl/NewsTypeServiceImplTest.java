@@ -1,6 +1,7 @@
 package com.ssm.wuye.service.impl;
 
 import com.ssm.wuye.domain.NewsType;
+import com.ssm.wuye.domain.NewsTypeExample;
 import com.ssm.wuye.service.NewsTypeService;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
+import java.net.SocketTimeoutException;
 import java.util.List;
 
 /**
@@ -34,14 +36,19 @@ public class NewsTypeServiceImplTest {
     public void test() {
 
         List<NewsType> newsTypeList = newsTypeService.selectByExample(null);
-
         for (NewsType newsType : newsTypeList) {
-
             System.out.println(newsType.getNtid()+" "+newsType.getNtypename());
         }
 
-
-
+    }
+    @Test
+    public  void test1(){
+        NewsTypeExample newsTypeExample = new NewsTypeExample();
+        newsTypeExample.createCriteria().andNtidEqualTo(2);
+        List<NewsType> newsTypes = newsTypeService.selectByExample(newsTypeExample);
+        for (NewsType newsType : newsTypes) {
+            System.out.println(newsType.getNtypename());
+        }
     }
 
 

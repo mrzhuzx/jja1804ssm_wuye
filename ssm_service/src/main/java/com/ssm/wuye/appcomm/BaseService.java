@@ -19,7 +19,6 @@ public interface BaseService<T> {
      * @return
      */
     long countByExample(T example);
-
     /**
      * 删除数据
      * @param example
