@@ -123,4 +123,15 @@ public class ChGasMeter extends BaseEntity {
     public void setMonth(Date month) {
         this.month = month;
     }
+
+    @Override
+    public String toString() {
+        return "ChGasMeter{" +
+                "id=" + id +
+                ", gasnumber='" + gasnumber + '\'' +
+                ", houseid=" + houseid +
+                ", gas=" + gas +
+                ", month=" + month +
+                '}';
+    }
 }
