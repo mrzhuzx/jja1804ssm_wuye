@@ -49,15 +49,15 @@ public class ContractController {
      */
     @RequestMapping("consave")
     public ModelAndView contractsave(@ModelAttribute Contract con ){
-        ModelAndView m = new ModelAndView("pages/houduan/hetong.jsp");
+        ModelAndView m = new ModelAndView("pages/houduan/hetong");
         int i=contractService.insertSelective(con);
        if(i==0){
             System.out.println("增加失败");
         }else {
             System.out.println("增加成功:"+i+"条数据");
         }
-        List<Contract> serchall = serchall();
-       m.addObject("serchall",serchall);//
+        List<Contract> contractList = contractService.selectByExample(null);
+        m.addObject("contractList",contractList);
         return  m;
     }
 
@@ -68,12 +68,12 @@ public class ContractController {
      */
     @RequestMapping("searchone")
     public ModelAndView searchone(Integer contracid ){
-        ModelAndView m=new ModelAndView("pages/houduan/hetongadd.jsp");
+        ModelAndView m=new ModelAndView("pages/houduan/hetongupdate");
         Contract contract = contractService.selectByPrimaryKey(contracid);
         System.out.println("获取到了一条数据-----------");
-        List<Contract> serchall = serchall();
-        m.addObject("serchall",serchall);
-        return m;
+        List<Contract> contractList = contractService.selectByExample(null);
+        m.addObject("contractList",contractList);
+        return  m;
     }
 
     /**
@@ -82,16 +82,16 @@ public class ContractController {
      */
     @RequestMapping("conupdate")
     public ModelAndView conupdate(@ModelAttribute Contract con){
-        ModelAndView m=new ModelAndView("pages/houduan/hetongupdate.jsp");
+        ModelAndView m=new ModelAndView("pages/houduan/hetong");
         int i=contractService.updateByPrimaryKeySelective(con);
         if(i==0){
             System.out.println("修改失败");
         }else {
             System.out.println("修改成功:"+i+"条数据");
         }
-        List<Contract> serchall = serchall();
-        m.addObject("serchall",serchall);
-        return m;
+        List<Contract> contractList = contractService.selectByExample(null);
+        m.addObject("contractList",contractList);
+        return  m;
     }
 
 

@@ -436,7 +436,7 @@
                             <a href="${pageContext.request.contextPath}/con/consearch.do">合同查询</a>
                         </li>
                         <li>
-                            <a href="#">合同添加</a>
+                            <a href="hetongadd.jsp">合同添加</a>
                         </li>
                         <li>
                             <a href="#">Second Level Link</a>

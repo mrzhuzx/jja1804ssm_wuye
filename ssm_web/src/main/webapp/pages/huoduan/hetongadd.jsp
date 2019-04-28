@@ -1,43 +1,27 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2019/4/24 0024
-  Time: 下午 4:51
+  Date: 2019/4/28 0028
+  Time: 上午 9:26
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":"+ request.getServerPort() + path + "/";
-%>
-<base href="<%=basePath%>">
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-
     <!-- Bootstrap Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FontAwesome Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
 
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="./assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="./assets/css/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./plugins/datepicker3.css">
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- Morris Chart Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-
-
-
-
 </head>
 <body>
 <div id="wrapper">
@@ -49,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -267,28 +251,28 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.jsp"><i class="fa fa-dashboard"></i>图表</a>
+                    <a href="index.html"><i class="fa fa-dashboard"></i> 图表</a>
                 </li>
                 <li>
-                    <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI元素</a>
+                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI 元素</a>
                 </li>
                 <li>
-                    <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据表</a>
+                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
                 </li>
                 <li>
-                    <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
-                </li>
-
-                <li>
-                    <a href="table.jsp" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
-                </li>
-                <li>
-                    <a href="form.jsp"><i class="fa fa-edit"></i>表单 </a>
+                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
                 </li>
 
+                <li>
+                    <a href="table.html"><i class="fa fa-table"></i>响应表</a>
+                </li>
+                <li>
+                    <a href="form.html" class="active-menu"><i class="fa fa-edit"></i> 表单 </a>
+                </li>
+
 
                 <li>
-                    <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap"></i> 下单菜单<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -315,7 +299,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="empty.jsp"><i class="fa fa-fw fa-file"></i> 空白页</a>
+                    <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
                 </li>
             </ul>
 
@@ -328,79 +312,123 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        表格页面 <small>响应表</small>
+                         <small></small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
+            <div class="row" style="width: 600px;">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            高级表
+                            增加一份合同
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>合同名字</th>
-                                        <th>合同类型</th>
-                                        <th>合同起始时间</th>
-                                        <th>合同终止时间</th>
-                                        <th>合同描述</th>
-                                        <th>合同编号</th>
-                                        <th>签约人</th>
-                                        <th>联系方式</th>
-                                        <th>操作</th>
-                                        <th>    </th>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form action="${pageContext.request.contextPath}/con/consave.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
-                                    </tr>
-                                    </thead>
 
-                                    <tbody>
-                            <c:forEach var="sm" items="${contractList}">
-                                    <tr class="gradeA">
-                                        <td>${sm.contractId}</td>
-                                        <td>${sm.contractName}</td>
-                                        <td>${sm.contractType}</td>
-                                        <td class="center">${sm.contractStart}</td>
-                                        <td class="center">${sm.contractEnd}</td>
-                                        <td>${sm.contractDes}</td>
-                                        <td>${sm.contractNum}</td>
-                                        <td>${sm.signingPeople}</td>
-                                        <td>${sm.signatoryTelephone}</td>
-                                        <td class="center"></td>
-                                        <td class="center"></td>
-                                    </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
+
+                                        <div  >
+                                            <label>合同编号</label>
+                                            <input class="form-control" placeholder="合同编号" value="No.1258011008" name="contractnum" >
+                                        </div>
+                                        <div  >
+                                            <label>合同名字</label>
+                                            <input class="form-control" placeholder="合同名字" value="购房合同" name="contractname" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>合同类型</label>
+                                            <select class="form-control" placeholder="" name="contracttype">
+
+                                                <option>1</option>
+                                            </select>
+                                        </div>
+                                        <div  >
+                                            <label>合同描述</label>
+                                            <input class="form-control" placeholder="合同描述"  value="与xx的合同协议书" name="contractdes" readonly="readonly">
+                                        </div>
+                                        <div>
+                                            <label>签约人</label>
+                                            <input class="form-control" placeholder="签约人" value="徐凤年" name="signingpeople">
+                                        </div>
+                                        <div>
+                                            <label>合同起始时间</label>
+                                            <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="contractstart">
+                                        </div>
+                                        <div>
+                                            <label>合同终止时间</label>
+                                            <input class="form-control" placeholder="年月日" id="date" value="2069-10-10" name="contractend">
+                                        </div>
+                                        <div  >
+                                            <label>联系方式</label>
+                                            <input class="form-control" placeholder="联系方式" value="15020201414" name="signatorytelephone" >
+                                        </div>
+                                        <br>
+                                        <div>
+
+                                           <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
+
+                                            <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+
+                                        </div>
+
+
+
+                                    </form>
+                                </div>
+
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
-            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
 </div>
-<!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
+<script src="./assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-    });
-</script>
+<script src="./assets/js/jquery.metisMenu.js"></script>
 <!-- Custom Js -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+<script src="./assets/js/custom-scripts.js"></script>
+<script src="./assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="./assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="./assets/datatables/jquery.dataTables.min.js"></script>
+<script src="./assets/datatables/dataTables.bootstrap.min.js"></script>
+<script src="./plugins/jquery-2.2.3.min.js"></script>
+<script src="./plugins/bootstrap-datepicker.js"></script>
+<script>
+        $(document).ready(function() {
+            $('#dateid').datepicker({
+                format : "yyyy-mm-dd",
+                autoclose: true,
+                language: 'zh-CN'
+            });
+        });
+    </script>
+        <script>
+            $(document).ready(function() {
+                $('#date').datepicker({
+                    format : "yyyy-mm-dd",
+                    autoclose: true,
+                    language: 'zh-CN'
+                });
+            });
+        </script>
+
 
 
 </body>
