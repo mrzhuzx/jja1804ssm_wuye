@@ -16,7 +16,7 @@ import org.apache.ibatis.type.Alias;
 @Data
 public class SysAdminInfo extends BaseEntity {
     /**
-     * 
+     *
      */
     @Id
     @Column(name = "userid")
@@ -65,22 +65,22 @@ public class SysAdminInfo extends BaseEntity {
     private String userstyle;
 
     /**
-     * 
+     *
      */
     @Column(name = "roleid")
     private Integer roleid;
 
     /**
-     * 
-     * @return userid 
+     *
+     * @return userid
      */
     public Integer getUserid() {
         return userid;
     }
 
     /**
-     * 
-     * @param userid 
+     *
+     * @param userid
      */
     public void setUserid(Integer userid) {
         this.userid = userid;
@@ -199,16 +199,16 @@ public class SysAdminInfo extends BaseEntity {
     }
 
     /**
-     * 
-     * @return roleid 
+     *
+     * @return roleid
      */
     public Integer getRoleid() {
         return roleid;
     }
 
     /**
-     * 
-     * @param roleid 
+     *
+     * @param roleid
      */
     public void setRoleid(Integer roleid) {
         this.roleid = roleid;
