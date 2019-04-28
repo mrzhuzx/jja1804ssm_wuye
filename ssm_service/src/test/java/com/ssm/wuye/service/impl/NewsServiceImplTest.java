@@ -30,10 +30,10 @@ public class NewsServiceImplTest {
     @Test
     public void search() {
         NewsExample newsExample = new NewsExample();
-        newsExample.createCriteria().andNctypeidEqualTo(3);
+        newsExample.createCriteria().andNctypeidEqualTo(2);
         List<News> news = newsService.selectByExample(newsExample);
         for (News news1 : news) {
-            System.out.println(news1.toString());
+            System.out.println(news1.getNctypeid());
         }
 
     }
