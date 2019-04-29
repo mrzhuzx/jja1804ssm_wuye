@@ -60,7 +60,7 @@ public class SysAdminInfoServiceImplTest {
     public void updateByPrimaryKeySelective() {
 
         //用下面这个方法要在实体类加一个构造
-        SysAdminInfo sai = new SysAdminInfo(35, "保安游队长", "123123", "12580", "144sdd@qq.com", "img/face/qq (14).jpg", "启用", "大妈勾引他，被无情拒绝，并发通告通知全小区，外号铁面无私单身狗", 8);
+        SysAdminInfo sai = new SysAdminInfo(35, "保安游队长", "123123", "12580", "144sdd@qq.com", "img/face/qq (14).jpg", "启用", "大妈勾引他，被无情拒绝，并发通告通知全小区，搞得大妈没脸见人，人送外号铁面无私单身狗", 8);
 
         int i = sysAdminInfoService.updateByPrimaryKeySelective(sai);
         if (i == 0) {

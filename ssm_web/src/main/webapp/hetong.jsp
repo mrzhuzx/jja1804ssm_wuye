@@ -1,22 +1,43 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/4/24 0024
+  Time: 下午 4:51
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":"+ request.getServerPort() + path + "/";
+%>
+<base href="<%=basePath%>">
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+
     <!-- Bootstrap Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Morris Chart Styles-->
 
     <!-- Custom Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- TABLE STYLES-->
+    <!-- Morris Chart Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -28,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -246,23 +267,23 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i>图表</a>
+                    <a href="index.jsp"><i class="fa fa-dashboard"></i>图表</a>
                 </li>
                 <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
+                    <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI元素</a>
                 </li>
                 <li>
-                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
+                    <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据表</a>
                 </li>
                 <li>
-                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
+                    <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
                 </li>
 
                 <li>
-                    <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
+                    <a href="table.jsp" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
                 </li>
                 <li>
-                    <a href="form.html"><i class="fa fa-edit"></i>表单 </a>
+                    <a href="form.jsp"><i class="fa fa-edit"></i>表单 </a>
                 </li>
 
 
@@ -294,7 +315,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
+                    <a href="empty.jsp"><i class="fa fa-fw fa-file"></i> 空白页</a>
                 </li>
             </ul>
 
@@ -325,45 +346,41 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>电表ID</th>
-                                        <th>电表编号</th>
-                                        <th>房屋号/引用house表的houseid</th>
-                                        <th>用电量/度</th>
-                                        <th>年月份</th>
+                                        <th>ID</th>
+                                        <th>合同名字</th>
+                                        <th>合同类型</th>
+                                        <th>合同起始时间</th>
+                                        <th>合同终止时间</th>
+                                        <th>合同描述</th>
+                                        <th>合同编号</th>
+                                        <th>签约人</th>
+                                        <th>联系方式</th>
                                         <th>操作</th>
+                                        <th>    </th>
+
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <c:forEach items="${electricList}" var="electric">
 
-                                        <tr class="odd gradeX">
-                                            <td>${electric.electricid}</td>
-                                            <td>${electric.enumber}</td>
-                                            <td>${electric.houseid}</td>
-                                            <td>${electric.electric}</td>
-                                            <td>${electric.monthStr}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/electric/findById.do?id=${electric.electricid}'"><i class="fa fa-edit " ></i> 修改</button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/electric/delete.do?id=${electric.electricid}'"><i class="fa fa-pencil"  ></i> 删除</button></td>
-                                        </tr>
+                                    <tbody>
+                            <c:forEach var="sm" items="${contractList}">
+                                    <tr class="gradeA">
+                                        <td>${sm.contractId}</td>
+                                        <td>${sm.contractName}</td>
+                                        <td>${sm.contractType}</td>
+                                        <td class="center">${sm.contractStart}</td>
+                                        <td class="center">${sm.contractEnd}</td>
+                                        <td>${sm.contractDes}</td>
+                                        <td>${sm.contractNum}</td>
+                                        <td>${sm.signingPeople}</td>
+                                        <td>${sm.signatoryTelephone}</td>
+                                        <td class="center"></td>
+                                        <td class="center"></td>
+                                    </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
-
-                        </div>
-                    </div>
-                    <!--End Advanced Tables -->
-                </div>
             </div>
-            <!-- /. ROW  -->
-
-        </div>
-    </div>
-    <!-- /. ROW  -->
-</div>
-<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
-</div>
-<!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
@@ -388,3 +405,4 @@
 
 </body>
 </html>
+
