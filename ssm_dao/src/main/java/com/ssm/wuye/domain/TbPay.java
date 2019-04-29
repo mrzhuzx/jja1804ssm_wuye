@@ -282,4 +282,22 @@ public class TbPay extends BaseEntity {
     public void setOwerid(Integer owerid) {
         this.owerid = owerid;
     }
+
+    @Override
+    public String toString() {
+        return "TbPay{" +
+                "payid=" + payid +
+                ", chargeid=" + chargeid +
+                ", chargestandard=" + chargestandard +
+                ", latepayment=" + latepayment +
+                ", payreal=" + payreal +
+                ", paybalance=" + paybalance +
+                ", houseid=" + houseid +
+                ", chargetime=" + chargetime +
+                ", payname='" + payname + '\'' +
+                ", paystate=" + paystate +
+                ", paymonth='" + paymonth + '\'' +
+                ", owerid=" + owerid +
+                '}';
+    }
 }
