@@ -73,7 +73,7 @@ public class OwerHouseTypeExample {
     }
 
     /**
-     * ower_house_type 2019-04-25
+     * ower_house_type 2019-04-29
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -513,66 +513,6 @@ public class OwerHouseTypeExample {
 
         public Criteria andHfloorNotBetween(Integer value1, Integer value2) {
             addCriterion("hFloor not between", value1, value2, "hfloor");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidIsNull() {
-            addCriterion("hTypeid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidIsNotNull() {
-            addCriterion("hTypeid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidEqualTo(Integer value) {
-            addCriterion("hTypeid =", value, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidNotEqualTo(Integer value) {
-            addCriterion("hTypeid <>", value, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidGreaterThan(Integer value) {
-            addCriterion("hTypeid >", value, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("hTypeid >=", value, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidLessThan(Integer value) {
-            addCriterion("hTypeid <", value, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidLessThanOrEqualTo(Integer value) {
-            addCriterion("hTypeid <=", value, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidIn(List<Integer> values) {
-            addCriterion("hTypeid in", values, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidNotIn(List<Integer> values) {
-            addCriterion("hTypeid not in", values, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidBetween(Integer value1, Integer value2) {
-            addCriterion("hTypeid between", value1, value2, "htypeid");
-            return (Criteria) this;
-        }
-
-        public Criteria andHtypeidNotBetween(Integer value1, Integer value2) {
-            addCriterion("hTypeid not between", value1, value2, "htypeid");
             return (Criteria) this;
         }
 
@@ -1056,6 +996,186 @@ public class OwerHouseTypeExample {
             return (Criteria) this;
         }
 
+        public Criteria andOlidIsNull() {
+            addCriterion("olId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidIsNotNull() {
+            addCriterion("olId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidEqualTo(Integer value) {
+            addCriterion("olId =", value, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidNotEqualTo(Integer value) {
+            addCriterion("olId <>", value, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidGreaterThan(Integer value) {
+            addCriterion("olId >", value, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("olId >=", value, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidLessThan(Integer value) {
+            addCriterion("olId <", value, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidLessThanOrEqualTo(Integer value) {
+            addCriterion("olId <=", value, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidIn(List<Integer> values) {
+            addCriterion("olId in", values, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidNotIn(List<Integer> values) {
+            addCriterion("olId not in", values, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidBetween(Integer value1, Integer value2) {
+            addCriterion("olId between", value1, value2, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOlidNotBetween(Integer value1, Integer value2) {
+            addCriterion("olId not between", value1, value2, "olid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidIsNull() {
+            addCriterion("hid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidIsNotNull() {
+            addCriterion("hid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidEqualTo(Integer value) {
+            addCriterion("hid =", value, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidNotEqualTo(Integer value) {
+            addCriterion("hid <>", value, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidGreaterThan(Integer value) {
+            addCriterion("hid >", value, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("hid >=", value, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidLessThan(Integer value) {
+            addCriterion("hid <", value, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidLessThanOrEqualTo(Integer value) {
+            addCriterion("hid <=", value, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidIn(List<Integer> values) {
+            addCriterion("hid in", values, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidNotIn(List<Integer> values) {
+            addCriterion("hid not in", values, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidBetween(Integer value1, Integer value2) {
+            addCriterion("hid between", value1, value2, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHidNotBetween(Integer value1, Integer value2) {
+            addCriterion("hid not between", value1, value2, "hid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidIsNull() {
+            addCriterion("hTypeId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidIsNotNull() {
+            addCriterion("hTypeId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidEqualTo(Integer value) {
+            addCriterion("hTypeId =", value, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidNotEqualTo(Integer value) {
+            addCriterion("hTypeId <>", value, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidGreaterThan(Integer value) {
+            addCriterion("hTypeId >", value, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("hTypeId >=", value, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidLessThan(Integer value) {
+            addCriterion("hTypeId <", value, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidLessThanOrEqualTo(Integer value) {
+            addCriterion("hTypeId <=", value, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidIn(List<Integer> values) {
+            addCriterion("hTypeId in", values, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidNotIn(List<Integer> values) {
+            addCriterion("hTypeId not in", values, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidBetween(Integer value1, Integer value2) {
+            addCriterion("hTypeId between", value1, value2, "htypeid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHtypeidNotBetween(Integer value1, Integer value2) {
+            addCriterion("hTypeId not between", value1, value2, "htypeid");
+            return (Criteria) this;
+        }
+
         public Criteria andOlnameLikeInsensitive(String value) {
             addCriterion("upper(olName) like", value.toUpperCase(), "olname");
             return (Criteria) this;
@@ -1115,7 +1235,7 @@ public class OwerHouseTypeExample {
     }
 
     /**
-     * ower_house_type 2019-04-25
+     * ower_house_type 2019-04-29
      */
     public static class Criterion {
         private String condition;

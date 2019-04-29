@@ -68,4 +68,16 @@ public class ChWaterServiceImpl implements ChWaterService {
         }
         return waterAndOwerList;
     }
+
+    public ChWaterMeter selectByPrimaryKey(Integer waterid) {
+        return chWaterMeterMapper.selectByPrimaryKey(waterid);
+    }
+
+    public int insertSelective(ChWaterMeter record) {
+        return chWaterMeterMapper.insertSelective(record);
+    }
+
+    public int updateByExampleSelective(ChWaterMeter record, ChWaterMeterExample example) {
+        return chWaterMeterMapper.updateByExampleSelective(record,example);
+    }
 }
