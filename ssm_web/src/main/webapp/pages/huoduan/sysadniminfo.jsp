@@ -520,7 +520,7 @@
                                         <th>状态</th>
                                         <th>个性签名</th>
                                         <th>类型ID</th>
-                                        <%--<th>操作</th>--%>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -536,7 +536,10 @@
                                             <td>${sai.userflag}</td>
                                             <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${sai.userstyle}</td>
                                             <td>${sai.roleid}</td>
-                                                <%--<td>${sai.username}</td>--%>
+                                            <td><button class="btn btn-primary">
+                                                <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/ai/infosearchone.do?userid=${sai.userid}'"></i> 修改</button>
+                                                <button class="btn btn-danger">
+                                                <i class="fa fa-dedent"  onclick="location.href='${pageContext.request.contextPath}/ai/infodelete.do?userid=${sai.userid}'"></i> 删除</button></td>
                                         </tr>
 
                                     </c:forEach>

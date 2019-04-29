@@ -14,6 +14,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -67,30 +68,41 @@ public class SysAdminInfoController {
     @RequestMapping("infosave")
     public ModelAndView save(@ModelAttribute SysAdminInfo sai) {
 
-        ModelAndView m = new ModelAndView("pages/huoduan/sysadniminfo.jsp");
+        ModelAndView m = new ModelAndView("redirect:/ai/infosearch.do");
         int i = sysAdminInfoService.insertSelective(sai);
         if (i == 0) {
             System.out.println("添加失败...........");
         } else {
             System.out.println("添加成功：" + i + "条数据");
         }
-        SysAdminInfoExample sysAdminInfoExample=new SysAdminInfoExample();
-        List<SysAdminInfo> sysAdminInfoList=sysAdminInfoService.selectByExample(sysAdminInfoExample);
-        m.addObject("sysAdminInfoList",sysAdminInfoList);
-
         return m;
     }
 
     /**
+     * 获取一条数据（配合修改方法使用）
+     * @param userid
+     * @return
+     */
+    @RequestMapping("infosearchone")
+   public ModelAndView searchone(@RequestParam Integer userid) {
+
+        ModelAndView m =new ModelAndView("pages/huoduan/adniminfoxiugai");
+        SysAdminInfo saif =sysAdminInfoService.selectByPrimaryKey(userid);
+        m.addObject("saif",saif);
+       System.out.println("获取到一条数据...........");
+       return m;
+
+   }
+    /**
      * 修改
-     * @param sai
+     * @param userid
      * @return
      */
     @RequestMapping("infoupdate")
-    public ModelAndView update(@ModelAttribute SysAdminInfo sai){
+    public ModelAndView update(@ModelAttribute SysAdminInfo userid){
 
-        ModelAndView m =new ModelAndView("pages/huoduan/sysadniminfo.jsp");
-        int i=sysAdminInfoService.updateByPrimaryKeySelective(sai);
+        ModelAndView m =new ModelAndView("redirect:/ai/infosearch.do");
+        int i=sysAdminInfoService.updateByPrimaryKeySelective(userid);
         if (i==0){
             System.out.println("修改失败...........");
         }else {
@@ -107,17 +119,16 @@ public class SysAdminInfoController {
       * @param userid
      * @return
      */
+    @RequestMapping("infodelete")
     public ModelAndView delete(@ModelAttribute Integer userid ){
 
-        ModelAndView m =new ModelAndView("pages/huoduan/sysadniminfo.jsp");
+        ModelAndView m =new ModelAndView("redirect:/ai/infosearch.do");
         int i=sysAdminInfoService.deleteByPrimaryKey(userid);
         if (i==0){
             System.out.println("删除成功..........");
         }else {
             System.out.println("成功删除"+i+"条数据");
         }
-        SysAdminInfoExample sysAdminInfoExample=new SysAdminInfoExample();
-        m.addObject("sysAdminInfoExample",sysAdminInfoExample);
         return m;
 
     }
