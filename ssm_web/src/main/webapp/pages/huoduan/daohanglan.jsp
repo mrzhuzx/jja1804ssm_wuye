@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!--/. NAV TOP  -->
 <nav class="navbar-default navbar-side" role="navigation">
     <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
@@ -191,7 +192,7 @@
                         <a href="${pageContext.request.contextPath}/con/consearch.do">合同查询</a>
                     </li>
                     <li>
-                        <a href="hetongadd.jsp">合同添加</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>

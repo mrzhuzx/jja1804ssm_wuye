@@ -44,7 +44,6 @@
     <!--/. NAV TOP  -->
     <%--导航栏--%>
     <jsp:include page="daohanglan.jsp"></jsp:include>
-    <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
@@ -71,8 +70,8 @@
                                         <th>ID</th>
                                         <th>合同名字</th>
                                         <th>合同类型</th>
-                                        <th>合同起始时间</th>
-                                        <th>合同终止时间</th>
+                                        <th>起始时间</th>
+                                        <th>终止时间</th>
                                         <th>合同描述</th>
                                         <th>合同编号</th>
                                         <th>签约人</th>
@@ -89,21 +88,26 @@
                                         <td>${sm.contractname}</td>
                                         <td>${sm.contracttype}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy/MM/dd'/></td>
+                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy-MM-dd'/></td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy/MM/dd'/></td>
+                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy-MM-dd'/></td>
                                         <td>${sm.contractdes}</td>
                                         <td>${sm.contractnum}</td>
                                         <td>${sm.signingpeople}</td>
                                         <td>${sm.signatorytelephone}</td>
-                                        <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
-                                            <button class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
+                                        <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                            <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                     </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
 </div>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->

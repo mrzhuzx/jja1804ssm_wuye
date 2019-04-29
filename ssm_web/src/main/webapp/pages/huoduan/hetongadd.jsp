@@ -75,7 +75,7 @@
                                         </div>
                                         <div  >
                                             <label>合同描述</label>
-                                            <input class="form-control" placeholder="合同描述"  value="与xx的合同协议书" name="contractdes" readonly="readonly">
+                                            <input class="form-control" placeholder="合同描述"  value="与xx的合同协议书" name="contractdes">
                                         </div>
                                         <div>
                                             <label>签约人</label>
@@ -116,6 +116,7 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
+            </div>
         <!-- /. PAGE INNER  -->
     </div>
     <!-- /. PAGE WRAPPER  -->
