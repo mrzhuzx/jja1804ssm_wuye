@@ -27,7 +27,12 @@
 			-----------------------------------------*/
             Morris.Bar({
                 element: 'morris-bar-chart',
-                data: [{
+                data: [
+                    {
+                        y: '2005',
+                        a: 99,
+                        b: 99
+                    },{
                     y: '2006',
                     a: 100,
                     b: 90
@@ -149,8 +154,8 @@
             Morris.Line({
                 element: 'morris-line-chart',
                 data: [{
-                    y: '2006',
-                    a: 100,
+                    y: '2005',
+                    a: 999,
                     b: 90
                 }, {
                     y: '2007',

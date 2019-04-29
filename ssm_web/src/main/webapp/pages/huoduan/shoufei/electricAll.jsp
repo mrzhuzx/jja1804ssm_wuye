@@ -40,10 +40,10 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -69,35 +69,33 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>合同名字</th>
-                                        <th>合同类型</th>
-                                        <th>合同起始时间</th>
-                                        <th>合同终止时间</th>
-                                        <th>合同描述</th>
-                                        <th>合同编号</th>
-                                        <th>签约人</th>
-                                        <th>联系方式</th>
+                                        <th>电表编号</th>
+                                        <th>房屋号</th>
+                                        <th>用电量</th>
+                                        <th>年月份</th>
+                                        <th>业主名</th>
+                                        <th>业主电话</th>
+
                                         <th>操作</th>
 
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                            <c:forEach  items="${contractList}" var="sm">
+                            <c:forEach  items="${electricAndOwers}" var="electricAndOwers">
                                     <tr class="gradeA">
-                                        <td>${sm.contractid}</td>
-                                        <td>${sm.contractname}</td>
-                                        <td>${sm.contracttype}</td>
+                                        <td>${electricAndOwers.electricid}</td>
+                                        <td>${electricAndOwers.enumber}</td>
+                                        <td>${electricAndOwers.houseid}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy/MM/dd'/></td>
+                                        <td class="center">${electricAndOwers.electric}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy/MM/dd'/></td>
-                                        <td>${sm.contractdes}</td>
-                                        <td>${sm.contractnum}</td>
-                                        <td>${sm.signingpeople}</td>
-                                        <td>${sm.signatorytelephone}</td>
+                                        <td class="center"><fmt:formatDate value='${electricAndOwers.month}' pattern='yyyy年MM月'/></td>
+                                        <td>${electricAndOwers.olname}</td>
+                                        <td>${electricAndOwers.olphone}</td>
+
                                         <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
-                                            <button class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
+                                            <button style="margin-right: 10px" class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
                                     </tr>
                                     </c:forEach>
                                     </tbody>
