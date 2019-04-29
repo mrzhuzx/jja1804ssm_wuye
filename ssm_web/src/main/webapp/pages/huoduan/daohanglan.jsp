@@ -198,7 +198,7 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">类别管理</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
