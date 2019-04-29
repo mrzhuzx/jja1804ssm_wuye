@@ -4,6 +4,7 @@ import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -87,12 +88,6 @@ public class NewsController {
         Integer tid = Integer.valueOf(ntid);
         System.out.println(tid + "777777777777777777777777777777777");
         News news = new News();
-
-        System.out.println(ncid);
-        System.out.println(nctitle);
-        System.out.println(nccontent);
-        System.out.println(nctime);
-        System.out.println(ntid);
         news.setNcid(id);
         news.setNctitle(nctitle);
         news.setNccontent(nccontent);
@@ -102,10 +97,32 @@ public class NewsController {
         if (i==1){
             System.out.println("更新成功");
         }else {
-            System.out.println("添加失败");
+            System.out.println("更新失败");
         }
         List<News> newsList = newsService.selectByExample(null);
         m.addObject("news", newsList);
         return m;
     }
-}
+    @RequestMapping("htn_add")
+     public ModelAndView htnadd(@ModelAttribute News news) {
+        ModelAndView m = new ModelAndView("pages/huoduan/ht_news");
+//        Integer tid = Integer.valueOf(ntid);
+
+//        News news = new News();
+//        news.setNctitle(nctitle);
+//        news.setNccontent(nccontent);
+//        news.setNctime(nctime);
+//        news.setNctypeid(tid);
+        int i = newsService.insert(news);
+
+        if (i==1){
+            System.out.println("更新成功");
+        }else {
+            System.out.println("更新失败");
+        }
+
+        List<News> newsList = newsService.selectByExample(null);
+        m.addObject("news", newsList);
+        return m;
+    }
+    }

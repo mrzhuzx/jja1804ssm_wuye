@@ -323,7 +323,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            新闻详情
+                            更新新闻详情
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -359,6 +359,70 @@
                                                     <option  value="${newsTypes.ntid}"> ${newsTypes.ntypename}</option>
                                                     </c:forEach>
                                                 </select>
+                                            </div>
+                                        <br>
+                                            <div>
+
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 保存</button>
+
+                                            <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+
+                                        </div>
+
+
+
+                                    </form>
+                                </div>
+
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+            <div class="row" style="width: 600px;"   >
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            添加新闻
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                    <form action="${pageContext.request.contextPath}/news/htn_add.do" method="post">
+
+
+
+                                        <div>
+                                            <label>新闻标题</label>
+                                            <input class="form-control" placeholder="新闻标题" name="nctitle" value="">
+                                        </div>
+
+                                       <div class="form-group">
+
+                                                <label>新闻内容</label>
+                                                <textarea class="form-control" rows="5" name="nccontent" ></textarea>
+                                        </div>
+
+                                        <div>
+                                            <%--<fmt:formatDate value="${upnews.nctime}" pattern="yyyy-MM-dd"/>--%>
+                                            <label>年月份</label>
+                                            <input class="form-control" placeholder="年月份" id="dateid" value="${upnews.nctime}" name="nctime">
+                                        </div>
+                                            <div class="form-group" >
+                                                <label>类型ID</label>
+                                                <select class="form-control" name="ntid" >
+                                                    <c:forEach items="${newsTypes}" var="newsTypes">
+                                                    <option  value="${newsTypes.ntid}"> ${newsTypes.ntypename}</option>
+                                                    </c:forEach>
+                                                </select>
 
                                             </div>
 
@@ -366,7 +430,7 @@
                                         <br>
                                             <div>
 
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 保存</button>
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 添加</button>
 
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
