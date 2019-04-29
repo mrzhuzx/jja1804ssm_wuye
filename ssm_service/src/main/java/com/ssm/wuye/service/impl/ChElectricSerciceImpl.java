@@ -32,6 +32,14 @@ public class ChElectricSerciceImpl implements ChElectricSercice {
         return chElectricMeterMapper.selectByExample(example);
     }
 
+    public ChElectricMeter selectByPrimaryKey(Integer electricid) {
+        return chElectricMeterMapper.selectByPrimaryKey(electricid);
+    }
+
+    public int insertSelective(ChElectricMeter record) {
+        return chElectricMeterMapper.insertSelective(record);
+    }
+
     public List<ElectricAndOwer> selectAll() {
 
         List<ChElectricMeter> meterList = chElectricMeterMapper.selectByExample(null);
@@ -64,5 +72,9 @@ public class ChElectricSerciceImpl implements ChElectricSercice {
             electricAndOwers.add(eao);
         }
         return electricAndOwers;
+    }
+
+    public int updateByExampleSelective(ChElectricMeter record,ChElectricMeterExample example) {
+        return chElectricMeterMapper.updateByExampleSelective(record,example);
     }
 }

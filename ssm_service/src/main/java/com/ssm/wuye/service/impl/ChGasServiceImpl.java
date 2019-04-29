@@ -64,4 +64,16 @@ public class ChGasServiceImpl implements ChGasService {
         }
         return gasAndOwers;
     }
+
+    public ChGasMeter selectByPrimaryKey(Integer id) {
+        return chGasMeterMapper.selectByPrimaryKey(id);
+    }
+
+    public int insertSelective(ChGasMeter record) {
+        return chGasMeterMapper.insertSelective(record);
+    }
+
+    public int updateByExampleSelective(ChGasMeter record, ChGasMeterExample example) {
+        return chGasMeterMapper.updateByExampleSelective(record,example);
+    }
 }
