@@ -1,12 +1,16 @@
 package com.ssm.wuye.controller;
 
-import com.ssm.wuye.domain.ChElectricMeter;
+
+
 import com.ssm.wuye.domain.ChGasMeter;
-import com.ssm.wuye.service.ChElectricSercice;
+
+import com.ssm.wuye.domain.ChGasMeterExample;
 import com.ssm.wuye.service.ChGasService;
 import com.ssm.wuye.vo.GasAndOwer;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -35,5 +39,40 @@ public class ChGasController {
         System.out.println("_______________________________________________"+gasAndOwers.toString());
         view.addObject("gasAndOwers",gasAndOwers);
         return view;
+    }
+
+    @RequestMapping("searchOne")
+    public ModelAndView searchOne(@RequestParam Integer id){
+        ModelAndView view=new ModelAndView("pages/huoduan/shoufei/gasAdd");
+        ChGasMeter chGasMeter = chGasService.selectByPrimaryKey(id);
+        view.addObject("chGasMeter",chGasMeter);
+        return view;
+    }
+
+    @RequestMapping("insertOne")
+    public ModelAndView insertOne(@ModelAttribute ChGasMeter chGasMeter){
+        ModelAndView view=new ModelAndView("");
+        int i = chGasService.insertSelective(chGasMeter);
+        if (i>=0){
+            System.out.println("添加失败！！");
+        }else {
+            System.out.println("添加成功！！！");
+
+        }
+        return view;
+    }
+    @RequestMapping("updateOne")
+    public ModelAndView updateOne(@ModelAttribute ChGasMeter chGasMeter){
+        ModelAndView view=new ModelAndView("");
+        ChGasMeterExample chGasMeterExample=new ChGasMeterExample();
+        chGasMeterExample.createCriteria().andIdEqualTo(chGasMeter.getId());
+        int i = chGasService.updateByExampleSelective(chGasMeter, chGasMeterExample);
+        if (i>=0){
+            System.out.println("修改失败！！");
+        }else {
+            System.out.println("修改成功！！！");
+
+        }
+        return  view;
     }
 }

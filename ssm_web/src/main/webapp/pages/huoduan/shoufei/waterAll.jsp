@@ -55,8 +55,8 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-
-            <div class="row">
+            <a href="${pageContext.request.contextPath}/pages/huoduan/shoufei/waterAdd.jsp" class="btn btn-success">&nbsp抄&nbsp水&nbsp表&nbsp</a>
+            <div style="padding-top: 20px" class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">

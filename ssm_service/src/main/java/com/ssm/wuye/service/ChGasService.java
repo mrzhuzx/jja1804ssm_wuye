@@ -1,8 +1,10 @@
 package com.ssm.wuye.service;
 
+;
 import com.ssm.wuye.domain.ChGasMeter;
 import com.ssm.wuye.domain.ChGasMeterExample;
 import com.ssm.wuye.vo.GasAndOwer;
+
 
 
 import java.util.List;
@@ -17,4 +19,10 @@ public interface ChGasService {
     List<ChGasMeter> selectByExample(ChGasMeterExample example);
 
     List<GasAndOwer> selectAll();
+
+    ChGasMeter selectByPrimaryKey(Integer id);
+
+    int insertSelective(ChGasMeter record);
+
+    int updateByExampleSelective(ChGasMeter record,ChGasMeterExample example);
 }
