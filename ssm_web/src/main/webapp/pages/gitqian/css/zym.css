@@ -60,7 +60,7 @@ body{ font-size:12px; font-family:"微软雅黑"; background-position:center top
 
 .anlizs_lb li .anlz_tp_z:hover .anlz_fg{ 
 -webkit-transform: translate(0px,-130px);
--moz-transform:translate50px,-130px);
+/*-moz-transform:translate50px,-130px);*/
 transform: translate(0px,-210px);
 transition:all .2s ease-in 0s;
 -webkit-transition:all .2s ease-in 0s;

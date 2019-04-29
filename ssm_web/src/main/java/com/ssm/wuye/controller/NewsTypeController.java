@@ -1,12 +1,10 @@
 package com.ssm.wuye.controller;
 
 
-import com.ssm.wuye.domain.News;
-import com.ssm.wuye.domain.NewsExample;
-import com.ssm.wuye.domain.NewsType;
+import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
-import org.apache.ibatis.session.RowBounds;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,6 +40,7 @@ public class NewsTypeController {
     @RequestMapping("search")
     public ModelAndView search() {
         ModelAndView m = new ModelAndView();
+
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
         m.setViewName("pages/gitqian/index");
@@ -55,15 +54,23 @@ public class NewsTypeController {
 
         System.out.println(ntid);
         Integer id = Integer.valueOf(ntid);
-        //根据类别id查询该类下的所有内容
+        //根据typeid查询news类下的所有内容
         NewsExample newsExample = new NewsExample();
-
         newsExample.createCriteria().andNctypeidEqualTo(id);
         List<News> news1 = newsService.selectByExample(newsExample);
         m.addObject("news1", news1);
 
+
+        //根据typeid查询typename（来源：）
+        NewsTypeExample newsTypeExample = new NewsTypeExample();
+        newsTypeExample.createCriteria().andNtidEqualTo(id);
+        List<NewsType> newsTypes = newstypeService.selectByExample(newsTypeExample);
+        m.addObject("newst", newsTypes);
+
+
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
+
 
 
         m.setViewName("pages/gitqian/news");

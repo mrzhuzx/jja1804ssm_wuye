@@ -1,12 +1,8 @@
 package com.ssm.wuye.controller;
 
-import com.ssm.wuye.domain.News;
-import com.ssm.wuye.domain.NewsExample;
-import com.ssm.wuye.domain.NewsType;
+import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
-import org.apache.ibatis.session.RowBounds;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,16 +28,26 @@ public class NewsController {
     NewsTypeService newstypeService;
 
     @RequestMapping("one")
-    public ModelAndView news(@RequestParam String   nid){
-        System.out.println(nid);
+    public ModelAndView news(@RequestParam String   ncid){
+        System.out.println(ncid);
         ModelAndView  m = new ModelAndView("pages/gitqian/new_list");
-        Integer id = Integer.valueOf(nid);
+        Integer id = Integer.valueOf(ncid);
         News news = newsService.selectByPrimaryKey(id);
         m.addObject("news",news);
 
         //所有新闻类
         List<NewsType> newsTypes = newstypeService.selectByExample(null);
         m.addObject("newsTypes",newsTypes);
+
+
+//        NewsTypeVoiwExample newsTypeVoiwExample = new NewsTypeVoiwExample();
+//        newsTypeVoiwExample.createCriteria().andNcidEqualTo(id);
+//        List<NewsTypeVoiw> newsTypeVoiws = newsTypeVoiwService.selectByExample(newsTypeVoiwExample);
+//        for (NewsTypeVoiw newsTypeVoiw : newsTypeVoiws) {
+//            System.out.println(newsTypeVoiw.getNtypename());
+//        }
+//        m.addObject("newsTypeVoiws",newsTypeVoiws);
+
         return  m;
     }
 }
