@@ -24,7 +24,7 @@
         <div class="tou_zj">
             <div class="hy">
                 <img src="pages/gitqian/images/tou_tb_03.png">
-                <span>欢迎来到贵州天能物业管理有限公司</span>
+                <span>欢迎来到厦门国贸物业管理有限公司</span>
             </div>
             <div class="soucang">
                 <a href="#">设为首页&nbsp;</a>｜
@@ -168,7 +168,9 @@
         <div class="lujing">
 
             <h2>公司新闻</h2>
-            <p>您的位置：首页 > 公司新闻</p>
+            <p>您的位置：首页 > <c:forEach items="${newst}"  var="newst">
+               ${newst.ntypename}
+            </c:forEach></p>
         </div>
         <ul class="skb" style="margin-bottom: 20px;">
             <li style="background: #005bac; width: 12%;"></li>
@@ -221,7 +223,7 @@
 <div class="dibu">
     <div class="dibu_jz">
         <div class="dibu_zuo">
-            <p>联系地址：贵州省贵阳市市南路120号黔电发展楼6楼<br>
+            <p>联系地址：厦门市软件园观日路128号401室<br>
                 电 话：0851-85594612   传 真：0851-85594612<br></p>
             <ul>
                 <li><span>分享到：</span></li>
@@ -238,12 +240,12 @@
                 <li><a href="#">意见反馈&nbsp;&nbsp;</a>｜</li>
                 <li><a href="#">联系我们</a></li>
             </ul>
-            <img class="dibu_logo" src="pages/gitqian/images/dibu_03.png">
+            <img class="dibu_logo" src="">
         </div>
     </div>
 </div>
 <div class="dibu_1">
-    <p>版权所有 贵州天能物业管理有限公司 黔ICP备10001741号<br>
+    <p>版权所有 厦门国贸物业管理有限公司 黔ICP备10001741号<br>
         技术支持：WangID 驰通网络</p>
 </div>
 

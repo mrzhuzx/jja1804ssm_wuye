@@ -45,30 +45,9 @@
                             </a>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="about.html">
-                                关于我们
-                                <b></b>
-                                <div></div>
+                            <a class="nav_btn" href="pages/gitqian/about.jsp">
+                                公司简介
                             </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="#">公司简介</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司文化</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">领导致辞</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">服务理念</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">企业荣誉</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="narrow_wrap">
                             <a class="nav_btn" href="products.html">
