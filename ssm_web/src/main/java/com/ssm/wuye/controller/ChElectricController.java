@@ -2,6 +2,7 @@ package com.ssm.wuye.controller;
 
 import com.ssm.wuye.domain.ChElectricMeter;
 import com.ssm.wuye.service.ChElectricSercice;
+import com.ssm.wuye.vo.ElectricAndOwer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,9 +28,10 @@ public class ChElectricController {
      */
     @RequestMapping("searchAll")
     public ModelAndView searchAll(){
-        ModelAndView view=new ModelAndView("");
-        List<ChElectricMeter> meterList = chElectricSercice.selectByExample(null);
-        view.addObject("meterList",meterList);
+        ModelAndView view=new ModelAndView("pages/huoduan/shoufei/electricAll");
+        List<ElectricAndOwer> electricAndOwers = chElectricSercice.selectAll();
+        System.out.println(electricAndOwers.toString()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        view.addObject("electricAndOwers",electricAndOwers);
         return view;
     }
 

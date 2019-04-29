@@ -24,7 +24,7 @@
                 <span>欢迎来到贵州国贸物业管理有限公司</span>
             </div>
             <div class="soucang">
-                <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">用户登入</a></c:if>
+                <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">业主登入</a></c:if>
                 <c:if test="${ower ne null}"><img src="${ower.olheadimg}">&nbsp;${ower.olname}&nbsp;|&nbsp;<a href="ower/logout.do">注销</a></c:if>
             </div>
         </div>
@@ -92,10 +92,13 @@
                                         <a href="ower/query.do?olid=${ower.olid}">个人信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">家庭成员</a>
+                                        <a href="ower/of.do?olid=${ower.olid}">家庭成员</a>
                                     </li>
                                     <li>
-                                        <a href="#">房屋信息</a>
+                                        <a href="ower/of.do?olid=${ower.olid}">增加家人</a>
+                                    </li>
+                                    <li>
+                                        <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
                                         <a href="#">车位信息</a>

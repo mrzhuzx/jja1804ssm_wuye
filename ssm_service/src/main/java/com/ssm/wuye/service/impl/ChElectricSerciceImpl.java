@@ -33,6 +33,7 @@ public class ChElectricSerciceImpl implements ChElectricSercice {
     }
 
     public List<ElectricAndOwer> selectAll() {
+
         List<ChElectricMeter> meterList = chElectricMeterMapper.selectByExample(null);
         List<ElectricAndOwer> electricAndOwers=new ArrayList<ElectricAndOwer>();
         for (ChElectricMeter chElectricMeter : meterList) {

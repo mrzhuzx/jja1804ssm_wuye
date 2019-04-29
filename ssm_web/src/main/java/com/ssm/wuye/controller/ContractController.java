@@ -7,6 +7,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
 
 /**
  * desc:
- * author:lzp
+ * author:卢智鹏
  * {time}
  * version:1.2.3
  */
@@ -65,12 +66,11 @@ public class ContractController {
      * @return
      */
     @RequestMapping("searchone")
-    public ModelAndView searchone(Integer contracid ){
-        ModelAndView m=new ModelAndView("pages/houduan/hetongupdate");
-        Contract contract = contractService.selectByPrimaryKey(contracid);
+    public ModelAndView searchone(@RequestParam Integer contractid ){
+        ModelAndView m=new ModelAndView("pages/huoduan/hetongupdate");
+        Contract contract = contractService.selectByPrimaryKey(contractid);
+        m.addObject("contract",contract);
         System.out.println("获取到了一条数据-----------");
-        List<Contract> contractList = contractService.selectByExample(null);
-        m.addObject("contractList",contractList);
         return  m;
     }
 
@@ -97,7 +97,7 @@ public class ContractController {
      * @return
      */
     @RequestMapping("condelete")
-     public  ModelAndView condelete(@ModelAttribute Integer contractid){
+     public  ModelAndView condelete(@RequestParam Integer contractid){
         ModelAndView m=new ModelAndView("forward:/con/consearch.do");
         int i=contractService.deleteByPrimaryKey(contractid);
         if(i==0){

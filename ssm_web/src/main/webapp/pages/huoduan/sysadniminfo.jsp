@@ -1,22 +1,43 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/4/24 0024
+  Time: 下午 4:51
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
+<base href="<%=basePath%>">
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
+
     <!-- Bootstrap Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- FontAwesome Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Morris Chart Styles-->
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet"/>
 
     <!-- Custom Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet"/>
     <!-- Google Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- TABLE STYLES-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <!-- Morris Chart Styles-->
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css"
+          rel="stylesheet"/>
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -28,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -96,7 +117,8 @@
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (success)</span>
                                     </div>
                                 </div>
@@ -112,7 +134,8 @@
                                     <span class="pull-right text-muted">28% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 28%">
                                         <span class="sr-only">28% Complete</span>
                                     </div>
                                 </div>
@@ -128,7 +151,8 @@
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -144,7 +168,8 @@
                                     <span class="pull-right text-muted">85% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 85%">
                                         <span class="sr-only">85% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -242,32 +267,11 @@
     </nav>
     <!--/. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
+        <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
-
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i>图表</a>
-                </li>
-                <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
-                </li>
-                <li>
-                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
-                </li>
-                <li>
-                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
-                </li>
-
-                <li>
-                    <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
-                </li>
-                <li>
-                    <a href="form.html"><i class="fa fa-edit"></i>表单 </a>
-                </li>
-
-
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-desktop"></i> 人事管理 <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -276,38 +280,221 @@
                             <a href="#">Second Level Link</a>
                         </li>
                         <li>
-                            <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Link</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Link</a>
-                                </li>
-
-                            </ul>
-
+                            <a href="#">Second Level Link</a>
                         </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
                     </ul>
                 </li>
+
                 <li>
-                    <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
+                    <a href="#"><i class="fa fa-desktop"></i> 收费管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
                 </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 能耗管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 新闻管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 房屋管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 业主管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 项目管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="">所有工作人员</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <%--<li>
+                    <a href="#"><i class="fa fa-desktop"></i> null <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Link</a>
+                        </li>--%>
+
+            </ul>
+            </li>
+
             </ul>
 
         </div>
 
     </nav>
     <!-- /. NAV SIDE  -->
-    <div id="page-wrapper" >
+    <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        表格页面 <small>响应表</small>
+                        优秀员工
+                        <small></small>
                     </h1>
                 </div>
             </div>
@@ -318,33 +505,40 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            高级表
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>电表ID</th>
-                                        <th>电表编号</th>
-                                        <th>房屋号/引用house表的houseid</th>
-                                        <th>用电量/度</th>
-                                        <th>年月份</th>
-                                        <th>操作</th>
+                                        <th>ID</th>
+                                        <th>名字</th>
+                                        <th>密码</th>
+                                        <th>电话</th>
+                                        <th>邮箱</th>
+                                        <th>头像</th>
+                                        <th>状态</th>
+                                        <th>个性签名</th>
+                                        <th>类型ID</th>
+                                        <%--<th>操作</th>--%>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${electricList}" var="electric">
+                                    <c:forEach items="${sysAdminInfoList}" var="sai">
 
                                         <tr class="odd gradeX">
-                                            <td>${electric.electricid}</td>
-                                            <td>${electric.enumber}</td>
-                                            <td>${electric.houseid}</td>
-                                            <td>${electric.electric}</td>
-                                            <td>${electric.monthStr}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/electric/findById.do?id=${electric.electricid}'"><i class="fa fa-edit " ></i> 修改</button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/electric/delete.do?id=${electric.electricid}'"><i class="fa fa-pencil"  ></i> 删除</button></td>
+                                            <td>${sai.userid}</td>
+                                            <td>${sai.username}</td>
+                                            <td>${sai.userpass}</td>
+                                            <td>${sai.userphone}</td>
+                                            <td>${sai.usermail}</td>
+                                            <td>${sai.userqqface}</td>
+                                            <td>${sai.userflag}</td>
+                                            <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${sai.userstyle}</td>
+                                            <td>${sai.roleid}</td>
+                                                <%--<td>${sai.username}</td>--%>
                                         </tr>
+
                                     </c:forEach>
                                     </tbody>
                                 </table>
@@ -355,15 +549,10 @@
                     <!--End Advanced Tables -->
                 </div>
             </div>
-            <!-- /. ROW  -->
 
         </div>
     </div>
-    <!-- /. ROW  -->
-</div>
-<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
-</div>
-<!-- /. PAGE INNER  -->
+    <!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
@@ -388,3 +577,4 @@
 
 </body>
 </html>
+

@@ -25,17 +25,19 @@ public interface OwerHouseTypeMapper {
         "insert into ower_house_type (olName, hNumber, ",
         "hState, hBulidingName, ",
         "hUnitNumber, hFloor, ",
-        "hTypeid, hDirection, ",
-        "hArea, hRemarks, ",
-        "Loan, hTypeName, ",
-        "htPropertyRight, olPhone)",
+        "hDirection, hArea, ",
+        "hRemarks, Loan, ",
+        "hTypeName, htPropertyRight, ",
+        "olPhone, olId, hid, ",
+        "hTypeId)",
         "values (#{olname,jdbcType=VARCHAR}, #{hnumber,jdbcType=VARCHAR}, ",
         "#{hstate,jdbcType=VARCHAR}, #{hbulidingname,jdbcType=VARCHAR}, ",
         "#{hunitnumber,jdbcType=INTEGER}, #{hfloor,jdbcType=INTEGER}, ",
-        "#{htypeid,jdbcType=INTEGER}, #{hdirection,jdbcType=VARCHAR}, ",
-        "#{harea,jdbcType=VARCHAR}, #{hremarks,jdbcType=VARCHAR}, ",
-        "#{loan,jdbcType=INTEGER}, #{htypename,jdbcType=VARCHAR}, ",
-        "#{htpropertyright,jdbcType=VARCHAR}, #{olphone,jdbcType=VARCHAR})"
+        "#{hdirection,jdbcType=VARCHAR}, #{harea,jdbcType=VARCHAR}, ",
+        "#{hremarks,jdbcType=VARCHAR}, #{loan,jdbcType=INTEGER}, ",
+        "#{htypename,jdbcType=VARCHAR}, #{htpropertyright,jdbcType=VARCHAR}, ",
+        "#{olphone,jdbcType=VARCHAR}, #{olid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER}, ",
+        "#{htypeid,jdbcType=INTEGER})"
     })
     int insert(OwerHouseType record);
 
@@ -50,14 +52,16 @@ public interface OwerHouseTypeMapper {
         @Result(column="hBulidingName", property="hbulidingname", jdbcType=JdbcType.VARCHAR),
         @Result(column="hUnitNumber", property="hunitnumber", jdbcType=JdbcType.INTEGER),
         @Result(column="hFloor", property="hfloor", jdbcType=JdbcType.INTEGER),
-        @Result(column="hTypeid", property="htypeid", jdbcType=JdbcType.INTEGER),
         @Result(column="hDirection", property="hdirection", jdbcType=JdbcType.VARCHAR),
         @Result(column="hArea", property="harea", jdbcType=JdbcType.VARCHAR),
         @Result(column="hRemarks", property="hremarks", jdbcType=JdbcType.VARCHAR),
         @Result(column="Loan", property="loan", jdbcType=JdbcType.INTEGER),
         @Result(column="hTypeName", property="htypename", jdbcType=JdbcType.VARCHAR),
         @Result(column="htPropertyRight", property="htpropertyright", jdbcType=JdbcType.VARCHAR),
-        @Result(column="olPhone", property="olphone", jdbcType=JdbcType.VARCHAR)
+        @Result(column="olPhone", property="olphone", jdbcType=JdbcType.VARCHAR),
+        @Result(column="olId", property="olid", jdbcType=JdbcType.INTEGER),
+        @Result(column="hid", property="hid", jdbcType=JdbcType.INTEGER),
+        @Result(column="hTypeId", property="htypeid", jdbcType=JdbcType.INTEGER)
     })
     List<OwerHouseType> selectByExampleWithRowbounds(OwerHouseTypeExample example, RowBounds rowBounds);
 
@@ -69,14 +73,16 @@ public interface OwerHouseTypeMapper {
         @Result(column="hBulidingName", property="hbulidingname", jdbcType=JdbcType.VARCHAR),
         @Result(column="hUnitNumber", property="hunitnumber", jdbcType=JdbcType.INTEGER),
         @Result(column="hFloor", property="hfloor", jdbcType=JdbcType.INTEGER),
-        @Result(column="hTypeid", property="htypeid", jdbcType=JdbcType.INTEGER),
         @Result(column="hDirection", property="hdirection", jdbcType=JdbcType.VARCHAR),
         @Result(column="hArea", property="harea", jdbcType=JdbcType.VARCHAR),
         @Result(column="hRemarks", property="hremarks", jdbcType=JdbcType.VARCHAR),
         @Result(column="Loan", property="loan", jdbcType=JdbcType.INTEGER),
         @Result(column="hTypeName", property="htypename", jdbcType=JdbcType.VARCHAR),
         @Result(column="htPropertyRight", property="htpropertyright", jdbcType=JdbcType.VARCHAR),
-        @Result(column="olPhone", property="olphone", jdbcType=JdbcType.VARCHAR)
+        @Result(column="olPhone", property="olphone", jdbcType=JdbcType.VARCHAR),
+        @Result(column="olId", property="olid", jdbcType=JdbcType.INTEGER),
+        @Result(column="hid", property="hid", jdbcType=JdbcType.INTEGER),
+        @Result(column="hTypeId", property="htypeid", jdbcType=JdbcType.INTEGER)
     })
     List<OwerHouseType> selectByExample(OwerHouseTypeExample example);
 

@@ -40,10 +40,11 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
+    <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
@@ -68,35 +69,33 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>合同名字</th>
-                                        <th>合同类型</th>
-                                        <th>起始时间</th>
-                                        <th>终止时间</th>
-                                        <th>合同描述</th>
-                                        <th>合同编号</th>
-                                        <th>签约人</th>
-                                        <th>联系方式</th>
+                                        <th>燃气表编号</th>
+                                        <th>房屋号</th>
+                                        <th>燃气用量</th>
+                                        <th>年月份</th>
+                                        <th>业主名</th>
+                                        <th>业主电话</th>
+
                                         <th>操作</th>
 
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                            <c:forEach  items="${contractList}" var="sm">
+                            <c:forEach  items="${gasAndOwers}" var="gasAndOwers">
                                     <tr class="gradeA">
-                                        <td>${sm.contractid}</td>
-                                        <td>${sm.contractname}</td>
-                                        <td>${sm.contracttype}</td>
+                                        <td>${gasAndOwers.id}</td>
+                                        <td>${gasAndOwers.gasnumber}</td>
+                                        <td>${gasAndOwers.houseid}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy-MM-dd'/></td>
+                                        <td class="center">${gasAndOwers.gas}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy-MM-dd'/></td>
-                                        <td>${sm.contractdes}</td>
-                                        <td>${sm.contractnum}</td>
-                                        <td>${sm.signingpeople}</td>
-                                        <td>${sm.signatorytelephone}</td>
-                                        <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                            <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                        <td class="center"><fmt:formatDate value='${gasAndOwers.month}' pattern='yyyy年MM月'/></td>
+                                        <td>${gasAndOwers.olname}</td>
+                                        <td>${gasAndOwers.olphone}</td>
+
+                                        <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
+                                            <button style="margin-right: 10px" class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
                                     </tr>
                                     </c:forEach>
                                     </tbody>
@@ -107,8 +106,11 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
+
+
+
+</body>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -128,8 +130,5 @@
 </script>
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
-
-
-</body>
 </html>
 

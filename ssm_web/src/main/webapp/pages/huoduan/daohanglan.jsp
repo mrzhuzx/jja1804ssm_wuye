@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!--/. NAV TOP  -->
 <nav class="navbar-default navbar-side" role="navigation">
     <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
@@ -34,16 +35,19 @@
                 <a href="#"><i class="fa fa-desktop"></i> 收费管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/water/searchAll.do">水务管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ele/searchAll.do">电力管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/gas/searchAll.do">燃气管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">收费管理</a>
+                    </li>
+                    <li>
+                        <a href="#">收费标准管理</a>
                     </li>
 
                 </ul>
@@ -145,7 +149,7 @@
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">所有工作人员</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -186,7 +190,7 @@
                         <a href="${pageContext.request.contextPath}/con/consearch.do">合同查询</a>
                     </li>
                     <li>
-                        <a href="hetongadd.jsp">合同添加</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
