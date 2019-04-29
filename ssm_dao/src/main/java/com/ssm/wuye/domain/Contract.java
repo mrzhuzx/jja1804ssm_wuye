@@ -216,17 +216,19 @@ public class Contract extends BaseEntity {
         this.contractnum = contractnum == null ? null : contractnum.trim();
     }
 
-//    public Contract(Integer contractid, String contractname, String contracttype, Date contractstart, Date contractend, String contractdes, String signingpeople, String signatorytelephone, String contractnum) {
-//        this.contractid = contractid;
-//        this.contractname = contractname;
-//        this.contracttype = contracttype;
-//        this.contractstart = contractstart;
-//        this.contractend = contractend;
-//        this.contractdes = contractdes;
-//        this.signingpeople = signingpeople;
-//        this.signatorytelephone = signatorytelephone;
-//        this.contractnum = contractnum;
-//    }
+    public Contract() {
+    }
+        public Contract(Integer contractid, String contractname, String contracttype, Date contractstart, Date contractend, String contractdes, String signingpeople, String signatorytelephone, String contractnum) {
+        this.contractid = contractid;
+        this.contractname = contractname;
+        this.contracttype = contracttype;
+        this.contractstart = contractstart;
+        this.contractend = contractend;
+        this.contractdes = contractdes;
+        this.signingpeople = signingpeople;
+        this.signatorytelephone = signatorytelephone;
+        this.contractnum = contractnum;
+    }
 
     @Override
     public String toString() {
