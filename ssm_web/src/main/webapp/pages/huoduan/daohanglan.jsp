@@ -76,18 +76,13 @@
                 <a href="#"><i class="fa fa-desktop"></i> 新闻管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/nt/htnewstype.do">新闻类别</a>
                     </li>
 
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/news/htnews.do">新闻详情</a>
                     </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
+
 
                 </ul>
             </li>
@@ -198,10 +193,10 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/cont/ctsearch.do">类别管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/htsave.jsp">类型添加</a>
                     </li>
 
                 </ul>

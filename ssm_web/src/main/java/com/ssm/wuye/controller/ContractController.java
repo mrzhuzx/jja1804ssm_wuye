@@ -49,7 +49,7 @@ public class ContractController {
      */
     @RequestMapping("consave")
     public ModelAndView contractsave(@ModelAttribute Contract con ){
-        ModelAndView m = new ModelAndView("forward:/con/consearch.do");
+        ModelAndView m = new ModelAndView("redirect:/con/consearch.do");
         int i=contractService.insertSelective(con);
        if(i==0){
             System.out.println("增加失败");

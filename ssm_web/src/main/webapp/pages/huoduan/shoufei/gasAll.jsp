@@ -55,8 +55,8 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-
-            <div class="row">
+            <a href="${pageContext.request.contextPath}/pages/huoduan/shoufei/gasAdd.jsp" class="btn btn-success">&nbsp抄&nbsp燃&nbsp气&nbsp表&nbsp</a>
+            <div style="padding-top: 20px" class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">

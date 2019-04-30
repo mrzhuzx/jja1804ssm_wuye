@@ -5,6 +5,7 @@ import com.ssm.wuye.domain.ChElectricMeterExample;
 import com.ssm.wuye.vo.ElectricAndOwer;
 
 
+
 import java.util.List;
 
 /**
@@ -17,4 +18,10 @@ public interface ChElectricSercice {
     List<ChElectricMeter> selectByExample(ChElectricMeterExample example);
 
     List<ElectricAndOwer> selectAll();
+
+    ChElectricMeter selectByPrimaryKey(Integer electricid);
+
+    int insertSelective(ChElectricMeter record);
+
+    int updateByExampleSelective( ChElectricMeter record, ChElectricMeterExample example);
 }

@@ -1,8 +1,11 @@
 package com.ssm.wuye.service;
 
+
+
 import com.ssm.wuye.domain.ChWaterMeter;
 import com.ssm.wuye.domain.ChWaterMeterExample;
 import com.ssm.wuye.vo.WaterAndOwer;
+
 
 import java.util.List;
 
@@ -20,5 +23,11 @@ public interface ChWaterService {
      * @return
      */
     List<WaterAndOwer> selectAll();
+
+    ChWaterMeter selectByPrimaryKey(Integer waterid);
+
+    int insertSelective(ChWaterMeter record);
+
+    int updateByExampleSelective(ChWaterMeter record,ChWaterMeterExample example);
 
 }
