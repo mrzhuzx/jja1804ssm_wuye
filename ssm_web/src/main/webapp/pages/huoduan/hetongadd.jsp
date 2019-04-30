@@ -51,7 +51,6 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form action="${pageContext.request.contextPath}/con/consave.do" method="post">
-
                                         <div  >
                                             <label>合同编号</label>
                                             <input class="form-control" placeholder="合同编号" value="No.1258011008" name="contractnum" >

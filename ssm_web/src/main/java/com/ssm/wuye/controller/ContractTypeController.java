@@ -42,9 +42,9 @@ public class ContractTypeController {
      * 增加一种类型
      */
     @RequestMapping("ctsave")
-    public  ModelAndView  ctsave(@ModelAttribute ContractType ct){
+    public  ModelAndView  ctsave(@ModelAttribute ContractType contypetid){
         ModelAndView  m=new ModelAndView("redirect:/cont/ctsearch.do");
-        int i=contractTypeService.insertSelective(ct);
+        int i=contractTypeService.insertSelective(contypetid);
         if(i==0){
             System.out.println("增加失败");
         }else {
@@ -70,7 +70,7 @@ public class ContractTypeController {
      */
   @RequestMapping("ctupdate")
     public ModelAndView ctupdate(@ModelAttribute ContractType cont){
-      ModelAndView m=new ModelAndView("pages/huoduan/htupdate");
+      ModelAndView m=new ModelAndView("redirect:/cont/ctsearch.do");
       int i=contractTypeService.updateByPrimaryKeySelective(cont);
       if(i==0){
           System.out.println("修改失败");

@@ -57,7 +57,7 @@
 
                                         <div  >
                                             <label>合同ID</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractid}" name="contractid">
+                                            <input class="form-control" placeholder="" value="${contract.contractid}" name="contractid" readonly="readonly" >
                                         </div>
                                         <div  >
                                             <label>合同编号</label>
