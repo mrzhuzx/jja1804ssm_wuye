@@ -43,27 +43,39 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           房屋类型
+                           房屋信息
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>房屋类型ID</th>
-                                        <th>房屋类型名字</th>
-                                        <th>房屋类型年限</th>
+                                        <th>房屋编号</th>
+                                        <th>楼宇名称</th>
+                                        <th>楼号楼层</th>
+                                        <th>房屋面积</th>
+                                        <th>房屋状态</th>
+                                        <th>出租状态</th>
+                                        <th>房屋类型</th>
+                                        <th>产权年限</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${mhtList}" var="mth">
+                                    <c:forEach items="${hstate}" var="oth">
                                         <tr class="odd gradeX">
-                                            <td>${mth.htypeid}</td>
-                                            <td>${mth.htypename}</td>
-                                            <td>${mth.htpropertyright}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/mht/tzmht.do?htypeid=${mth.htypeid}'"><i class="fa fa-edit " ></i>编辑</button>
-                                                <%--<button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/mht/deletemht.do?htypeid=${mth.htypeid}'"><i class="fa fa-pencil" ></i> 删除</button>--%>
+                                            <td>${oth.hnumber}</td>
+                                            <td>${oth.hbulidingname}</td>
+                                            <td>${oth.hunitnumber}号${oth.hfloor}楼</td>
+                                            <td>${oth.harea}</td>
+                                            <td>${oth.hstate}</td>
+                                            <td><c:if test="${oth.loan eq 0}">不租</c:if>
+                                                <c:if test="${oth.loan eq 1}">已租</c:if>
+                                                <c:if test="${oth.loan eq 2}">待租</c:if></td>
+                                            <td>${oth.htypename}</td>
+                                            <td>${oth.htpropertyright}</td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/house/houset.do?hid=${oth.hid}'"><i class="fa fa-edit " ></i>编辑</button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/house/deletedhouse.do?hid=${oth.hid}'"><i class="fa fa-pencil" ></i> 删除</button>
                                             <%--<button class="btn btn-success"><i class="fa fa-save " onclick="location.href='${pageContext.request.contextPath}/nt/htntidadd.do?ntid=${htnestype.ntid}'"></i> 保存</button>--%>
                                             </td>
                                         </tr>

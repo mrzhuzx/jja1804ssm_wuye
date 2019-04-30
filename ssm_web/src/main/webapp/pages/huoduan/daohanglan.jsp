@@ -91,10 +91,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 房屋管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">房屋信息</a>
+                        <a href="${pageContext.request.contextPath}/house/querht.do">房屋信息</a>
                     </li>
                     <li>
-                        <a href="#">添加房屋</a>
+                        <a href="${pageContext.request.contextPath}/house/tzaddhouse.do">添加房屋</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/mht/querymht.do">房屋类型</a>
