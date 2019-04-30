@@ -1,7 +1,6 @@
 package com.ssm.wuye.service.impl;
 
 import com.ssm.wuye.dao.TbMatterMapper;
-import com.ssm.wuye.dao.TbPayMapper;
 import com.ssm.wuye.domain.TbMatter;
 import com.ssm.wuye.domain.TbMatterExample;
 import com.ssm.wuye.service.TbMatterService;

@@ -61,27 +61,21 @@
                  </div>
                  <div class="form-group has-success">
                      <h4><label class="control-label" for="inputSuccess">状态</label>
-                         <select class="form-control" placeholder="" name="contracttype" value="启用" name="userflag">
+                         <select class="form-control" placeholder="" name="contracttype" value="工作中" name="userflag">
                              <option>请选择类型</option>
-                             <option>启用</option>
-                             <option>禁用</option>
+                             <option>工作中</option>
+                             <option>休假</option>
                          </select>
                  <div class="form-group has-success">
                      <h4><label class="control-label" for="inputSuccess">个性签名</label>
                          <input type="text" class="form-control" id="" value="是个弟弟" name="userstyle"></h4>
 
                  </div>
-                 <div class="form-group has-success">
-                     <h4><label class="control-label" for="inputSuccess">类型ID</label>
-                         <select class="form-control" placeholder="" name="contracttype" value="" name="roleid">
-                             <option>请选择类型</option>
-                             <option>6保洁</option>
-                             <option>7保安</option>
-                             <option>8保安队长</option>
-                         </select>
-                     </h4>
+                         <div class="form-group has-success">
+                             <h4><label class="control-label" for="inputSuccess">职位</label>
+                                 <input type="text" class="form-control" id="wrapper" value="保安" name="rolename"></h4>
 
-                 </div>
+                         </div>
                  <div>
 
                      <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
