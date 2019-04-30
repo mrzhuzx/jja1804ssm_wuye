@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
-        <title>增加家人</title>
+        <title>房屋出售</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/index.css" type="text/css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/zym.css" type="text/css">
 
@@ -22,7 +22,7 @@
         <div class="tou_zj">
             <div class="hy">
                 <img src="pages/gitqian/images/tou_tb_03.png">
-                <span>欢迎来到国贸物业管理有限公司</span>
+                <span>欢迎来到贵州国贸物业管理有限公司</span>
             </div>
             <div class="soucang">
                 <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">用户登入</a></c:if>
@@ -54,10 +54,10 @@
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="ohtc/qtcxhstate.do">房屋出售</a>
+                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
                                     </li>
                                     <li>
-                                        <a href="ohtc/qtcxloan.do">房屋出租</a>
+                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
                                     </li>
                                 </ul>
                             </div>
@@ -158,7 +158,7 @@
         <div class="women">
             <div class="btmc">
                 <h1>N</h1>
-                <p>业主信息<span>ews</span></p>
+                <p>公司动态<span>ews</span></p>
             </div>
             <ul class="skb">
                 <li style="background: #005bac; width: 25%;"></li>
@@ -168,20 +168,17 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a  href="ower/query.do?olid=${ower.olid}">个人信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/of.do?olid=${ower.olid}">家庭成员</a></li>
-                <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="ower/tzzjof.do?olid=${ower.olid}">增加家人</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="#">车位信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="#">缴费信息</a></li>
+                <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a></li>
+                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a></li>
+
             </ul>
         </div>
     </div>
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-            <h2>个人信息</h2>
-            <p>您的位置：首页 > 业主信息 >个人信息</p>
+            <h2>房屋信息</h2>
+            <p>您的位置：首页 > 房屋租售 > 房屋出售</p>
         </div>
         <ul class="skb" style="margin-bottom: 20px;">
             <li style="background: #005bac; width: 12%;"></li>
@@ -191,26 +188,33 @@
 
         <!--内容-->
         <div class="gsjj_nr">
-            <form method="post" action="ower/zjof.do?olid=${ower.olid}">
-            <ul>
-                <li>
-                <div style="margin:10px 0px;" >
-                    成员姓名：<input type="text"  name="ofname" value="队长" />
-                </div><div style="margin:10px 0px;">
-                    成员性别：<input type="text" name="ofsex" value="男"/>
-                </div><div style="margin:10px 0px;">
-                    成员籍贯：<input type="text"  name="ofhomeplace" value="中国人民共和国" />
-                </div><div style="margin:10px 0px;">
-                    成员电话：<input type="text"  name="oftel" value="12580"/>
-                </div><div style="margin:10px 0px;">
-                    与业主关系：<input type="text"  name="ofnexus" value="父子"/>
-                </div>
-                </li>
-                <hr>
-                <button type="submit">增加<span style="width:20px;"></span>成员</button>
-                </li>
+            <ul class="xwlb_bj">
+                <c:forEach var="oth" items="${hstate}">
+                    <h3><br>
+                        房屋编号: ${oth.hnumber}&nbsp;|&nbsp;
+                        楼宇名称：${oth.hbulidingname}&nbsp;|&nbsp;
+                        房屋描述：${oth.hremarks}<br>
+                        楼宇编号：${oth.hunitnumber}&nbsp;|&nbsp;
+                        房屋楼层：${oth.hfloor}&nbsp;|&nbsp;
+                        类型名字：${oth.htypename}&nbsp;|&nbsp;
+                        房屋朝向：${oth.hdirection}&nbsp;|&nbsp;
+                        房屋面积：${oth.harea}&nbsp;|&nbsp;
+                        房屋状态：${oth.hstate}&nbsp;|&nbsp;
+                        出租状态：<c:if test="${oth.loan eq 0}">不租</c:if>
+                                  <c:if test="${oth.loan eq 1}">已租</c:if>
+                                  <c:if test="${oth.loan eq 2}">待租</c:if><br>
+                        业主姓名：${oth.olname}&nbsp;|&nbsp;
+                        业主手机号码：${oth.olphone}<br>
+                    </h3><br>
+                    <hr>
+                </c:forEach>
             </ul>
-            </form>
+            <div class="webdiyerCss">
+            <a href="ohtc/qtcxhstate.do?pageNum=1"  style="margin-right:5px;">首页</a>
+            <a href="ohtc/qtcxhstate.do?pageNum=${pageNum-1}"  style="margin-right:5px;">上一页</a>
+            <a href="ohtc/qtcxhstate.do?pageNum=${pageNum+1}" style="margin-right:5px;">下一页</a>
+            <a href="ohtc/qtcxhstate.do?pageNum=${pageAll}" style="margin-right:5px;">尾页</a>
+            </div>
         </div>
     </div>
 </div>
