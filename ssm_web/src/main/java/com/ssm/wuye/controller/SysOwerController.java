@@ -174,6 +174,7 @@ public class SysOwerController {
         m.addObject("ower", sysOwer);
         return m;
     }
+
     @RequestMapping("czfw")//房屋租借
     public ModelAndView czfwolan(@RequestParam Integer hid,@RequestParam Integer olid ,@RequestParam Integer olan){
         ModelAndView m=new ModelAndView("forward:/ower/ckhouse.do");

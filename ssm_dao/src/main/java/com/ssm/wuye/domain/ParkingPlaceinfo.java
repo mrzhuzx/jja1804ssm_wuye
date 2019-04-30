@@ -4,6 +4,8 @@ import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -11,6 +13,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "parking_placeinfo")
 @Alias("parkingPlaceinfo")
+@Data
 public class ParkingPlaceinfo extends BaseEntity {
     /**
      * 主键/自动递增
@@ -166,4 +169,13 @@ public class ParkingPlaceinfo extends BaseEntity {
     public void setDescr(String descr) {
         this.descr = descr == null ? null : descr.trim();
     }
+
+    public ParkingPlaceinfo(Integer hid,  String descr) {
+        this.hid = hid;
+        this.descr = descr;
+    }
+
+    public ParkingPlaceinfo() {
+    }
+
 }

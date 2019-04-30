@@ -50,6 +50,18 @@ public class NewsTypeServiceImplTest {
             System.out.println(newsType.getNtypename());
         }
     }
+    @Test
+    public  void update(){
+        NewsType newsType = new NewsType();
+        newsType.setNtypename("g99gggg");
+        newsType.setNtid(16);
+        int i = newsTypeService.updateByPrimaryKeySelective(newsType);
+        if (i==1){
+            System.out.println("更新成功");
+        }else {
+            System.out.println("更新失败");
+        }
+    }
 
 
 }

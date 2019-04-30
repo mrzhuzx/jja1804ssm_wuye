@@ -101,7 +101,7 @@
                                         <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">车位信息</a>
+                                        <a href="parking/pk_list.do?olid=${ower.olid}">车位信息</a>
                                     </li>
                                     <li>
                                         <a href="#">缴费信息</a>
