@@ -99,15 +99,17 @@ public class MyhouseController {
      */
     @RequestMapping("weg")
     public ModelAndView weg(@RequestParam String op){
+        System.out.println(op);
         ModelAndView modelAndView=new ModelAndView();
         if ("water".equals(op)){
+            System.out.println(op);
             modelAndView.setViewName("pages/huoduan/shoufei/waterAdd");
-        }if ("gas".equals(op)){
+        }else if ("gas".equals(op)){
             modelAndView.setViewName("pages/huoduan/shoufei/gasAdd");
-        }if ("electric".equals(op)){
+        }else if ("electric".equals(op)){
             modelAndView.setViewName("pages/huoduan/shoufei/electricAdd");
         }else {
-            System.out.println("错误请求！！！！");
+            System.out.println("错误请求！！！");
         }
         List<MyHouse> myHouseList = myHouseService.selectByExample(null);
         modelAndView.addObject("myHouseList",myHouseList);

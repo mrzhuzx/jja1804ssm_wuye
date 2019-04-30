@@ -15,7 +15,6 @@
     <!-- Bootstrap Styles-->
 
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
-
     <!-- FontAwesome Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
@@ -26,11 +25,11 @@
 </head>
 <body>
 <div id="wrapper">
-   <%--头部--%>
-    <jsp:include page="../toubu.jsp"></jsp:include>
+    <%--头部--%>
+    <jsp:include page="toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="../daohanglan.jsp"></jsp:include>
+    <jsp:include page="daohanglan.jsp"></jsp:include>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -46,42 +45,24 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           抄电表
+                            修改房屋类型
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/ele/insertOne.do" method="post">
-
-
-
-                                        <div class="form-group">
-                                            <label>房屋ID</label>
-                                            <select class="form-control" placeholder="" name="houseid">
-                                                <c:forEach items="${myHouseList}" var="mh" >
-                                                    <option value="${mh.hid}">${mh.hid}----${mh.hbulidingname}</option>
-                                                </c:forEach>
-                                            </select>
-                                        </div>
-                                        <span style="position: absolute;padding-left: 260px;padding-top: 30px">度</span>
+                                    <form action="${pageContext.request.contextPath}/mht/updatemht.do?htypeid=${mht.htypeid}" method="post">
                                         <div  >
-                                            <label>用电量</label>
-                                            <input class="form-control" placeholder="用电量" value="139" name="electric" >
-
+                                            <label>房屋类型</label>
+                                            <input class="form-control" type="text" value="${mht.htypename}" name="htypename" >
                                         </div>
-
                                         <div  >
-                                            <label>抄表时间</label>
-                                            <input class="form-control" placeholder="年月份" id="dateid"  name="month">
+                                            <label>房屋年限</label>
+                                            <input class="form-control" type="text" value="${mht.htpropertyright}" name="htpropertyright" >
                                         </div>
-
-
-
-
                                         <br>
                                         <div>
 
-                                           <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
+                                           <button type="submit" class="btn btn-success"><i class=""></i> 确认修改 </button>
 
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
@@ -121,26 +102,9 @@
 
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
-<script>
-        $(document).ready(function() {
-            $('#dateid').datepicker({
-                format : "yyyy-mm-dd",
-                autoclose: true,
-                language: 'zh-CN'
-            });
-        });
-    </script>
-        <script>
-            $(document).ready(function() {
-                $('#date').datepicker({
-                    format : "yyyy-mm-dd",
-                    autoclose: true,
-                    language: 'zh-CN'
-                });
-            });
-        </script>
+<script src="${pageContext.request.contextPath}/plugins/jquery-2.2.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/plugins/bootstrap-datepicker.js"></script>
+
 
 
 
