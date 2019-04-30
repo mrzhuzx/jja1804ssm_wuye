@@ -168,10 +168,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/fantai/search.do">防台物资</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -193,10 +193,10 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/cont/ctsearch.do">类别管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/htsave.jsp">类型添加</a>
                     </li>
 
                 </ul>

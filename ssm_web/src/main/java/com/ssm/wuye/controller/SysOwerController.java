@@ -6,13 +6,16 @@ package com.ssm.wuye.controller;
 
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.*;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 ;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -30,6 +33,8 @@ public class SysOwerController {
     NewsTypeService newsTypeService;
     @Autowired
     OwerHouseTypeService owerHouseTypeService;
+    @Resource
+    SysOfVoService sysOfVoService;
 
 
 
@@ -197,6 +202,77 @@ public class SysOwerController {
         }
         return m;
     }
-
-
+//    @RequestMapping("querower")//后台查询业主
+//    public  ModelAndView querower(@RequestParam Integer pageNum){
+//        ModelAndView m=new ModelAndView();
+//        SysOwerExample sysOwerExample=new SysOwerExample();
+//        Integer Size=6;
+//        long l =sysOwerService.countByExample(sysOwerExample);
+//        Integer con =(int)l;
+//        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
+//        if (pageNum<=1){
+//            pageNum = 1;
+//        }
+//        if (pageNum>pageAll){
+//            pageNum=pageAll;
+//        }
+//        Integer Num =Size*(pageNum-1);
+//        List<SysOwer> sysOwerList = sysOwerService.selectByExampleWithRowbounds(sysOwerExample, new RowBounds(pageNum, Size));
+//        m.addObject("pageAll", pageAll);
+//        m.addObject("pageNum", pageNum);
+//        m.addObject("ower", sysOwerList);
+//        return m;
+//    }
+//    @RequestMapping("querof")//后台查询业主家庭信息
+//    public  ModelAndView querowerf(@RequestParam Integer pageNum){
+//        ModelAndView m=new ModelAndView();
+//        SysOfVoExample sysOfVoExample=new SysOfVoExample();
+//        Integer Size=6;
+//        long l =sysOfVoService.countByExample(sysOfVoExample);
+//        Integer con =(int)l;
+//        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
+//        if (pageNum<=1){
+//            pageNum = 1;
+//        }
+//        if (pageNum>pageAll){
+//            pageNum=pageAll;
+//        }
+//        Integer Num =Size*(pageNum-1);
+//        List<SysOfVo> sysOfVoList = sysOfVoService.selectByExampleWithRowbounds(sysOfVoExample, new RowBounds(pageNum, Size));
+//        m.addObject("pageAll", pageAll);
+//        m.addObject("pageNum", pageNum);
+//        m.addObject("ower", sysOfVoList);
+//        return m;
+//    }
+//    @RequestMapping("deletedower")//删除业主
+//    public ModelAndView deleteower(@RequestParam Integer olid,@RequestParam Integer pageNum){
+//        ModelAndView m=new ModelAndView("forward:/ower/querower.do");
+//        int i = sysOwerService.deleteByPrimaryKey(olid);
+//        return m;
+//    }
+//    @RequestMapping("")//跳转增加业主
+//    public ModelAndView eower(){
+//        ModelAndView m=new ModelAndView("");
+//
+//        return m;
+//    }
+//    @RequestMapping("")//增加业主
+//    public ModelAndView addower(@ModelAttribute SysOwer sysOwer, @RequestParam Integer pageNum){
+//        ModelAndView m=new ModelAndView("forward:/ower/querower.do");
+//        sysOwerService.insertSelective(sysOwer);
+//        return m;
+//    }
+//    @RequestMapping("")//跳转修改业主
+//    public ModelAndView tzower(){
+//        ModelAndView m=new ModelAndView("");
+//
+//        return m;
+//    }
+//    @RequestMapping("")//修改业主
+//    public ModelAndView updateower(@ModelAttribute SysOwer sysOwer, @RequestParam Integer pageNum){
+//        ModelAndView m=new ModelAndView("forward:/ower/querower.do");
+//        sysOwerService.updateByPrimaryKeySelective(sysOwer);
+//        return m;
+//    }
+//
 }

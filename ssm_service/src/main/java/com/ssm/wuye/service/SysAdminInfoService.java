@@ -6,8 +6,6 @@ package com.ssm.wuye.service;
  *version:1.2.3
  */
 
-import com.ssm.wuye.appcomm.BaseService;
-import com.ssm.wuye.domain.Contract;
 import com.ssm.wuye.domain.SysAdminInfo;
 import com.ssm.wuye.domain.SysAdminInfoExample;
 import org.apache.ibatis.session.RowBounds;
