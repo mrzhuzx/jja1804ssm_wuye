@@ -73,7 +73,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-desktop"></i> 新闻管理 <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-desktop"></i> 信息发布 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="${pageContext.request.contextPath}/nt/htnewstype.do">新闻类别</a>
@@ -82,6 +82,19 @@
                     <li>
                         <a href="${pageContext.request.contextPath}/news/htnews.do">新闻详情</a>
                     </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">建立新活动</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">活动信息记录</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">招聘信息记录</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">新建招聘信息</a>
+                    </li>
+
 
 
                 </ul>
