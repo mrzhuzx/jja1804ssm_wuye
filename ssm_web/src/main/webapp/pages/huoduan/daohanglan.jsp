@@ -124,18 +124,14 @@
                 <a href="#"><i class="fa fa-desktop"></i> 业主管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ower/querower.do">业主信息</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ower/querof.do">业主家庭信息</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/ower/eower.do">增加业主</a>
                     </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-
                 </ul>
             </li>
 

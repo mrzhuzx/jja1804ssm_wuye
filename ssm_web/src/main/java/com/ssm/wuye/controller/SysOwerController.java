@@ -6,10 +6,8 @@ package com.ssm.wuye.controller;
 
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.*;
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,8 +33,6 @@ public class SysOwerController {
     OwerHouseTypeService owerHouseTypeService;
     @Resource
     SysOfVoService sysOfVoService;
-    @Resource
-    SysRoleService sysRoleService;
 
 
 
@@ -204,30 +200,18 @@ public class SysOwerController {
         }
         return m;
     }
+    //-------------------------------------------封口线-----------------------------------------------------------------
     @RequestMapping("querower")//后台查询业主
-    public  ModelAndView querower(@RequestParam Integer pageNum){
-        ModelAndView m=new ModelAndView();
+    public  ModelAndView querower(){
+        ModelAndView m=new ModelAndView("pages/huoduan/ower");
         SysOwerExample sysOwerExample=new SysOwerExample();
-        Integer Size=6;
-        long l =sysOwerService.countByExample(sysOwerExample);
-        Integer con =(int)l;
-        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
-        if (pageNum<=1){
-            pageNum = 1;
-        }
-        if (pageNum>pageAll){
-            pageNum=pageAll;
-        }
-        Integer Num =Size*(pageNum-1);
-        List<SysOwer> sysOwerList = sysOwerService.selectByExampleWithRowbounds(sysOwerExample, new RowBounds(pageNum, Size));
-        m.addObject("pageAll", pageAll);
-        m.addObject("pageNum", pageNum);
+        List<SysOwer> sysOwerList = sysOwerService.selectByExample(sysOwerExample);
         m.addObject("ower", sysOwerList);
         return m;
     }
     @RequestMapping("querof")//后台查询业主家庭信息
     public  ModelAndView querowerf(){
-        ModelAndView m=new ModelAndView();
+        ModelAndView m=new ModelAndView("pages/huoduan/owerfamliy");
         SysOfVoExample sysOfVoExample=new SysOfVoExample();
         List<SysOfVo> sysOfVoList = sysOfVoService.selectByExample(sysOfVoExample);
         m.addObject("ower", sysOfVoList);
@@ -235,39 +219,19 @@ public class SysOwerController {
     }
     @RequestMapping("deletedower")//删除业主
     public ModelAndView deleteower(@RequestParam Integer olid){
-        ModelAndView m=new ModelAndView("forward:/ower/querower.do");
+        ModelAndView m=new ModelAndView("forward:querower.do");
         int i = sysOwerService.deleteByPrimaryKey(olid);
         return m;
     }
-    @RequestMapping("eower")//跳转增加业主
-    public ModelAndView eower(){
-        ModelAndView m=new ModelAndView("");
-        SysRoleExample sysRoleExample=new SysRoleExample();
-        List<SysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
-        m.addObject("sysRoles", sysRoles);
-        return m;
-    }
     @RequestMapping("addower")//增加业主
-    public ModelAndView addower(@ModelAttribute SysOwer sysOwer){
-        ModelAndView m=new ModelAndView("forward:/ower/querower.do");
+    public ModelAndView addower(@RequestParam String olname,@RequestParam String olaccount,@RequestParam String olpasswd,@RequestParam String powerid,@RequestParam String olphone
+            ){
+        ModelAndView m=new ModelAndView("forward:querower.do");
+        String olheadimg="";
+        Integer olmember=0;
+        Integer roleid=1;
+        SysOwer sysOwer=new SysOwer(olname, olaccount, olpasswd, powerid, olphone, olheadimg, olmember, roleid);
         sysOwerService.insertSelective(sysOwer);
         return m;
     }
-    @RequestMapping("tzower")//跳转修改业主
-    public ModelAndView tzower(@RequestParam Integer olid){
-        ModelAndView m=new ModelAndView("");
-        SysOwer sysOwer = sysOwerService.selectByPrimaryKey(olid);
-        SysRoleExample sysRoleExample=new SysRoleExample();
-        List<SysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
-        m.addObject("sysRoles", sysRoles);
-        m.addObject("ower", sysOwer);
-        return m;
-    }
-    @RequestMapping("updateower")//修改业主
-    public ModelAndView updateower(@ModelAttribute SysOwer sysOwer){
-        ModelAndView m=new ModelAndView("forward:/ower/querower.do");
-        sysOwerService.updateByPrimaryKeySelective(sysOwer);
-        return m;
-    }
-
 }
