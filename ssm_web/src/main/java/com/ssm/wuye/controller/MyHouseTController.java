@@ -18,41 +18,39 @@ public class MyHouseTController {
     @Resource
     MyHouseTypeService myHouseTypeService;
 
-    @RequestMapping("querymht")
+    @RequestMapping("querymht")//查询房屋类型
     public ModelAndView querymht(){
-        ModelAndView m=new ModelAndView("");
+        ModelAndView m=new ModelAndView("/pages/huoduan/housetype");
         MyHouseTypeExample myHouseTypeExample=new MyHouseTypeExample();
         List<MyHouseType> mhtList = myHouseTypeService.selectByExample(myHouseTypeExample);
         m.addObject("mhtList", mhtList);
         return m;
     }
-    @RequestMapping("addmht")
+    @RequestMapping("addmht")//添加房屋类型
     public ModelAndView addmht(@RequestParam String htypename,@RequestParam String htpropertyright){
         ModelAndView m=new ModelAndView("forward:/mht/querymht.do");
         MyHouseType myHouseType=new MyHouseType(htypename, htpropertyright);
         myHouseTypeService.insertSelective(myHouseType);
         return m;
     }
-    @RequestMapping("tzmht")
+    @RequestMapping("tzmht")//跳转到修改房屋类型页面
     public ModelAndView tzmht(@RequestParam Integer htypeid){
-        ModelAndView m=new ModelAndView();
+        ModelAndView m=new ModelAndView("pages/huoduan/xghousetype");
         MyHouseType myHouseType = myHouseTypeService.selectByPrimaryKey(htypeid);
         m.addObject("mht", myHouseType);
         return m;
     }
-    @RequestMapping("updatemht")
+    @RequestMapping("updatemht")//修改房屋类型
     public ModelAndView updatemht(@RequestParam Integer htypeid,@RequestParam String htypename,@RequestParam String htpropertyright){
         ModelAndView m=new ModelAndView("forward:/mht/querymht.do");
         MyHouseType myHouseType=new MyHouseType(htypeid, htypename, htpropertyright);
         int i = myHouseTypeService.updateByPrimaryKeySelective(myHouseType);
         return m;
     }
-    @RequestMapping("deletemht")
+    @RequestMapping("deletemht")//删除房屋类型
     public ModelAndView deletemht(@RequestParam Integer htypeid){
         ModelAndView m=new ModelAndView("forward:/mht/querymht.do");
         int i = myHouseTypeService.deleteByPrimaryKey(htypeid);
         return m;
     }
-
-
 }
