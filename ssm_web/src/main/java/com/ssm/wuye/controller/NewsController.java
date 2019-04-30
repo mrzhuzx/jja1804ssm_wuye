@@ -103,22 +103,24 @@ public class NewsController {
         m.addObject("news", newsList);
         return m;
     }
+    //@ModelAttribute News news
     @RequestMapping("htn_add")
-     public ModelAndView htnadd(@ModelAttribute News news) {
+     public ModelAndView htnadd(@RequestParam String nctitle, @RequestParam String nccontent,@RequestParam Date nctime,@RequestParam String ntid) {
         ModelAndView m = new ModelAndView("pages/huoduan/ht_news");
-//        Integer tid = Integer.valueOf(ntid);
+        Integer tid = Integer.valueOf(ntid);
 
-//        News news = new News();
-//        news.setNctitle(nctitle);
-//        news.setNccontent(nccontent);
-//        news.setNctime(nctime);
-//        news.setNctypeid(tid);
+
+        News news = new News();
+        news.setNctitle(nctitle);
+        news.setNccontent(nccontent);
+        news.setNctime(nctime);
+        news.setNctypeid(tid);
         int i = newsService.insert(news);
 
         if (i==1){
-            System.out.println("更新成功");
+            System.out.println("添加成功");
         }else {
-            System.out.println("更新失败");
+            System.out.println("添加失败");
         }
 
         List<News> newsList = newsService.selectByExample(null);
