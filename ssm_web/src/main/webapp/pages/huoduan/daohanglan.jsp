@@ -16,16 +16,16 @@
                 <a href="#"><i class="fa fa-desktop"></i> 人事管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}//.do">职员管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}//.do">新人入职</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/role/rolesearch.do">职位查询</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/sysroleadd.jsp">职位设立</a>
                     </li>
 
                 </ul>
@@ -73,7 +73,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-desktop"></i> 新闻管理 <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-desktop"></i> 信息发布 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="${pageContext.request.contextPath}/nt/htnewstype.do">新闻类别</a>
@@ -82,6 +82,19 @@
                     <li>
                         <a href="${pageContext.request.contextPath}/news/htnews.do">新闻详情</a>
                     </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">建立新活动</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">活动信息记录</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">招聘信息记录</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}//.do">新建招聘信息</a>
+                    </li>
+
 
 
                 </ul>
@@ -149,10 +162,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">所有工作人员</a>
+                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">后勤人员</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/adniminfotianjia.jsp">人员添加</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>

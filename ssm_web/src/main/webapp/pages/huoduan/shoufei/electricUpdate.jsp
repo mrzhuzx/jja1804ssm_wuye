@@ -26,7 +26,7 @@
 </head>
 <body>
 <div id="wrapper">
-   <%--头部--%>
+   %--头部--%>
     <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
@@ -51,8 +51,8 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/ele/insertOne.do" method="post">
-
+                                    <form action="${pageContext.request.contextPath}/electric/insertOne.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
 
                                         <div class="form-group">

@@ -34,83 +34,75 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!-- Morris Chart Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-
-
-    <head><base href="${pageContext.request.contextPath}">
 <body>
 <div id="wrapper">
-   <%--头部--%>
-    <jsp:include page="../toubu.jsp"></jsp:include>
+    <%--头部--%>
+    <jsp:include page="toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="../daohanglan.jsp"></jsp:include>
-    <!-- /. NAV SIDE  -->
+    <jsp:include page="daohanglan.jsp"></jsp:include>
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                         <small></small>
+                        <small></small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/house/weg.do?op=gas" class="btn btn-success">&nbsp抄&nbsp燃&nbsp气&nbsp表&nbsp</a>
-            <div style="padding-top: 20px" class="row">
+
+            <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
+                            职位类别表
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>燃气表编号</th>
-                                        <th>房屋号</th>
-                                        <th>燃气用量</th>
-                                        <th>年月份</th>
-                                        <th>业主名</th>
-                                        <th>业主电话</th>
-
+                                        <th>职位ID</th>
+                                        <th>职位名称</th>
+                                        <th>职位状态</th>
                                         <th>操作</th>
-
                                     </tr>
                                     </thead>
-
                                     <tbody>
-                            <c:forEach  items="${gasAndOwers}" var="gasAndOwers">
-                                    <tr class="gradeA">
-                                        <td>${gasAndOwers.id}</td>
-                                        <td>${gasAndOwers.gasnumber}</td>
-                                        <td>${gasAndOwers.houseid}</td>
+                                    <c:forEach items="${roles}" var="ro">
 
-                                        <td class="center">${gasAndOwers.gas}</td>
+                                        <tr class="odd gradeX">
+                                            <td>${ro.roleid}</td>
+                                            <td>${ro.rolename}</td>
+                                            <td>${ro.rolestatus}</td>
 
-                                        <td class="center"><fmt:formatDate value='${gasAndOwers.month}' pattern='yyyy年MM月'/></td>
-                                        <td>${gasAndOwers.olname}</td>
-                                        <td>${gasAndOwers.olphone}</td>
+                                            <td><button class="btn btn-primary"onclick="location.href='${pageContext.request.contextPath}/role/roleone.do?roleid=${ro.roleid}'"><i class="fa fa-edit " ></i> 修改 </button>
 
-                                        <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
-                                            <button style="margin-right: 10px" class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
-                                    </tr>
+                                                <button class="btn btn-success"onclick="location.href='${pageContext.request.contextPath}/role/roledelete.do?roleid=${ro.roleid}'"><i class="fa fa-save " ></i> 删除 </button>
+                                            </td>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
+
                         </div>
                     </div>
+                    <!--End Advanced Tables -->
                 </div>
             </div>
+            <!-- /. ROW  -->
+
         </div>
+    </div>
+    <!-- /. ROW  -->
 </div>
 
-
-
-</body>
+</div>
+<!-- /. PAGE INNER  -->
+</div>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -130,5 +122,7 @@
 </script>
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
-</html>
 
+
+</body>
+</html>
