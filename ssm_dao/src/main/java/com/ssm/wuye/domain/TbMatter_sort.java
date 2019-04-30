@@ -56,4 +56,21 @@ public class TbMatter_sort extends BaseEntity {
     public void setMattersort(String mattersort) {
         this.mattersort = mattersort == null ? null : mattersort.trim();
     }
+
+    public TbMatter_sort(String mattersort) {
+        this.mattersort = mattersort;
+    }
+
+    public TbMatter_sort(Integer mattersortid, String mattersort) {
+        this.mattersortid = mattersortid;
+        this.mattersort = mattersort;
+    }
+
+    @Override
+    public String toString() {
+        return "TbMatter_sort{" +
+                "mattersortid=" + mattersortid +
+                ", mattersort='" + mattersort + '\'' +
+                '}';
+    }
 }
