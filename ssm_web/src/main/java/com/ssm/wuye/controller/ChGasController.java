@@ -51,7 +51,8 @@ public class ChGasController {
 
     @RequestMapping("insertOne")
     public ModelAndView insertOne(@ModelAttribute ChGasMeter chGasMeter){
-        ModelAndView view=new ModelAndView("");
+        ModelAndView view=new ModelAndView("redirect:/gas/searchAll.do");
+        chGasMeter.setGasnumber("gas"+chGasMeter.getHouseid());
         int i = chGasService.insertSelective(chGasMeter);
         if (i>=0){
             System.out.println("添加失败！！");
@@ -63,9 +64,10 @@ public class ChGasController {
     }
     @RequestMapping("updateOne")
     public ModelAndView updateOne(@ModelAttribute ChGasMeter chGasMeter){
-        ModelAndView view=new ModelAndView("");
+        ModelAndView view=new ModelAndView("redirect:/gas/searchAll.do");
         ChGasMeterExample chGasMeterExample=new ChGasMeterExample();
         chGasMeterExample.createCriteria().andIdEqualTo(chGasMeter.getId());
+        chGasMeter.setGasnumber("gas"+chGasMeter.getHouseid());
         int i = chGasService.updateByExampleSelective(chGasMeter, chGasMeterExample);
         if (i>=0){
             System.out.println("修改失败！！");

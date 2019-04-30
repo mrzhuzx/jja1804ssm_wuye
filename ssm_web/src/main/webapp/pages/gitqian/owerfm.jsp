@@ -47,26 +47,17 @@
                         </li>
                         <li class="narrow_wrap">
                             <a class="nav_btn" href="about.html">
-                                关于我们
+                                房屋租售
                                 <b></b>
                                 <div></div>
                             </a>
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="#">公司简介</a>
+                                        <a href="ohtc/qtcxhstate.do">房屋出售</a>
                                     </li>
                                     <li>
-                                        <a href="#">公司文化</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">领导致辞</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">服务理念</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">企业荣誉</a>
+                                        <a href="ohtc/qtcxloan.do">房屋出租</a>
                                     </li>
                                 </ul>
                             </div>

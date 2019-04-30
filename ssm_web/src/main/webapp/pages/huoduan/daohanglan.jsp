@@ -91,16 +91,16 @@
                 <a href="#"><i class="fa fa-desktop"></i> 房屋管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">房屋信息</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">添加房屋</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/mht/querymht.do">房屋类型</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/tjhousetype.jsp">增加类型</a>
                     </li>
 
                 </ul>
@@ -149,10 +149,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">所有工作人员</a>
+                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">后勤人员</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/adniminfotianjia.jsp">人员添加</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -168,10 +168,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/fantai/search.do">防台物资</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>

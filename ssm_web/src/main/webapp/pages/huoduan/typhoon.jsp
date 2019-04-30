@@ -39,24 +39,23 @@
     <head><base href="${pageContext.request.contextPath}">
 <body>
 <div id="wrapper">
-   <%--头部--%>
-    <jsp:include page="../toubu.jsp"></jsp:include>
+    <%--头部--%>
+    <jsp:include page="toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="../daohanglan.jsp"></jsp:include>
-    <!-- /. NAV SIDE  -->
+    <jsp:include page="daohanglan.jsp"></jsp:include>
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                         <small></small>
+                        <small></small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/house/weg.do?op=gas" class="btn btn-success">&nbsp抄&nbsp燃&nbsp气&nbsp表&nbsp</a>
-            <div style="padding-top: 20px" class="row">
+
+            <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
@@ -68,35 +67,35 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>燃气表编号</th>
-                                        <th>房屋号</th>
-                                        <th>燃气用量</th>
-                                        <th>年月份</th>
-                                        <th>业主名</th>
-                                        <th>业主电话</th>
-
-                                        <th>操作</th>
-
+                                    <tr><th>ID</th>
+                                        <th>物资名称</th>
+                                        <th>物资数量</th>
+                                        <th>物资价格</th>
+                                        <th>物资类别</th>
+                                        <th>入库时间</th>
+                                        <th>出库时间</th>
+                                        <th>物资状态</th>
+                                        <th>编辑</th>
                                     </tr>
                                     </thead>
-
                                     <tbody>
-                            <c:forEach  items="${gasAndOwers}" var="gasAndOwers">
-                                    <tr class="gradeA">
-                                        <td>${gasAndOwers.id}</td>
-                                        <td>${gasAndOwers.gasnumber}</td>
-                                        <td>${gasAndOwers.houseid}</td>
+                                    <c:forEach var="f" items="${tbMatterList}">
+                                        <tr class="odd gradeX">
+                                            <td>${f.matterid}</td>
+                                            <td>${f.mattername}</td>
+                                            <td>${f.matternum}</td>
+                                            <td>${f.matterprice}</td>
+                                            <td>${f.mattersortid}</td>
+                                            <td><fmt:formatDate value='${f.instoragetime}' pattern='yyyy-MM-dd'/></td>
+                                            <td><fmt:formatDate value='${f.outstoragetime}' pattern='yyyy-MM-dd'/></td>
 
-                                        <td class="center">${gasAndOwers.gas}</td>
+                                            <td>${f.matterstate}</td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                        </tr>
 
-                                        <td class="center"><fmt:formatDate value='${gasAndOwers.month}' pattern='yyyy年MM月'/></td>
-                                        <td>${gasAndOwers.olname}</td>
-                                        <td>${gasAndOwers.olphone}</td>
 
-                                        <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
-                                            <button style="margin-right: 10px" class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
-                                    </tr>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
@@ -106,11 +105,8 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
-
-
-
-</body>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -130,5 +126,8 @@
 </script>
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+
+
+</body>
 </html>
 

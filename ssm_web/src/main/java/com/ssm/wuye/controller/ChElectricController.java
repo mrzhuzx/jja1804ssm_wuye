@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.sound.midi.Soundbank;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,8 +48,13 @@ public class ChElectricController {
     }
 
     @RequestMapping("insertOne")
-    public ModelAndView insertOne(@ModelAttribute ChElectricMeter chElectricMeter){
-        ModelAndView view=new ModelAndView("");
+    public ModelAndView insertOne(@RequestParam Integer houseid, @RequestParam double electric, @RequestParam Date month){
+        ModelAndView view=new ModelAndView("redirect:/ele/searchAll.do");
+        ChElectricMeter chElectricMeter=new ChElectricMeter();
+        chElectricMeter.setHouseid(houseid);
+        chElectricMeter.setElectric(electric);
+        chElectricMeter.setMonth(month);
+        chElectricMeter.setEnumber("electric"+houseid);
         int i = chElectricSercice.insertSelective(chElectricMeter);
         if (i>=0){
             System.out.println("添加失败！！");
@@ -60,9 +66,10 @@ public class ChElectricController {
     }
     @RequestMapping("updateOne")
     public ModelAndView updateOne(@ModelAttribute ChElectricMeter chElectricMeter){
-        ModelAndView view=new ModelAndView("");
+        ModelAndView view=new ModelAndView("redirect:/ele/searchAll.do");
         ChElectricMeterExample chElectricMeterExample=new ChElectricMeterExample();
         chElectricMeterExample.createCriteria().andElectricidEqualTo(chElectricMeter.getElectricid());
+        chElectricMeter.setEnumber("electric"+chElectricMeter.getHouseid());
         int i = chElectricSercice.updateByExampleSelective(chElectricMeter, chElectricMeterExample);
         if (i>=0){
             System.out.println("修改失败！！");
