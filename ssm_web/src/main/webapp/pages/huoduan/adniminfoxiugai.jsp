@@ -77,7 +77,7 @@
                 </div>
                     <div class="form-group has-success">
                         <h4><label class="control-label" for="inputSuccess">职位</label>
-                            <input type="text" class="form-control" id="wrapper" value="${saif.rolename}" name="roleName"></h4>
+                            <input type="text" class="form-control" id="wrapper" value="${saif.rolename}" name="rolename"></h4>
 
                     </div>
 
