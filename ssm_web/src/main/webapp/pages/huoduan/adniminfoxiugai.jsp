@@ -67,25 +67,20 @@
                     <h4><label class="control-label" for="inputSuccess">状态</label>
                         <select class="form-control" placeholder="" name="contracttype" value="${saif.userflag}" name="userflag">
                             <option>请选择类型</option>
-                            <option>启用</option>
-                            <option>禁用</option>
+                            <option>工作中</option>
+                            <option>休假</option>
                         </select></h4>
                 <div class="form-group has-success">
                     <h4><label class="control-label" for="inputSuccess">个性签名</label>
                         <input type="text" class="form-control" id="" value="${saif.userstyle}" name="userstyle"></h4>
 
                 </div>
-                <div class="form-group has-success">
-                    <h4><label class="control-label" for="inputSuccess">类型ID</label>
-                        <select class="form-control" placeholder="" name="${saif.roleid}" value="" name="roleid">
-                            <option>请选择类型</option>
-                            <option>6保洁</option>
-                            <option>7保安</option>
-                            <option>8保安队长</option>
-                        </select>
-                    </h4>
+                    <div class="form-group has-success">
+                        <h4><label class="control-label" for="inputSuccess">职位</label>
+                            <input type="text" class="form-control" id="wrapper" value="${saif.rolename}" name="roleName"></h4>
 
-                </div>
+                    </div>
+
                 <div>
 
                     <button type="submit" class="btn btn-success"><i class=""></i> 确认修改 </button>

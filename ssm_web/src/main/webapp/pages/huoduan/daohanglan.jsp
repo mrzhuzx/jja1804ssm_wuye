@@ -149,7 +149,7 @@
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/ai/infosearch.do">后勤人员</a>
+                        <a href="${pageContext.request.contextPath}/ai/houqinsearch.do">后勤人员</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/pages/huoduan/adniminfotianjia.jsp">人员添加</a>

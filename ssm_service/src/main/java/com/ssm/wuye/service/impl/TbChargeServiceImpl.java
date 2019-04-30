@@ -1,7 +1,6 @@
 package com.ssm.wuye.service.impl;
 
 import com.ssm.wuye.dao.TbChargeMapper;
-import com.ssm.wuye.domain.NewsExample;
 import com.ssm.wuye.domain.TbCharge;
 import com.ssm.wuye.domain.TbChargeExample;
 import com.ssm.wuye.service.TbChargeService;

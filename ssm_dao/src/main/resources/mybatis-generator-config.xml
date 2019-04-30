@@ -20,8 +20,12 @@
   	
 		<!-- 数据库链接URL、用户名、密码  jja1804ssmwu-->
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.31.216:3306/wuye?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
+			userId="root" password="123123" />
+<!--
 			connectionURL="jdbc:mysql://teacherzhu.uicp.net:34626/jja1804_ssmwuye?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
 			userId="jja1804ssmwu" password="123123" />
+-->
 		<!--生成注解实体类，继承一个标准的父类  -->
 		<javaModelGenerator targetPackage="com.ssm.wuye.domain" targetProject="src">
 			<!-- 是否针对string类型的字段在set的时候进行trim调用 -->
@@ -39,7 +43,8 @@
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
 
 
-		<table tableName="newstype_voiw" domainObjectName="NewsTypeVoiw"/>
+		<table tableName="houqin" domainObjectName="Houqin"/>
+
 		<!--
 		<table tableName="wy_house_type" domainObjectName="WyHousetype"/>
 		<table tableName="wy_house" domainObjectName="WyHouse"/>

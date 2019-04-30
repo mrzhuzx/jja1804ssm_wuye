@@ -1,15 +1,12 @@
 package com.ssm.wuye.service.impl;
 
 import com.ssm.wuye.dao.NewsTypeMapper;
-import com.ssm.wuye.domain.News;
-import com.ssm.wuye.domain.NewsExample;
 import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.NewsTypeExample;
 import com.ssm.wuye.service.NewsTypeService;
 import org.apache.ibatis.session.RowBounds;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;

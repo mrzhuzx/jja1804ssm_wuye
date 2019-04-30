@@ -6,7 +6,6 @@ import com.ssm.wuye.dao.SysOwerMapper;
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.ChGasService;
 import com.ssm.wuye.vo.GasAndOwer;
-import com.ssm.wuye.vo.WaterAndOwer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

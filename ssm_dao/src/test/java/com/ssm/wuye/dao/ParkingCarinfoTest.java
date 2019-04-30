@@ -1,12 +1,10 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.ParkingCarinfo;
 import com.ssm.wuye.domain.ParkingCarinfoExample;
 import org.apache.ibatis.session.RowBounds;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -24,7 +22,7 @@ import java.util.List;
 public class ParkingCarinfoTest {
 
     @Resource
-    ParkingCarinfoMapper  parkingCarinfoMapper;
+    ParkingCarinfoMapper parkingCarinfoMapper;
 
     @Test
     public void testsearch() {
