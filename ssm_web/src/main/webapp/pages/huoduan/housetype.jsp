@@ -43,38 +43,27 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           新闻详情
+                           房屋类型
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>新闻ID</th>
-                                        <th>新闻标题</th>
-                                        <th>新闻内容</th>
-                                        <th>发布时间</th>
-                                        <th>类型ID</th>
+                                        <th>房屋类型ID</th>
+                                        <th>房屋类型名字</th>
+                                        <th>房屋类型年限</th>
                                         <th>操作</th>
-
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${news}" var="news">
-
+                                    <c:forEach items="${mhtList}" var="mth">
                                         <tr class="odd gradeX">
-                                            <td>${news.ncid}</td>
-                                            <td>
-                                                    ${fn:length(news.nctitle) > 10 ? fn:substring(news.nctitle,0,10) : news.nctitle}${fn:length(news.nctitle) > 10 ? '...' : ''}</td>
-                                            <td>
-                                                    ${fn:length(news.nccontent) >20 ? fn:substring(news.nccontent,0,20) : news.nccontent}${fn:length(news.nccontent) > 20 ? '...' : ''}
-                                            </td>
-                                            <td>
-                                                <fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" /></td>
-                                            <td>${news.nctypeid}</td>
-
-                                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/news/htnupdate.do?ncid=${news.ncid}'"></i>编辑</button>
-                                                <button class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/news/htndelet.do?ncid=${news.ncid}'"></i> 删除</button>
+                                            <td>${mth.htypeid}</td>
+                                            <td>${mth.htypename}</td>
+                                            <td>${mth.htpropertyright}</td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/mht/tzmht.do?htypeid=${mth.htypeid}'"><i class="fa fa-edit " ></i>编辑</button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/mht/deletemht.do?htypeid=${mth.htypeid}'"><i class="fa fa-pencil" ></i> 删除</button>
                                             <%--<button class="btn btn-success"><i class="fa fa-save " onclick="location.href='${pageContext.request.contextPath}/nt/htntidadd.do?ntid=${htnestype.ntid}'"></i> 保存</button>--%>
                                             </td>
                                         </tr>

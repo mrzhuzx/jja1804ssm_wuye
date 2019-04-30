@@ -52,40 +52,40 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/con/conupdate.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/fantai/delete.do" method="post">
 
 
                                         <div  >
                                             <label>合同ID</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractid}" name="contractid" readonly="readonly" >
+                                            <input class="form-control" placeholder="" value="${tbmatter.contractid}" name="contractid">
                                         </div>
                                         <div  >
                                             <label>合同编号</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractnum}" name="contractnum" >
+                                            <input class="form-control" placeholder="" value="${tbmatter.contractnum}" name="contractnum" >
                                         </div>
                                         <div  >
                                             <label>合同名字</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractname}" name="contractname" >
+                                            <input class="form-control" placeholder="" value="${tbmatter.contractname}" name="contractname" >
                                         </div>
                                         <div class="form-group">
                                             <label>合同描述</label>
-                                            <textarea class="form-control" rows="3"  name="contractdes" >${contract.contractdes}</textarea>
+                                            <textarea class="form-control" rows="3"  name="contractdes" >${tbmatter.contractdes}</textarea>
                                         </div>
                                         <div>
                                             <label>签约人</label>
-                                            <input class="form-control" placeholder="" value="${contract.signingpeople}" name="signingpeople">
+                                            <input class="form-control" placeholder="" value="${tbmatter.signingpeople}" name="signingpeople">
                                         </div>
                                         <div>
                                             <label>合同起始时间</label>
-                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${contract.contractstart}' pattern='yyyy-MM-dd'/>"name="contractstart" >
+                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${tbmatter.contractstart}' pattern='yyyy-MM-dd'/>"name="contractstart" >
                                         </div>
                                         <div>
                                             <label>合同终止时间</label>
-                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${contract.contractend}' pattern='yyyy-MM-dd'/>"name="contractstart" >
+                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${tbmatter.contractend}' pattern='yyyy-MM-dd'/>"name="contractstart" >
                                         </div>
                                         <div  >
                                             <label>联系方式</label>
-                                            <input class="form-control" placeholder="" value="${contract.signatorytelephone}" name="signatorytelephone" >
+                                            <input class="form-control" placeholder="" value="${tbmatter.signatorytelephone}" name="signatorytelephone" >
                                         </div>
                                         <br>
                                         <div>

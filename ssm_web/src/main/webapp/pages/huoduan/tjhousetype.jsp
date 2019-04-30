@@ -45,49 +45,19 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一份合同
+                            增加房屋类型
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/con/consave.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/mht/addmht.do" method="post">
                                         <div  >
-                                            <label>合同编号</label>
-                                            <input class="form-control" placeholder="合同编号" value="No.1258011008" name="contractnum" >
-                                        </div>
-                                        <div  >
-                                            <label>合同名字</label>
-                                            <input class="form-control" placeholder="合同名字" value="购房合同" name="contractname" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label>合同类型</label>
-                                            <select class="form-control" placeholder="" name="contracttype">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
+                                            <label>房屋类型</label>
+                                            <input class="form-control" placeholder="房屋类型" value="海景房" name="htypename" >
                                         </div>
                                         <div  >
-                                            <label>合同描述</label>
-                                            <input class="form-control" placeholder="合同描述"  value="与xx的合同协议书" name="contractdes">
-                                        </div>
-                                        <div>
-                                            <label>签约人</label>
-                                            <input class="form-control" placeholder="签约人" value="徐凤年" name="signingpeople">
-                                        </div>
-                                        <div>
-                                            <label>合同起始时间</label>
-                                            <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="contractstart">
-                                        </div>
-                                        <div>
-                                            <label>合同终止时间</label>
-                                            <input class="form-control" placeholder="年月日" id="date" value="2069-10-10" name="contractend">
-                                        </div>
-                                        <div  >
-                                            <label>联系方式</label>
-                                            <input class="form-control" placeholder="联系方式" value="15020201414" name="signatorytelephone" >
+                                            <label>房屋年限</label>
+                                            <input class="form-control" placeholder="房屋年限" value="产权年限50年" name="htpropertyright" >
                                         </div>
                                         <br>
                                         <div>

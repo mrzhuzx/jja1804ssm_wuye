@@ -45,50 +45,56 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一份合同
+                            增加工具
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/con/consave.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/fantai/add.do" method="post">
+
                                         <div  >
-                                            <label>合同编号</label>
-                                            <input class="form-control" placeholder="合同编号" value="No.1258011008" name="contractnum" >
+                                            <label>物资名称</label>
+                                            <input class="form-control" placeholder="物资名称" value="扫把" name="mattername" >
+                                        </div>
+
+                                        <div  >
+                                            <label>物资数量</label>
+                                            <input class="form-control" placeholder="物资数量" value="10" name="matternum" >
                                         </div>
                                         <div  >
-                                            <label>合同名字</label>
-                                            <input class="form-control" placeholder="合同名字" value="购房合同" name="contractname" >
+                                            <label>物资价格</label>
+                                            <input class="form-control" placeholder="物资价格" value="5" name="matterprice" >
                                         </div>
                                         <div class="form-group">
-                                            <label>合同类型</label>
-                                            <select class="form-control" placeholder="" name="contracttype">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                            <label>物资类别</label>
+                                            <select class="form-control" placeholder="" name="mattersortid">
+                                                <option>1001</option>
+                                                <option>1002</option>
+                                                <option>1003</option>
+                                                <option>1004</option>
+                                                <option>1005</option>
                                             </select>
                                         </div>
                                         <div  >
-                                            <label>合同描述</label>
-                                            <input class="form-control" placeholder="合同描述"  value="与xx的合同协议书" name="contractdes">
+                                            <label>入库时间</label>
+                                            <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="instoragetime">
+
                                         </div>
                                         <div>
-                                            <label>签约人</label>
-                                            <input class="form-control" placeholder="签约人" value="徐凤年" name="signingpeople">
+                                            <label>出库时间</label>
+                                            <input class="form-control" placeholder="年月日" id="date" value="2019-10-10" name="outstoragetime">
+
                                         </div>
                                         <div>
-                                            <label>合同起始时间</label>
-                                            <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="contractstart">
+                                            <label>物资状态</label>
+                                            <select class="form-control" placeholder="" name="matterstate">
+                                                <option>可用</option>
+                                                <option>不可用</option>
+
+                                            </select>
+
                                         </div>
-                                        <div>
-                                            <label>合同终止时间</label>
-                                            <input class="form-control" placeholder="年月日" id="date" value="2069-10-10" name="contractend">
-                                        </div>
-                                        <div  >
-                                            <label>联系方式</label>
-                                            <input class="form-control" placeholder="联系方式" value="15020201414" name="signatorytelephone" >
-                                        </div>
+
                                         <br>
                                         <div>
 
