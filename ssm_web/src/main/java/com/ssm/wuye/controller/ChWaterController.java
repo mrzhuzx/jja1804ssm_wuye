@@ -51,7 +51,8 @@ public class ChWaterController {
 
     @RequestMapping("insertOne")
     public ModelAndView insertOne(@ModelAttribute ChWaterMeter chWaterMeter){
-        ModelAndView view=new ModelAndView("");
+        ModelAndView view=new ModelAndView("redirect:/water/searchAll.do");
+        chWaterMeter.setWnumber("water"+chWaterMeter.getHouseid());
         int i = chWaterService.insertSelective(chWaterMeter);
         if (i>=0){
             System.out.println("添加失败！！");
@@ -63,9 +64,9 @@ public class ChWaterController {
     }
     @RequestMapping("updateOne")
     public ModelAndView updateOne(@ModelAttribute ChWaterMeter chWaterMeter){
-        ModelAndView view=new ModelAndView("");
+        ModelAndView view=new ModelAndView("redirect:/water/searchAll.do");
         ChWaterMeterExample chWaterMeterExample=new ChWaterMeterExample();
-
+        chWaterMeter.setWnumber("water"+chWaterMeter.getHouseid());
         chWaterMeterExample.createCriteria().andWateridEqualTo(chWaterMeter.getWaterid());
         int i = chWaterService.updateByExampleSelective(chWaterMeter, chWaterMeterExample);
         if (i>=0){

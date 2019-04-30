@@ -39,7 +39,7 @@
     <head><base href="${pageContext.request.contextPath}">
 <body>
 <div id="wrapper">
-    <%--头部--%>
+   <%--头部--%>
     <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/pages/huoduan/shoufei/gasAdd.jsp" class="btn btn-success">&nbsp抄&nbsp燃&nbsp气&nbsp表&nbsp</a>
+            <a href="${pageContext.request.contextPath}/house/weg.do?op=gas" class="btn btn-success">&nbsp抄&nbsp燃&nbsp气&nbsp表&nbsp</a>
             <div style="padding-top: 20px" class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
