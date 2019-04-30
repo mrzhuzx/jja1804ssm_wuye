@@ -193,10 +193,10 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/cont/ctsearch.do">类别管理</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/htsave.jsp">类型添加</a>
                     </li>
 
                 </ul>
