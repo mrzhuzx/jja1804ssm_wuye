@@ -14,7 +14,6 @@ import com.ssm.wuye.domain.SysAdminInfo;
 import com.ssm.wuye.domain.SysAdminInfoExample;
 import com.ssm.wuye.service.HouqinService;
 import com.ssm.wuye.service.SysAdminInfoService;
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,7 +39,6 @@ public class SysAdminInfoController {
      */
     @RequestMapping("infosearch")
     public ModelAndView search(){
-
       ModelAndView m =new ModelAndView("pages/huoduan/sysadniminfo");
       SysAdminInfoExample sysAdminInfoExample=new SysAdminInfoExample();
       List<SysAdminInfo> sysAdminInfoList=sysAdminInfoService.selectByExample(sysAdminInfoExample);
@@ -109,7 +107,6 @@ public class SysAdminInfoController {
      */
     @RequestMapping("infosearchone")
    public ModelAndView searchone(@RequestParam Integer userid) {
-
         ModelAndView m =new ModelAndView("pages/huoduan/adniminfoxiugai");
         SysAdminInfo saif =sysAdminInfoService.selectByPrimaryKey(userid);
         m.addObject("saif",saif);
