@@ -94,8 +94,8 @@
                                         <td>${wao.olname}</td>
                                         <td>${wao.olphone}</td>
 
-                                        <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
-                                            <button style="margin-right: 10px" class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
+                                        <td><button class="btn btn-primary"onclick=" location.href='${pageContext.request.contextPath}/water/searchOne.do?waterid=${wao.waterid}'"><i class="fa fa-edit " ></i> 修改</button>
+                                            <button style="margin-right: 10px" class="btn btn-danger"  onclick="location.href='${pageContext.request.contextPath}/water/deleteOne.do?waterid=${wao.waterid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                     </tr>
                                     </c:forEach>
                                     </tbody>

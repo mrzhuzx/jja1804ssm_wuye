@@ -30,4 +30,6 @@ public interface ChWaterService {
 
     int updateByExampleSelective(ChWaterMeter record,ChWaterMeterExample example);
 
+    int deleteByPrimaryKey(Integer waterid);
+
 }
