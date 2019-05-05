@@ -1,11 +1,13 @@
 package com.ssm.wuye.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ssm.wuye.appcomm.BaseEntity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * tb_pay
@@ -60,6 +62,8 @@ public class TbPay extends BaseEntity {
      * 收费时间
 
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     @Column(name = "chargeTime")
     private Date chargetime;
 

@@ -25,4 +25,6 @@ public interface ChGasService {
     int insertSelective(ChGasMeter record);
 
     int updateByExampleSelective(ChGasMeter record,ChGasMeterExample example);
+
+    int deleteByPrimaryKey(Integer id);
 }

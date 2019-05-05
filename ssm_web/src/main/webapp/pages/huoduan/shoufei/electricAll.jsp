@@ -39,7 +39,7 @@
     <head><base href="${pageContext.request.contextPath}">
 <body>
 <div id="wrapper">
-    <%--头部--%>
+   <%--头部--%>
     <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/pages/huoduan/shoufei/electricAdd.jsp" class="btn btn-success">&nbsp抄&nbsp电&nbsp表&nbsp</a>
+            <a href="${pageContext.request.contextPath}/house/weg.do?op=electric" class="btn btn-success">&nbsp抄&nbsp电&nbsp表&nbsp</a>
             <div style="padding-top: 20px;" class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
@@ -94,8 +94,8 @@
                                         <td>${electricAndOwers.olname}</td>
                                         <td>${electricAndOwers.olphone}</td>
 
-                                        <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/con/searchone.do'"></i> 修改</button>
-                                            <button style="margin-right: 10px" class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"></i> 删除</button></td>
+                                        <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/ele/searchOne.do?electricid=${electricAndOwers.electricid}'"><i class="fa fa-edit "></i> 修改</button>
+                                            <button style="margin-right: 10px" class="btn btn-danger"  onclick="location.href='${pageContext.request.contextPath}/ele/deleteOne.do?electricid=${electricAndOwers.electricid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                     </tr>
                                     </c:forEach>
                                     </tbody>

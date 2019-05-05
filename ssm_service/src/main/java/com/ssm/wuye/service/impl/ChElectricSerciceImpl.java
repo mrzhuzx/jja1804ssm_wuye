@@ -77,4 +77,9 @@ public class ChElectricSerciceImpl implements ChElectricSercice {
     public int updateByExampleSelective(ChElectricMeter record,ChElectricMeterExample example) {
         return chElectricMeterMapper.updateByExampleSelective(record,example);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer electricid) {
+        return chElectricMeterMapper.deleteByPrimaryKey(electricid);
+    }
 }

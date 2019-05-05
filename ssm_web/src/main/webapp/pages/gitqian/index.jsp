@@ -39,18 +39,31 @@
                 <div class="main clearBoth">
                     <ul class="nav right">
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="index.html">
+                            <a class="nav_btn" href="#">
                                 网站首页
                                 <b></b>
                             </a>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/about.jsp">
-                                公司简介
+                            <a class="nav_btn" href="pages/gitqian/about.html">
+                                房屋租售
+                                <b></b>
+                                <div></div>
                             </a>
+                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
+                                <ul>
+                                    <li>
+                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
+                                    </li>
+                                    <li>
+                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="products.html">
+                            <a class="nav_btn" href="pages/gitqian/products.html">
                                 项目展示
                                 <b></b>
                                 <div></div>

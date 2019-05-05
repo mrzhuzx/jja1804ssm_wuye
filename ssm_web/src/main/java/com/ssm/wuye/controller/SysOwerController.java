@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 ;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -30,6 +31,8 @@ public class SysOwerController {
     NewsTypeService newsTypeService;
     @Autowired
     OwerHouseTypeService owerHouseTypeService;
+    @Resource
+    SysOfVoService sysOfVoService;
 
 
 
@@ -198,6 +201,38 @@ public class SysOwerController {
         }
         return m;
     }
-
-
+    //-------------------------------------------封口线-----------------------------------------------------------------
+    @RequestMapping("querower")//后台查询业主
+    public  ModelAndView querower(){
+        ModelAndView m=new ModelAndView("pages/huoduan/ower");
+        SysOwerExample sysOwerExample=new SysOwerExample();
+        List<SysOwer> sysOwerList = sysOwerService.selectByExample(sysOwerExample);
+        m.addObject("ower", sysOwerList);
+        return m;
+    }
+    @RequestMapping("querof")//后台查询业主家庭信息
+    public  ModelAndView querowerf(){
+        ModelAndView m=new ModelAndView("pages/huoduan/owerfamliy");
+        SysOfVoExample sysOfVoExample=new SysOfVoExample();
+        List<SysOfVo> sysOfVoList = sysOfVoService.selectByExample(sysOfVoExample);
+        m.addObject("ower", sysOfVoList);
+        return m;
+    }
+    @RequestMapping("deletedower")//删除业主
+    public ModelAndView deleteower(@RequestParam Integer olid){
+        ModelAndView m=new ModelAndView("forward:querower.do");
+        int i = sysOwerService.deleteByPrimaryKey(olid);
+        return m;
+    }
+    @RequestMapping("addower")//增加业主
+    public ModelAndView addower(@RequestParam String olname,@RequestParam String olaccount,@RequestParam String olpasswd,@RequestParam String powerid,@RequestParam String olphone
+            ){
+        ModelAndView m=new ModelAndView("forward:querower.do");
+        String olheadimg="";
+        Integer olmember=0;
+        Integer roleid=1;
+        SysOwer sysOwer=new SysOwer(olname, olaccount, olpasswd, powerid, olphone, olheadimg, olmember, roleid);
+        sysOwerService.insertSelective(sysOwer);
+        return m;
+    }
 }

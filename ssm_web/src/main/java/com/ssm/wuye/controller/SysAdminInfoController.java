@@ -7,13 +7,17 @@ package com.ssm.wuye.controller;
  *version:1.2.3
  */
 
+import com.ssm.wuye.dao.HouqinMapper;
+import com.ssm.wuye.domain.Houqin;
+import com.ssm.wuye.domain.HouqinExample;
 import com.ssm.wuye.domain.SysAdminInfo;
 import com.ssm.wuye.domain.SysAdminInfoExample;
+import com.ssm.wuye.service.HouqinService;
 import com.ssm.wuye.service.SysAdminInfoService;
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -25,6 +29,8 @@ public class SysAdminInfoController {
 
     @Resource
     SysAdminInfoService sysAdminInfoService;
+    @Resource
+    HouqinService houqinService;
 
 
     /**
@@ -33,7 +39,6 @@ public class SysAdminInfoController {
      */
     @RequestMapping("infosearch")
     public ModelAndView search(){
-
       ModelAndView m =new ModelAndView("pages/huoduan/sysadniminfo");
       SysAdminInfoExample sysAdminInfoExample=new SysAdminInfoExample();
       List<SysAdminInfo> sysAdminInfoList=sysAdminInfoService.selectByExample(sysAdminInfoExample);
@@ -41,6 +46,24 @@ public class SysAdminInfoController {
       return m;
 
   }
+
+
+    /**
+     * 后勤视图查询
+     * @return
+     */
+    @RequestMapping("houqinsearch")
+  public  ModelAndView houqinsearch(){
+      ModelAndView m=new ModelAndView("pages/huoduan/sysadniminfo");
+      HouqinExample houqinExample=new HouqinExample();
+      /*houqinExample.createCriteria().andRolenameEqualTo("保安队长");*/
+        List<Houqin> houqins = houqinService.selectByExample(houqinExample);
+        m.addObject("houqins",houqins);
+      return m;
+
+  }
+
+
   /**
      * 带条件分页查询
      * @return
@@ -67,30 +90,40 @@ public class SysAdminInfoController {
     @RequestMapping("infosave")
     public ModelAndView save(@ModelAttribute SysAdminInfo sai) {
 
-        ModelAndView m = new ModelAndView("pages/huoduan/sysadniminfo.jsp");
+        ModelAndView m = new ModelAndView("redirect:/ai/houqinsearch.do");
         int i = sysAdminInfoService.insertSelective(sai);
         if (i == 0) {
             System.out.println("添加失败...........");
         } else {
             System.out.println("添加成功：" + i + "条数据");
         }
-        SysAdminInfoExample sysAdminInfoExample=new SysAdminInfoExample();
-        List<SysAdminInfo> sysAdminInfoList=sysAdminInfoService.selectByExample(sysAdminInfoExample);
-        m.addObject("sysAdminInfoList",sysAdminInfoList);
-
         return m;
     }
 
     /**
+     * 获取一条数据（配合修改方法使用）
+     * @param userid
+     * @return
+     */
+    @RequestMapping("infosearchone")
+   public ModelAndView searchone(@RequestParam Integer userid) {
+        ModelAndView m =new ModelAndView("pages/huoduan/adniminfoxiugai");
+        SysAdminInfo saif =sysAdminInfoService.selectByPrimaryKey(userid);
+        m.addObject("saif",saif);
+       System.out.println("获取到一条数据...........");
+       return m;
+
+   }
+    /**
      * 修改
-     * @param sai
+     * @param userid
      * @return
      */
     @RequestMapping("infoupdate")
-    public ModelAndView update(@ModelAttribute SysAdminInfo sai){
+    public ModelAndView update(@ModelAttribute SysAdminInfo userid){
 
-        ModelAndView m =new ModelAndView("pages/huoduan/sysadniminfo.jsp");
-        int i=sysAdminInfoService.updateByPrimaryKeySelective(sai);
+        ModelAndView m =new ModelAndView("redirect:/ai/houqinsearch.do");
+        int i=sysAdminInfoService.updateByPrimaryKeySelective(userid);
         if (i==0){
             System.out.println("修改失败...........");
         }else {
@@ -107,19 +140,18 @@ public class SysAdminInfoController {
       * @param userid
      * @return
      */
-    public ModelAndView delete(@ModelAttribute Integer userid ){
-
-        ModelAndView m =new ModelAndView("pages/huoduan/sysadniminfo.jsp");
+    @RequestMapping("infodelete")
+    public ModelAndView delete(@RequestParam Integer userid){
+        System.out.println("11111111111111111111111111111111111111");
+        ModelAndView m =new ModelAndView("redirect:/ai/houqinsearch.do");
         int i=sysAdminInfoService.deleteByPrimaryKey(userid);
+        System.out.println(userid);
         if (i==0){
             System.out.println("删除成功..........");
         }else {
             System.out.println("成功删除"+i+"条数据");
         }
-        SysAdminInfoExample sysAdminInfoExample=new SysAdminInfoExample();
-        m.addObject("sysAdminInfoExample",sysAdminInfoExample);
         return m;
-
     }
 
 }

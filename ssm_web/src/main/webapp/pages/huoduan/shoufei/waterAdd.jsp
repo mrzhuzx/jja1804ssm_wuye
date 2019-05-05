@@ -14,13 +14,13 @@
     <title></title>
     <!-- Bootstrap Styles-->
 
-    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
 
     <!-- FontAwesome Styles-->
-    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="../assets/css/custom-styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../plugins/datepicker3.css">
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/huoduan/plugins/datepicker3.css">
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -46,7 +46,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一份合同
+                            抄水表
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -57,16 +57,16 @@
 
                                         <div class="form-group">
                                             <label>房屋ID</label>
-                                            <select class="form-control" placeholder="" name="contracttype">
-                                                <%--<c:forEach items=" " var="" >--%>
-                                                    <%--<option>1</option>--%>
-                                                <%--</c:forEach>--%>
+                                            <select class="form-control" placeholder="" name="houseid">
+                                                <c:forEach items="${myHouseList}" var="mh" >
+                                                    <option value="${mh.hid}">${mh.hid}----${mh.hbulidingname}</option>
+                                                </c:forEach>
                                             </select>
                                         </div>
                                         <span style="position: absolute;padding-left: 260px;padding-top: 30px">吨</span>
                                         <div  >
                                             <label>用水量</label>
-                                            <input class="form-control" placeholder="用水量" value="139" name="contractnum" >
+                                            <input class="form-control" placeholder="用水量" value="139" name="watervolume" >
 
                                         </div>
 
@@ -100,6 +100,7 @@
                     </div>
                     <!-- /.panel -->
                 </div>
+            </div>
                 <!-- /.col-lg-12 -->
         <!-- /. PAGE INNER  -->
     </div>
@@ -108,20 +109,20 @@
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="../assets/js/jquery-1.10.2.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
-<script src="../assets/js/jquery.metisMenu.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
 <!-- Custom Js -->
-<script src="../assets/js/custom-scripts.js"></script>
-<script src="../assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-<script src="../assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 
-<script src="../assets/datatables/jquery.dataTables.min.js"></script>
-<script src="../assets/datatables/dataTables.bootstrap.min.js"></script>
-<script src="../plugins/jquery-2.2.3.min.js"></script>
-<script src="../plugins/bootstrap-datepicker.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
 <script>
         $(document).ready(function() {
             $('#dateid').datepicker({

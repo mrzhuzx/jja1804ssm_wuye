@@ -1,0 +1,144 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/4/24 0024
+  Time: 下午 4:47
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+
+</head>
+<body>
+<%--头部--%>
+<jsp:include page="toubu.jsp"></jsp:include>
+<!--/. NAV TOP  -->
+<%--导航栏--%>
+<jsp:include page="daohanglan.jsp"></jsp:include>
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="page-header">修改页面</h2>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <form action="${pageContext.request.contextPath}/ai/infoupdate.do" method="post">
+                <div class="form-group has-success">
+                        <h4><label class="control-label" for="inputSuccess">ID</label>
+                        <input type="text" class="form-control" id="inputSuccess" value="${saif.userid}" name="userid"></h4>
+
+                </div>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">名字</label>
+                        <input type="text" class="form-control" id="easypiechart-teal" value="${saif.username}" name="username"></h4>
+                </div>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">密码</label>
+                        <input type="text" class="form-control" id="inputError" value="${saif.userpass}" name="userpass"></h4>
+
+                </div>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">电话</label>
+                        <input type="text" class="form-control" id="easypiechart-orange" value="${saif.userphone}" name="userphone"></h4>
+
+                </div>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">邮箱</label>
+                        <input type="text" class="form-control" id="easypiechart-red" value="${saif.usermail}" name="usermail"></h4>
+
+                </div>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">头像</label>
+                        <input type="text" class="form-control" id="easypiechart-blue" value="${saif.userqqface}" name="userqqface"></h4>
+
+                </div>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">状态</label>
+                        <select class="form-control" placeholder="" name="contracttype" value="${saif.userflag}" name="userflag">
+                            <option>请选择类型</option>
+                            <option>工作中</option>
+                            <option>休假</option>
+                        </select></h4>
+                <div class="form-group has-success">
+                    <h4><label class="control-label" for="inputSuccess">个性签名</label>
+                        <input type="text" class="form-control" id="" value="${saif.userstyle}" name="userstyle"></h4>
+
+                </div>
+                    <div class="form-group has-success">
+                        <h4><label class="control-label" for="inputSuccess">职位</label>
+                            <input type="text" class="form-control" id="wrapper" value="${saif.rolename}" name="rolename"></h4>
+
+                    </div>
+
+                <div>
+
+                    <button type="submit" class="btn btn-success"><i class=""></i> 确认修改 </button>
+
+                    <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+
+                </div>
+                </div>
+            </form>
+        </div>
+        <!-- /.col-lg-6 (nested) -->
+    </div>
+    <!-- /.row (nested) -->
+</div>
+<!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+
+<!-- /. PAGE INNER  -->
+</div>
+<!-- /. PAGE WRAPPER  -->
+</div>
+
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
+<!-- Metis Menu Js -->
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
+<!-- Custom Js -->
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#date').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+
+</body>
+</html>
+
