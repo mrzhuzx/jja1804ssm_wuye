@@ -20,8 +20,8 @@
   	
 		<!-- 数据库链接URL、用户名、密码  jja1804ssmwu-->
 		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-			connectionURL="jdbc:mysql://192.168.31.216:3306/wuye?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
-			userId="root" password="123123" />
+			connectionURL="jdbc:mysql://192.168.31.55:3306/jja1804_ssm_wuye?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
+			userId="jja1804" password="123123" />
 <!--
 			connectionURL="jdbc:mysql://teacherzhu.uicp.net:34626/jja1804_ssmwuye?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
 			userId="jja1804ssmwu" password="123123" />
@@ -43,7 +43,7 @@
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
 
 
-		<table tableName="houqin" domainObjectName="Houqin"/>
+		<table tableName="recruit" domainObjectName="Recruit"/>
 
 		<!--
 		<table tableName="wy_house_type" domainObjectName="WyHousetype"/>
