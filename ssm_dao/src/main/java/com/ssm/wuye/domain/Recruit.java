@@ -1,5 +1,6 @@
 package com.ssm.wuye.domain;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -43,6 +44,12 @@ public class Recruit {
     private String duty;
 
     /**
+     * 薪资待遇
+     */
+    @Column(name = "Salary")
+    private String salary;
+
+    /**
      * 招聘人数
      */
     @Column(name = "recruitNum")
@@ -51,8 +58,15 @@ public class Recruit {
     /**
      * 联系电话
      */
-    @Column(name = "contactNumber")
-    private String contactnumber;
+    @Column(name = "recruitNumber")
+    private String recruitnumber;
+
+    /**
+     * 截止时间
+
+     */
+    @Column(name = "recruitEnd")
+    private Date recruitend;
 
     /**
      * 地址
@@ -141,6 +155,22 @@ public class Recruit {
     }
 
     /**
+     * 薪资待遇
+     * @return Salary 薪资待遇
+     */
+    public String getSalary() {
+        return salary;
+    }
+
+    /**
+     * 薪资待遇
+     * @param salary 薪资待遇
+     */
+    public void setSalary(String salary) {
+        this.salary = salary == null ? null : salary.trim();
+    }
+
+    /**
      * 招聘人数
      * @return recruitNum 招聘人数
      */
@@ -158,18 +188,38 @@ public class Recruit {
 
     /**
      * 联系电话
-     * @return contactNumber 联系电话
+     * @return recruitNumber 联系电话
      */
-    public String getContactnumber() {
-        return contactnumber;
+    public String getRecruitnumber() {
+        return recruitnumber;
     }
 
     /**
      * 联系电话
-     * @param contactnumber 联系电话
+     * @param recruitnumber 联系电话
      */
-    public void setContactnumber(String contactnumber) {
-        this.contactnumber = contactnumber == null ? null : contactnumber.trim();
+    public void setRecruitnumber(String recruitnumber) {
+        this.recruitnumber = recruitnumber == null ? null : recruitnumber.trim();
+    }
+
+    /**
+     * 截止时间
+
+     * @return recruitEnd 截止时间
+
+     */
+    public Date getRecruitend() {
+        return recruitend;
+    }
+
+    /**
+     * 截止时间
+
+     * @param recruitend 截止时间
+
+     */
+    public void setRecruitend(Date recruitend) {
+        this.recruitend = recruitend;
     }
 
     /**

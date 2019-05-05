@@ -1,6 +1,8 @@
 package com.ssm.wuye.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class RecruitExample {
@@ -114,6 +116,32 @@ public class RecruitExample {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
+        }
+
+        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
+            if (value == null) {
+                throw new RuntimeException("Value for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value.getTime()), property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
+            if (values == null || values.size() == 0) {
+                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
+            }
+            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
+            Iterator<Date> iter = values.iterator();
+            while (iter.hasNext()) {
+                dateList.add(new java.sql.Date(iter.next().getTime()));
+            }
+            addCriterion(condition, dateList, property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
+            if (value1 == null || value2 == null) {
+                throw new RuntimeException("Between values for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
         public Criteria andRecruitidIsNull() {
@@ -456,6 +484,76 @@ public class RecruitExample {
             return (Criteria) this;
         }
 
+        public Criteria andSalaryIsNull() {
+            addCriterion("Salary is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryIsNotNull() {
+            addCriterion("Salary is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryEqualTo(String value) {
+            addCriterion("Salary =", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryNotEqualTo(String value) {
+            addCriterion("Salary <>", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryGreaterThan(String value) {
+            addCriterion("Salary >", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryGreaterThanOrEqualTo(String value) {
+            addCriterion("Salary >=", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryLessThan(String value) {
+            addCriterion("Salary <", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryLessThanOrEqualTo(String value) {
+            addCriterion("Salary <=", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryLike(String value) {
+            addCriterion("Salary like", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryNotLike(String value) {
+            addCriterion("Salary not like", value, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryIn(List<String> values) {
+            addCriterion("Salary in", values, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryNotIn(List<String> values) {
+            addCriterion("Salary not in", values, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryBetween(String value1, String value2) {
+            addCriterion("Salary between", value1, value2, "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andSalaryNotBetween(String value1, String value2) {
+            addCriterion("Salary not between", value1, value2, "salary");
+            return (Criteria) this;
+        }
+
         public Criteria andRecruitnumIsNull() {
             addCriterion("recruitNum is null");
             return (Criteria) this;
@@ -516,73 +614,133 @@ public class RecruitExample {
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberIsNull() {
-            addCriterion("contactNumber is null");
+        public Criteria andRecruitnumberIsNull() {
+            addCriterion("recruitNumber is null");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberIsNotNull() {
-            addCriterion("contactNumber is not null");
+        public Criteria andRecruitnumberIsNotNull() {
+            addCriterion("recruitNumber is not null");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberEqualTo(String value) {
-            addCriterion("contactNumber =", value, "contactnumber");
+        public Criteria andRecruitnumberEqualTo(String value) {
+            addCriterion("recruitNumber =", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberNotEqualTo(String value) {
-            addCriterion("contactNumber <>", value, "contactnumber");
+        public Criteria andRecruitnumberNotEqualTo(String value) {
+            addCriterion("recruitNumber <>", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberGreaterThan(String value) {
-            addCriterion("contactNumber >", value, "contactnumber");
+        public Criteria andRecruitnumberGreaterThan(String value) {
+            addCriterion("recruitNumber >", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberGreaterThanOrEqualTo(String value) {
-            addCriterion("contactNumber >=", value, "contactnumber");
+        public Criteria andRecruitnumberGreaterThanOrEqualTo(String value) {
+            addCriterion("recruitNumber >=", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberLessThan(String value) {
-            addCriterion("contactNumber <", value, "contactnumber");
+        public Criteria andRecruitnumberLessThan(String value) {
+            addCriterion("recruitNumber <", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberLessThanOrEqualTo(String value) {
-            addCriterion("contactNumber <=", value, "contactnumber");
+        public Criteria andRecruitnumberLessThanOrEqualTo(String value) {
+            addCriterion("recruitNumber <=", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberLike(String value) {
-            addCriterion("contactNumber like", value, "contactnumber");
+        public Criteria andRecruitnumberLike(String value) {
+            addCriterion("recruitNumber like", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberNotLike(String value) {
-            addCriterion("contactNumber not like", value, "contactnumber");
+        public Criteria andRecruitnumberNotLike(String value) {
+            addCriterion("recruitNumber not like", value, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberIn(List<String> values) {
-            addCriterion("contactNumber in", values, "contactnumber");
+        public Criteria andRecruitnumberIn(List<String> values) {
+            addCriterion("recruitNumber in", values, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberNotIn(List<String> values) {
-            addCriterion("contactNumber not in", values, "contactnumber");
+        public Criteria andRecruitnumberNotIn(List<String> values) {
+            addCriterion("recruitNumber not in", values, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberBetween(String value1, String value2) {
-            addCriterion("contactNumber between", value1, value2, "contactnumber");
+        public Criteria andRecruitnumberBetween(String value1, String value2) {
+            addCriterion("recruitNumber between", value1, value2, "recruitnumber");
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberNotBetween(String value1, String value2) {
-            addCriterion("contactNumber not between", value1, value2, "contactnumber");
+        public Criteria andRecruitnumberNotBetween(String value1, String value2) {
+            addCriterion("recruitNumber not between", value1, value2, "recruitnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendIsNull() {
+            addCriterion("recruitEnd is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendIsNotNull() {
+            addCriterion("recruitEnd is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendEqualTo(Date value) {
+            addCriterionForJDBCDate("recruitEnd =", value, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendNotEqualTo(Date value) {
+            addCriterionForJDBCDate("recruitEnd <>", value, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendGreaterThan(Date value) {
+            addCriterionForJDBCDate("recruitEnd >", value, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("recruitEnd >=", value, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendLessThan(Date value) {
+            addCriterionForJDBCDate("recruitEnd <", value, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("recruitEnd <=", value, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendIn(List<Date> values) {
+            addCriterionForJDBCDate("recruitEnd in", values, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendNotIn(List<Date> values) {
+            addCriterionForJDBCDate("recruitEnd not in", values, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("recruitEnd between", value1, value2, "recruitend");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitendNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("recruitEnd not between", value1, value2, "recruitend");
             return (Criteria) this;
         }
 
@@ -676,8 +834,13 @@ public class RecruitExample {
             return (Criteria) this;
         }
 
-        public Criteria andContactnumberLikeInsensitive(String value) {
-            addCriterion("upper(contactNumber) like", value.toUpperCase(), "contactnumber");
+        public Criteria andSalaryLikeInsensitive(String value) {
+            addCriterion("upper(Salary) like", value.toUpperCase(), "salary");
+            return (Criteria) this;
+        }
+
+        public Criteria andRecruitnumberLikeInsensitive(String value) {
+            addCriterion("upper(recruitNumber) like", value.toUpperCase(), "recruitnumber");
             return (Criteria) this;
         }
 

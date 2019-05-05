@@ -1,93 +1,88 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.Recruit;
-import com.ssm.wuye.domain.RecruitExample.Criteria;
-import com.ssm.wuye.domain.RecruitExample.Criterion;
-import com.ssm.wuye.domain.RecruitExample;
+import com.ssm.wuye.domain.Contract;
+import com.ssm.wuye.domain.ContractExample.Criteria;
+import com.ssm.wuye.domain.ContractExample.Criterion;
+import com.ssm.wuye.domain.ContractExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class RecruitSqlProvider {
+public class ContractSqlProvider {
 
-    public String countByExample(RecruitExample example) {
+    public String countByExample(ContractExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("recruit");
+        sql.SELECT("count(*)").FROM("contract");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(RecruitExample example) {
+    public String deleteByExample(ContractExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("recruit");
+        sql.DELETE_FROM("contract");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(Recruit record) {
+    public String insertSelective(Contract record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("recruit");
+        sql.INSERT_INTO("contract");
         
-        if (record.getRecruitid() != null) {
-            sql.VALUES("recruitId", "#{recruitid,jdbcType=INTEGER}");
+        if (record.getContractid() != null) {
+            sql.VALUES("contractId", "#{contractid,jdbcType=INTEGER}");
         }
         
-        if (record.getCompanyname() != null) {
-            sql.VALUES("companyName", "#{companyname,jdbcType=VARCHAR}");
+        if (record.getContractname() != null) {
+            sql.VALUES("contractName", "#{contractname,jdbcType=VARCHAR}");
         }
         
-        if (record.getPostname() != null) {
-            sql.VALUES("postName", "#{postname,jdbcType=VARCHAR}");
+        if (record.getContracttype() != null) {
+            sql.VALUES("contractType", "#{contracttype,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitdes() != null) {
-            sql.VALUES("recruitDes", "#{recruitdes,jdbcType=VARCHAR}");
+        if (record.getContractstart() != null) {
+            sql.VALUES("contractStart", "#{contractstart,jdbcType=DATE}");
         }
         
-        if (record.getDuty() != null) {
-            sql.VALUES("Duty", "#{duty,jdbcType=VARCHAR}");
+        if (record.getContractend() != null) {
+            sql.VALUES("contractEnd", "#{contractend,jdbcType=DATE}");
         }
         
-        if (record.getSalary() != null) {
-            sql.VALUES("Salary", "#{salary,jdbcType=VARCHAR}");
+        if (record.getContractdes() != null) {
+            sql.VALUES("contractDes", "#{contractdes,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitnum() != null) {
-            sql.VALUES("recruitNum", "#{recruitnum,jdbcType=INTEGER}");
+        if (record.getSigningpeople() != null) {
+            sql.VALUES("signingPeople", "#{signingpeople,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitnumber() != null) {
-            sql.VALUES("recruitNumber", "#{recruitnumber,jdbcType=VARCHAR}");
+        if (record.getSignatorytelephone() != null) {
+            sql.VALUES("signatoryTelephone", "#{signatorytelephone,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitend() != null) {
-            sql.VALUES("recruitEnd", "#{recruitend,jdbcType=DATE}");
-        }
-        
-        if (record.getAddress() != null) {
-            sql.VALUES("Address", "#{address,jdbcType=VARCHAR}");
+        if (record.getContractnum() != null) {
+            sql.VALUES("contractNum", "#{contractnum,jdbcType=VARCHAR}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(RecruitExample example) {
+    public String selectByExample(ContractExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
-            sql.SELECT_DISTINCT("recruitId");
+            sql.SELECT_DISTINCT("contractId");
         } else {
-            sql.SELECT("recruitId");
+            sql.SELECT("contractId");
         }
-        sql.SELECT("companyName");
-        sql.SELECT("postName");
-        sql.SELECT("recruitDes");
-        sql.SELECT("Duty");
-        sql.SELECT("Salary");
-        sql.SELECT("recruitNum");
-        sql.SELECT("recruitNumber");
-        sql.SELECT("recruitEnd");
-        sql.SELECT("Address");
-        sql.FROM("recruit");
+        sql.SELECT("contractName");
+        sql.SELECT("contractType");
+        sql.SELECT("contractStart");
+        sql.SELECT("contractEnd");
+        sql.SELECT("contractDes");
+        sql.SELECT("signingPeople");
+        sql.SELECT("signatoryTelephone");
+        sql.SELECT("contractNum");
+        sql.FROM("contract");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -98,50 +93,46 @@ public class RecruitSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Recruit record = (Recruit) parameter.get("record");
-        RecruitExample example = (RecruitExample) parameter.get("example");
+        Contract record = (Contract) parameter.get("record");
+        ContractExample example = (ContractExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("recruit");
+        sql.UPDATE("contract");
         
-        if (record.getRecruitid() != null) {
-            sql.SET("recruitId = #{record.recruitid,jdbcType=INTEGER}");
+        if (record.getContractid() != null) {
+            sql.SET("contractId = #{record.contractid,jdbcType=INTEGER}");
         }
         
-        if (record.getCompanyname() != null) {
-            sql.SET("companyName = #{record.companyname,jdbcType=VARCHAR}");
+        if (record.getContractname() != null) {
+            sql.SET("contractName = #{record.contractname,jdbcType=VARCHAR}");
         }
         
-        if (record.getPostname() != null) {
-            sql.SET("postName = #{record.postname,jdbcType=VARCHAR}");
+        if (record.getContracttype() != null) {
+            sql.SET("contractType = #{record.contracttype,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitdes() != null) {
-            sql.SET("recruitDes = #{record.recruitdes,jdbcType=VARCHAR}");
+        if (record.getContractstart() != null) {
+            sql.SET("contractStart = #{record.contractstart,jdbcType=DATE}");
         }
         
-        if (record.getDuty() != null) {
-            sql.SET("Duty = #{record.duty,jdbcType=VARCHAR}");
+        if (record.getContractend() != null) {
+            sql.SET("contractEnd = #{record.contractend,jdbcType=DATE}");
         }
         
-        if (record.getSalary() != null) {
-            sql.SET("Salary = #{record.salary,jdbcType=VARCHAR}");
+        if (record.getContractdes() != null) {
+            sql.SET("contractDes = #{record.contractdes,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitnum() != null) {
-            sql.SET("recruitNum = #{record.recruitnum,jdbcType=INTEGER}");
+        if (record.getSigningpeople() != null) {
+            sql.SET("signingPeople = #{record.signingpeople,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitnumber() != null) {
-            sql.SET("recruitNumber = #{record.recruitnumber,jdbcType=VARCHAR}");
+        if (record.getSignatorytelephone() != null) {
+            sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitend() != null) {
-            sql.SET("recruitEnd = #{record.recruitend,jdbcType=DATE}");
-        }
-        
-        if (record.getAddress() != null) {
-            sql.SET("Address = #{record.address,jdbcType=VARCHAR}");
+        if (record.getContractnum() != null) {
+            sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
         }
         
         applyWhere(sql, example, true);
@@ -150,70 +141,65 @@ public class RecruitSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("recruit");
+        sql.UPDATE("contract");
         
-        sql.SET("recruitId = #{record.recruitid,jdbcType=INTEGER}");
-        sql.SET("companyName = #{record.companyname,jdbcType=VARCHAR}");
-        sql.SET("postName = #{record.postname,jdbcType=VARCHAR}");
-        sql.SET("recruitDes = #{record.recruitdes,jdbcType=VARCHAR}");
-        sql.SET("Duty = #{record.duty,jdbcType=VARCHAR}");
-        sql.SET("Salary = #{record.salary,jdbcType=VARCHAR}");
-        sql.SET("recruitNum = #{record.recruitnum,jdbcType=INTEGER}");
-        sql.SET("recruitNumber = #{record.recruitnumber,jdbcType=VARCHAR}");
-        sql.SET("recruitEnd = #{record.recruitend,jdbcType=DATE}");
-        sql.SET("Address = #{record.address,jdbcType=VARCHAR}");
+        sql.SET("contractId = #{record.contractid,jdbcType=INTEGER}");
+        sql.SET("contractName = #{record.contractname,jdbcType=VARCHAR}");
+        sql.SET("contractType = #{record.contracttype,jdbcType=VARCHAR}");
+        sql.SET("contractStart = #{record.contractstart,jdbcType=DATE}");
+        sql.SET("contractEnd = #{record.contractend,jdbcType=DATE}");
+        sql.SET("contractDes = #{record.contractdes,jdbcType=VARCHAR}");
+        sql.SET("signingPeople = #{record.signingpeople,jdbcType=VARCHAR}");
+        sql.SET("signatoryTelephone = #{record.signatorytelephone,jdbcType=VARCHAR}");
+        sql.SET("contractNum = #{record.contractnum,jdbcType=VARCHAR}");
         
-        RecruitExample example = (RecruitExample) parameter.get("example");
+        ContractExample example = (ContractExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(Recruit record) {
+    public String updateByPrimaryKeySelective(Contract record) {
         SQL sql = new SQL();
-        sql.UPDATE("recruit");
+        sql.UPDATE("contract");
         
-        if (record.getCompanyname() != null) {
-            sql.SET("companyName = #{companyname,jdbcType=VARCHAR}");
+        if (record.getContractname() != null) {
+            sql.SET("contractName = #{contractname,jdbcType=VARCHAR}");
         }
         
-        if (record.getPostname() != null) {
-            sql.SET("postName = #{postname,jdbcType=VARCHAR}");
+        if (record.getContracttype() != null) {
+            sql.SET("contractType = #{contracttype,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitdes() != null) {
-            sql.SET("recruitDes = #{recruitdes,jdbcType=VARCHAR}");
+        if (record.getContractstart() != null) {
+            sql.SET("contractStart = #{contractstart,jdbcType=DATE}");
         }
         
-        if (record.getDuty() != null) {
-            sql.SET("Duty = #{duty,jdbcType=VARCHAR}");
+        if (record.getContractend() != null) {
+            sql.SET("contractEnd = #{contractend,jdbcType=DATE}");
         }
         
-        if (record.getSalary() != null) {
-            sql.SET("Salary = #{salary,jdbcType=VARCHAR}");
+        if (record.getContractdes() != null) {
+            sql.SET("contractDes = #{contractdes,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitnum() != null) {
-            sql.SET("recruitNum = #{recruitnum,jdbcType=INTEGER}");
+        if (record.getSigningpeople() != null) {
+            sql.SET("signingPeople = #{signingpeople,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitnumber() != null) {
-            sql.SET("recruitNumber = #{recruitnumber,jdbcType=VARCHAR}");
+        if (record.getSignatorytelephone() != null) {
+            sql.SET("signatoryTelephone = #{signatorytelephone,jdbcType=VARCHAR}");
         }
         
-        if (record.getRecruitend() != null) {
-            sql.SET("recruitEnd = #{recruitend,jdbcType=DATE}");
+        if (record.getContractnum() != null) {
+            sql.SET("contractNum = #{contractnum,jdbcType=VARCHAR}");
         }
         
-        if (record.getAddress() != null) {
-            sql.SET("Address = #{address,jdbcType=VARCHAR}");
-        }
-        
-        sql.WHERE("recruitId = #{recruitid,jdbcType=INTEGER}");
+        sql.WHERE("contractId = #{contractid,jdbcType=INTEGER}");
         
         return sql.toString();
     }
 
-    protected void applyWhere(SQL sql, RecruitExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, ContractExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }
