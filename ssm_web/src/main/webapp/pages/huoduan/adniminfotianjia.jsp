@@ -65,10 +65,10 @@
                  </div>
                  <div class="form-group has-success">
                      <h4><label class="control-label" for="inputSuccess">状态</label>
-                         <select class="form-control" placeholder=""  name="userflag">
-                             <%--<option SELECTED="selected">${saif.userflag}</option>--%>
-                             <option value="工作中">工作中</option>
-                             <option value="休假">休假</option>
+                                 <select class="form-control" placeholder=""  name="userflag">
+                                     <%--<option SELECTED="selected">${saif.userflag}</option>--%>
+                                     <option value="工作中">工作中</option>
+                                     <option value="休假">休假</option>
                          </select></h4>
                  </div>
                  <div class="form-group has-success">
