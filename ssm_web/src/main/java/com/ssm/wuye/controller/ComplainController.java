@@ -45,9 +45,9 @@ public class ComplainController {
         ModelAndView mv = new ModelAndView();
         int i = complainService.deleteByPrimaryKey(cid);
         System.out.println("删除数据" + i + "条");
-        List<ComplainInfo> list = complainService.selectByExample(null);
-        mv.addObject(list);
-        mv.setViewName("pages/huoduan/complain");
+//        List<ComplainInfo> list = complainService.selectByExample(null);
+//        mv.addObject("list",list);
+        mv.setViewName("forward:/complain/findall.do");
         return mv;
     }
 
@@ -74,8 +74,8 @@ public class ComplainController {
         ModelAndView mv = new ModelAndView();
         int i = complainService.updateByPrimaryKeySelective(complainInfo);
         List<ComplainInfo> list = complainService.selectByExample(null);
-        mv.addObject(list);
-        mv.setViewName("pages/huoduan/complain");
+        mv.addObject("list",list);
+        mv.setViewName("forward:/complain/findall.do");
         return mv;
 
     }
@@ -94,7 +94,7 @@ public class ComplainController {
         System.out.println("添加成功" + i + "条");
         List<ComplainInfo> list = complainService.selectByExample(null);
         mv.addObject(list);
-        mv.setViewName("pages/huoduan/complainrefresh.jsp");
+        mv.setViewName("forward:/complain/findall.do");
         return mv;
     }
 
