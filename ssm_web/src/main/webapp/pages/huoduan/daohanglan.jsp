@@ -16,10 +16,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 人事管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/ai/houqinsearch.do">职员管理</a>
+                        <a href="${pageContext.request.contextPath}//.do">职员管理</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/ai/searchRole.do">新人入职</a>
+                        <a href="${pageContext.request.contextPath}//.do">新人入职</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/role/rolesearch.do">职位查询</a>
@@ -89,14 +89,11 @@
                         <a href="${pageContext.request.contextPath}//.do">活动信息记录</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">招聘信息记录</a>
+                        <a href="${pageContext.request.contextPath}/recruit/research.do">招聘信息记录</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">新建招聘信息</a>
+                        <a href="${pageContext.request.contextPath}/pages/houduan/recruitsave.jsp">新建招聘信息</a>
                     </li>
-
-
-
                 </ul>
             </li>
 
@@ -154,7 +151,7 @@
                 </ul>
             </li>
 
-           <%-- <li>
+            <li>
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -171,7 +168,7 @@
                     </li>
 
                 </ul>
-            </li>--%>
+            </li>
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
@@ -229,7 +226,6 @@
 
                 </ul>
             </li>
-
         </ul>
 
     </div>
