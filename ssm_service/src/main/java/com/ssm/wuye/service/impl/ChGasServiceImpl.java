@@ -75,4 +75,9 @@ public class ChGasServiceImpl implements ChGasService {
     public int updateByExampleSelective(ChGasMeter record, ChGasMeterExample example) {
         return chGasMeterMapper.updateByExampleSelective(record,example);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer id) {
+        return chGasMeterMapper.deleteByPrimaryKey(id);
+    }
 }

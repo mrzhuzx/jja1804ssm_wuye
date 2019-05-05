@@ -24,4 +24,6 @@ public interface ChElectricSercice {
     int insertSelective(ChElectricMeter record);
 
     int updateByExampleSelective( ChElectricMeter record, ChElectricMeterExample example);
+
+    int deleteByPrimaryKey(Integer electricid);
 }

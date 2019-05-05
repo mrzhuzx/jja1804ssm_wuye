@@ -80,4 +80,9 @@ public class ChWaterServiceImpl implements ChWaterService {
     public int updateByExampleSelective(ChWaterMeter record, ChWaterMeterExample example) {
         return chWaterMeterMapper.updateByExampleSelective(record,example);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer waterid) {
+        return chWaterMeterMapper.deleteByPrimaryKey(waterid);
+    }
 }

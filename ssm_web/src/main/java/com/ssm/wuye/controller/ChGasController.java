@@ -5,7 +5,9 @@ package com.ssm.wuye.controller;
 import com.ssm.wuye.domain.ChGasMeter;
 
 import com.ssm.wuye.domain.ChGasMeterExample;
+import com.ssm.wuye.domain.MyHouse;
 import com.ssm.wuye.service.ChGasService;
+import com.ssm.wuye.service.MyHouseService;
 import com.ssm.wuye.vo.GasAndOwer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +29,8 @@ import java.util.List;
 public class ChGasController {
     @Resource
     ChGasService chGasService;
+    @Resource
+    MyHouseService myHouseService;
 
     /**
      * 查询全部燃气
@@ -43,8 +47,10 @@ public class ChGasController {
 
     @RequestMapping("searchOne")
     public ModelAndView searchOne(@RequestParam Integer id){
-        ModelAndView view=new ModelAndView("pages/huoduan/shoufei/gasAdd");
+        ModelAndView view=new ModelAndView("pages/huoduan/shoufei/gasUpdate");
         ChGasMeter chGasMeter = chGasService.selectByPrimaryKey(id);
+        List<MyHouse> myHouseList = myHouseService.selectByExample(null);
+        view.addObject("myHouseList",myHouseList);
         view.addObject("chGasMeter",chGasMeter);
         return view;
     }
@@ -55,9 +61,9 @@ public class ChGasController {
         chGasMeter.setGasnumber("gas"+chGasMeter.getHouseid());
         int i = chGasService.insertSelective(chGasMeter);
         if (i>=0){
-            System.out.println("添加失败！！");
+            System.out.println("添加成功！！");
         }else {
-            System.out.println("添加成功！！！");
+            System.out.println("添加失败！！！");
 
         }
         return view;
@@ -70,11 +76,24 @@ public class ChGasController {
         chGasMeter.setGasnumber("gas"+chGasMeter.getHouseid());
         int i = chGasService.updateByExampleSelective(chGasMeter, chGasMeterExample);
         if (i>=0){
-            System.out.println("修改失败！！");
+            System.out.println("修改成功！！");
         }else {
-            System.out.println("修改成功！！！");
+            System.out.println("修改失败！！！");
 
         }
         return  view;
+    }
+    @RequestMapping("deleteOne")
+    public ModelAndView deleteOne(@RequestParam Integer id){
+        ModelAndView view=new ModelAndView("redirect:/gas/searchAll.do");
+        int i = chGasService.deleteByPrimaryKey(id);
+        if (i>=0){
+            System.out.println("删除成功！！！");
+
+        }else {
+            System.out.println("删除失败！！");
+
+        }
+        return view;
     }
 }
