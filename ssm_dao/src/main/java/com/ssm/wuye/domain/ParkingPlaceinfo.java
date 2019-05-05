@@ -14,8 +14,10 @@ import org.apache.ibatis.type.Alias;
 public class ParkingPlaceinfo extends BaseEntity {
     /**
      * 主键/自动递增
+     *
      */
     @Id
+
     @Column(name = "hid")
     private Integer hid;
 

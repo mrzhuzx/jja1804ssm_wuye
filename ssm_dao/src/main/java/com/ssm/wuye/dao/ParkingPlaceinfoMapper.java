@@ -94,6 +94,7 @@ public interface ParkingPlaceinfoMapper {
     int updateByPrimaryKeySelective(ParkingPlaceinfo record);
 
     @Update({
+
         "update parking_placeinfo",
         "set pid = #{pid,jdbcType=VARCHAR},",
           "olid = #{olid,jdbcType=INTEGER},",

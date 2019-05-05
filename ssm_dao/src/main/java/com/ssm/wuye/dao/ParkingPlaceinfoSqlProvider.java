@@ -19,6 +19,7 @@ public class ParkingPlaceinfoSqlProvider {
 
     public String deleteByExample(ParkingPlaceinfoExample example) {
         SQL sql = new SQL();
+
         sql.DELETE_FROM("parking_placeinfo");
         applyWhere(sql, example, false);
         return sql.toString();
