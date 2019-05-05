@@ -43,7 +43,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           房屋信息
+                           房屋信息  注：删除后无法撤回
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">

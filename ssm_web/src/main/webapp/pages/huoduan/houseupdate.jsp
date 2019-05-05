@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Forms Page <small></small>
+                        修改房屋信息 <small></small>
                     </h1>
                 </div>
             </div>
@@ -82,18 +82,32 @@
                                             <label>房屋描述</label>
                                             <input class="form-control"  placeholder="房屋描述" name="hremarks"  value="${myhouse.hremarks}">
                                         </div>
-                                        <div >
+
+                                        <div class="form-group" >
                                             <label>房屋状态</label>
-                                            <input class="form-control" placeholder="房屋状态" name="hstate" value="${myhouse.hstate}">
-                                        </div>
-                                        <div>
-                                            <label>房屋出租</label>
-                                            <input class="form-control" placeholder="房屋出租" name="loan" value="${myhouse.loan}">
+                                            <select class="form-control" name="hstate" >
+                                                <option selected="selected"  value="${myhouse.hstate}">${myhouse.hstate}</option>
+                                                <option  value="代售">代售</option>
+                                                <option  value="入住">入住</option>
+                                            </select>
                                         </div>
 
                                         <div class="form-group" >
-                                            <label>房屋类型:${myhouse.htypeid}</label>
+                                            <label>房屋出租</label>
+                                            <select class="form-control" name="loan" >
+                                                <option selected="selected"  value="${myhouse.loan}"><c:if test="${myhouse.loan eq 0}">不租</c:if>
+                                                    <c:if test="${myhouse.loan eq 1}">已租</c:if>
+                                                    <c:if test="${myhouse.loan eq 2}">待租</c:if></option>
+                                                <option  value="0">不租</option>
+                                                <option  value="1">已租</option>
+                                                <option  value="2">待租</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group" >
+                                            <label>房屋类型</label>
                                             <select class="form-control" name="htypeid" >
+                                                <option selected="selected"  value="${myhouse.htypeid}">${myhouse.htypename}</option>
                                                 <c:forEach items="${myHouseTypeList}" var="mht">
                                                     <option  value="${mht.htypeid}">${mht.htypename}</option>
                                                 </c:forEach>
@@ -101,8 +115,9 @@
                                         </div>
 
                                             <div class="form-group" >
-                                                <label>业主名字:,${myhouse.olid}</label>
+                                                <label>业主名字</label>
                                                 <select class="form-control" name="olid" >
+                                                    <option selected="selected"  value="${myhouse.olid}">${myhouse.olname}</option>
                                                     <c:forEach items="${ower}" var="ower">
                                                     <option  value="${ower.olid}"> ${ower.olname}</option>
                                                     </c:forEach>
