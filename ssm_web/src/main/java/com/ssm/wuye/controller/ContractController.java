@@ -80,7 +80,7 @@ public class ContractController {
      */
     @RequestMapping("conupdate")
     public ModelAndView conupdate(@ModelAttribute Contract con){
-        ModelAndView m=new ModelAndView("forward:/con/consearch.do");
+        ModelAndView m=new ModelAndView("redirect:/con/consearch.do");
         int i=contractService.updateByPrimaryKeySelective(con);
         if(i==0){
             System.out.println("修改失败");
@@ -98,7 +98,7 @@ public class ContractController {
      */
     @RequestMapping("condelete")
      public  ModelAndView condelete(@RequestParam Integer contractid){
-        ModelAndView m=new ModelAndView("forward:/con/consearch.do");
+        ModelAndView m=new ModelAndView("redirect:/con/consearch.do");
         int i=contractService.deleteByPrimaryKey(contractid);
         if(i==0){
             System.out.println("删除失败");

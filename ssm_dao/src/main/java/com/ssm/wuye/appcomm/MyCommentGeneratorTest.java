@@ -1,12 +1,10 @@
 package com.ssm.wuye.appcomm;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.generator.api.MyBatisGenerator;
-import org.mybatis.generator.api.ShellRunner;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;

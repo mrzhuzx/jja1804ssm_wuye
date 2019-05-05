@@ -81,8 +81,8 @@ public interface ParkingPlaceinfoMapper {
         @Result(column="hphone", property="hphone", jdbcType=JdbcType.VARCHAR),
         @Result(column="hcards", property="hcards", jdbcType=JdbcType.VARCHAR),
         @Result(column="descr", property="descr", jdbcType=JdbcType.VARCHAR)
-    })
-    ParkingPlaceinfo selectByPrimaryKey(Integer hid);
+})
+        ParkingPlaceinfo selectByPrimaryKey(Integer hid);
 
     @UpdateProvider(type=ParkingPlaceinfoSqlProvider.class, method="updateByExampleSelective")
     int updateByExampleSelective(@Param("record") ParkingPlaceinfo record, @Param("example") ParkingPlaceinfoExample example);
@@ -94,7 +94,6 @@ public interface ParkingPlaceinfoMapper {
     int updateByPrimaryKeySelective(ParkingPlaceinfo record);
 
     @Update({
-
         "update parking_placeinfo",
         "set pid = #{pid,jdbcType=VARCHAR},",
           "olid = #{olid,jdbcType=INTEGER},",
