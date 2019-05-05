@@ -16,10 +16,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 人事管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">职员管理</a>
+                        <a href="${pageContext.request.contextPath}/ai/houqinsearch.do">职员管理</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">新人入职</a>
+                        <a href="${pageContext.request.contextPath}/ai/searchRole.do">新人入职</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/role/rolesearch.do">职位查询</a>
@@ -154,7 +154,7 @@
                 </ul>
             </li>
 
-            <li>
+           <%-- <li>
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -171,7 +171,7 @@
                     </li>
 
                 </ul>
-            </li>
+            </li>--%>
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
@@ -230,33 +230,6 @@
                 </ul>
             </li>
 
-
-
-
-            <li>
-                <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard"></i> 图表 </a>
-            </li>
-            <li>
-                <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI 元素 </a>
-            </li>
-            <li>
-                <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据图表 </a>
-            </li>
-
-            <li>
-                <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板 </a>
-            </li>
-
-            <li>
-                <a href="table.jsp"><i class="fa fa-table"></i> 响应表 </a>
-            </li>
-
-            <li>
-                <a href="form.jsp"><i class="fa fa-edit"></i> 表单 </a>
-            </li>
-            <li>
-                <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
-            </li>
         </ul>
 
     </div>

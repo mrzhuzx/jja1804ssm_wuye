@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        后勤领导人游队长
+                        人事管理阿松
                         <small></small>
                     </h1>
                 </div>
@@ -94,7 +94,7 @@
                                             <td>${sai.userqqface}</td>
                                             <td>${sai.userflag}</td>
                                             <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${sai.userstyle}</td>
-                                            <td>${sai.rolename}</td>
+                                            <td>${sai.rolename}</td>0
                                             <td><button class="btn btn-primary">
                                                 <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/ai/infosearchone.do?userid=${sai.userid}'"></i> 修改</button>
                                                 <button class="btn btn-danger">

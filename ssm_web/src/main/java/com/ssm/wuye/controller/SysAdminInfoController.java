@@ -7,13 +7,10 @@ package com.ssm.wuye.controller;
  *version:1.2.3
  */
 
-import com.ssm.wuye.dao.HouqinMapper;
-import com.ssm.wuye.domain.Houqin;
-import com.ssm.wuye.domain.HouqinExample;
-import com.ssm.wuye.domain.SysAdminInfo;
-import com.ssm.wuye.domain.SysAdminInfoExample;
+import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.HouqinService;
 import com.ssm.wuye.service.SysAdminInfoService;
+import com.ssm.wuye.service.SysRoleService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +28,8 @@ public class SysAdminInfoController {
     SysAdminInfoService sysAdminInfoService;
     @Resource
     HouqinService houqinService;
+    @Resource
+    SysRoleService sysRoleService;
 
 
     /**
@@ -82,6 +81,23 @@ public class SysAdminInfoController {
 //        }
 //        return m;
 //    }
+    /**
+     * 获取职位信息（配合修改方法使用）
+     * @param
+     * @return
+     */
+    @RequestMapping("searchRole")
+    public ModelAndView searchRole() {
+        ModelAndView m =new ModelAndView("pages/huoduan/adniminfotianjia");
+        List<SysRole> sysRoles = sysRoleService.selectByExample(null);
+        m.addObject("sysRoles",sysRoles);
+        for (SysRole sysRole : sysRoles) {
+            sysRole.getRolename();
+        }
+        System.out.println("获取到一条数据...........");
+        return m;
+
+    }
 
     /**
      * 添加
@@ -108,22 +124,30 @@ public class SysAdminInfoController {
     @RequestMapping("infosearchone")
    public ModelAndView searchone(@RequestParam Integer userid) {
         ModelAndView m =new ModelAndView("pages/huoduan/adniminfoxiugai");
-        SysAdminInfo saif =sysAdminInfoService.selectByPrimaryKey(userid);
-        m.addObject("saif",saif);
+        HouqinExample houqinExample=new HouqinExample();
+        houqinExample.createCriteria().andUseridEqualTo(userid);
+        List<Houqin> houqins = houqinService.selectByExample(houqinExample);
+        List<SysRole> sysRoles = sysRoleService.selectByExample(null);
+        Houqin houqin=new Houqin();
+        for (Houqin houqin1 : houqins) {
+            houqin= houqin1;
+        }
+        m.addObject("saif",houqin);
+        m.addObject("sysRoles",sysRoles);
        System.out.println("获取到一条数据...........");
        return m;
 
    }
     /**
      * 修改
-     * @param userid
+     * @param sysAdminInfo
      * @return
      */
     @RequestMapping("infoupdate")
-    public ModelAndView update(@ModelAttribute SysAdminInfo userid){
+    public ModelAndView update(@ModelAttribute SysAdminInfo sysAdminInfo){
 
         ModelAndView m =new ModelAndView("redirect:/ai/houqinsearch.do");
-        int i=sysAdminInfoService.updateByPrimaryKeySelective(userid);
+        int i=sysAdminInfoService.updateByPrimaryKeySelective(sysAdminInfo);
         if (i==0){
             System.out.println("修改失败...........");
         }else {
@@ -142,7 +166,6 @@ public class SysAdminInfoController {
      */
     @RequestMapping("infodelete")
     public ModelAndView delete(@RequestParam Integer userid){
-        System.out.println("11111111111111111111111111111111111111");
         ModelAndView m =new ModelAndView("redirect:/ai/houqinsearch.do");
         int i=sysAdminInfoService.deleteByPrimaryKey(userid);
         System.out.println(userid);
@@ -153,6 +176,8 @@ public class SysAdminInfoController {
         }
         return m;
     }
+
+
 
 }
 
