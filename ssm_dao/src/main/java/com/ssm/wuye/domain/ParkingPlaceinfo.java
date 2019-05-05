@@ -1,6 +1,5 @@
 package com.ssm.wuye.domain;
 
-import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,13 +10,11 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "parking_placeinfo")
 @Alias("parkingPlaceinfo")
-public class ParkingPlaceinfo extends BaseEntity {
+public class ParkingPlaceinfo {
     /**
      * 主键/自动递增
-     *
      */
     @Id
-
     @Column(name = "hid")
     private Integer hid;
 

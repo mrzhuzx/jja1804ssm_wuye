@@ -33,12 +33,14 @@ public interface RecruitMapper {
     @Insert({
         "insert into recruit (recruitId, companyName, ",
         "postName, recruitDes, ",
-        "Duty, recruitNum, ",
-        "contactNumber, Address)",
+        "Duty, Salary, recruitNum, ",
+        "recruitNumber, recruitEnd, ",
+        "Address)",
         "values (#{recruitid,jdbcType=INTEGER}, #{companyname,jdbcType=VARCHAR}, ",
         "#{postname,jdbcType=VARCHAR}, #{recruitdes,jdbcType=VARCHAR}, ",
-        "#{duty,jdbcType=VARCHAR}, #{recruitnum,jdbcType=INTEGER}, ",
-        "#{contactnumber,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR})"
+        "#{duty,jdbcType=VARCHAR}, #{salary,jdbcType=VARCHAR}, #{recruitnum,jdbcType=INTEGER}, ",
+        "#{recruitnumber,jdbcType=VARCHAR}, #{recruitend,jdbcType=DATE}, ",
+        "#{address,jdbcType=VARCHAR})"
     })
     int insert(Recruit record);
 
@@ -52,8 +54,10 @@ public interface RecruitMapper {
         @Result(column="postName", property="postname", jdbcType=JdbcType.VARCHAR),
         @Result(column="recruitDes", property="recruitdes", jdbcType=JdbcType.VARCHAR),
         @Result(column="Duty", property="duty", jdbcType=JdbcType.VARCHAR),
+        @Result(column="Salary", property="salary", jdbcType=JdbcType.VARCHAR),
         @Result(column="recruitNum", property="recruitnum", jdbcType=JdbcType.INTEGER),
-        @Result(column="contactNumber", property="contactnumber", jdbcType=JdbcType.VARCHAR),
+        @Result(column="recruitNumber", property="recruitnumber", jdbcType=JdbcType.VARCHAR),
+        @Result(column="recruitEnd", property="recruitend", jdbcType=JdbcType.DATE),
         @Result(column="Address", property="address", jdbcType=JdbcType.VARCHAR)
     })
     List<Recruit> selectByExampleWithRowbounds(RecruitExample example, RowBounds rowBounds);
@@ -65,16 +69,18 @@ public interface RecruitMapper {
         @Result(column="postName", property="postname", jdbcType=JdbcType.VARCHAR),
         @Result(column="recruitDes", property="recruitdes", jdbcType=JdbcType.VARCHAR),
         @Result(column="Duty", property="duty", jdbcType=JdbcType.VARCHAR),
+        @Result(column="Salary", property="salary", jdbcType=JdbcType.VARCHAR),
         @Result(column="recruitNum", property="recruitnum", jdbcType=JdbcType.INTEGER),
-        @Result(column="contactNumber", property="contactnumber", jdbcType=JdbcType.VARCHAR),
+        @Result(column="recruitNumber", property="recruitnumber", jdbcType=JdbcType.VARCHAR),
+        @Result(column="recruitEnd", property="recruitend", jdbcType=JdbcType.DATE),
         @Result(column="Address", property="address", jdbcType=JdbcType.VARCHAR)
     })
     List<Recruit> selectByExample(RecruitExample example);
 
     @Select({
         "select",
-        "recruitId, companyName, postName, recruitDes, Duty, recruitNum, contactNumber, ",
-        "Address",
+        "recruitId, companyName, postName, recruitDes, Duty, Salary, recruitNum, recruitNumber, ",
+        "recruitEnd, Address",
         "from recruit",
         "where recruitId = #{recruitid,jdbcType=INTEGER}"
     })
@@ -84,8 +90,10 @@ public interface RecruitMapper {
         @Result(column="postName", property="postname", jdbcType=JdbcType.VARCHAR),
         @Result(column="recruitDes", property="recruitdes", jdbcType=JdbcType.VARCHAR),
         @Result(column="Duty", property="duty", jdbcType=JdbcType.VARCHAR),
+        @Result(column="Salary", property="salary", jdbcType=JdbcType.VARCHAR),
         @Result(column="recruitNum", property="recruitnum", jdbcType=JdbcType.INTEGER),
-        @Result(column="contactNumber", property="contactnumber", jdbcType=JdbcType.VARCHAR),
+        @Result(column="recruitNumber", property="recruitnumber", jdbcType=JdbcType.VARCHAR),
+        @Result(column="recruitEnd", property="recruitend", jdbcType=JdbcType.DATE),
         @Result(column="Address", property="address", jdbcType=JdbcType.VARCHAR)
     })
     Recruit selectByPrimaryKey(Integer recruitid);
@@ -105,8 +113,10 @@ public interface RecruitMapper {
           "postName = #{postname,jdbcType=VARCHAR},",
           "recruitDes = #{recruitdes,jdbcType=VARCHAR},",
           "Duty = #{duty,jdbcType=VARCHAR},",
+          "Salary = #{salary,jdbcType=VARCHAR},",
           "recruitNum = #{recruitnum,jdbcType=INTEGER},",
-          "contactNumber = #{contactnumber,jdbcType=VARCHAR},",
+          "recruitNumber = #{recruitnumber,jdbcType=VARCHAR},",
+          "recruitEnd = #{recruitend,jdbcType=DATE},",
           "Address = #{address,jdbcType=VARCHAR}",
         "where recruitId = #{recruitid,jdbcType=INTEGER}"
     })

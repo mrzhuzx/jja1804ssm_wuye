@@ -5,9 +5,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * 卢智鹏
- */
 public class ContractExample {
     /**
      * contract
@@ -78,7 +75,7 @@ public class ContractExample {
     }
 
     /**
-     * contract 2019-04-25
+     * contract 2019-05-05
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -786,7 +783,7 @@ public class ContractExample {
     }
 
     /**
-     * contract 2019-04-25
+     * contract 2019-05-05
      */
     public static class Criterion {
         private String condition;
@@ -874,7 +871,3 @@ public class ContractExample {
         }
     }
 }
-
-
-
-
