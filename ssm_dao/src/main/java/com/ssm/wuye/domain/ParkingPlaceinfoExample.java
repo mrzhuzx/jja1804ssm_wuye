@@ -9,6 +9,7 @@ public class ParkingPlaceinfoExample {
      */
     protected String orderByClause;
 
+
     /**
      * parking_placeinfo
      */
