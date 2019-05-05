@@ -43,7 +43,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           房屋信息
+                           业主信息
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -56,8 +56,7 @@
                                         <th>业主身份证</th>
                                         <th>业主手机号</th>
                                         <th>居住成员人数</th>
-                                        <th>业主姓名</th>
-                                        <th>操作</th>
+                                        <th>业主身份</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -65,14 +64,14 @@
                                         <tr class="odd gradeX">
                                             <td>${oth.olname}</td>
                                             <td>${oth.olaccount}</td>
-                                            <td>${oth.olpasswd}</td>
+                                            <td>******</td>
                                             <td>${oth.powerid}</td>
                                             <td>${oth.olphone}</td>
                                             <td>${oth.olmember}</td>
                                             <td>业主</td>
-                                            <td><button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ower/deletedower.do?olid=${oth.olid}'"><i class="fa fa-pencil" ></i> 删除</button>
-                                            <%--<button class="btn btn-success"><i class="fa fa-save " onclick="location.href='${pageContext.request.contextPath}/nt/htntidadd.do?ntid=${htnestype.ntid}'"></i> 保存</button>--%>
-                                            </td>
+                                            <%--<td><button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/ower/deletedower.do?olid=${oth.olid}'"><i class="fa fa-pencil" ></i> 删除</button>--%>
+                                            <%--&lt;%&ndash;<button class="btn btn-success"><i class="fa fa-save " onclick="location.href='${pageContext.request.contextPath}/nt/htntidadd.do?ntid=${htnestype.ntid}'"></i> 保存</button>&ndash;%&gt;--%>
+                                            <%--</td>--%>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
