@@ -1,10 +1,8 @@
 package com.ssm.wuye.controller;
 
-import com.ssm.wuye.domain.Contract;
 import com.ssm.wuye.domain.Recruit;
 import com.ssm.wuye.service.RecruitService;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,9 +18,11 @@ import java.util.List;
  * version:1.2.3
  */
 
+
 @Controller
 @RequestMapping("recruit")
 public class RecruitController {
+
     @Resource
     RecruitService recruitService;
 
@@ -30,7 +30,7 @@ public class RecruitController {
      * 查询全部
      */
     @RequestMapping("research")
-    public ModelAndView search() {
+    public ModelAndView research() {
         ModelAndView m = new ModelAndView("pages/huoduan/recruit");
         List<Recruit> recruitList = recruitService.selectByExample(null);
         for ( Recruit recruit : recruitList) {
@@ -40,13 +40,12 @@ public class RecruitController {
         return m;
     }
 
-
     /**
      * 增加一条数据
      *
      */
     @RequestMapping("resave")
-    public ModelAndView contractsave(@ModelAttribute Recruit re ){
+    public ModelAndView resave(@ModelAttribute Recruit re ){
         ModelAndView m = new ModelAndView("redirect:/recruit/research.do");
         int i=recruitService.insertSelective(re);
         if(i==0){
@@ -77,7 +76,7 @@ public class RecruitController {
      * @return
      */
     @RequestMapping("reupdate")
-    public ModelAndView conupdate(@ModelAttribute Recruit re){
+    public ModelAndView reupdate(@ModelAttribute Recruit re){
         ModelAndView m=new ModelAndView("redirect:/recruit/research.do");
         int i=recruitService.updateByPrimaryKeySelective(re);
         if(i==0){
@@ -94,8 +93,8 @@ public class RecruitController {
      *根据主键ID删除
      * @return
      */
-    @RequestMapping("condelete")
-    public  ModelAndView condelete(@RequestParam Integer recruitid){
+    @RequestMapping("redelete")
+    public  ModelAndView redelete(@RequestParam Integer recruitid){
         ModelAndView m=new ModelAndView("redirect:/recruit/research.do");
         int i=recruitService.deleteByPrimaryKey(recruitid);
         if(i==0){

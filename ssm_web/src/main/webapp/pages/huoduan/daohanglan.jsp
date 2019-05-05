@@ -92,7 +92,7 @@
                         <a href="${pageContext.request.contextPath}/recruit/research.do">招聘信息记录</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/pages/houduan/recruitsave.jsp">新建招聘信息</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/recruitsave.jsp">新建招聘信息</a>
                     </li>
                 </ul>
             </li>

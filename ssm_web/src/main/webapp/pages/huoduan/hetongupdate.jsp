@@ -71,6 +71,7 @@
                                             <label>合同描述</label>
                                             <textarea class="form-control" rows="3"  name="contractdes" >${contract.contractdes}</textarea>
                                         </div>
+
                                         <div>
                                             <label>签约人</label>
                                             <input class="form-control" placeholder="" value="${contract.signingpeople}" name="signingpeople">

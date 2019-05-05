@@ -69,10 +69,12 @@
                                                 <option>5</option>
                                             </select>
                                         </div>
-                                        <div  >
+                                        <div class="form-group">
                                             <label>合同描述</label>
-                                            <input class="form-control" placeholder="合同描述"  value="与xx的合同协议书" name="contractdes">
+                                            <textarea class="form-control" rows="3"  name="contractdes" >与xx的合同协议书</textarea>
                                         </div>
+
+
                                         <div>
                                             <label>签约人</label>
                                             <input class="form-control" placeholder="签约人" value="徐凤年" name="signingpeople">
