@@ -89,14 +89,11 @@
                         <a href="${pageContext.request.contextPath}//.do">活动信息记录</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">招聘信息记录</a>
+                        <a href="${pageContext.request.contextPath}/recruit/research.do">招聘信息记录</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">新建招聘信息</a>
+                        <a href="${pageContext.request.contextPath}/pages/houduan/recruitsave.jsp">新建招聘信息</a>
                     </li>
-
-
-
                 </ul>
             </li>
 
@@ -228,34 +225,6 @@
                     </li>
 
                 </ul>
-            </li>
-
-
-
-
-            <li>
-                <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard"></i> 图表 </a>
-            </li>
-            <li>
-                <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI 元素 </a>
-            </li>
-            <li>
-                <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据图表 </a>
-            </li>
-
-            <li>
-                <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板 </a>
-            </li>
-
-            <li>
-                <a href="table.jsp"><i class="fa fa-table"></i> 响应表 </a>
-            </li>
-
-            <li>
-                <a href="form.jsp"><i class="fa fa-edit"></i> 表单 </a>
-            </li>
-            <li>
-                <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
             </li>
         </ul>
 
