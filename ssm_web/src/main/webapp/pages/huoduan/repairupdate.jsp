@@ -1,43 +1,29 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2019/4/24 0024
-  Time: 下午 4:51
+  Date: 2019\4\26 0026
+  Time: 9:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":"+ request.getServerPort() + path + "/";
-%>
-<base href="<%=basePath%>">
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib prefix="fmt"   uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-
     <!-- Bootstrap Styles-->
+
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
-
     <!-- Custom Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/huoduan/plugins/datepicker3.css">
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- Morris Chart Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-
-
-
-
 </head>
 <body>
 <div id="wrapper">
@@ -49,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -267,28 +253,28 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.jsp"><i class="fa fa-dashboard"></i>图表</a>
+                    <a href="index.html"><i class="fa fa-dashboard"></i> 图表</a>
                 </li>
                 <li>
-                    <a href="ui-elements.jsp"><i class="fa fa-desktop"></i> UI元素</a>
+                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI 元素</a>
                 </li>
                 <li>
-                    <a href="chart.jsp"><i class="fa fa-bar-chart-o"></i> 数据表</a>
+                    <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
                 </li>
                 <li>
-                    <a href="tab-panel.jsp"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
-                </li>
-
-                <li>
-                    <a href="table.jsp" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
-                </li>
-                <li>
-                    <a href="form.jsp"><i class="fa fa-edit"></i>表单 </a>
+                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 标签 & 面板</a>
                 </li>
 
+                <li>
+                    <a href="table.html"><i class="fa fa-table"></i>响应表</a>
+                </li>
+                <li>
+                    <a href="form.html" class="active-menu"><i class="fa fa-edit"></i> 表单 </a>
+                </li>
+
 
                 <li>
-                    <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap"></i> 下单菜单<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -315,7 +301,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="empty.jsp"><i class="fa fa-fw fa-file"></i> 空白页</a>
+                    <a href="empty.html"><i class="fa fa-fw fa-file"></i> 空白页</a>
                 </li>
             </ul>
 
@@ -328,61 +314,116 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        表格页面 <small>响应表</small>
+                        Forms Page <small>最好的表单元素</small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
+            <div class="row" style="width: 600px;">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            高级表
+                            基本表单元素
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>合同名字</th>
-                                        <th>合同类型</th>
-                                        <th>合同起始时间</th>
-                                        <th>合同终止时间</th>
-                                        <th>合同描述</th>
-                                        <th>合同编号</th>
-                                        <th>签约人</th>
-                                        <th>联系方式</th>
-                                        <th>操作</th>
-                                        <th>    </th>
+                            <div class="row">
+                                <div class="col-lg-6">
 
-                                    </tr>
-                                    </thead>
+                                    <form action="${pageContext.request.contextPath}/repair/update.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
-                                    <tbody>
-                            <c:forEach var="sm" items="${contractList}">
-                                    <tr class="gradeA">
-                                        <td>${sm.contractId}</td>
-                                        <td>${sm.contractName}</td>
-                                        <td>${sm.contractType}</td>
-                                        <td class="center">${sm.contractStart}</td>
-                                        <td class="center">${sm.contractEnd}</td>
-                                        <td>${sm.contractDes}</td>
-                                        <td>${sm.contractNum}</td>
-                                        <td>${sm.signingPeople}</td>
-                                        <td>${sm.signatoryTelephone}</td>
-                                        <td class="center"></td>
-                                        <td class="center"></td>
-                                    </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
+                                        <div  >
+                                            <label>编号</label>
+                                            <input class="form-control" placeholder="id" value="${rep.id}" name="id" >
+                                        </div>
+                                        <div  >
+                                            <label>业主</label>
+                                            <input class="form-control" placeholder="repairname"  value="${rep.repairname}" name="repairname" >
+                                        </div>
+                                        <div>
+                                            <label>业主电话</label>
+                                            <input class="form-control" placeholder="repairphone" value="${rep.repairphone}" name="repairphone">
+                                        </div>
+                                        <div>
+                                            <label>类别</label>
+                                            <input class="form-control" placeholder="category" value="${rep.category}" name="category">
+                                        </div>
+                                        <div>
+                                            <label>问题描述</label>
+                                            <input class="form-control" placeholder="repdesc" value="${rep.repdesc}" name="repdesc">
+                                        </div>
+                                        <div>
+                                            <label>反馈时间</label>
+                                            <input class="form-control" placeholder="reportdate" value="<fmt:formatDate value='${rep.reportdate}' pattern='yyyy-MM-dd'/>"  name= "reportdate">
+                                        </div>
+                                        <div>
+                                            <label>报修方式</label>
+                                            <input class="form-control" placeholder="means" value="${rep.means}" name="means">
+                                        </div>
+                                        <div>
+                                            <label>是否处理</label>
+                                            <input class="form-control" placeholder="status" value="${rep.status}" name="status">
+                                        </div>
+
+                                        <div>
+                                            <label>安排维修时间</label>
+                                            <input class="form-control" placeholder="repairdate"  value="<fmt:formatDate value='${rep.repairdate}' pattern='yyyy-MM-dd'/>"  name= "repairdate">
+                                        </div>
+                                        <div>
+                                            <label>修理工</label>
+                                            <input class="form-control" placeholder="principal" value="${rep.principal}" name="principal">
+                                        </div>
+                                        <div>
+                                            <label>材料</label>
+                                            <input class="form-control" placeholder="material" value="${rep.material}" name="material">
+                                        </div>
+                                        <div>
+                                            <label>费用</label>
+                                            <input class="form-control" placeholder="upkeep" value="${rep.upkeep}" name="upkeep">
+                                        </div>
+                                        <div>
+                                            <label>完成日期</label>
+                                            <input class="form-control" placeholder="completedate"id="dateid"value="<fmt:formatDate value='${rep.completedate}' pattern='yyyy-MM-dd'/>"  name= "completedate" >
+                                        </div>
+                                        <div>
+                                            <label>费用是否缴纳</label>
+                                            <input class="form-control" placeholder="ispay" value="${rep.ispay}" name="ispay">
+                                        </div>
+                                        <div>
+                                            <label>费用缴纳日期</label>
+                                            <input class="form-control" placeholder="paydate"value="<fmt:formatDate value='${rep.paydate}' pattern='yyyy-MM-dd'/>"  name= "paydate">
+                                        </div>
+                                        <br>
+                                        <div>
+
+                                        <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 保存</button>
+
+                                            <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+
+                                        </div>
+
+
+
+                                    </form>
+
+                                </div>
+
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
+            <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
 </div>
-<!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
@@ -391,16 +432,25 @@
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-    });
-</script>
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+
 
 
 </body>
