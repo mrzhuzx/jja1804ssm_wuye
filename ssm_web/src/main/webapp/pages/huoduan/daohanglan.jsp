@@ -130,7 +130,7 @@
                         <a href="${pageContext.request.contextPath}/ower/querof.do">业主家庭信息</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/ower/eower.do">增加业主</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/oweradd.jsp">增加业主</a>
                     </li>
                 </ul>
             </li>

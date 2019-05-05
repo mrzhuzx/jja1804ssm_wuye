@@ -218,19 +218,19 @@ public class SysOwerController {
         m.addObject("ower", sysOfVoList);
         return m;
     }
-    @RequestMapping("deletedower")//删除业主
-    public ModelAndView deleteower(@RequestParam Integer olid){
-        ModelAndView m=new ModelAndView("forward:querower.do");
-        int i = sysOwerService.deleteByPrimaryKey(olid);
-        return m;
-    }
+//    @RequestMapping("deletedower")//删除业主
+//    public ModelAndView deleteower(@RequestParam Integer olid){
+//        ModelAndView m=new ModelAndView("forward:querower.do");
+//        int i = sysOwerService.deleteByPrimaryKey(olid);
+//        return m;
+//    }
     @RequestMapping("addower")//增加业主
     public ModelAndView addower(@RequestParam String olname,@RequestParam String olaccount,@RequestParam String olpasswd,@RequestParam String powerid,@RequestParam String olphone
             ){
         ModelAndView m=new ModelAndView("forward:querower.do");
-        String olheadimg="";
+        String olheadimg="img/qqface/qq (1).gif";
         Integer olmember=0;
-        Integer roleid=1;
+        Integer roleid=3;
         SysOwer sysOwer=new SysOwer(olname, olaccount, olpasswd, powerid, olphone, olheadimg, olmember, roleid);
         sysOwerService.insertSelective(sysOwer);
         return m;
