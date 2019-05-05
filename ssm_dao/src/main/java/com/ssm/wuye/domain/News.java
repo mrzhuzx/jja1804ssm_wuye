@@ -14,7 +14,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "news")
 @Alias("news")
-@Data
+//@Data
 public class News extends BaseEntity {
     /**
      * 

@@ -318,4 +318,22 @@ public class MyHouse extends BaseEntity {
 
     public MyHouse() {
     }
+
+    @Override
+    public String toString() {
+        return "MyHouse{" +
+                "hid=" + hid +
+                ", hnumber='" + hnumber + '\'' +
+                ", hstate='" + hstate + '\'' +
+                ", hbulidingname='" + hbulidingname + '\'' +
+                ", hunitnumber=" + hunitnumber +
+                ", hfloor=" + hfloor +
+                ", htypeid=" + htypeid +
+                ", hdirection='" + hdirection + '\'' +
+                ", harea='" + harea + '\'' +
+                ", hremarks='" + hremarks + '\'' +
+                ", olid=" + olid +
+                ", loan=" + loan +
+                '}';
+    }
 }

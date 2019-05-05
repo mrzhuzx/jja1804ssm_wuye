@@ -4,8 +4,10 @@ package com.ssm.wuye.controller;
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
-import com.ssm.wuye.service.NewsTypeVoiwService;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,8 +29,7 @@ public class NewsTypeController {
     NewsTypeService newstypeService;
     @Resource
     NewsService newsService;
-    @Resource
-    NewsTypeVoiwService newsTypeVoiwService;
+
 
     public NewsTypeController() {
         System.out.println(" NewsTypeController springmvc is ok................................. ");
@@ -62,21 +63,83 @@ public class NewsTypeController {
         List<News> news1 = newsService.selectByExample(newsExample);
         m.addObject("news1", news1);
 
-
         //根据typeid查询typename（来源：）
         NewsTypeExample newsTypeExample = new NewsTypeExample();
         newsTypeExample.createCriteria().andNtidEqualTo(id);
         List<NewsType> newsTypes = newstypeService.selectByExample(newsTypeExample);
         m.addObject("newst", newsTypes);
 
-
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
 
-
-
         m.setViewName("pages/gitqian/news");
         return m;
+    }
+
+    //h后台
+    @RequestMapping("htnewstype")
+    public ModelAndView htnewstype() {
+
+        ModelAndView m = new ModelAndView("pages/huoduan/htnewstype");
+        List<NewsType> htnestype = newstypeService.selectByExample(null);
+        m.addObject("htnestype", htnestype);
+        return  m ;
+    }
+    @RequestMapping("htnewstypeid")
+    public ModelAndView htnewstypeid(@RequestParam String ntid) {
+        System.out.println(ntid);
+        Integer id = Integer.valueOf(ntid);
+        ModelAndView m = new ModelAndView("pages/huoduan/ht_ntypeupdate");
+        NewsType newsType = newstypeService.selectByPrimaryKey(id);
+        m.addObject("newsType", newsType);
+        return m;
+    }
+
+    @RequestMapping("htnewstypeupda")
+    public ModelAndView htnewstypeupda(@RequestParam String ntid ,@RequestParam  String  ntypename){
+        ModelAndView m = new ModelAndView("pages/huoduan/htnewstype");
+        Integer id = Integer.valueOf(ntid);
+        NewsType  tewsType = new NewsType();
+        tewsType.setNtid(id);
+        tewsType.setNtypename(ntypename);
+        System.out.println(ntypename+"====================================");
+        newstypeService.updateByPrimaryKeySelective(tewsType);
+
+        List<NewsType> htnestype = newstypeService.selectByExample(null);
+        m.addObject("htnestype", htnestype);
+
+        return m;
+    }
+
+
+    @RequestMapping("htntidadd")
+    public ModelAndView htntidadd(@RequestParam String ntid) {
+        System.out.println(ntid);
+        Integer id = Integer.valueOf(ntid);
+        ModelAndView m = new ModelAndView("pages/huoduan/ht_ntypeadd");
+        NewsType newsType = newstypeService.selectByPrimaryKey(id);
+        m.addObject("newsType", newsType);
+        return m;
+    }
+
+    @RequestMapping("htnewstypeadd")
+    public ModelAndView htnewstypeadd(@RequestParam  String  ntypename){
+        ModelAndView m = new ModelAndView("pages/huoduan/htnewstype");
+
+        NewsType  tewsType = new NewsType();
+        tewsType.setNtypename(ntypename);
+        System.out.println(ntypename+"====================================");
+        int insert = newstypeService.insert(tewsType);
+        if (insert==1){
+            System.out.println("添加成功");
+        }else {
+            System.out.println("添加失败");
+        }
+        List<NewsType> htnestype = newstypeService.selectByExample(null);
+        m.addObject("htnestype", htnestype);
+
+        return m;
+
     }
 
 }

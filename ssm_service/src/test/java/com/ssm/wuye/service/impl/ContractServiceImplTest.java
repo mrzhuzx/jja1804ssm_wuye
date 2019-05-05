@@ -129,4 +129,19 @@ public class ContractServiceImplTest {
             System.out.println("修改成功:"+i+"条数据");
         }
     }
+
+    /**
+     * 删除
+     */
+    @Test
+    public void deleteByPrimaryKey(){
+
+        int i = contractService.deleteByPrimaryKey(11);
+        if(i==0){
+            System.out.println("删除失败");
+        }else {
+            System.out.println("删除成功:"+i+"条数据");
+        }
+
+    }
 }

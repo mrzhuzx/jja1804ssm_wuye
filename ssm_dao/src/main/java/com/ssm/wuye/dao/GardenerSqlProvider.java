@@ -1,79 +1,68 @@
 package com.ssm.wuye.dao;
 
-import com.ssm.wuye.domain.ParkingPlaceinfo;
-import com.ssm.wuye.domain.ParkingPlaceinfoExample.Criteria;
-import com.ssm.wuye.domain.ParkingPlaceinfoExample.Criterion;
-import com.ssm.wuye.domain.ParkingPlaceinfoExample;
+import com.ssm.wuye.domain.Gardener;
+import com.ssm.wuye.domain.GardenerExample.Criteria;
+import com.ssm.wuye.domain.GardenerExample.Criterion;
+import com.ssm.wuye.domain.GardenerExample;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.jdbc.SQL;
 
-public class ParkingPlaceinfoSqlProvider {
+public class GardenerSqlProvider {
 
-    public String countByExample(ParkingPlaceinfoExample example) {
+    public String countByExample(GardenerExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("parking_placeinfo");
+        sql.SELECT("count(*)").FROM("gardener");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String deleteByExample(ParkingPlaceinfoExample example) {
+    public String deleteByExample(GardenerExample example) {
         SQL sql = new SQL();
-
-        sql.DELETE_FROM("parking_placeinfo");
+        sql.DELETE_FROM("gardener");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
-    public String insertSelective(ParkingPlaceinfo record) {
+    public String insertSelective(Gardener record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("parking_placeinfo");
+        sql.INSERT_INTO("gardener");
         
-        if (record.getHid() != null) {
-            sql.VALUES("hid", "#{hid,jdbcType=INTEGER}");
+        if (record.getGarid() != null) {
+            sql.VALUES("garid", "#{garid,jdbcType=INTEGER}");
         }
         
-        if (record.getPid() != null) {
-            sql.VALUES("pid", "#{pid,jdbcType=VARCHAR}");
+        if (record.getGarname() != null) {
+            sql.VALUES("garname", "#{garname,jdbcType=VARCHAR}");
         }
         
-        if (record.getOlid() != null) {
-            sql.VALUES("olid", "#{olid,jdbcType=INTEGER}");
+        if (record.getGarphone() != null) {
+            sql.VALUES("garphone", "#{garphone,jdbcType=VARCHAR}");
         }
         
-        if (record.getHname() != null) {
-            sql.VALUES("hname", "#{hname,jdbcType=VARCHAR}");
+        if (record.getGarflag() != null) {
+            sql.VALUES("garflag", "#{garflag,jdbcType=VARCHAR}");
         }
         
-        if (record.getHphone() != null) {
-            sql.VALUES("hphone", "#{hphone,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHcards() != null) {
-            sql.VALUES("hcards", "#{hcards,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getDescr() != null) {
-            sql.VALUES("descr", "#{descr,jdbcType=VARCHAR}");
+        if (record.getRoleid() != null) {
+            sql.VALUES("roleid", "#{roleid,jdbcType=INTEGER}");
         }
         
         return sql.toString();
     }
 
-    public String selectByExample(ParkingPlaceinfoExample example) {
+    public String selectByExample(GardenerExample example) {
         SQL sql = new SQL();
         if (example != null && example.isDistinct()) {
-            sql.SELECT_DISTINCT("hid");
+            sql.SELECT_DISTINCT("garid");
         } else {
-            sql.SELECT("hid");
+            sql.SELECT("garid");
         }
-        sql.SELECT("pid");
-        sql.SELECT("olid");
-        sql.SELECT("hname");
-        sql.SELECT("hphone");
-        sql.SELECT("hcards");
-        sql.SELECT("descr");
-        sql.FROM("parking_placeinfo");
+        sql.SELECT("garname");
+        sql.SELECT("garphone");
+        sql.SELECT("garflag");
+        sql.SELECT("roleid");
+        sql.FROM("gardener");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -84,38 +73,30 @@ public class ParkingPlaceinfoSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        ParkingPlaceinfo record = (ParkingPlaceinfo) parameter.get("record");
-        ParkingPlaceinfoExample example = (ParkingPlaceinfoExample) parameter.get("example");
+        Gardener record = (Gardener) parameter.get("record");
+        GardenerExample example = (GardenerExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("parking_placeinfo");
+        sql.UPDATE("gardener");
         
-        if (record.getHid() != null) {
-            sql.SET("hid = #{record.hid,jdbcType=INTEGER}");
+        if (record.getGarid() != null) {
+            sql.SET("garid = #{record.garid,jdbcType=INTEGER}");
         }
         
-        if (record.getPid() != null) {
-            sql.SET("pid = #{record.pid,jdbcType=VARCHAR}");
+        if (record.getGarname() != null) {
+            sql.SET("garname = #{record.garname,jdbcType=VARCHAR}");
         }
         
-        if (record.getOlid() != null) {
-            sql.SET("olid = #{record.olid,jdbcType=INTEGER}");
+        if (record.getGarphone() != null) {
+            sql.SET("garphone = #{record.garphone,jdbcType=VARCHAR}");
         }
         
-        if (record.getHname() != null) {
-            sql.SET("hname = #{record.hname,jdbcType=VARCHAR}");
+        if (record.getGarflag() != null) {
+            sql.SET("garflag = #{record.garflag,jdbcType=VARCHAR}");
         }
         
-        if (record.getHphone() != null) {
-            sql.SET("hphone = #{record.hphone,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHcards() != null) {
-            sql.SET("hcards = #{record.hcards,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getDescr() != null) {
-            sql.SET("descr = #{record.descr,jdbcType=VARCHAR}");
+        if (record.getRoleid() != null) {
+            sql.SET("roleid = #{record.roleid,jdbcType=INTEGER}");
         }
         
         applyWhere(sql, example, true);
@@ -124,55 +105,20 @@ public class ParkingPlaceinfoSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("parking_placeinfo");
+        sql.UPDATE("gardener");
         
-        sql.SET("hid = #{record.hid,jdbcType=INTEGER}");
-        sql.SET("pid = #{record.pid,jdbcType=VARCHAR}");
-        sql.SET("olid = #{record.olid,jdbcType=INTEGER}");
-        sql.SET("hname = #{record.hname,jdbcType=VARCHAR}");
-        sql.SET("hphone = #{record.hphone,jdbcType=VARCHAR}");
-        sql.SET("hcards = #{record.hcards,jdbcType=VARCHAR}");
-        sql.SET("descr = #{record.descr,jdbcType=VARCHAR}");
+        sql.SET("garid = #{record.garid,jdbcType=INTEGER}");
+        sql.SET("garname = #{record.garname,jdbcType=VARCHAR}");
+        sql.SET("garphone = #{record.garphone,jdbcType=VARCHAR}");
+        sql.SET("garflag = #{record.garflag,jdbcType=VARCHAR}");
+        sql.SET("roleid = #{record.roleid,jdbcType=INTEGER}");
         
-        ParkingPlaceinfoExample example = (ParkingPlaceinfoExample) parameter.get("example");
+        GardenerExample example = (GardenerExample) parameter.get("example");
         applyWhere(sql, example, true);
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(ParkingPlaceinfo record) {
-        SQL sql = new SQL();
-        sql.UPDATE("parking_placeinfo");
-        
-        if (record.getPid() != null) {
-            sql.SET("pid = #{pid,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getOlid() != null) {
-            sql.SET("olid = #{olid,jdbcType=INTEGER}");
-        }
-        
-        if (record.getHname() != null) {
-            sql.SET("hname = #{hname,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHphone() != null) {
-            sql.SET("hphone = #{hphone,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getHcards() != null) {
-            sql.SET("hcards = #{hcards,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getDescr() != null) {
-            sql.SET("descr = #{descr,jdbcType=VARCHAR}");
-        }
-        
-        sql.WHERE("hid = #{hid,jdbcType=INTEGER}");
-        
-        return sql.toString();
-    }
-
-    protected void applyWhere(SQL sql, ParkingPlaceinfoExample example, boolean includeExamplePhrase) {
+    protected void applyWhere(SQL sql, GardenerExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

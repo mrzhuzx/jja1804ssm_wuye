@@ -1,6 +1,5 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.TbMatterMapper;
 import com.ssm.wuye.domain.TbMatter;
 import com.ssm.wuye.domain.TbMatterExample;
 import com.ssm.wuye.service.TbMatterService;
@@ -9,14 +8,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import sun.rmi.runtime.Log;
 
 import javax.annotation.Resource;
 
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * desc:

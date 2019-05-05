@@ -1,11 +1,13 @@
 package com.ssm.wuye.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ssm.wuye.appcomm.BaseEntity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * ch_gas_meter
@@ -41,6 +43,8 @@ public class ChGasMeter extends BaseEntity {
     /**
      * 年月份
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")
     @Column(name = "month")
     private Date month;
 
@@ -122,5 +126,16 @@ public class ChGasMeter extends BaseEntity {
      */
     public void setMonth(Date month) {
         this.month = month;
+    }
+
+    @Override
+    public String toString() {
+        return "ChGasMeter{" +
+                "id=" + id +
+                ", gasnumber='" + gasnumber + '\'' +
+                ", houseid=" + houseid +
+                ", gas=" + gas +
+                ", month=" + month +
+                '}';
     }
 }

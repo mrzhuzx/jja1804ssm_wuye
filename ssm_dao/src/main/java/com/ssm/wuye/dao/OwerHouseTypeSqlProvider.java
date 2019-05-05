@@ -52,10 +52,6 @@ public class OwerHouseTypeSqlProvider {
             sql.VALUES("hFloor", "#{hfloor,jdbcType=INTEGER}");
         }
         
-        if (record.getHtypeid() != null) {
-            sql.VALUES("hTypeid", "#{htypeid,jdbcType=INTEGER}");
-        }
-        
         if (record.getHdirection() != null) {
             sql.VALUES("hDirection", "#{hdirection,jdbcType=VARCHAR}");
         }
@@ -84,6 +80,18 @@ public class OwerHouseTypeSqlProvider {
             sql.VALUES("olPhone", "#{olphone,jdbcType=VARCHAR}");
         }
         
+        if (record.getOlid() != null) {
+            sql.VALUES("olId", "#{olid,jdbcType=INTEGER}");
+        }
+        
+        if (record.getHid() != null) {
+            sql.VALUES("hid", "#{hid,jdbcType=INTEGER}");
+        }
+        
+        if (record.getHtypeid() != null) {
+            sql.VALUES("hTypeId", "#{htypeid,jdbcType=INTEGER}");
+        }
+        
         return sql.toString();
     }
 
@@ -99,7 +107,6 @@ public class OwerHouseTypeSqlProvider {
         sql.SELECT("hBulidingName");
         sql.SELECT("hUnitNumber");
         sql.SELECT("hFloor");
-        sql.SELECT("hTypeid");
         sql.SELECT("hDirection");
         sql.SELECT("hArea");
         sql.SELECT("hRemarks");
@@ -107,6 +114,9 @@ public class OwerHouseTypeSqlProvider {
         sql.SELECT("hTypeName");
         sql.SELECT("htPropertyRight");
         sql.SELECT("olPhone");
+        sql.SELECT("olId");
+        sql.SELECT("hid");
+        sql.SELECT("hTypeId");
         sql.FROM("ower_house_type");
         applyWhere(sql, example, false);
         
@@ -148,10 +158,6 @@ public class OwerHouseTypeSqlProvider {
             sql.SET("hFloor = #{record.hfloor,jdbcType=INTEGER}");
         }
         
-        if (record.getHtypeid() != null) {
-            sql.SET("hTypeid = #{record.htypeid,jdbcType=INTEGER}");
-        }
-        
         if (record.getHdirection() != null) {
             sql.SET("hDirection = #{record.hdirection,jdbcType=VARCHAR}");
         }
@@ -180,6 +186,18 @@ public class OwerHouseTypeSqlProvider {
             sql.SET("olPhone = #{record.olphone,jdbcType=VARCHAR}");
         }
         
+        if (record.getOlid() != null) {
+            sql.SET("olId = #{record.olid,jdbcType=INTEGER}");
+        }
+        
+        if (record.getHid() != null) {
+            sql.SET("hid = #{record.hid,jdbcType=INTEGER}");
+        }
+        
+        if (record.getHtypeid() != null) {
+            sql.SET("hTypeId = #{record.htypeid,jdbcType=INTEGER}");
+        }
+        
         applyWhere(sql, example, true);
         return sql.toString();
     }
@@ -194,7 +212,6 @@ public class OwerHouseTypeSqlProvider {
         sql.SET("hBulidingName = #{record.hbulidingname,jdbcType=VARCHAR}");
         sql.SET("hUnitNumber = #{record.hunitnumber,jdbcType=INTEGER}");
         sql.SET("hFloor = #{record.hfloor,jdbcType=INTEGER}");
-        sql.SET("hTypeid = #{record.htypeid,jdbcType=INTEGER}");
         sql.SET("hDirection = #{record.hdirection,jdbcType=VARCHAR}");
         sql.SET("hArea = #{record.harea,jdbcType=VARCHAR}");
         sql.SET("hRemarks = #{record.hremarks,jdbcType=VARCHAR}");
@@ -202,6 +219,9 @@ public class OwerHouseTypeSqlProvider {
         sql.SET("hTypeName = #{record.htypename,jdbcType=VARCHAR}");
         sql.SET("htPropertyRight = #{record.htpropertyright,jdbcType=VARCHAR}");
         sql.SET("olPhone = #{record.olphone,jdbcType=VARCHAR}");
+        sql.SET("olId = #{record.olid,jdbcType=INTEGER}");
+        sql.SET("hid = #{record.hid,jdbcType=INTEGER}");
+        sql.SET("hTypeId = #{record.htypeid,jdbcType=INTEGER}");
         
         OwerHouseTypeExample example = (OwerHouseTypeExample) parameter.get("example");
         applyWhere(sql, example, true);

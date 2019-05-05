@@ -1,6 +1,5 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.MyHouseMapper;
 import com.ssm.wuye.dao.MyHouseTypeMapper;
 import com.ssm.wuye.domain.MyHouseType;
 import com.ssm.wuye.domain.MyHouseTypeExample;

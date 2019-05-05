@@ -1,7 +1,6 @@
 package com.ssm.wuye.service.impl;
 
 import com.ssm.wuye.dao.SysOfVoMapper;
-import com.ssm.wuye.dao.SysOwerMapper;
 import com.ssm.wuye.domain.SysOfVo;
 import com.ssm.wuye.domain.SysOfVoExample;
 import com.ssm.wuye.service.SysOfVoService;

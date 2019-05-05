@@ -3,7 +3,6 @@ package com.ssm.wuye.service.impl;
 import com.ssm.wuye.dao.ParkingCarinfoMapper;
 import com.ssm.wuye.domain.ParkingCarinfo;
 import com.ssm.wuye.domain.ParkingCarinfoExample;
-import com.ssm.wuye.domain.ParkingPlaceinfo;
 import com.ssm.wuye.service.ParkingCarinfoService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;

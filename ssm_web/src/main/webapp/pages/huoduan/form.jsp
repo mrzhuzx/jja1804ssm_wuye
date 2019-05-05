@@ -349,6 +349,7 @@
                                             <input type="file">
                                         </div>
                                         <div class="form-group">
+
                                             <label>Text area</label>
                                             <textarea class="form-control" rows="3"></textarea>
                                         </div>

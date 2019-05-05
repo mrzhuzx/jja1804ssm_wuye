@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
 public class NewsTest {
     @Autowired
-    NewsMapper  newsMapper;
+    NewsMapper newsMapper;
     @Test
     public void testsearch() {
         NewsExample newsExample = new NewsExample();

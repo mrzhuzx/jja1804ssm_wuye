@@ -24,7 +24,7 @@
                 <span>欢迎来到贵州国贸物业管理有限公司</span>
             </div>
             <div class="soucang">
-                <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">用户登入</a></c:if>
+                <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">业主登入</a></c:if>
                 <c:if test="${ower ne null}"><img src="${ower.olheadimg}">&nbsp;${ower.olname}&nbsp;|&nbsp;<a href="ower/logout.do">注销</a></c:if>
             </div>
         </div>
@@ -39,39 +39,31 @@
                 <div class="main clearBoth">
                     <ul class="nav right">
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="index.html">
+                            <a class="nav_btn" href="#">
                                 网站首页
                                 <b></b>
                             </a>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="about.html">
-                                关于我们
+                            <a class="nav_btn" href="pages/gitqian/about.html">
+                                房屋租售
                                 <b></b>
                                 <div></div>
                             </a>
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="#">公司简介</a>
+                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
                                     </li>
                                     <li>
-                                        <a href="#">公司文化</a>
+                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
                                     </li>
-                                    <li>
-                                        <a href="#">领导致辞</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">服务理念</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">企业荣誉</a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="products.html">
+                            <a class="nav_btn" href="pages/gitqian/products.html">
                                 项目展示
                                 <b></b>
                                 <div></div>
@@ -113,10 +105,13 @@
                                         <a href="ower/query.do?olid=${ower.olid}">个人信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">家庭成员</a>
+                                        <a href="ower/of.do?olid=${ower.olid}">家庭成员</a>
                                     </li>
                                     <li>
-                                        <a href="#">房屋信息</a>
+                                        <a href="ower/of.do?olid=${ower.olid}">增加家人</a>
+                                    </li>
+                                    <li>
+                                        <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
                                         <a href="#">车位信息</a>

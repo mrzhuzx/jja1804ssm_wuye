@@ -49,12 +49,6 @@ public class OwerHouseType extends BaseEntity {
     private Integer hfloor;
 
     /**
-     * 房屋类型
-     */
-    @Column(name = "hTypeid")
-    private Integer htypeid;
-
-    /**
      * 朝向
      */
     @Column(name = "hDirection")
@@ -95,6 +89,24 @@ public class OwerHouseType extends BaseEntity {
      */
     @Column(name = "olPhone")
     private String olphone;
+
+    /**
+     * 业主编号
+     */
+    @Column(name = "olId")
+    private Integer olid;
+
+    /**
+     * 编号
+     */
+    @Column(name = "hid")
+    private Integer hid;
+
+    /**
+     * 类型Id
+     */
+    @Column(name = "hTypeId")
+    private Integer htypeid;
 
     /**
      * 业主姓名
@@ -190,22 +202,6 @@ public class OwerHouseType extends BaseEntity {
      */
     public void setHfloor(Integer hfloor) {
         this.hfloor = hfloor;
-    }
-
-    /**
-     * 房屋类型
-     * @return hTypeid 房屋类型
-     */
-    public Integer getHtypeid() {
-        return htypeid;
-    }
-
-    /**
-     * 房屋类型
-     * @param htypeid 房屋类型
-     */
-    public void setHtypeid(Integer htypeid) {
-        this.htypeid = htypeid;
     }
 
     /**
@@ -320,23 +316,55 @@ public class OwerHouseType extends BaseEntity {
         this.olphone = olphone == null ? null : olphone.trim();
     }
 
-    @Override
-    public String toString() {
-        return "OwerHouseType{" +
-                "olname='" + olname + '\'' +
-                ", hnumber='" + hnumber + '\'' +
-                ", hstate='" + hstate + '\'' +
-                ", hbulidingname='" + hbulidingname + '\'' +
-                ", hunitnumber=" + hunitnumber +
-                ", hfloor=" + hfloor +
-                ", htypeid=" + htypeid +
-                ", hdirection='" + hdirection + '\'' +
-                ", harea='" + harea + '\'' +
-                ", hremarks='" + hremarks + '\'' +
-                ", loan=" + loan +
-                ", htypename='" + htypename + '\'' +
-                ", htpropertyright='" + htpropertyright + '\'' +
-                ", olphone='" + olphone + '\'' +
-                '}';
+    /**
+     * 业主编号
+     * @return olId 业主编号
+     */
+    public Integer getOlid() {
+        return olid;
     }
+
+    /**
+     * 业主编号
+     * @param olid 业主编号
+     */
+    public void setOlid(Integer olid) {
+        this.olid = olid;
+    }
+
+    /**
+     * 编号
+     * @return hid 编号
+     */
+    public Integer getHid() {
+        return hid;
+    }
+
+    /**
+     * 编号
+     * @param hid 编号
+     */
+    public void setHid(Integer hid) {
+        this.hid = hid;
+    }
+
+    /**
+     * 类型Id
+     * @return hTypeId 类型Id
+     */
+    public Integer getHtypeid() {
+        return htypeid;
+    }
+
+    /**
+     * 类型Id
+     * @param htypeid 类型Id
+     */
+    public void setHtypeid(Integer htypeid) {
+        this.htypeid = htypeid;
+    }
+
+    public OwerHouseType() {
+    }
+
 }

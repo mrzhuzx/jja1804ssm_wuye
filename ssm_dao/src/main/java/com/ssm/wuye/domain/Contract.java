@@ -4,14 +4,17 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.ssm.wuye.appcomm.BaseEntity;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * contract
  */
 @Table(name = "contract")
 @Alias("contract")
-public class Contract {
+public class Contract extends BaseEntity {
     /**
      * 
      */
@@ -34,12 +37,14 @@ public class Contract {
     /**
      * 合同起始时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "contractStart")
     private Date contractstart;
 
     /**
      * 合同终止时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "contractEnd")
     private Date contractend;
 
@@ -211,17 +216,19 @@ public class Contract {
         this.contractnum = contractnum == null ? null : contractnum.trim();
     }
 
-//    public Contract(Integer contractid, String contractname, String contracttype, Date contractstart, Date contractend, String contractdes, String signingpeople, String signatorytelephone, String contractnum) {
-//        this.contractid = contractid;
-//        this.contractname = contractname;
-//        this.contracttype = contracttype;
-//        this.contractstart = contractstart;
-//        this.contractend = contractend;
-//        this.contractdes = contractdes;
-//        this.signingpeople = signingpeople;
-//        this.signatorytelephone = signatorytelephone;
-//        this.contractnum = contractnum;
-//    }
+    public Contract() {
+    }
+        public Contract(Integer contractid, String contractname, String contracttype, Date contractstart, Date contractend, String contractdes, String signingpeople, String signatorytelephone, String contractnum) {
+        this.contractid = contractid;
+        this.contractname = contractname;
+        this.contracttype = contracttype;
+        this.contractstart = contractstart;
+        this.contractend = contractend;
+        this.contractdes = contractdes;
+        this.signingpeople = signingpeople;
+        this.signatorytelephone = signatorytelephone;
+        this.contractnum = contractnum;
+    }
 
     @Override
     public String toString() {

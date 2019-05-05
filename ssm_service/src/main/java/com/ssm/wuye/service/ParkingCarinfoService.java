@@ -2,7 +2,6 @@ package com.ssm.wuye.service;
 
 import com.ssm.wuye.domain.ParkingCarinfo;
 import com.ssm.wuye.domain.ParkingCarinfoExample;
-import com.ssm.wuye.domain.ParkingPlaceinfo;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;

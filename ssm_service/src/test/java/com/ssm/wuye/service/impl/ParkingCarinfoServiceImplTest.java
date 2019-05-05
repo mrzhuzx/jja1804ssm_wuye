@@ -1,6 +1,5 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.ParkingCarinfoMapper;
 import com.ssm.wuye.domain.ParkingCarinfo;
 import com.ssm.wuye.domain.ParkingCarinfoExample;
 import com.ssm.wuye.service.ParkingCarinfoService;
@@ -11,12 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.annotation.Resource;
-
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * desc:路面停车信息表 service测试...

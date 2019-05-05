@@ -32,6 +32,12 @@
 	    height: 30px;
 	    margin: 25px 10px 0px 0px;
 	}
+	.tyg-div-form form {padding:10px;}
+	.tyg-div-form form input[type="password"]{
+		width: 270px;
+		height: 30px;
+		margin: 25px 10px 0px 0px;
+	}
 	.tyg-div-form form button {
 	    cursor: pointer;
 	    width: 270px;
@@ -91,14 +97,14 @@
 </div>
 <div class="tyg-div-denglv">
 	<div class="tyg-div-form">
-		<form action="ower/login.do">
+		<form method="post" action="ower/login.do">
 			<h2>登录</h2><p class="tyg-p">欢迎访问  国贸物业</p>
 			<div style="margin:5px 0px;">
 				<input type="text" name="account" value="ys" />
 				<%--placeholder="请输入账号..."--%>
 			</div>
-			<div style="margin:5px 0px;">
-				<input type="password" name="passwd" value="123123"/>
+			<div style="margin:10px 0px;">
+				<input type="password"  name="passwd" value="123123"/>
 			</div>
 			<button type="submit" >登<span style="width:20px;"></span>录</button>
 		</form>
