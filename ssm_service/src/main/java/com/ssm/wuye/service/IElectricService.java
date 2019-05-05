@@ -5,16 +5,17 @@ package com.ssm.wuye.service;/*
  */
 
 import com.ssm.wuye.domain.Electric;
+import com.ssm.wuye.domain.PuElectric;
 
 import java.util.List;
 
 public interface IElectricService {
 
-    List<Electric> findAll();
+    List<PuElectric> findAll();
 
     void delete(Integer id);
 
-    Electric findById(String id);
+    PuElectric findById(String id);
 
     void updata(Electric electric);
 
