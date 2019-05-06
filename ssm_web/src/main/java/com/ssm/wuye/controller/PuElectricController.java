@@ -4,7 +4,6 @@ package com.ssm.wuye.controller;/*
  * time:2019\5\5 0005
  */
 
-import com.ssm.wuye.domain.Electric;
 import com.ssm.wuye.domain.PuElectric;
 import com.ssm.wuye.service.IElectricService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ public class PuElectricController {
         List<PuElectric> electricList = electricService.findAll();
         System.out.println(electricList.toString());
         mv.addObject("electricList",electricList);
-        mv.setViewName("electrics-list");
+        mv.setViewName("pages/huoduan/pu_meter/electrics-list");
         return mv;
     }
 
@@ -38,7 +37,7 @@ public class PuElectricController {
         PuElectric electrics=electricService.findById(id);
 //        System.out.println(electrics.toString());
         mv.addObject("electrics",electrics);
-        mv.setViewName("electrics-up-datetable");
+        mv.setViewName("pages/huoduan/pu_meter/electrics-up-datetable");
         return mv;
 
     }
@@ -52,9 +51,9 @@ public class PuElectricController {
     }
 
     @RequestMapping("/updata.do")
-    public String updata(Electric electric){
+    public String updata(PuElectric electric){
 
-        System.out.println(electric.toString());
+//        System.out.println(electric.toString());
 //        System.out.println("aaaaa---------");
         electricService.updata(electric);
 
@@ -62,13 +61,22 @@ public class PuElectricController {
         return "redirect:findAll.do";
 
     }
+    @RequestMapping("/addpage.do")
+    public ModelAndView addpage(){
+        ModelAndView mv = new ModelAndView();
+        PuElectric electrics=electricService.findIdMax();
+//        System.out.println(electrics.toString());
+        mv.addObject("electrics",electrics);
+        mv.setViewName("pages/huoduan/pu_meter/electrics-add");
+        return mv;
+
+    }
     @RequestMapping("/add.do")
-    public String add(Electric electric){
+    public String add(PuElectric electric){
 
         System.out.println(electric.toString());
-        System.out.println("aaaaa---------");
+//        System.out.println("aaaaa---------");
         electricService.add(electric);
-        List<Integer> allhouseid=electricService.findAllhouseid();
 
 
         return "redirect:findAll.do";

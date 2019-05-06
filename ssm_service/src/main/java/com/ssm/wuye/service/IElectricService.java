@@ -4,7 +4,6 @@ package com.ssm.wuye.service;/*
  * time:2019\4\25 0025
  */
 
-import com.ssm.wuye.domain.Electric;
 import com.ssm.wuye.domain.PuElectric;
 
 import java.util.List;
@@ -17,10 +16,12 @@ public interface IElectricService {
 
     PuElectric findById(String id);
 
-    void updata(Electric electric);
+    void updata(PuElectric puElectric);
 
-    void add(Electric electric);
+    void add(PuElectric puElectric);
 
 
     List<Integer> findAllhouseid();
+
+    PuElectric findIdMax();
 }

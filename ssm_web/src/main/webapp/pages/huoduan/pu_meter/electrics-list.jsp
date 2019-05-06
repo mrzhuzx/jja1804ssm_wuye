@@ -36,7 +36,8 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-
+            <a href="${pageContext.request.contextPath}/puelectric/addpage.do" class="btn btn-success">&nbsp抄&nbsp电&nbsp表&nbsp</a>
+            <hr>
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->

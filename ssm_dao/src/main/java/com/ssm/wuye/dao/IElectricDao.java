@@ -25,12 +25,15 @@ public interface IElectricDao {
     @Select("select * from pu_electric where electricid=#{id}")
     PuElectric findById(String id);
 
-    @Update("UPDATE ch_electric_meter SET enumber=#{enumber},electric=#{electric},month=#{month} where electricid=#{electricid} ")
-    void updata(Electric electric);
+    @Update("UPDATE pu_electric SET enumber=#{enumber},electric=#{electric},month=#{month} where electricid=#{electricid} ")
+    void updata(PuElectric electric);
 
-    @Insert("insert into ch_electric_meter (enumber,houseid,electric,month) values(#{enumber},#{houseid},#{electric},#{month})")
-    void add(Electric electric);
+    @Insert("insert into pu_electric (electricid,enumber,electric,month) values(#{electricid},#{enumber},#{electric},#{month})")
+    void add(PuElectric electric);
 
     @Select("SELECT hid FROM wy_house")
     List<Integer> findAllhouseid();
+
+    @Select("SELECT * FROM pu_electric WHERE pu_electric.electricid=(SELECT Max(pu_electric.electricid) FROM pu_electric)")
+    PuElectric findIdMax();
 }

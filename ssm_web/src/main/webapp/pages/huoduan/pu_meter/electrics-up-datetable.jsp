@@ -50,15 +50,15 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/electric/updata.do" method="post">
+                                    <form action="/puelectric/updata.do" method="post">
                                         <input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid}" name="electricid"  >
 
                                         <div  >
                                             <label>电表编号</label>
-                                            <input class="form-control" placeholder="电表编号" value="${electrics.enumber}" name="enumber" >
+                                            <input class="form-control" placeholder="电表编号" value="${electrics.enumber}" name="enumber" readonly="readonly">
                                         </div>
                                         <%--<div  >--%>
-                                            <%--<label>房屋号</label>--%>
+                                            <%--<la                      bel>房屋号</label>--%>
                                             <%--<input class="form-control" placeholder="房屋号"  value="${electrics.houseid}" name="houseid" readonly="readonly">--%>
                                         <%--</div>--%>
                                         <div>
