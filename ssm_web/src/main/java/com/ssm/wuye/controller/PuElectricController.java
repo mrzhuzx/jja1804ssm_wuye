@@ -1,10 +1,10 @@
 package com.ssm.wuye.controller;/*
  * desc:
  * author:tanghuaming
- * time:2019\4\25 0025
+ * time:2019\5\5 0005
  */
 
-import com.ssm.wuye.domain.Electric;
+import com.ssm.wuye.domain.PuElectric;
 import com.ssm.wuye.service.IElectricService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,18 +15,18 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/electric")
-public class ElectricController {
+@RequestMapping("/puelectric")
+public class PuElectricController {
     @Autowired
     IElectricService electricService;
-        //查询全部产品----未分页
+    //查询全部产品----未分页
     @RequestMapping("/findAll.do")
     public ModelAndView findAll(){
         ModelAndView mv = new ModelAndView();
-        List<Electric> electricList = electricService.findAll();
+        List<PuElectric> electricList = electricService.findAll();
         System.out.println(electricList.toString());
         mv.addObject("electricList",electricList);
-        mv.setViewName("electrics-list");
+        mv.setViewName("pages/huoduan/pu_meter/electrics-list");
         return mv;
     }
 
@@ -34,10 +34,10 @@ public class ElectricController {
     @RequestMapping("/findById.do")
     public ModelAndView findById(String id){
         ModelAndView mv = new ModelAndView();
-        Electric electrics=electricService.findById(id);
+        PuElectric electrics=electricService.findById(id);
 //        System.out.println(electrics.toString());
         mv.addObject("electrics",electrics);
-        mv.setViewName("electrics-up-datetable");
+        mv.setViewName("pages/huoduan/pu_meter/electrics-up-datetable");
         return mv;
 
     }
@@ -51,40 +51,35 @@ public class ElectricController {
     }
 
     @RequestMapping("/updata.do")
-    public String updata(Electric electric){
+    public String updata(PuElectric electric){
 
-        System.out.println(electric.toString());
-        System.out.println("aaaaa---------");
+//        System.out.println(electric.toString());
+//        System.out.println("aaaaa---------");
         electricService.updata(electric);
 
 
         return "redirect:findAll.do";
 
     }
+    @RequestMapping("/addpage.do")
+    public ModelAndView addpage(){
+        ModelAndView mv = new ModelAndView();
+        PuElectric electrics=electricService.findIdMax();
+//        System.out.println(electrics.toString());
+        mv.addObject("electrics",electrics);
+        mv.setViewName("pages/huoduan/pu_meter/electrics-add");
+        return mv;
+
+    }
     @RequestMapping("/add.do")
-    public String add(Electric electric){
+    public String add(PuElectric electric){
 
         System.out.println(electric.toString());
-        System.out.println("aaaaa---------");
+//        System.out.println("aaaaa---------");
         electricService.add(electric);
-        List<Integer> allhouseid=electricService.findAllhouseid();
 
 
         return "redirect:findAll.do";
 
     }
-//    @RequestMapping("/add.do")
-//    public ModelAndView add(Electric electric){
-//        ModelAndView mv = new ModelAndView();
-//        System.out.println(electric.toString());
-//        System.out.println("aaaaa---------");
-//        electricService.add(electric);
-//        List<Integer> allhouseid=electricService.findAllhouseid();
-//        System.out.println(allhouseid.toString());
-//        mv.addObject("allhouseid",allhouseid);
-//        mv.setViewName("redirect:findAll.do");
-//        return mv;
-//
-//    }
-
 }

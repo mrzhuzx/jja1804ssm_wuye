@@ -57,16 +57,16 @@
                 <a href="#"><i class="fa fa-desktop"></i> 能耗管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/puelectric/findAll.do">开户配表</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/puelectric/findAll.do">公共电表</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">公共水表</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">公共天然气表</a>
                     </li>
 
                 </ul>
@@ -188,6 +188,10 @@
 
                 </ul>
             </li>
+
+
+
+
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 合同管理 <span class="fa arrow"></span></a>

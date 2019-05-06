@@ -3,7 +3,7 @@ package com.ssm.wuye.controller;
 import com.ssm.wuye.domain.ChElectricMeter;
 import com.ssm.wuye.domain.ChElectricMeterExample;
 import com.ssm.wuye.domain.MyHouse;
-import com.ssm.wuye.service.ChElectricSercice;
+import com.ssm.wuye.service.ChElectricService;
 import com.ssm.wuye.service.MyHouseService;
 import com.ssm.wuye.vo.ElectricAndOwer;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ import java.util.List;
 @RequestMapping("ele")
 public class ChElectricController {
     @Resource
-    ChElectricSercice chElectricSercice;
+    ChElectricService chElectricSercice;
     @Resource
     MyHouseService myHouseService;
 
