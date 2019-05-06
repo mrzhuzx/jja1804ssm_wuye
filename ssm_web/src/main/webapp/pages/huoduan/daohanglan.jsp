@@ -136,10 +136,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 项目管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pr/xiangmusearch.do">项目查询</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/">增加项目</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -151,7 +151,7 @@
                 </ul>
             </li>
 
-            <li>
+           <%--&lt;%&ndash; <li>
                 <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -165,10 +165,10 @@
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
-                    </li>
+                    </li>&ndash;%&gt;
 
-                </ul>
-            </li>
+               &lt;%&ndash; </ul>&ndash;%&gt;
+            </li>--%>
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
