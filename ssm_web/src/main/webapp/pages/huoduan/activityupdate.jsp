@@ -321,56 +321,45 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            添加界面
+                            修改界面
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
 
-                                    <form action="${pageContext.request.contextPath}/complain/save.do" method="post">
-                                        <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
+                                    <form action="${pageContext.request.contextPath}/activity/update.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="" name=""  >
 
                                         <div  >
                                             <label>ID</label>
-                                            <input class="form-control" placeholder="cid" value="" name="cid" >
+                                            <input class="form-control" placeholder="cid" value="${activity.id}" name="id" >
                                         </div>
                                         <div  >
-                                            <label>标题</label>
-                                            <input class="form-control" placeholder="title"  value="" name="title" >
+                                            <label>活动标题</label>
+                                            <input class="form-control" placeholder="title"  value="${activity.activityname}" name="activityname">
                                         </div>
                                         <div>
-                                            <label> 描述</label>
-                                            <input class="form-control" placeholder="descr" value="" name="descr">
+                                            <label>活动描述</label>
+                                            <input class="form-control" placeholder="descr" value="${activity.activitydesc}" name="activitydesc">
                                         </div>
                                         <div>
-                                            <label>业主</label>
-                                            <input class="form-control" placeholder="cname" value="" name="cname">
-                                        </div>
-                                        <div>
-                                            <label>业主电话</label>
-                                            <input class="form-control" placeholder="cname" value="" name="cphone">
-                                        </div>
-                                        <div>
-                                            <label>修理员</label>
-                                            <input class="form-control" placeholder="cname" value="" name="rname">
-                                        </div>
-                                        <div>
-                                            <label>是否处理</label>
-                                            <input class="form-control" placeholder="status" value="" name="status">
-                                        </div>
-                                        <div>
-                                            <label>投诉方式</label>
-                                            <input class="form-control" placeholder="means" value="" name="means">
+                                            <label>活动内容</label>
+                                            <input class="form-control" placeholder="cname" value="${activity.activitycont}" name="activitycont">
                                         </div>
 
                                         <div>
-                                            <label>上报日期</label>
-                                            <input class="form-control" placeholder="cdate" id="dateid" value="" name="cdate">
+                                            <label>活动时间</label>
+                                            <input class="form-control" placeholder="cdate" id="dateid" value="${activity.activitytime}" name="activitytime">
                                         </div>
                                         <div>
-                                            <label>处理日期</label>
-                                            <input class="form-control" placeholder="dealdescr" value="" name="dealdescr">
+                                            <label>工作人员</label>
+                                            <input class="form-control" placeholder="cname" value="${activity.activityworker}" name="activityworker">
                                         </div>
+                                        <div>
+                                            <label>奖品</label>
+                                            <input class="form-control" placeholder="status" value="${activity.activityward}" name="activityward">
+                                        </div>
+
                                         <br>
                                         <div>
 

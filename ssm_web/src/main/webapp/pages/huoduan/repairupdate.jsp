@@ -354,7 +354,7 @@
                                         </div>
                                         <div>
                                             <label>反馈时间</label>
-                                            <input class="form-control" placeholder="reportdate" value="<fmt:formatDate value='${rep.reportdate}' pattern='yyyy-MM-dd'/>"  name= "reportdate">
+                                            <input class="form-control" placeholder="reportdate"id="dateid3" value="<fmt:formatDate value='${rep.reportdate}' pattern='yyyy-MM-dd'/>"  name= "reportdate">
                                         </div>
                                         <div>
                                             <label>报修方式</label>
@@ -367,7 +367,7 @@
 
                                         <div>
                                             <label>安排维修时间</label>
-                                            <input class="form-control" placeholder="repairdate"  value="<fmt:formatDate value='${rep.repairdate}' pattern='yyyy-MM-dd'/>"  name= "repairdate">
+                                            <input class="form-control" placeholder="repairdate" id="dateid2" value="<fmt:formatDate value='${rep.repairdate}' pattern='yyyy-MM-dd'/>"  name= "repairdate">
                                         </div>
                                         <div>
                                             <label>修理工</label>
@@ -383,7 +383,7 @@
                                         </div>
                                         <div>
                                             <label>完成日期</label>
-                                            <input class="form-control" placeholder="completedate"id="dateid"value="<fmt:formatDate value='${rep.completedate}' pattern='yyyy-MM-dd'/>"  name= "completedate" >
+                                            <input class="form-control" placeholder="completedate"id="dateid" value="<fmt:formatDate value='${rep.completedate}' pattern='yyyy-MM-dd'/>"  name= "completedate" >
                                         </div>
                                         <div>
                                             <label>费用是否缴纳</label>
@@ -391,7 +391,7 @@
                                         </div>
                                         <div>
                                             <label>费用缴纳日期</label>
-                                            <input class="form-control" placeholder="paydate"value="<fmt:formatDate value='${rep.paydate}' pattern='yyyy-MM-dd'/>"  name= "paydate">
+                                            <input class="form-control" placeholder="paydate" id="dateid1" value="<fmt:formatDate value='${rep.paydate}' pattern='yyyy-MM-dd'/>"  name= "paydate">
                                         </div>
                                         <br>
                                         <div>
@@ -444,6 +444,33 @@
 <script>
     $(document).ready(function() {
         $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid1').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid2').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid3').datepicker({
             format : "yyyy-mm-dd",
             autoclose: true,
             language: 'zh-CN'

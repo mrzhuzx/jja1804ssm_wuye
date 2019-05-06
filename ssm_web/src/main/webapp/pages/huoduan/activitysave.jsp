@@ -327,50 +327,39 @@
                             <div class="row">
                                 <div class="col-lg-6">
 
-                                    <form action="${pageContext.request.contextPath}/complain/save.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/activity/save.do" method="post">
                                         <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
                                         <div  >
-                                            <label>ID</label>
-                                            <input class="form-control" placeholder="cid" value="" name="cid" >
+                                            <label>编号</label>
+                                            <input class="form-control" placeholder="id" value="" name="id" >
                                         </div>
                                         <div  >
-                                            <label>标题</label>
-                                            <input class="form-control" placeholder="title"  value="" name="title" >
+                                            <label>活动标题</label>
+                                            <input class="form-control" placeholder="activityname"  value="" name="activityname" >
                                         </div>
                                         <div>
-                                            <label> 描述</label>
-                                            <input class="form-control" placeholder="descr" value="" name="descr">
+                                            <label> 活动描述</label>
+                                            <input class="form-control" placeholder="activitydesc" value="" name="activitydesc">
                                         </div>
                                         <div>
-                                            <label>业主</label>
-                                            <input class="form-control" placeholder="cname" value="" name="cname">
+                                            <label>活动内容</label>
+                                            <input class="form-control" placeholder="activitycont" value="" name="activitycont">
                                         </div>
                                         <div>
-                                            <label>业主电话</label>
-                                            <input class="form-control" placeholder="cname" value="" name="cphone">
+                                            <label>活动日期</label>
+                                            <input class="form-control" placeholder="activitytime" id="dateid" value="" name="activitytime">
                                         </div>
                                         <div>
-                                            <label>修理员</label>
-                                            <input class="form-control" placeholder="cname" value="" name="rname">
+                                            <label>工作人员</label>
+                                            <input class="form-control" placeholder="activityworker" value="" name="activityworker">
                                         </div>
                                         <div>
-                                            <label>是否处理</label>
-                                            <input class="form-control" placeholder="status" value="" name="status">
-                                        </div>
-                                        <div>
-                                            <label>投诉方式</label>
-                                            <input class="form-control" placeholder="means" value="" name="means">
+                                            <label>活动奖品</label>
+                                            <input class="form-control" placeholder="activityward" value="" name="activityward">
                                         </div>
 
-                                        <div>
-                                            <label>上报日期</label>
-                                            <input class="form-control" placeholder="cdate" id="dateid" value="" name="cdate">
-                                        </div>
-                                        <div>
-                                            <label>处理日期</label>
-                                            <input class="form-control" placeholder="dealdescr" value="" name="dealdescr">
-                                        </div>
+
                                         <br>
                                         <div>
 
