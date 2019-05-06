@@ -336,7 +336,7 @@
                                         </div>
                                         <div  >
                                             <label>title 内容</label>
-                                            <input class="form-control" placeholder="title"  value="" name="title" readonly="readonly">
+                                            <input class="form-control" placeholder="title"  value="" name="title" >
                                         </div>
                                         <div>
                                             <label>descr 描述</label>

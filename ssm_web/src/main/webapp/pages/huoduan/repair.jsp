@@ -1,27 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019\4\26 0026
-  Time: 9:07
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
-
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- FontAwesome Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+
     <!-- Custom Styles-->
-    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/huoduan/plugins/datepicker3.css">
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet"/>
     <!-- Google Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <!-- TABLE STYLES-->
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css"
+          rel="stylesheet"/>
 </head>
 <body>
 <div id="wrapper">
@@ -101,7 +97,8 @@
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (success)</span>
                                     </div>
                                 </div>
@@ -117,7 +114,8 @@
                                     <span class="pull-right text-muted">28% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 28%">
                                         <span class="sr-only">28% Complete</span>
                                     </div>
                                 </div>
@@ -133,7 +131,8 @@
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -149,7 +148,8 @@
                                     <span class="pull-right text-muted">85% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 85%">
                                         <span class="sr-only">85% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -251,10 +251,10 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i> 图表</a>
+                    <a href="index.html"><i class="fa fa-dashboard"></i>图表</a>
                 </li>
                 <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI 元素</a>
+                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
                 </li>
                 <li>
                     <a href="chart.html"><i class="fa fa-bar-chart-o"></i> 数据表</a>
@@ -264,15 +264,15 @@
                 </li>
 
                 <li>
-                    <a href="table.html"><i class="fa fa-table"></i>响应表</a>
+                    <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
                 </li>
                 <li>
-                    <a href="form.html" class="active-menu"><i class="fa fa-edit"></i> 表单 </a>
+                    <a href="form.html"><i class="fa fa-edit"></i>表单 </a>
                 </li>
 
 
                 <li>
-                    <a href="#"><i class="fa fa-sitemap"></i> 下单菜单<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap"></i>下拉<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="#">Second Level Link</a>
@@ -307,101 +307,108 @@
 
     </nav>
     <!-- /. NAV SIDE  -->
-    <div id="page-wrapper" >
+    <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Forms Page <small>最好的表单元素</small>
+
+                        <small>设备维修表</small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-            <div class="row" style="width: 600px;">
-                <div class="col-lg-12">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            基本表单元素
+
+                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/repairsave.jsp'"></i> 添加</button>
+                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/complain/findall.do'"></i> 刷新</button>
+
+
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-
-                                    <form action="${pageContext.request.contextPath}/complain/update.do" method="post">
-                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="" name=""  >
-
-                                        <div  >
-                                            <label>cid</label>
-                                            <input class="form-control" placeholder="cid" value="${com.cid}" name="cid" >
-                                        </div>
-                                        <div  >
-                                            <label>title 内容</label>
-                                            <input class="form-control" placeholder="title"  value="${com.title}" name="title">
-                                        </div>
-                                        <div>
-                                            <label>descr 描述</label>
-                                            <input class="form-control" placeholder="descr" value="${com.descr}" name="descr">
-                                        </div>
-                                        <div>
-                                            <label>cname</label>
-                                            <input class="form-control" placeholder="cname" value="${com.cname}" name="cname">
-                                        </div>
-                                        <div>
-                                            <label>cphone</label>
-                                            <input class="form-control" placeholder="cname" value="${co.cphone}" name="cphone">
-                                        </div>
-                                        <div>
-                                            <label>rname</label>
-                                            <input class="form-control" placeholder="cname" value="${com.rname}" name="rname">
-                                        </div>
-                                        <div>
-                                            <label>status</label>
-                                            <input class="form-control" placeholder="status" value="${com.status}" name="status">
-                                        </div>
-                                        <div>
-                                            <label>means</label>
-                                            <input class="form-control" placeholder="means" value="${com.means}" name="means">
-                                        </div>
-
-                                        <div>
-                                            <label>cdate</label>
-                                            <input class="form-control" placeholder="cdate" id="dateid" value="${com.cdate}" name="cdate">
-                                        </div>
-                                        <div>
-                                            <label>dealdescr</label>
-                                            <input class="form-control" placeholder="dealdescr" value="${com.dealdescr}" name="dealdescr">
-                                        </div>
-                                        <br>
-                                        <div>
-
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 保存</button>
-
-                                            <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
-
-                                        </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>repairname</th>
+                                        <th>repairphone</th>
+                                        <th>category</th>
+                                        <th>repdesc</th>
+                                        <th>reportdate</th>
+                                        <th>means</th>
+                                        <th>status</th>
+                                        <th>repairdate</th>
+                                        <th>principal</th>
+                                        <th>material</th>
+                                        <th>upkeep</th>
+                                        <th>completedate</th>
+                                        <th>ispay</th>
+                                        <th>paydate</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${repairInfos}" var="re">
+                                        <tr class="odd gradeX">
+                                            <td>${re.id}</td>
+                                            <td>${re.repairname}</td>
+                                            <td>${re.repairphone}</td>
+                                            <td>${re.category}</td>
+                                            <td>${re.repdesc}</td>
+                                            <td>${re.reportdate}</td>
+                                            <td>${re.means}</td>
+                                            <td>${re.status}</td>
+                                            <td>${re.repairdate}</td>
+                                            <td>${re.principal}</td>
+                                            <td>${re.material}</td>
+                                            <td>${re.upkeep}</td>
+                                            <td>${re.completedate}</td>
+                                            <td>${re.ispay}</td>
+                                            <td>${re.paydate}</td>
 
 
 
-                                    </form>
-
-                                </div>
-
-                                <!-- /.col-lg-6 (nested) -->
+                                            <td>
+                                                <button class="btn btn-primary"><i class="fa fa-edit "
+                                                                                   onclick="location.href='${pageContext.request.contextPath}/repair/findone.do?id=${re.id}'"></i>
+                                                    修改
+                                                </button>
+                                                <button class="btn btn-danger"><i class="fa fa-pencil"
+                                                                                  onclick="location.href='${pageContext.request.contextPath}/repair/delete.do?id=${re.id}'"></i>
+                                                    删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- /.row (nested) -->
+
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
+                    <!--End Advanced Tables -->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
+            <!-- /. ROW  -->
+
         </div>
-        <!-- /. PAGE INNER  -->
     </div>
-    <!-- /. PAGE WRAPPER  -->
+    <!-- /. ROW  -->
 </div>
+<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/"
+                                                                                    target="_blank"
+                                                                                    title="模板之家">模板之家</a> - Collect from
+    <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
@@ -410,25 +417,16 @@
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
-<!-- Custom Js -->
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
-<script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#dateid').datepicker({
-            format : "yyyy-mm-dd",
-            autoclose: true,
-            language: 'zh-CN'
-        });
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
     });
 </script>
-
+<!-- Custom Js -->
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
 
 </body>

@@ -16,10 +16,10 @@
                 <a href="#"><i class="fa fa-desktop"></i> 人事管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">职员管理</a>
+                        <a href="${pageContext.request.contextPath}/ai/houqinsearch.do">职员管理</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">新人入职</a>
+                        <a href="${pageContext.request.contextPath}/ai/searchRole.do">新人入职</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/role/rolesearch.do">职位查询</a>
@@ -189,6 +189,10 @@
                 </ul>
             </li>
 
+
+
+
+
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 合同管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -212,7 +216,7 @@
                 <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/complain/findall">客户投诉表</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>

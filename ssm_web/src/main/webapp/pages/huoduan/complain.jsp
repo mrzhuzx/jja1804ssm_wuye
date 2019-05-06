@@ -1,13 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019\4\25 0025
-  Time: 10:08
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@include file="appcomm/basePath.jsp"%>--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -18,13 +11,13 @@
     <!-- FontAwesome Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <%--D:\ideaworkspace\jja1804ssm_wuye3\ssm_web\src\main\webapp\${pageContext.request.contextPath}/pages\huoduan\assets\css--%>
+
     <!-- Custom Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!-- TABLE STYLES-->
-    <link href="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 <div id="wrapper">
@@ -36,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../../index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -254,7 +247,7 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="../../index.html"><i class="fa fa-dashboard"></i>图表</a>
+                    <a href="index.html"><i class="fa fa-dashboard"></i>图表</a>
                 </li>
                 <li>
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI元素</a>
@@ -315,7 +308,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        客户投诉<small>反馈表</small>
+                        表格页面 <small>响应表</small>
                     </h1>
                 </div>
             </div>
@@ -327,48 +320,45 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <td><a href="${pageContext.request.contextPath}/pages/huoduan/complainsave.jsp"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 添加</button></a></td>
-                            <td><a href=" ${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 刷新</button></a></td>
+                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/complainsave.jsp'"></i> 添加</button>
+                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/complain/findall.do'"></i> 刷新</button>
+
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>cid</th>
-                                        <th>title</th>
-                                        <th>descr</th>
-                                        <th>cname</th>
-                                        <th>cphone</th>
-                                        <th>rname</th>
-                                        <th>status</th>
-                                        <th>means</th>
-                                        <th>cdate</th>
-                                        <th>dealdescr</th>
-                                        <th>操作</th>
+                                    <th>cid</th>
+                                    <th>title</th>
+                                    <th>descr</th>
+                                    <th>cname</th>
+                                    <th>cphone</th>
+                                    <th>rname</th>
+                                    <th>status</th>
+                                    <th>means</th>
+                                    <th>cdate</th>
+                                    <th>dealdescr</th>
+                                    <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${complainInfolist}" var="co">
 
 
-                                        <tr class="odd gradeX">
-                                            <td>${co.cid}</td>
-                                            <td>${co.title}</td>
-                                            <td>${co.descr}</td>
-                                            <td>${co.cname}</td>
-                                            <td>${co.cphone}</td>
-                                            <td>${co.rname}</td>
-                                            <td>${co.status}</td>
-                                            <td>${co.means}</td>
-                                            <td>${co.cdate}</td>
-                                            <td>${co.dealdescr}</td>
-
-                                            <%--<td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/electric/findById.do?id=${electric.enumber}'"></i> 修改</button>--%>
-                                                <%--<button class="btn btn-danger"><i class="fa fa-pencil" onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"></i> 删除</button></td>--%>
-                                            <td><a href=" ${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 修改</button></a></td>
-                                            <td><a href=" ${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}"><button class="btn btn-danger"><i class="fa fa-pencil"></i> 删除</button></a></td>
-
+                                    <tr class="odd gradeX">
+                                    <td>${co.cid}</td>
+                                    <td>${co.title}</td>
+                                    <td>${co.descr}</td>
+                                    <td>${co.cname}</td>
+                                    <td>${co.cphone}</td>
+                                    <td>${co.rname}</td>
+                                    <td>${co.status}</td>
+                                    <td>${co.means}</td>
+                                    <td>${co.cdate}</td>
+                                    <td>${co.dealdescr}</td>
+                                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}'"></i> 修改</button>
+                                                <button class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"></i> 删除</button></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
@@ -380,39 +370,37 @@
                     <!--End Advanced Tables -->
                 </div>
             </div>
-
-                </div>
-                <div class="col-md-6">
-
-                </div>
-            </div>
             <!-- /. ROW  -->
+
         </div>
-        <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
     </div>
-    <!-- /. PAGE INNER  -->
+    <!-- /. ROW  -->
+</div>
+<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
+</div>
+<!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-                                              
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery-1.10.2.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
 <!-- Bootstrap Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/jquery.metisMenu.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
 <!-- DATA TABLE SCRIPTS -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.js"></script>
 <script>
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
     });
 </script>
 <!-- Custom Js -->
-<script src="${pageContext.request.contextPath}/pages/houduan/assets/js/custom-scripts.js"></script>
+<script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
 
 </body>
 </html>
+
