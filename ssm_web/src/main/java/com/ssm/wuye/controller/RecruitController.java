@@ -136,7 +136,7 @@ public class RecruitController {
     }
 
     /**
-     * 获取一条数据
+     * 前台获取一条数据
      * @return
      */
     @RequestMapping("qianreone")

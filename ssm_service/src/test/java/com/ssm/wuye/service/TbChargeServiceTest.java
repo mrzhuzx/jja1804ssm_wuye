@@ -30,8 +30,8 @@ public class TbChargeServiceTest {
     @Resource
     TbChargeService tbChargeService;
     @Resource
-    ChElectricSercice chElectricSercice;
-    @Resource
+    //ChElectricSercice chElectricSercice;
+  //  @Resource
     ChWaterService chWaterService;
     @Resource
     ChGasService chGasServicel;
@@ -75,11 +75,11 @@ public class TbChargeServiceTest {
     @Test
     public void test5(){
 
-        List<ElectricAndOwer> electricAndOwers = chElectricSercice.selectAll();
-        for (ElectricAndOwer tbCharge : electricAndOwers) {
-            System.out.println(tbCharge.toString());
+      //  List<ElectricAndOwer> electricAndOwers = chElectricSercice.selectAll();
+      //  for (ElectricAndOwer tbCharge : electricAndOwers) {
+        //    System.out.println(tbCharge.toString());
         }
 
-    }
+ //   }
 
 }

@@ -14,7 +14,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+        <a class="navbar-brand" href="#"><i class="fa fa-gear"></i> <strong>管理系统</strong></a>
     </div>
 
     <ul class="nav navbar-top-links navbar-right">
