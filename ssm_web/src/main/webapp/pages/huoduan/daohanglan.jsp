@@ -196,7 +196,7 @@
                         <a href="${pageContext.request.contextPath}/con/consearch.do">合同查询</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
+                        <a href="${pageContext.request.contextPath}/con/searchType.do">合同添加</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/cont/ctsearch.do">类别管理</a>

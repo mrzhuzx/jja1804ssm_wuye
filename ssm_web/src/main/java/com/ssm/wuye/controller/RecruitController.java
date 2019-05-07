@@ -1,7 +1,9 @@
 package com.ssm.wuye.controller;
 
 import com.ssm.wuye.domain.Recruit;
+import com.ssm.wuye.domain.RecruitExample;
 import com.ssm.wuye.service.RecruitService;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -104,7 +106,47 @@ public class RecruitController {
         }
         return m;
     }
+    /**
+     * 分页查询(前台)
+     */
+    @RequestMapping("refenye")
+    public ModelAndView qiansearch() {
+        ModelAndView m = new ModelAndView("pages/gitqian/zhaopin");
+//        RecruitExample recruitExample=new RecruitExample();
+//        Integer Size = 3;//条数
+//
+//        long l =recruitService.countByExample(recruitExample);
+//        Integer con =(int)l;
+//        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
+//        if (pageNum<=1){
+//            pageNum = 1;
+//        }
+//        if (pageNum>pageAll){
+//            pageNum=pageAll;
+//        }
+//        Integer Num = Size * (pageNum - 1);//从哪条数据分页
+        List<Recruit> recruitList = recruitService.selectByExample(null);
+        for ( Recruit recruit : recruitList) {
+            System.out.println(recruit.toString());
+        }
+        m.addObject("recruitList",recruitList);
+//        m.addObject("pageAll",pageAll);
+//        m.addObject("pageNum",pageNum);
+        return m;
+    }
 
+    /**
+     * 获取一条数据
+     * @return
+     */
+    @RequestMapping("qianreone")
+    public ModelAndView qianrene(@RequestParam Integer recruitid ){
+        ModelAndView m=new ModelAndView("pages/gitqian/zhaopinxq");
+        Recruit recruit = recruitService.selectByPrimaryKey(recruitid);
+        m.addObject("recruit",recruit);
+        System.out.println("获取到了一条数据-----------");
+        return  m;
+    }
 
 
 }

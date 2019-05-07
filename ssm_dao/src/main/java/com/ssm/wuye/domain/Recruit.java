@@ -242,4 +242,20 @@ public class Recruit {
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Recruit{" +
+                "recruitid=" + recruitid +
+                ", companyname='" + companyname + '\'' +
+                ", postname='" + postname + '\'' +
+                ", recruitdes='" + recruitdes + '\'' +
+                ", duty='" + duty + '\'' +
+                ", salary='" + salary + '\'' +
+                ", recruitnum=" + recruitnum +
+                ", recruitnumber='" + recruitnumber + '\'' +
+                ", recruitend=" + recruitend +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

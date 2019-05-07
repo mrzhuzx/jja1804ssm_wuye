@@ -71,7 +71,15 @@
                                             <label>合同描述</label>
                                             <textarea class="form-control" rows="3"  name="contractdes" >${contract.contractdes}</textarea>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label>合同类型</label>
+                                            <select class="form-control" placeholder="" name="contracttype">
+                                                <option selected="selected" value="${contract.contracttype}">${contract.contracttype}</option>
+                                                <c:forEach var="st" items="${types}">
+                                                    <option value="${st.contypeid}">${st.contypeid}----${st.contracttype}</option>
+                                                </c:forEach>
+                                            </select>
+                                        </div>
                                         <div>
                                             <label>签约人</label>
                                             <input class="form-control" placeholder="" value="${contract.signingpeople}" name="signingpeople">
