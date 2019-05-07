@@ -1,11 +1,10 @@
 package com.ssm.wuye.service;
 
-import com.ssm.wuye.domain.ChElectricMeter;
+
 import com.ssm.wuye.domain.TbCharge;
 import com.ssm.wuye.domain.TbChargeExample;
 import com.ssm.wuye.vo.ElectricAndOwer;
 import com.ssm.wuye.vo.GasAndOwer;
-import com.ssm.wuye.vo.WaterAndOwer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -30,11 +29,12 @@ public class TbChargeServiceTest {
     @Resource
     TbChargeService tbChargeService;
     @Resource
-    //ChElectricSercice chElectricSercice;
-  //  @Resource
+    ChElectricService chElectricSercice;
+    @Resource
     ChWaterService chWaterService;
     @Resource
     ChGasService chGasServicel;
+
 
 //    @Test
 //    public void test1(){
@@ -75,11 +75,66 @@ public class TbChargeServiceTest {
     @Test
     public void test5(){
 
-      //  List<ElectricAndOwer> electricAndOwers = chElectricSercice.selectAll();
-      //  for (ElectricAndOwer tbCharge : electricAndOwers) {
-        //    System.out.println(tbCharge.toString());
+        List<ElectricAndOwer> electricAndOwers = chElectricSercice.selectAll();
+        for (ElectricAndOwer tbCharge : electricAndOwers) {
+            System.out.println(tbCharge.toString());
         }
 
- //   }
+    }
+    @Test
+    public void testlll(){
+        TbChargeExample tbChargeExample=new TbChargeExample();
+        TbChargeExample tbChargeExample1=new TbChargeExample();
+        tbChargeExample.createCriteria().andChargenameEqualTo("水费");
+        tbChargeExample1.createCriteria().andChargenameEqualTo("电费");
+        List<TbCharge> tbCharges = tbChargeService.selectByExample(tbChargeExample);
+        List<TbCharge> tbCharges1 = tbChargeService.selectByExample(tbChargeExample1);
+        System.out.println("水"+tbCharges.size()+"电"+tbCharges1.size());
+
+        if (tbCharges.size()>=tbCharges1.size()){
+            TbChargeExample tbChargeExample2=new TbChargeExample();
+            tbChargeExample2.createCriteria().andChargenameEqualTo("燃气费");
+            List<TbCharge> tbCharges2 = tbChargeService.selectByExample(tbChargeExample2);
+            System.out.println("燃气"+tbCharges2.size());
+            if (tbCharges.size()>=tbCharges2.size()){
+//                model.addAttribute("tbCharges",tbCharges);
+                System.out.println("1");
+            }else {
+                TbChargeExample tbChargeExample3=new TbChargeExample();
+                tbChargeExample3.createCriteria().andChargenameEqualTo("物业费");
+                List<TbCharge> tbCharges3 = tbChargeService.selectByExample(tbChargeExample3);
+                System.out.println("物业"+tbCharges.size());
+                if (tbCharges2.size()>=tbCharges3.size()){
+//                model.addAttribute("tbCharges",tbCharges1);
+                    System.out.println("2");
+                }else {
+//                model.addAttribute("tbCharges",tbChargeExample2);
+                    System.out.println("3");
+                }
+//
+            }
+        }else {
+            TbChargeExample tbChargeExample2=new TbChargeExample();
+            tbChargeExample2.createCriteria().andChargenameEqualTo("物业费");
+            List<TbCharge> tbCharges2 = tbChargeService.selectByExample(tbChargeExample2);
+            System.out.println("物业"+tbCharges.size());
+            if (tbCharges1.size()>=tbCharges2.size()){
+//                model.addAttribute("tbCharges",tbCharges1);
+                System.out.println("4");
+            }else {
+                TbChargeExample tbChargeExample3=new TbChargeExample();
+                tbChargeExample3.createCriteria().andChargenameEqualTo("燃气费");
+                List<TbCharge> tbCharges3 = tbChargeService.selectByExample(tbChargeExample3);
+                System.out.println("燃气"+tbCharges.size());
+                if (tbCharges2.size()>=tbCharges3.size()){
+//                model.addAttribute("tbCharges",tbCharges1);
+                    System.out.println("5");
+                }else {
+//                model.addAttribute("tbCharges",tbChargeExample2);
+                    System.out.println("6");
+                }
+            }
+        }
+    }
 
 }

@@ -26,10 +26,10 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="${pageContext.request.contextPath}/pages/huoduan/toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="${pageContext.request.contextPath}/pages/huoduan/daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
 
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
