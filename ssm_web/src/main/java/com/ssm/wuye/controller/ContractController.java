@@ -2,7 +2,9 @@ package com.ssm.wuye.controller;
 
 import com.ssm.wuye.domain.Contract;
 import com.ssm.wuye.domain.ContractExample;
+import com.ssm.wuye.domain.ContractType;
 import com.ssm.wuye.service.ContractService;
+import com.ssm.wuye.service.ContractTypeService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +29,9 @@ public class ContractController {
 
     @Resource
     ContractService contractService;
+
+    @Resource
+    ContractTypeService contractTypeService;
 
     /**
      * 查询全部
@@ -69,11 +74,26 @@ public class ContractController {
     public ModelAndView searchone(@RequestParam Integer contractid ){
         ModelAndView m=new ModelAndView("pages/huoduan/hetongupdate");
         Contract contract = contractService.selectByPrimaryKey(contractid);
+        List<ContractType> types = contractTypeService.selectByExample(null);
+        m.addObject("types",types);
         m.addObject("contract",contract);
         System.out.println("获取到了一条数据-----------");
         return  m;
     }
 
+    /**
+     * 获取合同类别
+     *
+     * @return
+     */
+    @RequestMapping("searchType")
+    public ModelAndView searchType( ){
+        ModelAndView m=new ModelAndView("pages/huoduan/hetongadd");
+        List<ContractType> types = contractTypeService.selectByExample(null);
+        m.addObject("types",types);
+        System.out.println("获取到了一条数据-----------");
+        return  m;
+    }
     /**
      *根据主键ID修改
      * @return

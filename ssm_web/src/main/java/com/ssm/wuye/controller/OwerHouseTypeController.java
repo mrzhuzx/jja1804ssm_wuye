@@ -1,10 +1,13 @@
 package com.ssm.wuye.controller;
 
 
+import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.OwerHouseType;
 import com.ssm.wuye.domain.OwerHouseTypeExample;
+import com.ssm.wuye.service.NewsTypeService;
 import com.ssm.wuye.service.OwerHouseTypeService;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +23,8 @@ import java.util.List;
 public class OwerHouseTypeController {
     @Resource
     OwerHouseTypeService oHTService;
+    @Autowired
+    NewsTypeService newsTypeService;
 
 
     public OwerHouseTypeController(){
@@ -30,9 +35,10 @@ public class OwerHouseTypeController {
         ModelAndView m = new ModelAndView("/pages/gitqian/housestate");
         OwerHouseTypeExample ohte = new OwerHouseTypeExample();
         ohte.createCriteria().andHstateEqualTo("待售");
-        Integer Size=6;
+        ohte.createCriteria().andLoanEqualTo(2);
         long l =oHTService.countByExample(ohte);
         Integer con =(int)l;
+        Integer Size=6;
         Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
         if (pageNum<=1){
             pageNum = 1;
@@ -41,7 +47,9 @@ public class OwerHouseTypeController {
             pageNum=pageAll;
         }
         Integer Num =Size*(pageNum-1);
-        List<OwerHouseType> owerHouseTypes = oHTService.selectByExampleWithRowbounds(ohte,new RowBounds(pageNum, Size));
+        List<OwerHouseType> owerHouseTypes = oHTService.selectByExampleWithRowbounds(ohte,new RowBounds(Num, Size));
+        List<NewsType> newstypeList = newsTypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
         m.addObject("pageAll", pageAll);
         m.addObject("pageNum", pageNum);
        m.addObject("hstate", owerHouseTypes);
@@ -64,7 +72,9 @@ public class OwerHouseTypeController {
             pageNum=pageAll;
         }
         Integer Num =Size*(pageNum-1);
-        List<OwerHouseType> owerHouseTypes = oHTService.selectByExampleWithRowbounds(ohte,new RowBounds(pageNum, Size));
+        List<OwerHouseType> owerHouseTypes = oHTService.selectByExampleWithRowbounds(ohte,new RowBounds(Num, Size));
+        List<NewsType> newstypeList = newsTypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
         m.addObject("pageAll", pageAll);
         m.addObject("pageNum", pageNum);
         m.addObject("loan", owerHouseTypes);

@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -93,9 +95,12 @@ public class ParkingCarinfoServiceImplTest {
      */
     @Test
     public void searchone() {
-        ParkingCarinfo parkingCarinfo = parkingCarinfoService.selectByPrimaryKey(1);
-        System.out.println(parkingCarinfo.toString());
-
+        ParkingCarinfoExample   parkingCarinfoExample = new ParkingCarinfoExample();
+        parkingCarinfoExample.createCriteria().andParkingcardsEqualTo("闽C-H66666");
+        List<ParkingCarinfo> parkingCarinfos = parkingCarinfoService.selectByExample(parkingCarinfoExample);
+        for (ParkingCarinfo parkingCarinfo : parkingCarinfos) {
+            System.out.println(parkingCarinfo.getParkingid());
+        }
     }
 
     /**
@@ -117,6 +122,25 @@ public class ParkingCarinfoServiceImplTest {
         }else {
             System.out.println("添加失败");
         }
+    }
+    @Test
+    public void test() {
+        ParkingCarinfo  pc = parkingCarinfoService.selectByPrimaryKey(1);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date parkingintime = pc.getParkingintime();
+        Date parkingouttime = pc.getParkingouttime();
+        long diff = parkingouttime.getTime() -parkingintime.getTime();//这样得到的差值是微秒级别
+        long days = diff / (1000 * 60 * 60 * 24);
+        long hours = (diff-days*(1000 * 60 * 60 * 24))/(1000* 60 * 60);
+        System.out.println(""+days+"天"+hours+"小时");
+        System.out.println(""+((days*24)+hours)+"小时");
+        long time=((days*24)+hours);
+        long Parkingcost=6*time;
+        System.out.println(Parkingcost);
+
+
+
+
     }
 
 }

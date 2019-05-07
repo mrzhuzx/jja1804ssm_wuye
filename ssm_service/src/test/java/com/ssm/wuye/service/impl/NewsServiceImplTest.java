@@ -40,7 +40,8 @@ public class NewsServiceImplTest {
     @Test
     public void testsearch() {
         NewsExample newsExample = new NewsExample();
-        long l = newsService.countByExample(newsExample);
-        System.out.println("总条数:"+l);
+//        newsExample.createCriteria().andNctypeidEqualTo(1);
+        int i = newsService.countByExample(newsExample);
+        System.out.println("总条数:"+i);
     }
 }
