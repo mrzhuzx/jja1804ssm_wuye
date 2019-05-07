@@ -180,7 +180,7 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修表</a>
+                        <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -216,7 +216,7 @@
                 <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/complain/findall.do">客户投诉表</a>
+                        <a href="${pageContext.request.contextPath}/complain/findall.do">客户投诉</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
