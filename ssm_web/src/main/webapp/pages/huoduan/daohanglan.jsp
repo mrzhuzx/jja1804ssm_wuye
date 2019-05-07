@@ -139,36 +139,10 @@
                         <a href="${pageContext.request.contextPath}/pr/xiangmusearch.do">项目查询</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/">增加项目</a>
+                        <a href="${pageContext.request.contextPath}/pr/typesearch.do">增加项目</a>
                     </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-
                 </ul>
             </li>
-
-           <%--&lt;%&ndash; <li>
-                <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="${pageContext.request.contextPath}/ai/houqinsearch.do">后勤人员</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/pages/huoduan/adniminfotianjia.jsp">人员添加</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link</a>
-                    </li>&ndash;%&gt;
-
-               &lt;%&ndash; </ul>&ndash;%&gt;
-            </li>--%>
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>

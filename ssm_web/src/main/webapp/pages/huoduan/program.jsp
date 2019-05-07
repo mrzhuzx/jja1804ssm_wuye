@@ -84,15 +84,16 @@
 
                                         <tr class="odd gradeX">
                                             <td>${xm.pid}</td>
-                                            <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.pname}</td>
+                                            <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.pname}</td> <%--限制每行的字数，超出的话懂用...表示--%>
                                             <td style="max-width: 12em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.ppicture}</td>
                                             <td style="max-width: 27em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.pintroduce}</td>
                                             <td style="max-width: 9em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.padress}</td>
                                             <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.ptypename}</td>
                                             <td><button class="btn btn-primary">
-                                                <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/ai/infosearchone.do?userid=${xm.pid}'"></i> 修改</button>
+                                                <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/pr/xmsearchone.do?pid=${xm.pid}'"></i> 修改</button>
+                                                    <%--用获取一条数据方法--%>
                                                 <button class="btn btn-danger">
-                                                    <i class="fa fa-dedent"  onclick="location.href='${pageContext.request.contextPath}/ai/infodelete.do?userid=${xm.pid}'"></i> 删除</button></td>
+                                                    <i class="fa fa-dedent"  onclick="location.href='${pageContext.request.contextPath}/pr/xiangmudelete.do?pid=${xm.pid}'"></i> 删除</button></td>
                                         </tr>
 
                                     </c:forEach>
