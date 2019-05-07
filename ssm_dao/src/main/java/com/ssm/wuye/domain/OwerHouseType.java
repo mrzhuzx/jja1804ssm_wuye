@@ -367,4 +367,25 @@ public class OwerHouseType extends BaseEntity {
     public OwerHouseType() {
     }
 
+    @Override
+    public String toString() {
+        return "OwerHouseType{" +
+                "olname='" + olname + '\'' +
+                ", hnumber='" + hnumber + '\'' +
+                ", hstate='" + hstate + '\'' +
+                ", hbulidingname='" + hbulidingname + '\'' +
+                ", hunitnumber=" + hunitnumber +
+                ", hfloor=" + hfloor +
+                ", hdirection='" + hdirection + '\'' +
+                ", harea='" + harea + '\'' +
+                ", hremarks='" + hremarks + '\'' +
+                ", loan=" + loan +
+                ", htypename='" + htypename + '\'' +
+                ", htpropertyright='" + htpropertyright + '\'' +
+                ", olphone='" + olphone + '\'' +
+                ", olid=" + olid +
+                ", hid=" + hid +
+                ", htypeid=" + htypeid +
+                '}';
+    }
 }
