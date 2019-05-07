@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        设备维修详情页 <small></small>
+                         <small>设备维修详情页</small>
                     </h1>
                 </div>
             </div>

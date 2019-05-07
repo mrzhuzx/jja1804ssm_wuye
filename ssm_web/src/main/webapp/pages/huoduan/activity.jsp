@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -32,7 +33,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        <small>客户投诉表</small>
+                        <small>社区活动表</small>
                     </h1>
                 </div>
             </div>
@@ -73,7 +74,7 @@
                                     <td>${ac.activityname}</td>
                                     <td>${ac.activitydesc}</td>
                                     <td>${ac.activitycont}</td>
-                                    <td>${ac.activitytime}</td>
+                                    <td><fmt:formatDate value='${ac.activitytime}' pattern='yyyy-MM-dd'/></td>
                                     <td>${ac.activityworker}</td>
                                     <td>${ac.activityward}</td>
 

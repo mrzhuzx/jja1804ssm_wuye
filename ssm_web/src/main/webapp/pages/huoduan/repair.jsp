@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -72,8 +73,8 @@
                                             <td>${re.repairname}</td>
                                             <td>${re.repairphone}</td>
                                             <td>${re.repdesc}</td>
-                                            <td>${re.reportdate}</td>
-                                            <td>${re.repairdate}</td>
+                                            <td><fmt:formatDate value='${re.reportdate}' pattern='yyyy-MM-dd'/></td>
+                                            <td><fmt:formatDate value='${re.repairdate}' pattern='yyyy-MM-dd'/></td>
                                             <td>${re.principal}</td>
 
 

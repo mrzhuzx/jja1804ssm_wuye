@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -35,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Forms Page <small>最好的表单元素</small>
+                         <small> 客户投诉表修改界面</small>
                     </h1>
                 </div>
             </div>
@@ -44,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            修改界面
+
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -88,7 +89,7 @@
 
                                         <div>
                                             <label>上报日期</label>
-                                            <input class="form-control" placeholder="cdate" id="dateid" value="${com.cdate}" name="cdate">
+                                            <input class="form-control" placeholder="cdate" id="dateid" value="<fmt:formatDate value='${com.cdate}' pattern='yyyy-MM-dd'/>" name="cdate">
                                         </div>
                                         <div>
                                             <label>处理日期</label>

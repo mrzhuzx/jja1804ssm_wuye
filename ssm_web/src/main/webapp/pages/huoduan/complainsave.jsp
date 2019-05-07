@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Forms Page <small>最好的表单元素</small>
+                         <small>客户投诉表添加界面</small>
                     </h1>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            添加界面
+
                         </div>
                         <div class="panel-body">
                             <div class="row">

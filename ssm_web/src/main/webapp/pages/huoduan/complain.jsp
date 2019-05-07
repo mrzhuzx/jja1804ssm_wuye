@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -79,7 +80,7 @@
                                     <td>${co.rname}</td>
                                     <td>${co.status}</td>
                                     <td>${co.means}</td>
-                                    <td>${co.cdate}</td>
+                                    <td><fmt:formatDate value='${co.cdate}' pattern='yyyy-MM-dd'/></td>
                                     <td>${co.dealdescr}</td>
                                             <td><button class="btn btn-primary"onclick="location.href='${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}'"><i class="fa fa-edit "></i> 修改</button>
                                                 <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"><i class="fa fa-pencil" ></i> 删除</button></td>

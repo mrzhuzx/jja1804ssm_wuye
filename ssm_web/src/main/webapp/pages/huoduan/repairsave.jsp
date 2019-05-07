@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Forms Page <small>最好的表单元素</small>
+                        <small>设备维修表添加界面</small>
                     </h1>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            基本表单元素
+
                         </div>
                         <div class="panel-body">
                             <div class="row">
