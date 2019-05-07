@@ -51,23 +51,23 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/puelectric/add.do" method="post">
-                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid+1}" name="electricid"  >
+                                    <form action="/puwater/add.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="水表编号" value="${electrics.waterid+1}" name="waterid"  >
 
                                         <div  >
 
-                                            <label>电表编号</label>
-                                            <c:if test="${electrics.electricid+1<10}">
-                                            <input class="form-control" placeholder="电表编号"  name="enumber" value="electric000${electrics.electricid+1}" readonly="readonly">
+                                            <label>水表编号</label>
+                                            <c:if test="${electrics.waterid+1<10}">
+                                            <input class="form-control" placeholder="水表编号"  name="enumber" value="water000${electrics.waterid+1}" readonly="readonly">
                                             </c:if>
-                                            <c:if test="${electrics.electricid+1<100&&electrics.electricid+1>10}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric00${electrics.electricid+1}" readonly="readonly">
+                                            <c:if test="${electrics.waterid+1<100&&electrics.waterid+1>10}">
+                                                <input class="form-control" placeholder="水表编号"  name="enumber" value="water00${electrics.waterid+1}" readonly="readonly">
                                             </c:if>
-                                            <c:if test="${electrics.electricid+1<1000&&electrics.electricid+1>100}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric0${electrics.electricid+1}" readonly="readonly">
+                                            <c:if test="${electrics.waterid+1<1000&&electrics.waterid+1>100}">
+                                                <input class="form-control" placeholder="水表编号"  name="enumber" value="water0${electrics.waterid+1}" readonly="readonly">
                                             </c:if>
-                                            <c:if test="${electrics.electricid+1>1000}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric${electrics.electricid+1}" readonly="readonly">
+                                            <c:if test="${electrics.waterid+1>1000}">
+                                                <input class="form-control" placeholder="水表编号"  name="enumber" value="water${electrics.waterid+1}" readonly="readonly">
                                             </c:if>
                                         </div>
                                         <%--<div  >--%>
@@ -85,8 +85,8 @@
                                             <%--</div>--%>
 
                                         <div>
-                                            <label>用电量/度</label>
-                                            <input class="form-control" placeholder="用电量/度" name="electric">
+                                            <label>用水量/吨</label>
+                                            <input class="form-control" placeholder="用水量/吨" name="water">
                                         </div>
                                         <div>
                                             <label>年月份</label>

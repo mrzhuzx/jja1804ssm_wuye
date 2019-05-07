@@ -63,10 +63,10 @@
                         <a href="${pageContext.request.contextPath}/puelectric/findAll.do">公共电表</a>
                     </li>
                     <li>
-                        <a href="#">公共水表</a>
+                        <a href="${pageContext.request.contextPath}/puwater/findAll.do">公共水表</a>
                     </li>
                     <li>
-                        <a href="#">公共天然气表</a>
+                        <a href="${pageContext.request.contextPath}/pugas/findAll.do">公共天然气表</a>
                     </li>
 
                 </ul>

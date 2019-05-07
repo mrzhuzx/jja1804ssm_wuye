@@ -51,23 +51,23 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/puelectric/add.do" method="post">
-                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid+1}" name="electricid"  >
+                                    <form action="/pugas/add.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="天然气表编号" value="${electrics.gasid+1}" name="gasid"  >
 
                                         <div  >
 
-                                            <label>电表编号</label>
-                                            <c:if test="${electrics.electricid+1<10}">
-                                            <input class="form-control" placeholder="电表编号"  name="enumber" value="electric000${electrics.electricid+1}" readonly="readonly">
+                                            <label>天然气表编号</label>
+                                            <c:if test="${electrics.gasid+1<10}">
+                                            <input class="form-control" placeholder="天然气表编号"  name="enumber" value="gas000${electrics.gasid+1}" readonly="readonly">
                                             </c:if>
-                                            <c:if test="${electrics.electricid+1<100&&electrics.electricid+1>10}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric00${electrics.electricid+1}" readonly="readonly">
+                                            <c:if test="${electrics.gasid+1<100&&electrics.gasid+1>10}">
+                                                <input class="form-control" placeholder="天然气表编号"  name="enumber" value="gas00${electrics.gasid+1}" readonly="readonly">
                                             </c:if>
-                                            <c:if test="${electrics.electricid+1<1000&&electrics.electricid+1>100}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric0${electrics.electricid+1}" readonly="readonly">
+                                            <c:if test="${electrics.gasid+1<1000&&electrics.gasid+1>100}">
+                                                <input class="form-control" placeholder="天然气表编号"  name="enumber" value="gas0${electrics.gasid+1}" readonly="readonly">
                                             </c:if>
-                                            <c:if test="${electrics.electricid+1>1000}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric${electrics.electricid+1}" readonly="readonly">
+                                            <c:if test="${electrics.gasid+1>1000}">
+                                                <input class="form-control" placeholder="天然气表编号"  name="enumber" value="gas${electrics.gasid+1}" readonly="readonly">
                                             </c:if>
                                         </div>
                                         <%--<div  >--%>
@@ -85,8 +85,8 @@
                                             <%--</div>--%>
 
                                         <div>
-                                            <label>用电量/度</label>
-                                            <input class="form-control" placeholder="用电量/度" name="electric">
+                                            <label>用气量/立方米</label>
+                                            <input class="form-control" placeholder="用气量/立方米" name="gas">
                                         </div>
                                         <div>
                                             <label>年月份</label>
