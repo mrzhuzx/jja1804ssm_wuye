@@ -18,122 +18,8 @@
 
     </head>
 <body>
-<!--头部-->
-<div class="top_bg" id="top_bg">
-    <div class="top_gang">
-        <div class="tou_zj">
-            <div class="hy">
-                <img src="pages/gitqian/images/tou_tb_03.png">
-                <span>欢迎来到厦门国贸物业管理有限公司</span>
-            </div>
-            <div class="soucang">
-                <a href="#">设为首页&nbsp;</a>｜
-                <a href="#">&nbsp;加入收藏</a>
-            </div>
-        </div>
-    </div>
-    <div class="top_main">
-        <div class="top_logo">
-            <a href='./'><img src="pages/gitqian/images/logo.png"></a>
-        </div>
-        <!--导航-->
-        <div class="daohang">
-            <div class="header_nav">
-                <div class="main clearBoth">
-                    <ul class="nav right">
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="index.html">
-                                网站首页
-                                <b></b>
-                            </a>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="about.html">
-                                关于我们
-                                <b></b>
-                                <div></div>
-                            </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="about.html">公司简介</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司文化</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">领导致辞</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">服务理念</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">企业荣誉</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="products.html">
-                                项目展示
-                                <b></b>
-                                <div></div>
-                            </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="#">经典案例</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司项目</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="nt/searchnes.do?ntid=1">
-                                公司动态
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <c:forEach var="news" items="${newstypeList}">
-                                        <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
-                                        </li>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="javascript:;">
-                                人才招聘
-                                <b></b>
-                            </a>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="contact.html">
-                                联系我们
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="contact.html">在线留言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">联系我们</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--子页-->
+<%--头部--%>
+<jsp:include page="toubu.jsp"></jsp:include>
 <div class="ziye_bj">
     <div class="ziye_tu">
         <img src="pages/gitqian/images/zy1_02.jpg">
@@ -157,7 +43,7 @@
         <div class="zy_dh_lb">
             <ul>
                 <c:forEach var="newstype" items="${newstypeList}">
-                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newstype.ntid}">${newstype.ntypename}</a></li>
+                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newstype.ntid}&pageNum=1">${newstype.ntypename}</a></li>
                 </c:forEach>
             </ul>
 
@@ -166,9 +52,9 @@
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-
-            <h2>公司新闻</h2>
-            <p>您的位置：首页 > <c:forEach items="${newst}"  var="newst">
+            <c:forEach items="${newst}"  var="newst">
+            <h2>${newst.ntypename}</h2>
+            <p>您的位置：首页 >
                ${newst.ntypename}
             </c:forEach></p>
         </div>
@@ -205,14 +91,10 @@
                 </c:forEach>
             </ul>
             <div class="webdiyerCss">
-                <%--<a href="" disabled="disabled" style="margin-right:5px;"></a>--%>
-                <%--<a disabled="disabled" style="margin-right:5px;">上一页</a>--%>
-                <%--<span class="redcss page_go" style="margin-right:5px;">1</span>--%>
-                <%--<a href="pagenum=1" style="margin-right:5px;">2</a>--%>
-                <%--<a href="#" style="margin-right:5px;">首页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">下一页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">下一页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">尾页</a>--%>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=1" style="margin-right:5px;">首页</a>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=${pageNum-1}" style="margin-right:5px;">上一页</a>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=${pageNum+1}" style="margin-right:5px;">下一页</a>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=${pageAll}" style="margin-right:5px;">尾页</a>
             </div>
         </div>
     </div>

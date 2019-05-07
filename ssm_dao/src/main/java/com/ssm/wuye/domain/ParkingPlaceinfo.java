@@ -3,6 +3,8 @@ package com.ssm.wuye.domain;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -10,6 +12,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "parking_placeinfo")
 @Alias("parkingPlaceinfo")
+@Data
 public class ParkingPlaceinfo {
     /**
      * 主键/自动递增
@@ -165,4 +168,16 @@ public class ParkingPlaceinfo {
     public void setDescr(String descr) {
         this.descr = descr == null ? null : descr.trim();
     }
+
+
+
+    public ParkingPlaceinfo(Integer olid, String descr) {
+        this.olid = olid;
+        this.descr = descr;
+    }
+
+    public ParkingPlaceinfo() {
+    }
+
+
 }

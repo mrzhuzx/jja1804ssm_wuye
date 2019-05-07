@@ -80,7 +80,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                         <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                            <a href="nt/searchnes.do?ntid=${news.ntid}&pageNum=1">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -106,7 +106,7 @@
                                         <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">车位信息</a>
+                                        <a href="parking/pk_list.do?olid=${ower.olid}">车位信息</a>
                                     </li>
                                     <li>
                                         <a href="#">缴费信息</a>
@@ -124,6 +124,9 @@
                                 <ul>
                                     <li>
                                         <a href="recruit/refenye.do?">招聘信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/gitqian/parking_carinfo.jsp">外来车辆</a>
                                     </li>
                                     <li>
                                         <a href="#">在线留言</a>

@@ -1,8 +1,11 @@
 package com.ssm.wuye.service.impl;
 
+import com.ssm.wuye.domain.News;
+import com.ssm.wuye.domain.NewsExample;
 import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.NewsTypeExample;
 import com.ssm.wuye.service.NewsTypeService;
+import org.apache.ibatis.session.RowBounds;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,6 +51,18 @@ public class NewsTypeServiceImplTest {
         List<NewsType> newsTypes = newsTypeService.selectByExample(newsTypeExample);
         for (NewsType newsType : newsTypes) {
             System.out.println(newsType.getNtypename());
+        }
+    }
+    @Test
+    public  void update(){
+        NewsType newsType = new NewsType();
+        newsType.setNtypename("g99gggg");
+        newsType.setNtid(16);
+        int i = newsTypeService.updateByPrimaryKeySelective(newsType);
+        if (i==1){
+            System.out.println("更新成功");
+        }else {
+            System.out.println("更新失败");
         }
     }
 
