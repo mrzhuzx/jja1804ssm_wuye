@@ -13,7 +13,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "sys_admin_info")
 @Alias("sysAdminInfo")
-@Data
+//@Data
 public class SysAdminInfo extends BaseEntity {
     /**
      *
