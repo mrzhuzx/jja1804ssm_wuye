@@ -71,7 +71,7 @@ public class ComplainServiceImplTest {
 
     @Test
     public void selectByPrimaryKey() {
-        ComplainInfo complainInfo = complainService.selectByPrimaryKey(3);
+        ComplainInfo complainInfo = complainService.selectByPrimaryKey(4);
         System.out.println(complainInfo.getDescr());
     }
 

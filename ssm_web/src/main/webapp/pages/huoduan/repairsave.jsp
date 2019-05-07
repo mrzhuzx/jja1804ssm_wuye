@@ -352,7 +352,7 @@
                                         </div>
                                         <div>
                                             <label>反馈时间</label>
-                                            <input class="form-control" placeholder="reportdate" value="" name="reportdate">
+                                            <input class="form-control" placeholder="reportdate"id="dateid1" value="" name="reportdate">
                                         </div>
                                         <div>
                                             <label>报修方式</label>
@@ -381,7 +381,7 @@
                                         </div>
                                         <div>
                                             <label>完成日期</label>
-                                            <input class="form-control" placeholder="completedate" value="" name="completedate">
+                                            <input class="form-control" placeholder="completedate" id="dateid2"value="" name="completedate">
                                         </div>
                                         <div>
                                             <label>费用是否缴纳</label>
@@ -389,7 +389,7 @@
                                         </div>
                                         <div>
                                             <label>费用缴纳日期</label>
-                                            <input class="form-control" placeholder="paydate" value="" name="paydate">
+                                            <input class="form-control" placeholder="paydate"id="dateid3" value="" name="paydate">
                                         </div>
                                         <br>
                                         <div>
@@ -442,6 +442,33 @@
 <script>
     $(document).ready(function() {
         $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid1').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid2').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid3').datepicker({
             format : "yyyy-mm-dd",
             autoclose: true,
             language: 'zh-CN'

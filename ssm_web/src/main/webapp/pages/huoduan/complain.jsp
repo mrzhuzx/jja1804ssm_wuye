@@ -308,7 +308,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        表格页面 <small>响应表</small>
+                        <small>客户投诉表</small>
                     </h1>
                 </div>
             </div>
@@ -320,8 +320,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/complainsave.jsp'"></i> 添加</button>
-                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/complain/findall.do'"></i> 刷新</button>
+                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/complainsave.jsp'"><i class="fa fa-edit "></i> 添加</button>
+                            <td><button class="btn btn-primary"onclick="location.href='${pageContext.request.contextPath}/complain/findall.do'"><i class="fa fa-edit " ></i> 刷新</button>
 
                         </div>
                         <div class="panel-body">
@@ -329,16 +329,16 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                    <th>cid</th>
-                                    <th>title</th>
-                                    <th>descr</th>
-                                    <th>cname</th>
-                                    <th>cphone</th>
-                                    <th>rname</th>
-                                    <th>status</th>
-                                    <th>means</th>
-                                    <th>cdate</th>
-                                    <th>dealdescr</th>
+                                    <th>ID</th>
+                                    <th>标题</th>
+                                    <th>描述</th>
+                                    <th>业主</th>
+                                    <th>业主电话</th>
+                                    <th>修理员</th>
+                                    <th>是否处理</th>
+                                    <th>投诉方式</th>
+                                    <th>上报日期</th>
+                                    <th>处理日期</th>
                                     <th>操作</th>
                                     </tr>
                                     </thead>
@@ -357,8 +357,8 @@
                                     <td>${co.means}</td>
                                     <td>${co.cdate}</td>
                                     <td>${co.dealdescr}</td>
-                                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}'"></i> 修改</button>
-                                                <button class="btn btn-danger"><i class="fa fa-pencil"  onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"></i> 删除</button></td>
+                                            <td><button class="btn btn-primary"onclick="location.href='${pageContext.request.contextPath}/complain/findone.do?cid=${co.cid}'"><i class="fa fa-edit "></i> 修改</button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/complain/delete.do?cid=${co.cid}'"><i class="fa fa-pencil" ></i> 删除</button></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>

@@ -1,12 +1,11 @@
 package com.ssm.wuye.dao;
 
 import com.ssm.wuye.domain.Activity;
-import com.ssm.wuye.domain.ActivityExample.Criteria;
-import com.ssm.wuye.domain.ActivityExample.Criterion;
 import com.ssm.wuye.domain.ActivityExample;
+import org.apache.ibatis.jdbc.SQL;
+
 import java.util.List;
 import java.util.Map;
-import org.apache.ibatis.jdbc.SQL;
 
 public class ActivitySqlProvider {
 
@@ -138,6 +137,39 @@ public class ActivitySqlProvider {
         return sql.toString();
     }
 
+    public String updateByPrimaryKeySelective(Activity record) {
+        SQL sql = new SQL();
+        sql.UPDATE("activity");
+        
+        if (record.getActivityname() != null) {
+            sql.SET("activityname = #{activityname,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getActivitydesc() != null) {
+            sql.SET("activitydesc = #{activitydesc,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getActivitycont() != null) {
+            sql.SET("activitycont = #{activitycont,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getActivitytime() != null) {
+            sql.SET("activitytime = #{activitytime,jdbcType=DATE}");
+        }
+        
+        if (record.getActivityworker() != null) {
+            sql.SET("activityworker = #{activityworker,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getActivityward() != null) {
+            sql.SET("activityward = #{activityward,jdbcType=VARCHAR}");
+        }
+        
+        sql.WHERE("id = #{id,jdbcType=INTEGER}");
+        
+        return sql.toString();
+    }
+
     protected void applyWhere(SQL sql, ActivityExample example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
@@ -166,10 +198,10 @@ public class ActivitySqlProvider {
         }
         
         StringBuilder sb = new StringBuilder();
-        List<Criteria> oredCriteria = example.getOredCriteria();
+        List<ActivityExample.Criteria> oredCriteria = example.getOredCriteria();
         boolean firstCriteria = true;
         for (int i = 0; i < oredCriteria.size(); i++) {
-            Criteria criteria = oredCriteria.get(i);
+            ActivityExample.Criteria criteria = oredCriteria.get(i);
             if (criteria.isValid()) {
                 if (firstCriteria) {
                     firstCriteria = false;
@@ -178,10 +210,10 @@ public class ActivitySqlProvider {
                 }
                 
                 sb.append('(');
-                List<Criterion> criterions = criteria.getAllCriteria();
+                List<ActivityExample.Criterion> criterions = criteria.getAllCriteria();
                 boolean firstCriterion = true;
                 for (int j = 0; j < criterions.size(); j++) {
-                    Criterion criterion = criterions.get(j);
+                    ActivityExample.Criterion criterion = criterions.get(j);
                     if (firstCriterion) {
                         firstCriterion = false;
                     } else {
