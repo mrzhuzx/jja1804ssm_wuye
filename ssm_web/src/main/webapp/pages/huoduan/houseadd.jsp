@@ -82,13 +82,27 @@
                                             <label>房屋描述</label>
                                             <input class="form-control"  placeholder="房屋描述" name="hremarks"  value="沙漠海景房">
                                         </div>
-                                        <div >
-                                            <label>房屋状态</label>
-                                            <input class="form-control" placeholder="房屋状态" name="hstate" value="入住">
-                                        </div>
+
                                         <div>
                                             <label>房屋出租</label>
                                             <input class="form-control" placeholder="房屋出租" name="loan" value="1">
+                                        </div>
+
+                                        <div class="form-group" >
+                                            <label>房屋状态</label>
+                                            <select class="form-control" name="hstate" >
+                                                <option  selected="selected" value="待售">待售</option>
+                                                <option  value="入住">入住</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group" >
+                                            <label>房屋出租</label>
+                                            <select class="form-control" name="loan" >
+                                                <option selected="selected" value="0">不租</option>
+                                                <option  value="1">已租</option>
+                                                <option  value="2">待租</option>
+                                            </select>
                                         </div>
 
                                         <div class="form-group" >

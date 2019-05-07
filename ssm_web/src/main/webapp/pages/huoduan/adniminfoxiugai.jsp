@@ -65,20 +65,31 @@
                 </div>
                 <div class="form-group has-success">
                     <h4><label class="control-label" for="inputSuccess">状态</label>
-                        <select class="form-control" placeholder="" name="contracttype" value="${saif.userflag}" name="userflag">
-                            <option>请选择类型</option>
+                        <select class="form-control" placeholder=""  name="userflag">
+                            <option SELECTED="selected">${saif.userflag}</option>
                             <option>工作中</option>
                             <option>休假</option>
                         </select></h4>
+                </div>
                 <div class="form-group has-success">
                     <h4><label class="control-label" for="inputSuccess">个性签名</label>
                         <input type="text" class="form-control" id="" value="${saif.userstyle}" name="userstyle"></h4>
 
-                </div>
+                <%--</div>
                     <div class="form-group has-success">
                         <h4><label class="control-label" for="inputSuccess">职位</label>
                             <input type="text" class="form-control" id="wrapper" value="${saif.rolename}" name="rolename"></h4>
 
+                    </div>--%>
+                    <div class="form-group has-success">
+                        <h4><label class="control-label" for="inputSuccess">职位</label>
+                            <select class="form-control" placeholder="" name="roleid">
+                                <option value="${saif.roleid}">${saif.rolename}</option>
+
+                               <c:forEach var="sr" items="${sysRoles}">
+                                   <option value="${sr.roleid}">${sr.rolename}</option>
+                               </c:forEach>
+                            </select></h4>
                     </div>
 
                 <div>
@@ -87,7 +98,6 @@
 
                     <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
-                </div>
                 </div>
             </form>
         </div>

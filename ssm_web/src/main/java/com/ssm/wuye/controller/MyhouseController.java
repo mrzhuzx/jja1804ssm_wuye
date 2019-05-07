@@ -58,14 +58,21 @@ public class MyhouseController {
     @RequestMapping("houset")//跳转修改房屋
     public ModelAndView house(@RequestParam Integer hid){
         ModelAndView m=new ModelAndView("pages/huoduan/houseupdate");
-        MyHouse myHouse = myHouseService.selectByPrimaryKey(hid);
+//        MyHouse myHouse = myHouseService.selectByPrimaryKey(hid);
         MyHouseTypeExample myHouseTypeExample=new MyHouseTypeExample();
         SysOwerExample sysOwerExample=new SysOwerExample();
+        OwerHouseTypeExample owerHouseTypeExample =new OwerHouseTypeExample();
+        owerHouseTypeExample.createCriteria().andHidEqualTo(hid);
+        List<OwerHouseType> owerHouseTypeList = oHTService.selectByExample(owerHouseTypeExample);
+        OwerHouseType owerHouseType=new OwerHouseType();
+        for (OwerHouseType houseType : owerHouseTypeList) {
+            owerHouseType=houseType;
+        }
         List<MyHouseType> myHouseTypeList = myHouseTypeService.selectByExample(myHouseTypeExample);
         List<SysOwer> sysOwerList = sysOwerService.selectByExample(sysOwerExample);
         m.addObject("ower", sysOwerList);
         m.addObject("myHouseTypeList", myHouseTypeList);
-        m.addObject("myhouse", myHouse);
+        m.addObject("myhouse", owerHouseType);
         return m;
     }
     @RequestMapping("updethouse")//修改房屋

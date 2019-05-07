@@ -7,9 +7,8 @@ package com.ssm.wuye.service.impl;
  */
 
 
-import com.ssm.wuye.domain.ContractExample;
-import com.ssm.wuye.domain.SysAdminInfo;
-import com.ssm.wuye.domain.SysAdminInfoExample;
+import com.ssm.wuye.domain.*;
+import com.ssm.wuye.service.HouqinService;
 import com.ssm.wuye.service.SysAdminInfoService;
 import org.apache.ibatis.session.RowBounds;
 import org.junit.Test;
@@ -26,6 +25,9 @@ public class SysAdminInfoServiceImplTest {
 
     @Resource
     SysAdminInfoService sysAdminInfoService;
+
+    @Resource
+    HouqinService houqinService;
 
 
     /**
@@ -127,6 +129,19 @@ public class SysAdminInfoServiceImplTest {
             System.out.println(ai.toString());
         }
 
+    }
+
+
+    @Test
+    public void selectByPrimaryKey(){
+
+        HouqinExample houqinExample=new HouqinExample();
+        houqinExample.createCriteria().andUseridEqualTo(20);
+        List<Houqin> houqins = houqinService.selectByExample(houqinExample);
+
+        for (Houqin houqin : houqins) {
+            System.out.println(houqin.toString());
+        }
     }
 
 

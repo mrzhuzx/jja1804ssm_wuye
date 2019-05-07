@@ -4,7 +4,8 @@ import com.ssm.wuye.dao.ChElectricMeterMapper;
 import com.ssm.wuye.dao.MyHouseMapper;
 import com.ssm.wuye.dao.SysOwerMapper;
 import com.ssm.wuye.domain.*;
-import com.ssm.wuye.service.ChElectricSercice;
+
+import com.ssm.wuye.service.ChElectricService;
 import com.ssm.wuye.vo.ElectricAndOwer;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ import java.util.List;
  */
 
 @Service
-public class ChElectricSerciceImpl implements ChElectricSercice {
+public class ChElectricSerciceImpl implements ChElectricService {
     @Resource
     ChElectricMeterMapper chElectricMeterMapper;
     @Resource

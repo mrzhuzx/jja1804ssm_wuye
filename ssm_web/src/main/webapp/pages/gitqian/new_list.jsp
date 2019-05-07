@@ -20,23 +20,23 @@
     </head>
 <body>
 <!--头部-->
-<div class="top_bg" id="top_bg">
-    <div class="top_gang">
-        <div class="tou_zj">
-            <div class="hy">
-                <img src="pages/gitqian/images/tou_tb_03.png">
-                <span>欢迎来到贵州天能物业管理有限公司</span>
+        <div class="top_bg" id="top_bg">
+            <div class="top_gang">
+                <div class="tou_zj">
+                    <div class="hy">
+                        <img src="pages/gitqian/images/tou_tb_03.png">
+                        <span>欢迎来到贵州天能物业管理有限公司</span>
+                    </div>
+                    <div class="soucang">
+                        <a href="#">设为首页&nbsp;</a>｜
+                        <a href="#">&nbsp;加入收藏</a>
+                    </div>
+                </div>
             </div>
-            <div class="soucang">
-                <a href="#">设为首页&nbsp;</a>｜
-                <a href="#">&nbsp;加入收藏</a>
-            </div>
-        </div>
-    </div>
-    <div class="top_main">
-        <div class="top_logo">
-            <a href='./'><img src="pages/gitqian/images/logo.png"></a>
-        </div>
+            <div class="top_main">
+                <div class="top_logo">
+                    <a href='./'><img src="pages/gitqian/images/logo.png"></a>
+                </div>
         <!--导航-->
         <div class="daohang">
             <div class="header_nav">
