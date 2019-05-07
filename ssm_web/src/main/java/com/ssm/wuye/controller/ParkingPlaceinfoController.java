@@ -32,14 +32,13 @@ public class ParkingPlaceinfoController {
         return m;
     }
     @RequestMapping("pk_cha")
-    public ModelAndView pk_cha(@RequestParam String hid,@RequestParam Integer olid,  @RequestParam String descr){
+    public ModelAndView pk_cha(@RequestParam Integer olid, @RequestParam String descr){
         ModelAndView m = new ModelAndView("forward:/parking/pk_list.do");
-        Integer id = Integer.valueOf(hid);
-        ParkingPlaceinfo parkingPlaceinfo = new ParkingPlaceinfo(id,descr);
-
-        parkingPlaceinfo.setOlid(id);
+        ParkingPlaceinfo parkingPlaceinfo = new ParkingPlaceinfo();
         parkingPlaceinfo.setDescr(descr);
-        int i = parkingPlaceinfoService.updateByPrimaryKeySelective(parkingPlaceinfo);
+        ParkingPlaceinfoExample parkingPlaceinfoExample=new ParkingPlaceinfoExample();
+        parkingPlaceinfoExample.createCriteria().andOlidEqualTo(olid);
+        int i = parkingPlaceinfoService.updateByExampleSelective(parkingPlaceinfo,parkingPlaceinfoExample);
         if (i==1){
             System.out.println("更新成功");
         }else {
@@ -47,5 +46,5 @@ public class ParkingPlaceinfoController {
         }
         return m;
     }
-    
+
 }

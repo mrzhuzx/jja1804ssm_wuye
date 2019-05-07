@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
-        <title>业主个人信息</title>
+        <title>房屋出租</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/index.css" type="text/css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/zym.css" type="text/css">
 
@@ -14,6 +14,9 @@
         <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/global.js"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/hm.js"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/script.js"></script>
+
+
+
     </head>
 <body>
 <!--头部-->
@@ -22,7 +25,7 @@
         <div class="tou_zj">
             <div class="hy">
                 <img src="pages/gitqian/images/tou_tb_03.png">
-                <span>欢迎来到国贸物业管理有限公司</span>
+                <span>欢迎来到贵州国贸物业管理有限公司</span>
             </div>
             <div class="soucang">
                 <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">用户登入</a></c:if>
@@ -54,10 +57,10 @@
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="ohtc/qtcxhstate.do">房屋出售</a>
+                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
                                     </li>
                                     <li>
-                                        <a href="ohtc/qtcxloan.do">房屋出租</a>
+                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
                                     </li>
                                 </ul>
                             </div>
@@ -114,7 +117,7 @@
                                         <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
-                                        <a href="parking/pk_list.do?olid=${ower.olid}">车位信息</a>
+                                        <a href="#">车位信息</a>
                                     </li>
                                     <li>
                                         <a href="#">缴费信息</a>
@@ -158,7 +161,7 @@
         <div class="women">
             <div class="btmc">
                 <h1>N</h1>
-                <p>业主信息<span>ews</span></p>
+                <p>公司动态<span>ews</span></p>
             </div>
             <ul class="skb">
                 <li style="background: #005bac; width: 25%;"></li>
@@ -168,20 +171,16 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="ower/query.do?olid=${ower.olid}">个人信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/of.do?olid=${ower.olid}">家庭成员</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/tzzjof.do?olid=${ower.olid}">增加家人</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="parking/pk_list.do?olid=${ower.olid}">车位信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="#">缴费信息</a></li>
+
+                <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="ohtc/qtcxloan.do?pageNum=1">外来车辆</a></li>
             </ul>
         </div>
     </div>
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-            <h2>个人信息</h2>
-            <p>您的位置：首页 > 业主信息 >个人信息</p>
+            <h2>房屋信息</h2>
+            <p>您的位置：首页 > 外来人员 > 外来车辆</p>
         </div>
         <ul class="skb" style="margin-bottom: 20px;">
             <li style="background: #005bac; width: 12%;"></li>
@@ -191,22 +190,20 @@
 
         <!--内容-->
         <div class="gsjj_nr">
-            <form method="post" action="ower/xgoi.do?olid=${ower.olid}">
-            <ul>
-                <li>
-                <div style="margin:10px 0px;">
-                     业主姓名：<input type="text" name="olname" value="${ower.olname}" />
-                </div><div style="margin:10px 0px;">
-                     业主手机号码：<input type="text" name="olphone" value="${ower.olphone}" />
-                </div><div style="margin:10px 0px;">
-                    业主身份证：<input type="text"  name="powerid" value="${ower.powerid}" />
-                </div>
-                </li>
-                <hr>
-                <button type="submit" >修改<span style="width:20px;"></span>信息</button>
-                </li>
+
+            进入时间: ${parkingCarinfos.parkingid}
+            出去时间：${parkingCarinfos.parkingouttime}
+
+
+
+            <ul class="xwlb_bj">
+
+                <h3><br>
+
+                </h3>
+
             </ul>
-            </form>
+
         </div>
     </div>
 </div>

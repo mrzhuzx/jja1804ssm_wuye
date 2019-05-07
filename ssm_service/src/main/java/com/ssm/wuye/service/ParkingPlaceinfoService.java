@@ -2,6 +2,8 @@ package com.ssm.wuye.service;
 
 import com.ssm.wuye.domain.ParkingPlaceinfo;
 import com.ssm.wuye.domain.ParkingPlaceinfoExample;
+import com.ssm.wuye.domain.SysOwer;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
@@ -9,10 +11,9 @@ import java.util.List;
 /**
  * desc:
  * author:zhs
- * time:time
+ * time:2019-05-05  09:01:06
  */
 public interface ParkingPlaceinfoService {
-
 
     /*
      *查询总 条数
@@ -50,10 +51,10 @@ public interface ParkingPlaceinfoService {
 
     /**
      * 主键返回一条数据
-     * @param pid
+     * @param tid
      * @return
      */
-    ParkingPlaceinfo selectByPrimaryKey(Integer pid);
+    ParkingPlaceinfo selectByPrimaryKey(Integer tid);
 
     /**
      * 修改
@@ -63,5 +64,12 @@ public interface ParkingPlaceinfoService {
      */
     int updateByPrimaryKeySelective(ParkingPlaceinfo record);
 
+    /**
+     * 不是根据注解修改           Selective（默认判断没给条件不修改）
+     * @param record
+     * @param example
+     * @return
+     */
+    int updateByExampleSelective(ParkingPlaceinfo record,ParkingPlaceinfoExample example);
 
 }

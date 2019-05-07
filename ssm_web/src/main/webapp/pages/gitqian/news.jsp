@@ -99,7 +99,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                         <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                            <a href="nt/searchnes.do?ntid=${news.ntid}&pageNum=1">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -157,7 +157,7 @@
         <div class="zy_dh_lb">
             <ul>
                 <c:forEach var="newstype" items="${newstypeList}">
-                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newstype.ntid}">${newstype.ntypename}</a></li>
+                    <li id="women"><img src="pages/gitqian/images/zy1_08_z.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newstype.ntid}&pageNum=1">${newstype.ntypename}</a></li>
                 </c:forEach>
             </ul>
 
@@ -166,9 +166,9 @@
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-
-            <h2>公司新闻</h2>
-            <p>您的位置：首页 > <c:forEach items="${newst}"  var="newst">
+            <c:forEach items="${newst}"  var="newst">
+            <h2>${newst.ntypename}</h2>
+            <p>您的位置：首页 >
                ${newst.ntypename}
             </c:forEach></p>
         </div>
@@ -205,14 +205,10 @@
                 </c:forEach>
             </ul>
             <div class="webdiyerCss">
-                <%--<a href="" disabled="disabled" style="margin-right:5px;"></a>--%>
-                <%--<a disabled="disabled" style="margin-right:5px;">上一页</a>--%>
-                <%--<span class="redcss page_go" style="margin-right:5px;">1</span>--%>
-                <%--<a href="pagenum=1" style="margin-right:5px;">2</a>--%>
-                <%--<a href="#" style="margin-right:5px;">首页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">下一页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">下一页</a>--%>
-                <%--<a href="#" style="margin-right:5px;">尾页</a>--%>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=1" style="margin-right:5px;">首页</a>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=${pageNum-1}" style="margin-right:5px;">上一页</a>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=${pageNum+1}" style="margin-right:5px;">下一页</a>
+                <a href="nt/searchnes.do?ntid=${Ntid}&&pageNum=${pageAll}" style="margin-right:5px;">尾页</a>
             </div>
         </div>
     </div>

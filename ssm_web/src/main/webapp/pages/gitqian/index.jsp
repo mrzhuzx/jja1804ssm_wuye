@@ -88,7 +88,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                     <li>
-                                        <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                        <a href="nt/searchnes.do?ntid=${news.ntid}&pageNum=1">${news.ntypename}</a>
                                     </li>
                                     </c:forEach>
                                 </ul>

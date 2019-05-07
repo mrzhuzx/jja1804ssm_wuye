@@ -19,7 +19,7 @@ import org.apache.ibatis.type.JdbcType;
 
 public interface NewsMapper {
     @SelectProvider(type=NewsSqlProvider.class, method="countByExample")
-    long countByExample(NewsExample example);
+    int countByExample(NewsExample example);
 
     @DeleteProvider(type=NewsSqlProvider.class, method="deleteByExample")
     int deleteByExample(NewsExample example);

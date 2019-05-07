@@ -1,5 +1,6 @@
 package com.ssm.wuye.service.impl;
 
+import com.ssm.wuye.domain.ParkingCarinfoExample;
 import com.ssm.wuye.domain.ParkingPlaceinfo;
 import com.ssm.wuye.domain.ParkingPlaceinfoExample;
 import com.ssm.wuye.service.ParkingPlaceinfoService;
@@ -12,8 +13,6 @@ import javax.annotation.Resource;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * desc:
  * author:zhs
@@ -24,19 +23,24 @@ import static org.junit.Assert.*;
 public class ParkingPlaceinfoServiceImplTest {
 
     @Resource
-    ParkingPlaceinfoService  parkingPlaceinfoService;
+    ParkingPlaceinfoService parkingPlaceinfoService;
     @Test
     public void countByExample() {
-//        List<ParkingPlaceinfo> parkingPlaceinfos = parkingPlaceinfoService.selectByExample(null);
-//        for (ParkingPlaceinfo parkingPlaceinfo : parkingPlaceinfos) {
-//            System.out.println(parkingPlaceinfo.toString());
-//        }
-        ParkingPlaceinfoExample parkingPlaceinfoExample = new ParkingPlaceinfoExample();
-        parkingPlaceinfoExample.createCriteria().andOlidEqualTo(4);
-        List<ParkingPlaceinfo> parkingPlaceinfos = parkingPlaceinfoService.selectByExample(parkingPlaceinfoExample);
+        List<ParkingPlaceinfo> parkingPlaceinfos = parkingPlaceinfoService.selectByExample(null);
         for (ParkingPlaceinfo parkingPlaceinfo : parkingPlaceinfos) {
             System.out.println(parkingPlaceinfo.toString());
         }
+
+
+//        ParkingPlaceinfo parkingPlaceinfo = parkingPlaceinfoService.selectByPrimaryKey(1);
+//        System.out.println(parkingPlaceinfo.toString());
+
+//        ParkingPlaceinfoExample parkingPlaceinfoExample = new ParkingPlaceinfoExample();
+//        parkingPlaceinfoExample.createCriteria().andOlidEqualTo(4);
+//        List<ParkingPlaceinfo> parkingPlaceinfos = parkingPlaceinfoService.selectByExample(parkingPlaceinfoExample);
+//        for (ParkingPlaceinfo parkingPlaceinfo : parkingPlaceinfos) {
+//            System.out.println(parkingPlaceinfo.toString());
+//        }
 
     }
 
@@ -63,17 +67,18 @@ public class ParkingPlaceinfoServiceImplTest {
     @Test
     public void updateByPrimaryKeySelective() {
         ParkingPlaceinfo parkingPlaceinfo = new ParkingPlaceinfo();
-        parkingPlaceinfo.setOlid(1);
-        parkingPlaceinfo.setHid(1);
-        parkingPlaceinfo.setPid("A-1303");
-        parkingPlaceinfo.setDescr("自用");
-        parkingPlaceinfo.setHcards("gggg");
-        parkingPlaceinfo.setHphone("15892765478");
-        int i = parkingPlaceinfoService.updateByPrimaryKeySelective(parkingPlaceinfo);
+        parkingPlaceinfo.setDescr("出租");
+        ParkingPlaceinfoExample parkingPlaceinfoExample=new ParkingPlaceinfoExample();
+        parkingPlaceinfoExample.createCriteria().andOlidEqualTo(1);
+        int i = parkingPlaceinfoService.updateByExampleSelective(parkingPlaceinfo,parkingPlaceinfoExample);
         if (i==1){
             System.out.println("更新成功");
         }else {
             System.out.println("更新失败");
         }
+    }
+    @Test
+    public void updateBy() {
+
     }
 }

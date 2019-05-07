@@ -1,6 +1,5 @@
 package com.ssm.wuye.domain;
 
-import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,18 +13,11 @@ import org.apache.ibatis.type.Alias;
 @Table(name = "parking_placeinfo")
 @Alias("parkingPlaceinfo")
 @Data
-public class ParkingPlaceinfo extends BaseEntity {
+public class ParkingPlaceinfo {
     /**
      * 主键/自动递增
      */
     @Id
-public class ParkingPlaceinfo extends BaseEntity {
-    /**
-     * 主键/自动递增
-     *
-     */
-    @Id
-
     @Column(name = "hid")
     private Integer hid;
 
@@ -177,12 +169,15 @@ public class ParkingPlaceinfo extends BaseEntity {
         this.descr = descr == null ? null : descr.trim();
     }
 
-    public ParkingPlaceinfo(Integer hid,  String descr) {
-        this.hid = hid;
+
+
+    public ParkingPlaceinfo(Integer olid, String descr) {
+        this.olid = olid;
         this.descr = descr;
     }
 
     public ParkingPlaceinfo() {
     }
+
 
 }

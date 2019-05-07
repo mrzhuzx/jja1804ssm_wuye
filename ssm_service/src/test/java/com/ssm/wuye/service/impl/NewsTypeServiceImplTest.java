@@ -1,8 +1,11 @@
 package com.ssm.wuye.service.impl;
 
+import com.ssm.wuye.domain.News;
+import com.ssm.wuye.domain.NewsExample;
 import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.NewsTypeExample;
 import com.ssm.wuye.service.NewsTypeService;
+import org.apache.ibatis.session.RowBounds;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

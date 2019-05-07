@@ -100,7 +100,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newsTypes}">
                                         <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                            <a href="nt/searchnes.do?ntid=${news.ntid}&pageNum=1">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -158,7 +158,7 @@
         <div class="zy_dh_lb">
             <ul>
                 <c:forEach items="${newsTypes}" var="newsTypes">
-                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}">${newsTypes.ntypename}</a></li>
+                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}&pageNum=1">${newsTypes.ntypename}</a></li>
 
                 </c:forEach>
             </ul>
@@ -182,7 +182,7 @@
 
             <div class="al_biaoti">
                 <h3>${news.nctitle}</h3>
-                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />　　来源：公司办公室</span>
+                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />来源：公司办公室</span>
             </div>
             <div class="xian_xw"></div>
             <img src="pages/gitqian/images/zy1_12.jpg">
@@ -234,13 +234,12 @@
                 with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+ ~(-new Date() / 36e5)];
             </script>
             <div class="sx_pian">
-                <a href="#">上一篇：多少个多少个手嘎哈</a>
-                <a href="#">上一篇：哪个快递号刚刚才把你当回事</a>
+
             </div>
             <div class="fanhui">
 
 
-                <a href="nt/searchnes.do?ntid=${news.nctypeid}"><img src="pages/gitqian/images/fanhui_03.png">
+                <a href="nt/searchnes.do?ntid=${news.nctypeid}&pageNum=1"><img src="pages/gitqian/images/fanhui_03.png">
 
                     <span>返回列表</span>
                 </a>
@@ -278,7 +277,7 @@
     </div>
 </div>
 <div class="dibu_1">
-    <p>版权所有 贵州天能物业管理有限公司 黔ICP备10001741号<br>
+    <p>版权所有 厦门国贸物业管理有限公司 黔ICP备10001741号<br>
         技术支持：WangID 驰通网络</p>
 </div>
 

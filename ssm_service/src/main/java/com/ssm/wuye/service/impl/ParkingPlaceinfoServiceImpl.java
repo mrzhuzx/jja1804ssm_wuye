@@ -84,4 +84,9 @@ public class ParkingPlaceinfoServiceImpl implements ParkingPlaceinfoService {
     public int updateByPrimaryKeySelective(ParkingPlaceinfo record) {
         return parkingPlaceinfoMapper.updateByPrimaryKeySelective(record);
     }
+
+
+    public int updateByExampleSelective(ParkingPlaceinfo record, ParkingPlaceinfoExample example) {
+        return parkingPlaceinfoMapper.updateByExampleSelective(record,example);
+    }
 }
