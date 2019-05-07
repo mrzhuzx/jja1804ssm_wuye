@@ -6,6 +6,7 @@ package com.ssm.wuye.dao;/*
 
 
 import com.ssm.wuye.domain.Electric;
+import com.ssm.wuye.domain.PuElectric;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -14,22 +15,25 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface IElectricDao {
-    @Select("SELECT * FROM ch_electric_meter")
-    public List<Electric> findAll();
+    @Select("SELECT * FROM pu_electric")
+    public List<PuElectric> findAll();
 
 
-    @Delete("delete from ch_electric_meter where ch_electric_meter.electricid=#{id}")
+    @Delete("delete from pu_electric where pu_electric.electricid=#{id}")
     void delete(Integer id);
 
-    @Select("select * from ch_electric_meter where electricid=#{id}")
-    Electric findById(String id);
+    @Select("select * from pu_electric where electricid=#{id}")
+    PuElectric findById(String id);
 
-    @Update("UPDATE ch_electric_meter SET enumber=#{enumber},electric=#{electric},month=#{month} where electricid=#{electricid} ")
-    void updata(Electric electric);
+    @Update("UPDATE pu_electric SET enumber=#{enumber},electric=#{electric},month=#{month} where electricid=#{electricid} ")
+    void updata(PuElectric electric);
 
-    @Insert("insert into ch_electric_meter (enumber,houseid,electric,month) values(#{enumber},#{houseid},#{electric},#{month})")
-    void add(Electric electric);
+    @Insert("insert into pu_electric (electricid,enumber,electric,month) values(#{electricid},#{enumber},#{electric},#{month})")
+    void add(PuElectric electric);
 
     @Select("SELECT hid FROM wy_house")
     List<Integer> findAllhouseid();
+
+    @Select("SELECT * FROM pu_electric WHERE pu_electric.electricid=(SELECT Max(pu_electric.electricid) FROM pu_electric)")
+    PuElectric findIdMax();
 }

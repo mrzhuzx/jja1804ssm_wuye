@@ -4,7 +4,10 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * contract
@@ -34,12 +37,16 @@ public class Contract {
     /**
      * 合同起始时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")
     @Column(name = "contractStart")
     private Date contractstart;
 
     /**
      * 合同终止时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")
     @Column(name = "contractEnd")
     private Date contractend;
 

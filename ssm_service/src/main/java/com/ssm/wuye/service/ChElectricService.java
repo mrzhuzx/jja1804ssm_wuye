@@ -14,7 +14,7 @@ import java.util.List;
  * desc:
  * version:1.3.22
  */
-public interface ChElectricSercice {
+public interface ChElectricService {
     List<ChElectricMeter> selectByExample(ChElectricMeterExample example);
 
     List<ElectricAndOwer> selectAll();

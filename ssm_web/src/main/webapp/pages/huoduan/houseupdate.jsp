@@ -87,7 +87,7 @@
                                             <label>房屋状态</label>
                                             <select class="form-control" name="hstate" >
                                                 <option selected="selected"  value="${myhouse.hstate}">${myhouse.hstate}</option>
-                                                <option  value="代售">代售</option>
+                                                <option  value="待售">待售</option>
                                                 <option  value="入住">入住</option>
                                             </select>
                                         </div>

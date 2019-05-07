@@ -321,7 +321,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            基本表单元素
+                            添加界面
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -331,44 +331,44 @@
                                         <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
                                         <div  >
-                                            <label>cid</label>
+                                            <label>ID</label>
                                             <input class="form-control" placeholder="cid" value="" name="cid" >
                                         </div>
                                         <div  >
-                                            <label>title 内容</label>
-                                            <input class="form-control" placeholder="title"  value="" name="title" readonly="readonly">
+                                            <label>标题</label>
+                                            <input class="form-control" placeholder="title"  value="" name="title" >
                                         </div>
                                         <div>
-                                            <label>descr 描述</label>
+                                            <label> 描述</label>
                                             <input class="form-control" placeholder="descr" value="" name="descr">
                                         </div>
                                         <div>
-                                            <label>cname</label>
+                                            <label>业主</label>
                                             <input class="form-control" placeholder="cname" value="" name="cname">
                                         </div>
                                         <div>
-                                            <label>cphone</label>
+                                            <label>业主电话</label>
                                             <input class="form-control" placeholder="cname" value="" name="cphone">
                                         </div>
                                         <div>
-                                            <label>rname</label>
+                                            <label>修理员</label>
                                             <input class="form-control" placeholder="cname" value="" name="rname">
                                         </div>
                                         <div>
-                                            <label>status</label>
+                                            <label>是否处理</label>
                                             <input class="form-control" placeholder="status" value="" name="status">
                                         </div>
                                         <div>
-                                            <label>means</label>
+                                            <label>投诉方式</label>
                                             <input class="form-control" placeholder="means" value="" name="means">
                                         </div>
 
                                         <div>
-                                            <label>cdate</label>
+                                            <label>上报日期</label>
                                             <input class="form-control" placeholder="cdate" id="dateid" value="" name="cdate">
                                         </div>
                                         <div>
-                                            <label>dealdescr</label>
+                                            <label>处理日期</label>
                                             <input class="form-control" placeholder="dealdescr" value="" name="dealdescr">
                                         </div>
                                         <br>

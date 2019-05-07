@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt"   uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -326,24 +328,70 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/electric/updata.do" method="post">
-                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid}" name="electricid"  >
+
+                                    <form action="${pageContext.request.contextPath}/repair/update.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
                                         <div  >
-                                            <label>电表编号</label>
-                                            <input class="form-control" placeholder="电表编号" value="${electrics.enumber}" name="enumber" >
+                                            <label>编号</label>
+                                            <input class="form-control" placeholder="id" value="${rep.id}" name="id" >
                                         </div>
                                         <div  >
-                                            <label>房屋号</label>
-                                            <input class="form-control" placeholder="房屋号"  value="${electrics.houseid}" name="houseid" readonly="readonly">
+                                            <label>业主</label>
+                                            <input class="form-control" placeholder="repairname"  value="${rep.repairname}" name="repairname" >
                                         </div>
                                         <div>
-                                            <label>用电量/度</label>
-                                            <input class="form-control" placeholder="用电量/度" value="${electrics.electric}" name="electric">
+                                            <label>业主电话</label>
+                                            <input class="form-control" placeholder="repairphone" value="${rep.repairphone}" name="repairphone">
                                         </div>
                                         <div>
-                                            <label>年月份</label>
-                                            <input class="form-control" placeholder="年月份" id="dateid" value="${electrics.monthStr}" name="month">
+                                            <label>类别</label>
+                                            <input class="form-control" placeholder="category" value="${rep.category}" name="category">
+                                        </div>
+                                        <div>
+                                            <label>问题描述</label>
+                                            <input class="form-control" placeholder="repdesc" value="${rep.repdesc}" name="repdesc">
+                                        </div>
+                                        <div>
+                                            <label>反馈时间</label>
+                                            <input class="form-control" placeholder="reportdate"id="dateid3" value="<fmt:formatDate value='${rep.reportdate}' pattern='yyyy-MM-dd'/>"  name= "reportdate">
+                                        </div>
+                                        <div>
+                                            <label>报修方式</label>
+                                            <input class="form-control" placeholder="means" value="${rep.means}" name="means">
+                                        </div>
+                                        <div>
+                                            <label>是否处理</label>
+                                            <input class="form-control" placeholder="status" value="${rep.status}" name="status">
+                                        </div>
+
+                                        <div>
+                                            <label>安排维修时间</label>
+                                            <input class="form-control" placeholder="repairdate" id="dateid2" value="<fmt:formatDate value='${rep.repairdate}' pattern='yyyy-MM-dd'/>"  name= "repairdate">
+                                        </div>
+                                        <div>
+                                            <label>修理工</label>
+                                            <input class="form-control" placeholder="principal" value="${rep.principal}" name="principal">
+                                        </div>
+                                        <div>
+                                            <label>材料</label>
+                                            <input class="form-control" placeholder="material" value="${rep.material}" name="material">
+                                        </div>
+                                        <div>
+                                            <label>费用</label>
+                                            <input class="form-control" placeholder="upkeep" value="${rep.upkeep}" name="upkeep">
+                                        </div>
+                                        <div>
+                                            <label>完成日期</label>
+                                            <input class="form-control" placeholder="completedate"id="dateid" value="<fmt:formatDate value='${rep.completedate}' pattern='yyyy-MM-dd'/>"  name= "completedate" >
+                                        </div>
+                                        <div>
+                                            <label>费用是否缴纳</label>
+                                            <input class="form-control" placeholder="ispay" value="${rep.ispay}" name="ispay">
+                                        </div>
+                                        <div>
+                                            <label>费用缴纳日期</label>
+                                            <input class="form-control" placeholder="paydate" id="dateid1" value="<fmt:formatDate value='${rep.paydate}' pattern='yyyy-MM-dd'/>"  name= "paydate">
                                         </div>
                                         <br>
                                         <div>
@@ -357,6 +405,7 @@
 
 
                                     </form>
+
                                 </div>
 
                                 <!-- /.col-lg-6 (nested) -->
@@ -395,6 +444,33 @@
 <script>
     $(document).ready(function() {
         $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid1').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid2').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid3').datepicker({
             format : "yyyy-mm-dd",
             autoclose: true,
             language: 'zh-CN'
