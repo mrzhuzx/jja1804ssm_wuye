@@ -1,6 +1,5 @@
 package com.ssm.wuye.domain;
 
-import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,12 +8,12 @@ import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
 /**
- * program
+ * xiangmu
  */
-@Table(name = "program")
-@Alias("program")
+@Table(name = "xiangmu")
+@Alias("xiangmu")
 @Data
-public class Program extends BaseEntity {
+public class Xiangmu {
     /**
      * 
      */
@@ -23,25 +22,25 @@ public class Program extends BaseEntity {
     private Integer pid;
 
     /**
-     * 
+     * 物业项目名
      */
     @Column(name = "pname")
     private String pname;
 
     /**
-     * 
+     * 图片信息
      */
     @Column(name = "ppicture")
     private String ppicture;
 
     /**
-     * 
+     * 描述
      */
     @Column(name = "pintroduce")
     private String pintroduce;
 
     /**
-     * 
+     * 项目所在地
      */
     @Column(name = "padress")
     private String padress;
@@ -51,6 +50,12 @@ public class Program extends BaseEntity {
      */
     @Column(name = "ptid")
     private Integer ptid;
+
+    /**
+     * 物业项目类型
+     */
+    @Column(name = "ptypename")
+    private String ptypename;
 
     /**
      * 
@@ -69,64 +74,64 @@ public class Program extends BaseEntity {
     }
 
     /**
-     * 
-     * @return pname 
+     * 物业项目名
+     * @return pname 物业项目名
      */
     public String getPname() {
         return pname;
     }
 
     /**
-     * 
-     * @param pname 
+     * 物业项目名
+     * @param pname 物业项目名
      */
     public void setPname(String pname) {
         this.pname = pname == null ? null : pname.trim();
     }
 
     /**
-     * 
-     * @return ppicture 
+     * 图片信息
+     * @return ppicture 图片信息
      */
     public String getPpicture() {
         return ppicture;
     }
 
     /**
-     * 
-     * @param ppicture 
+     * 图片信息
+     * @param ppicture 图片信息
      */
     public void setPpicture(String ppicture) {
         this.ppicture = ppicture == null ? null : ppicture.trim();
     }
 
     /**
-     * 
-     * @return pintroduce 
+     * 描述
+     * @return pintroduce 描述
      */
     public String getPintroduce() {
         return pintroduce;
     }
 
     /**
-     * 
-     * @param pintroduce 
+     * 描述
+     * @param pintroduce 描述
      */
     public void setPintroduce(String pintroduce) {
         this.pintroduce = pintroduce == null ? null : pintroduce.trim();
     }
 
     /**
-     * 
-     * @return padress 
+     * 项目所在地
+     * @return padress 项目所在地
      */
     public String getPadress() {
         return padress;
     }
 
     /**
-     * 
-     * @param padress 
+     * 项目所在地
+     * @param padress 项目所在地
      */
     public void setPadress(String padress) {
         this.padress = padress == null ? null : padress.trim();
@@ -148,15 +153,46 @@ public class Program extends BaseEntity {
         this.ptid = ptid;
     }
 
-    public Program() {
+    /**
+     * 物业项目类型
+     * @return ptypename 物业项目类型
+     */
+    public String getPtypename() {
+        return ptypename;
     }
 
-    public Program(Integer pid, String pname, String ppicture, String pintroduce, String padress, Integer ptid) {
+    /**
+     * 物业项目类型
+     * @param ptypename 物业项目类型
+     */
+    public void setPtypename(String ptypename) {
+        this.ptypename = ptypename == null ? null : ptypename.trim();
+    }
+
+    public Xiangmu() {
+    }
+
+    public Xiangmu(Integer pid, String pname, String ppicture, String pintroduce, String padress, Integer ptid, String ptypename) {
         this.pid = pid;
         this.pname = pname;
         this.ppicture = ppicture;
         this.pintroduce = pintroduce;
         this.padress = padress;
         this.ptid = ptid;
+        this.ptypename = ptypename;
     }
+
+    @Override
+    public String toString() {
+        return "Xiangmu{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                ", ppicture='" + ppicture + '\'' +
+                ", pintroduce='" + pintroduce + '\'' +
+                ", padress='" + padress + '\'' +
+                ", ptid=" + ptid +
+                ", ptypename='" + ptypename + '\'' +
+                '}';
+    }
+
 }

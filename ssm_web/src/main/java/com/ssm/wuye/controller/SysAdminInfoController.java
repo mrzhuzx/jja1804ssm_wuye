@@ -1,7 +1,7 @@
 package com.ssm.wuye.controller;
 
 /*
- *desc: 安保模块
+ *desc: 人事模块
  *author:wjs
  *time:2019/4/26 0026
  *version:1.2.3
@@ -48,7 +48,7 @@ public class SysAdminInfoController {
 
 
     /**
-     * 后勤视图查询
+     * 人事视图查询
      * @return
      */
     @RequestMapping("houqinsearch")
@@ -82,7 +82,7 @@ public class SysAdminInfoController {
 //        return m;
 //    }
     /**
-     * 获取职位信息（配合修改方法使用）
+     * 添加方法的获取职位信息
      * @param
      * @return
      */
@@ -117,7 +117,7 @@ public class SysAdminInfoController {
     }
 
     /**
-     * 获取一条数据（配合修改方法使用）
+     * 获取一条数据（用于修改方法使用）
      * @param userid
      * @return
      */

@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        人事管理阿松
+                        项目管理阿松(这个岗位有安排秘书)
                         <small></small>
                     </h1>
                 </div>
@@ -71,34 +71,29 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>名字</th>
-                                        <th>密码</th>
-                                        <th>电话</th>
-                                        <th>邮箱</th>
-                                        <th>头像</th>
-                                        <th>状态</th>
-                                        <th>个性签名</th>
-                                        <th>职位</th>
+                                        <th>物业项目名</th>
+                                        <th>图片信息</th>
+                                        <th>描述</th>
+                                        <th>项目所在地</th>
+                                        <th>物业项目类型</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${houqins}" var="sai">
+                                    <c:forEach items="${xiangmuList}" var="xm">
 
                                         <tr class="odd gradeX">
-                                            <td>${sai.userid}</td>
-                                            <td>${sai.username}</td>
-                                            <td>${sai.userpass}</td>
-                                            <td>${sai.userphone}</td>
-                                            <td>${sai.usermail}</td>
-                                            <td>${sai.userqqface}</td>
-                                            <td>${sai.userflag}</td>
-                                            <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${sai.userstyle}</td>
-                                            <td>${sai.rolename}</td>
+                                            <td>${xm.pid}</td>
+                                            <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.pname}</td> <%--限制每行的字数，超出的话懂用...表示--%>
+                                            <td style="max-width: 12em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.ppicture}</td>
+                                            <td style="max-width: 27em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.pintroduce}</td>
+                                            <td style="max-width: 9em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.padress}</td>
+                                            <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${xm.ptypename}</td>
                                             <td><button class="btn btn-primary">
-                                                <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/ai/infosearchone.do?userid=${sai.userid}'"></i> 修改</button>
+                                                <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/pr/xmsearchone.do?pid=${xm.pid}'"></i> 修改</button>
+                                                    <%--用获取一条数据方法--%>
                                                 <button class="btn btn-danger">
-                                                <i class="fa fa-dedent"  onclick="location.href='${pageContext.request.contextPath}/ai/infodelete.do?userid=${sai.userid}'"></i> 删除</button></td>
+                                                    <i class="fa fa-dedent"  onclick="location.href='${pageContext.request.contextPath}/pr/xiangmudelete.do?pid=${xm.pid}'"></i> 删除</button></td>
                                         </tr>
 
                                     </c:forEach>
