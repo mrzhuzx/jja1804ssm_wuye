@@ -73,6 +73,8 @@
                                         <th>招聘要求</th>
                                         <th>岗位职责</th>
                                         <th>招聘人数</th>
+                                        <th>薪资待遇</th>
+                                        <th>截止时间</th>
                                         <th>联系电话</th>
                                         <th>地址</th>
                                         <th>操作</th>
@@ -83,16 +85,18 @@
                                     <tbody>
                                     <c:forEach  items="${recruitList}" var="re">
                                         <tr class="gradeA">
-                                            <td>${re.contractid}</td>
-                                            <td>${re.contractname}</td>
-                                            <td>${re.contracttype}</td>
-                                            <td>${re.contracttype}</td>
-                                            <td>${re.contractdes}</td>
-                                            <td>${re.contractnum}</td>
-                                            <td>${re.signingpeople}</td>
-                                            <td>${re.signatorytelephone}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                            <td>${re.recruitid}</td>
+                                            <td>${re.companyname}</td>
+                                            <td>${re.postname}</td>
+                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.recruitdes}</td>
+                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.duty}</td>
+                                            <td>${re.recruitnum}</td>
+                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.salary}</td>
+                                            <td class="center"><fmt:formatDate value='${re.recruitend}' pattern='yyyy-MM-dd'/></td>
+                                            <td>${re.recruitnumber}</td>
+                                            <td>${re.address}</td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/recruit/reone.do?recruitid=${re.recruitid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/recruit/redelete.do?recruitid=${re.recruitid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>

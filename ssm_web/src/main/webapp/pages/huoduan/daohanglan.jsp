@@ -92,7 +92,7 @@
                         <a href="${pageContext.request.contextPath}/recruit/research.do">招聘信息记录</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/pages/houduan/recruitsave.jsp">新建招聘信息</a>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/recruitsave.jsp">新建招聘信息</a>
                     </li>
                 </ul>
             </li>
@@ -180,7 +180,7 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修表</a>
+                        <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -200,7 +200,7 @@
                         <a href="${pageContext.request.contextPath}/con/consearch.do">合同查询</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/pages/huoduan/hetongadd.jsp">合同添加</a>
+                        <a href="${pageContext.request.contextPath}/con/searchType.do">合同添加</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/cont/ctsearch.do">类别管理</a>
@@ -216,7 +216,7 @@
                 <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/complain/findall.do">客户投诉表</a>
+                        <a href="${pageContext.request.contextPath}/complain/findall.do">客户投诉</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>

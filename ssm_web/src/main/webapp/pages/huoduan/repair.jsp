@@ -326,7 +326,7 @@
                         <div class="panel-heading">
 
                             <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/repairsave.jsp'"><i class="fa fa-edit "></i> 添加</button>
-                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/complain/findall.do'"><i class="fa fa-edit "></i> 刷新</button>
+                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/repair/findall.do'"><i class="fa fa-edit "></i> 刷新</button>
 
 
                         </div>
