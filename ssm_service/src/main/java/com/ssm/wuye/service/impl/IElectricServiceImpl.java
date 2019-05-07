@@ -6,7 +6,7 @@ package com.ssm.wuye.service.impl;/*
 
 
 import com.ssm.wuye.dao.IElectricDao;
-import com.ssm.wuye.domain.Electric;
+import com.ssm.wuye.domain.PuElectric;
 import com.ssm.wuye.service.IElectricService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class IElectricServiceImpl implements IElectricService {
 
 
 
-    public List<Electric> findAll() {
+    public List<PuElectric> findAll() {
         return electricDao.findAll();
     }
 
@@ -32,22 +32,27 @@ public class IElectricServiceImpl implements IElectricService {
     }
 
 
-    public Electric findById(String Id) {
+    public PuElectric findById(String Id) {
         return electricDao.findById(Id);
     }
 
 
-    public void updata(Electric electric) {
-         electricDao.updata(electric);
+    public void updata(PuElectric puElectric) {
+         electricDao.updata(puElectric);
     }
 
 
-    public void add(Electric electric) {
-        electricDao.add(electric);
+    public void add(PuElectric puElectric) {
+        electricDao.add(puElectric);
     }
 
 
     public List<Integer> findAllhouseid() {
         return electricDao.findAllhouseid();
+    }
+
+    @Override
+    public PuElectric findIdMax() {
+        return electricDao.findIdMax();
     }
 }

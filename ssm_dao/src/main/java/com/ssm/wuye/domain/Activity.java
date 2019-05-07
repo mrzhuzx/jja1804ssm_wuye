@@ -1,10 +1,12 @@
 package com.ssm.wuye.domain;
 
-import java.util.Date;
+import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.apache.ibatis.type.Alias;
+import java.util.Date;
 
 /**
  * activity
@@ -15,6 +17,7 @@ public class Activity {
     /**
      * 社区活动
      */
+    @Id
     @Column(name = "id")
     private Integer id;
 
@@ -40,6 +43,7 @@ public class Activity {
      * 活动时间
      */
     @Column(name = "activitytime")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date activitytime;
 
     /**

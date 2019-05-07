@@ -325,8 +325,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/repairsave.jsp'"></i> 添加</button>
-                            <td><button class="btn btn-primary"><i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/complain/findall.do'"></i> 刷新</button>
+                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/pages/huoduan/repairsave.jsp'"><i class="fa fa-edit "></i> 添加</button>
+                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/repair/findall.do'"><i class="fa fa-edit "></i> 刷新</button>
 
 
                         </div>
@@ -335,21 +335,21 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>id</th>
-                                        <th>repairname</th>
-                                        <th>repairphone</th>
-                                        <th>category</th>
-                                        <th>repdesc</th>
-                                        <th>reportdate</th>
-                                        <th>means</th>
-                                        <th>status</th>
-                                        <th>repairdate</th>
-                                        <th>principal</th>
-                                        <th>material</th>
-                                        <th>upkeep</th>
-                                        <th>completedate</th>
-                                        <th>ispay</th>
-                                        <th>paydate</th>
+                                        <th>ID</th>
+                                        <th>业主</th>
+                                        <th>业主电话</th>
+                                        <th>报修类别</th>
+                                        <th>报修描述</th>
+                                        <th>报修日期</th>
+                                        <th>报修方式</th>
+                                        <th>是否维修</th>
+                                        <th>维修时间</th>
+                                        <th>维修负责人</th>
+                                        <th>材料费</th>
+                                        <th>维修费</th>
+                                        <th>完成日期</th>
+                                        <th>付费</th>
+                                        <th>付费日期</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -375,12 +375,12 @@
 
 
                                             <td>
-                                                <button class="btn btn-primary"><i class="fa fa-edit "
-                                                                                   onclick="location.href='${pageContext.request.contextPath}/repair/findone.do?id=${re.id}'"></i>
+                                                <button class="btn btn-primary"
+                                                                                   onclick="location.href='${pageContext.request.contextPath}/repair/findone.do?id=${re.id}'"><i class="fa fa-edit "></i>
                                                     修改
                                                 </button>
-                                                <button class="btn btn-danger"><i class="fa fa-pencil"
-                                                                                  onclick="location.href='${pageContext.request.contextPath}/repair/delete.do?id=${re.id}'"></i>
+                                                <button class="btn btn-danger"
+                                                                                  onclick="location.href='${pageContext.request.contextPath}/repair/delete.do?id=${re.id}'"><i class="fa fa-pencil"></i>
                                                     删除
                                                 </button>
                                             </td>

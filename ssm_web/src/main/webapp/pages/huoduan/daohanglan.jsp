@@ -57,16 +57,16 @@
                 <a href="#"><i class="fa fa-desktop"></i> 能耗管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/puelectric/findAll.do">开户配表</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/puelectric/findAll.do">公共电表</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/puwater/findAll.do">公共水表</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pugas/findAll.do">公共天然气表</a>
                     </li>
 
                 </ul>
@@ -83,7 +83,7 @@
                         <a href="${pageContext.request.contextPath}/news/htnews.do">新闻详情</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}//.do">建立新活动</a>
+                        <a href="${pageContext.request.contextPath}/activity/findall.do">社区活动</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}//.do">活动信息记录</a>
@@ -180,7 +180,7 @@
                         <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>
@@ -188,6 +188,10 @@
 
                 </ul>
             </li>
+
+
+
+
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 合同管理 <span class="fa arrow"></span></a>
@@ -212,7 +216,7 @@
                 <a href="#"><i class="fa fa-fw fa-file"></i> 客户反馈 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/complain/findall">客户投诉表</a>
+                        <a href="${pageContext.request.contextPath}/complain/findall.do">客户投诉</a>
                     </li>
                     <li>
                         <a href="#">Second Level Link</a>

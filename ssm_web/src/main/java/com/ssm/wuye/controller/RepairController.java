@@ -62,7 +62,7 @@ public class RepairController {
         return mv;
     }
     @RequestMapping("/insert")
-    public ModelAndView insert(@RequestParam RepairInfo repairInfo){
+    public ModelAndView insert(@ModelAttribute RepairInfo repairInfo){
         ModelAndView mv = new ModelAndView();
         int insert = repairService.insert(repairInfo);
         System.out.println("添加成功"+insert+"tiao");

@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * repair_info
@@ -48,6 +49,7 @@ public class RepairInfo extends BaseEntity {
      * 报修时间
      */
     @Column(name = "reportdate")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date reportdate;
 
     /**
@@ -66,6 +68,7 @@ public class RepairInfo extends BaseEntity {
      * 安排维修时间
      */
     @Column(name = "repairdate")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date repairdate;
 
     /**
@@ -90,6 +93,7 @@ public class RepairInfo extends BaseEntity {
      * 维修日期
      */
     @Column(name = "completedate")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date completedate;
 
     /**
@@ -102,6 +106,7 @@ public class RepairInfo extends BaseEntity {
      * 费用交纳时间
      */
     @Column(name = "paydate")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date paydate;
 
     /**

@@ -75,7 +75,7 @@ public class ActivityExample {
     }
 
     /**
-     * activity 2019-04-30
+     * activity 2019-05-06
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -648,7 +648,7 @@ public class ActivityExample {
     }
 
     /**
-     * activity 2019-04-30
+     * activity 2019-05-06
      */
     public static class Criterion {
         private String condition;
