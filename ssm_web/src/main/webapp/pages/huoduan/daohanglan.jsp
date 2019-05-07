@@ -148,10 +148,16 @@
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="${pageContext.request.contextPath}/fantai/search.do">防台物资</a>
+                        <a href="${pageContext.request.contextPath}/fantai/search.do"> 物资管理 </a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
+                        <a href="${pageContext.request.contextPath}/fantai/catchadd.do">购买公共用品</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/type/search.do"> 物资类别</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/typhonadd.jsp">添加物资类别</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修</a>

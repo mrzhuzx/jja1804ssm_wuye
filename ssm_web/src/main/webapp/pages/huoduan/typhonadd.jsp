@@ -50,43 +50,12 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/fantai/add.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/type/add.do" method="post">
                                         <div  >
-                                            <label> 物资名称</label>
-                                            <input class="form-control" placeholder=" 物资名称" value="桌子" name="mattername" >
-                                        </div>
-                                        <div  >
-                                            <label>物资数量</label>
-                                            <input class="form-control" placeholder="物资数量" value="10" name="matternum" >
-                                        </div>
-                                        <div  >
-                                            <label>物资价格</label>
-                                            <input class="form-control" placeholder="物资价格" value="10.00" name="matterprice" >
-                                        </div>
-                                        <div class="form-group">
-
-                                            <label>物资类别ID</label>
-                                            <select class="form-control" placeholder="" name="mattersortid">
-
-                                                <c:forEach items="${tbMatter_sortList}" var="mht">
-                                                    <option  value="${mht.mattersortid}">${mht.mattersort}</option>
-                                                </c:forEach>
-
-                                            </select>
+                                            <label> 物资类别名称</label>
+                                            <input class="form-control" placeholder=" 物质类别名称" value="健身器材" name="mattersort" >
                                         </div>
 
-                                        <div>
-                                            <label>入库时间</label>
-                                            <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="instoragetime">
-                                        </div>
-                                        <div>
-                                            <label>出库时间</label>
-                                            <input class="form-control" placeholder="年月日" id="date" value="2019-10-10" name="outstoragetime">
-                                        </div>
-                                        <div  >
-                                            <label>物资状态</label>
-                                            <input class="form-control" placeholder="联系方式" value="可用" name="matterstate" >
-                                        </div>
                                         <br>
                                         <div>
 

@@ -44,52 +44,44 @@
     <!--/. NAV TOP  -->
     <%--导航栏--%>
     <jsp:include page="daohanglan.jsp"></jsp:include>
-    <div id="page-wrapper" >
-        <div id="page-inner">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-header">
-                        物资管理 <small></small>
-                    </h1>
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            物资类别名称信息 <small></small>
+                        </h1>
+                    </div>
                 </div>
-            </div>
-            <!-- /. ROW  -->
-            <div class="row" style="width: 600px; display: inline">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            物资详情
-                        </div>
+                <!-- /. ROW  -->
+                <div class="row" style="width: 600px; display: inline">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                物资类别名称详情
+                            </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                    <tr><th>ID</th>
-                                        <th>物资名称</th>
-                                        <th>物资数量</th>
-                                        <th>物资价格</th>
-                                        <th>物资类别</th>
-                                        <th>入库时间</th>
-                                        <th>出库时间</th>
-                                        <th>物资状态</th>
+                                    <tr><th>物资类别ID</th>
+                                        <th>物资类别名称</th>
+
                                         <th>编辑</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="f" items="${tbMatterList}">
+                                    <c:forEach var="f" items="${tbMatter_sortList}">
                                         <tr class="odd gradeX">
-                                            <td>${f.matterid}</td>
-                                            <td>${f.mattername}</td>
-                                            <td>${f.matternum}</td>
-                                            <td>${f.matterprice}</td>
                                             <td>${f.mattersortid}</td>
-                                            <td><fmt:formatDate value='${f.instoragetime}' pattern='yyyy-MM-dd'/></td>
-                                            <td><fmt:formatDate value='${f.outstoragetime}' pattern='yyyy-MM-dd'/></td>
+                                            <td>${f.mattersort}</td>
 
-                                            <td>${f.matterstate}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/fantai/catch.do?matterid=${f.matterid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/fantai/delete.do?matterid=${f.matterid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+
+
+
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/type/catch.do?mattersortid=${f.mattersortid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/type/delete.do?mattersortid=${f.mattersortid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                         </tr>
 
 
