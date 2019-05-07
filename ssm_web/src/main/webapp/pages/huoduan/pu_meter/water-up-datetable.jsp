@@ -31,7 +31,6 @@
     <%--导航栏--%>
     <jsp:include page="${pageContext.request.contextPath}/pages/huoduan/daohanglan.jsp"></jsp:include>
 
-    <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
@@ -51,46 +50,24 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/puelectric/add.do" method="post">
-                                        <input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid+1}" name="electricid"  >
+                                    <form action="/puwater/updata.do" method="post">
+                                        <input  type="hidden" class="form-control" placeholder="水表编号" value="${electrics.waterid}" name="waterid"  >
 
                                         <div  >
-
-                                            <label>电表编号</label>
-                                            <c:if test="${electrics.electricid+1<10}">
-                                            <input class="form-control" placeholder="电表编号"  name="enumber" value="electric000${electrics.electricid+1}" readonly="readonly">
-                                            </c:if>
-                                            <c:if test="${electrics.electricid+1<100&&electrics.electricid+1>10}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric00${electrics.electricid+1}" readonly="readonly">
-                                            </c:if>
-                                            <c:if test="${electrics.electricid+1<1000&&electrics.electricid+1>100}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric0${electrics.electricid+1}" readonly="readonly">
-                                            </c:if>
-                                            <c:if test="${electrics.electricid+1>1000}">
-                                                <input class="form-control" placeholder="电表编号"  name="enumber" value="electric${electrics.electricid+1}" readonly="readonly">
-                                            </c:if>
+                                            <label>水表编号</label>
+                                            <input class="form-control" placeholder="水表编号" value="${electrics.enumber}" name="enumber" readonly="readonly">
                                         </div>
                                         <%--<div  >--%>
-                                            <%--<label>房屋号</label>--%>
-                                            <%--<input class="form-control" placeholder="房屋号" >--%>
+                                            <%--<la                      bel>房屋号</label>--%>
+                                            <%--<input class="form-control" placeholder="房屋号"  value="${electrics.houseid}" name="houseid" readonly="readonly">--%>
                                         <%--</div>--%>
-
-                                            <%--<div class="房屋号">--%>
-                                                <%--<label>Selects</label>--%>
-                                                <%--<select  class="form-control"   name="houseid">--%>
-                                                    <%--<c:forEach items="allhouseid" var="id">--%>
-                                                    <%--<option>${id}</option>--%>
-                                                    <%--</c:forEach>--%>
-                                                <%--</select>--%>
-                                            <%--</div>--%>
-
                                         <div>
                                             <label>用电量/度</label>
-                                            <input class="form-control" placeholder="用电量/度" name="electric">
+                                            <input class="form-control" placeholder="用电量/度" value="${electrics.water}" name="water">
                                         </div>
                                         <div>
                                             <label>年月份</label>
-                                            <input class="form-control" placeholder="年月份" id="dateid"  name="month">
+                                            <input class="form-control" placeholder="年月份" id="dateid" value="${electrics.monthStr}" name="month">
                                         </div>
                                         <br>
                                         <div>

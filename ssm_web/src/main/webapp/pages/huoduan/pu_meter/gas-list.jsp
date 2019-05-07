@@ -36,7 +36,7 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/puwater/addpage.do" class="btn btn-success">&nbsp抄&nbsp水&nbsp表&nbsp</a>
+            <a href="${pageContext.request.contextPath}/pugas/addpage.do" class="btn btn-success">&nbsp抄&nbsp电&nbsp表&nbsp</a>
             <hr>
             <div class="row">
                 <div class="col-md-12">
@@ -50,10 +50,10 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>水表ID</th>
-                                        <th>水表编号</th>
+                                        <th>天然气表ID</th>
+                                        <th>天然气表编号</th>
                                         <%--<th>房屋号/引用house表的houseid</th>--%>
-                                        <th>用水量/吨</th>
+                                        <th>用气量/立方米</th>
                                         <th>年月份</th>
                                         <th>操作</th>
                                     </tr>
@@ -62,13 +62,13 @@
                                     <c:forEach items="${electricList}" var="electric">
 
                                         <tr class="odd gradeX">
-                                            <td>${electric.waterid}</td>
+                                            <td>${electric.gasid}</td>
                                             <td>${electric.enumber}</td>
                                             <%--<td>${electric.houseid}</td>--%>
-                                            <td>${electric.water}</td>
+                                            <td>${electric.gas}</td>
                                             <td>${electric.monthStr}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/puwater/findById.do?id=${electric.waterid}'"><i class="fa fa-edit " ></i> 修改</button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/puwater/delete.do?id=${electric.waterid}'"><i class="fa fa-pencil"  ></i> 删除</button></td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/pugas/findById.do?id=${electric.gasid}'"><i class="fa fa-edit " ></i> 修改</button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/pugas/delete.do?id=${electric.gasid}'"><i class="fa fa-pencil"  ></i> 删除</button></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
