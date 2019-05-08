@@ -62,12 +62,11 @@
                             </a>
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
-                                    <li>
-                                        <a href="#">经典案例</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司项目</a>
-                                    </li>
+                                    <c:forEach var="protype" items="${programTypes}">
+                                        <li>
+                                            <a href="pr/xmlxsearch.do?ptid=${protype.ptid}&pageNum=1">${protype.ptypename}</a>
+                                        </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </li>

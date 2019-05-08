@@ -48,6 +48,10 @@ public class NewsTypeController {
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
         m.setViewName("pages/gitqian/index");
+
+
+
+
         return m;
     }
 
