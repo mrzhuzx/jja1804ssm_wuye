@@ -44,19 +44,18 @@
     <!--/. NAV TOP  -->
     <%--导航栏--%>
     <jsp:include page="../daohanglan.jsp"></jsp:include>
-    <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                         <small></small>
+                        <small></small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/house/weg.do?op=water" class="btn btn-success">&nbsp抄&nbsp水&nbsp表&nbsp</a>
-            <div style="padding-top: 20px" class="row">
+
+            <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
@@ -69,34 +68,36 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>水表编号</th>
-                                        <th>房屋号</th>
-                                        <th>用水量</th>
-                                        <th>年月份</th>
-                                        <th>业主名</th>
-                                        <th>业主电话</th>
-
+                                        <th>公司名称</th>
+                                        <th>岗位名称</th>
+                                        <th>招聘要求</th>
+                                        <th>岗位职责</th>
+                                        <th>招聘人数</th>
+                                        <th>薪资待遇</th>
+                                        <th>截止时间</th>
+                                        <th>联系电话</th>
+                                        <th>地址</th>
                                         <th>操作</th>
 
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                            <c:forEach  items="${waterAndOwerList}" var="wao">
-                                    <tr class="gradeA">
-                                        <td>${wao.waterid}</td>
-                                        <td>${wao.wnumber}</td>
-                                        <td>${wao.houseid}</td>
-
-                                        <td class="center">${wao.watervolume}</td>
-
-                                        <td class="center"><fmt:formatDate value='${wao.month}' pattern='yyyy年MM月'/></td>
-                                        <td>${wao.olname}</td>
-                                        <td>${wao.olphone}</td>
-
-                                        <td><button class="btn btn-primary"onclick=" location.href='${pageContext.request.contextPath}/water/searchOne.do?waterid=${wao.waterid}'"><i class="fa fa-edit " ></i> 修改</button>
-                                            <button style="margin-right: 10px" class="btn btn-danger"  onclick="location.href='${pageContext.request.contextPath}/water/deleteOne.do?waterid=${wao.waterid}'"><i class="fa fa-pencil"></i> 删除</button></td>
-                                    </tr>
+                                    <c:forEach  items="${recruitList}" var="re">
+                                        <tr class="gradeA">
+                                            <td>${re.recruitid}</td>
+                                            <td>${re.companyname}</td>
+                                            <td>${re.postname}</td>
+                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.recruitdes}</td>
+                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.duty}</td>
+                                            <td>${re.recruitnum}</td>
+                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.salary}</td>
+                                            <td class="center"><fmt:formatDate value='${re.recruitend}' pattern='yyyy-MM-dd'/></td>
+                                            <td>${re.recruitnumber}</td>
+                                            <td>${re.address}</td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/recruit/reone.do?recruitid=${re.recruitid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/recruit/redelete.do?recruitid=${re.recruitid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
@@ -106,12 +107,8 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
-
-
-
-</body>
-
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -132,5 +129,7 @@
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
+
+</body>
 </html>
 

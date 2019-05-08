@@ -4,6 +4,9 @@ import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -55,5 +58,13 @@ public class ProgramType extends BaseEntity {
      */
     public void setPtypename(String ptypename) {
         this.ptypename = ptypename == null ? null : ptypename.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "ProgramType{" +
+                "ptid=" + ptid +
+                ", ptypename='" + ptypename + '\'' +
+                '}';
     }
 }

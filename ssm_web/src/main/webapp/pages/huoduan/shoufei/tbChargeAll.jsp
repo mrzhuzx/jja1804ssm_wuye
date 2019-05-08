@@ -34,73 +34,72 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!-- Morris Chart Styles-->
     <link href="${pageContext.request.contextPath}/pages/huoduan/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+
+    <head><base href="${pageContext.request.contextPath}">
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
-<div id="page-wrapper" >
-    <div id="page-inner">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="page-header">
-                    <small></small>
-                </h1>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper" >
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                         <small></small>
+                    </h1>
+                </div>
             </div>
-        </div>
-        <!-- /. ROW  -->
+            <!-- /. ROW  -->
+            <a href="${pageContext.request.contextPath}/house/weg.do?op=water" class="btn btn-success">&nbsp抄&nbsp水&nbsp表&nbsp</a>
+            <div style="padding-top: 20px" class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
 
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Advanced Tables -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        合同类别表
-                    </div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                <tr>
-                                    <th>类别ID</th>
-                                    <th>类别名称</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${types}" var="ct">
-
-                                    <tr class="odd gradeX">
-                                        <td>${ct.contypeid}</td>
-                                        <td>${ct.contracttype}</td>
-
-                                        <td><button class="btn btn-primary"onclick="location.href='${pageContext.request.contextPath}/cont/ctone.do?contypeid=${ct.contypeid}'"><i class="fa fa-edit " ></i> 修改 </button>
-
-                                            <button class="btn btn-success"onclick="location.href='${pageContext.request.contextPath}/cont/ctdelect.do?contypeid=${ct.contypeid}'"><i class="fa fa-save " ></i> 删除 </button>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
                         </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" STYLE="text-align: center" id="dataTables-example">
+                                    <thead>
+                                    <tr >
+                                        <th>收费名</th>
+                                        <th>收费标准</th>
 
+                                        <th>操作</th>
+
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                            <c:forEach  items="${tbChargessearch}" var="tc">
+                                    <tr class="gradeA" STYLE="text-align: center">
+                                        <td>${tc.chargename}</td>
+                                        <td>${tc.chargedescription}</td>
+
+                                        <td><button class="btn btn-primary"onclick=" location.href='${pageContext.request.contextPath}/water/searchOne.do?waterid=${wao.waterid}'"><i class="fa fa-edit " ></i> 修改</button>
+                                            <button style="margin-right: 10px" class="btn btn-danger"  onclick="location.href='${pageContext.request.contextPath}/water/deleteOne.do?waterid=${wao.waterid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                    </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--End Advanced Tables -->
             </div>
         </div>
-        <!-- /. ROW  -->
-
-    </div>
-</div>
-<!-- /. ROW  -->
 </div>
 
-</div>
-<!-- /. PAGE INNER  -->
-</div>
+
+
+</body>
+
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -121,6 +120,5 @@
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
-
-</body>
 </html>
+

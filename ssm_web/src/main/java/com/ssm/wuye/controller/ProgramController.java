@@ -1,4 +1,5 @@
-package com.ssm.wuye.controller; /*
+package com.ssm.wuye.controller;
+/*
  *desc:
  *author:wjs
  *time:2019/5/5 0005
@@ -7,10 +8,12 @@ package com.ssm.wuye.controller; /*
 
 import com.ssm.wuye.dao.XiangmuMapper;
 import com.ssm.wuye.domain.*;
+import com.ssm.wuye.service.NewsTypeService;
 import com.ssm.wuye.service.ProgramService;
 import com.ssm.wuye.service.ProgramTypeService;
 import com.ssm.wuye.service.XiangmuSercice;
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +34,8 @@ public class ProgramController {
     ProgramService programService;
     @Resource
     ProgramTypeService programTypeService;
+    @Resource
+    NewsTypeService newstypeService;
 
     /**
      * 项目视图查询
@@ -47,6 +52,77 @@ public class ProgramController {
 
     }
 
+    /**
+     * 类型查询
+      * @return
+     */
+    @RequestMapping("xmtypesearch")
+    public ModelAndView typesearch() {
+        ModelAndView m = new ModelAndView("pages/gitqian/index");
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
+
+        return m;
+    }
+
+
+    /**
+     * 类别下面的项目信息
+     * @return
+     */
+    @RequestMapping("xmlxsearch")
+    public ModelAndView xmlxsearch(@RequestParam Integer ptid,@RequestParam Integer pageNum) {
+        ModelAndView m = new ModelAndView("pages/gitqian/products");
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        XiangmuExample xiangmuExample = new XiangmuExample();
+        xiangmuExample.createCriteria().andPtidEqualTo(ptid);//根据类型ID条件查询
+        long l =xiangmuSercice.countByExample(xiangmuExample);
+        Integer con =(int)l;
+        Integer Size=4;
+        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
+        if (pageNum<=1){
+            pageNum = 1;
+        }
+        if (pageNum>pageAll){
+            pageNum=pageAll;
+        }
+        Integer Num =Size*(pageNum-1);
+        List<Xiangmu> xiangmus = xiangmuSercice.selectByExampleWithRowbounds(xiangmuExample, new RowBounds(Num, Size));
+        m.addObject("xiangmus", xiangmus);
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        ProgramType programType = programTypeService.selectByPrimaryKey(ptid);
+        m.addObject("programType",programType);
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
+        m.addObject("programTypes", programTypes);
+        m.addObject("pageNum",pageNum);
+        m.addObject("pageAll",pageAll);
+        return m;
+    }
+
+
+    /**
+     * 根据项目ID查询内容
+     * @param pid
+     * @return
+     */
+    @RequestMapping("proidsearch")
+    public ModelAndView proidsearch(@RequestParam Integer pid,@RequestParam Integer ptid) {
+        ModelAndView m = new ModelAndView("pages/gitqian/proxiangqingye");
+        List<ProgramType> programTypes = programTypeService.selectByExample(null);
+        System.out.println(programTypes.size());
+        Program program = programService.selectByPrimaryKey(pid);
+        ProgramType programType = programTypeService.selectByPrimaryKey(ptid);
+        m.addObject("programType",programType);
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
+        m.addObject("programTypes", programTypes);
+        m.addObject("programs", program);
+        return m;
+    }
     /**
      * 添加
      * @param pg

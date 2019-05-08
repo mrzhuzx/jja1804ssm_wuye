@@ -7,8 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -47,48 +45,17 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一条讯息
+                            增加一些设备类型
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/recruit/reupdate.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/type/add.do" method="post">
                                         <div  >
-                                            <label>公司名称</label>
-                                            <input class="form-control" placeholder="" value="${recruit.companyname}" name="companyname" >
+                                            <label> 物资类别名称</label>
+                                            <input class="form-control" placeholder=" 物质类别名称" value="健身器材" name="mattersort" >
                                         </div>
-                                        <div  >
-                                            <label>岗位名称</label>
-                                            <input class="form-control" placeholder="" value="${recruit.postname}" name="postname" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label>招聘要求</label>
-                                            <textarea class="form-control" rows="5"  name="recruitdes">${recruit.recruitdes}</textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>岗位职责</label>
-                                            <textarea class="form-control" rows="5"  name="duty">${recruit.duty}</textarea>
-                                        </div>
-                                        <div>
-                                            <label>招聘人数</label>
-                                            <input class="form-control" placeholder="" value="${recruit.recruitnum}" name="recruitnum">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>薪资待遇</label>
-                                            <textarea class="form-control" rows="3"  name="salary">${recruit.salary}</textarea>
-                                        </div>
-                                        <div>
-                                            <label>截止时间</label>
-                                            <input class="form-control" placeholder="" id="date" value="<fmt:formatDate value='${recruit.recruitend}' pattern='yyyy-MM-dd'/>" name="recruitend">
-                                        </div>
-                                        <div  >
-                                            <label>联系电话</label>
-                                            <input class="form-control" placeholder="" value="${recruit.recruitnumber}" name="recruitnumber" >
-                                        </div>
-                                        <div  >
-                                            <label>地址</label>
-                                            <input class="form-control" placeholder="联系方式" value="${recruit.address}" name="address" >
-                                        </div>
+
                                         <br>
                                         <div>
 
@@ -157,3 +124,4 @@
 
 </body>
 </html>
+

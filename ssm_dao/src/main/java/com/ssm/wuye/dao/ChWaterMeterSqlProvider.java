@@ -25,6 +25,7 @@ public class ChWaterMeterSqlProvider {
     }
 
     public String insertSelective(ChWaterMeter record) {
+        System.out.println(record.getMonth());
         SQL sql = new SQL();
         sql.INSERT_INTO("ch_water_meter");
         

@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -26,10 +28,10 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -45,47 +47,47 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一些设备
+                            增加一条讯息
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/fantai/add.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/recruit/reupdate.do" method="post">
                                         <div  >
-                                            <label> 物资名称</label>
-                                            <input class="form-control" placeholder=" 物资名称" value="桌子" name="mattername" >
+                                            <label>公司名称</label>
+                                            <input class="form-control" placeholder="" value="${recruit.companyname}" name="companyname" >
                                         </div>
                                         <div  >
-                                            <label>物资数量</label>
-                                            <input class="form-control" placeholder="物资数量" value="10" name="matternum" >
-                                        </div>
-                                        <div  >
-                                            <label>物资价格</label>
-                                            <input class="form-control" placeholder="物资价格" value="10.00" name="matterprice" >
+                                            <label>岗位名称</label>
+                                            <input class="form-control" placeholder="" value="${recruit.postname}" name="postname" >
                                         </div>
                                         <div class="form-group">
-
-                                            <label>物资类别ID</label>
-                                            <select class="form-control" placeholder="" name="mattersortid">
-
-                                                <c:forEach items="${tbMatter_sortList}" var="mht">
-                                                    <option  value="${mht.mattersortid}">${mht.mattersort}</option>
-                                                </c:forEach>
-
-                                            </select>
+                                            <label>招聘要求</label>
+                                            <textarea class="form-control" rows="5"  name="recruitdes">${recruit.recruitdes}</textarea>
                                         </div>
-
-                                        <div>
-                                            <label>入库时间</label>
-                                            <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="instoragetime">
+                                        <div class="form-group">
+                                            <label>岗位职责</label>
+                                            <textarea class="form-control" rows="5"  name="duty">${recruit.duty}</textarea>
                                         </div>
                                         <div>
-                                            <label>出库时间</label>
-                                            <input class="form-control" placeholder="年月日" id="date" value="2019-10-10" name="outstoragetime">
+                                            <label>招聘人数</label>
+                                            <input class="form-control" placeholder="" value="${recruit.recruitnum}" name="recruitnum">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>薪资待遇</label>
+                                            <textarea class="form-control" rows="3"  name="salary">${recruit.salary}</textarea>
+                                        </div>
+                                        <div>
+                                            <label>截止时间</label>
+                                            <input class="form-control" placeholder="" id="date" value="<fmt:formatDate value='${recruit.recruitend}' pattern='yyyy-MM-dd'/>" name="recruitend">
                                         </div>
                                         <div  >
-                                            <label>物资状态</label>
-                                            <input class="form-control" placeholder="联系方式" value="可用" name="matterstate" >
+                                            <label>联系电话</label>
+                                            <input class="form-control" placeholder="" value="${recruit.recruitnumber}" name="recruitnumber" >
+                                        </div>
+                                        <div  >
+                                            <label>地址</label>
+                                            <input class="form-control" placeholder="联系方式" value="${recruit.address}" name="address" >
                                         </div>
                                         <br>
                                         <div>
@@ -155,4 +157,3 @@
 
 </body>
 </html>
-

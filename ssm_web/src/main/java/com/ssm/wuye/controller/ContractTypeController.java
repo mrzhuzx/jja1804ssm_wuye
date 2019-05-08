@@ -29,7 +29,7 @@ public class ContractTypeController {
      */
     @RequestMapping("ctsearch")
     public ModelAndView ctsearch(){
-        ModelAndView m=new ModelAndView("pages/huoduan/httype");
+        ModelAndView m=new ModelAndView("pages/huoduan/hetong/httype");
         List<ContractType> types = contractTypeService.selectByExample(null);
         for (ContractType contractType:types) {
             System.out.println(contractType.toString());
@@ -58,7 +58,7 @@ public class ContractTypeController {
      */
   @RequestMapping("ctone")
     public  ModelAndView ctone(@RequestParam Integer contypeid){
-      ModelAndView m=new ModelAndView("pages/huoduan/htupdate");
+      ModelAndView m=new ModelAndView("pages/huoduan/hetong/htupdate");
       ContractType type=contractTypeService.selectByPrimaryKey(contypeid);
       m.addObject("type",type);
       System.out.println("获取到了一条数据-----------");

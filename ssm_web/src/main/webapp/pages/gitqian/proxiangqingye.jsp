@@ -1,29 +1,36 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/4/23
+  Time: 18:47
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../appcomm/basePath.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
         <title>天能物业管理</title>
-        <link rel="stylesheet" href="pages/gitqian/css/index.css" type="text/css">
-        <link rel="stylesheet" href="pages/gitqian/css/zym.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/index.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/zym.css" type="text/css">
 
-        <script type="text/javascript" src="pages/gitqian/js/jquery.js"></script>
-        <script type="text/javascript" src="pages/gitqian/js/global.js"></script>
-        <script type="text/javascript" src="pages/gitqian/js/hm.js"></script>
-        <script type="text/javascript" src="pages/gitqian/js/script.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/jquery.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/global.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/hm.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/script.js"></script>
 
 
 
     </head>
 <body>
-<jsp:include page="toubu.jsp"/>
+<%--头部--%>
+<jsp:include page="toubu.jsp"></jsp:include>
 <!--子页-->
 <div class="ziye_bj">
     <div class="ziye_tu">
-        <img src="pages/gitqian/images/zy1_02.jpg">
+        <img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_02.jpg">
     </div>
 </div>
 <!--关于我们-->
@@ -32,8 +39,8 @@
         <div class="shang_g"></div>
         <div class="women">
             <div class="btmc">
-                <h1>Z</h1>
-                <p>招聘详情<span>hao</span></p>
+                <h1>N</h1>
+                <p>公司动态<span>ews</span></p>
             </div>
             <ul class="skb">
                 <li style="background: #005bac; width: 25%;"></li>
@@ -43,17 +50,26 @@
         </div>
         <div class="zy_dh_lb">
             <ul>
-                <c:forEach items="${newsTypes}" var="newsTypes">
-                    <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}">${newsTypes.ntypename}</a></li>
+
+
+                <c:forEach var="pt" items="${requestScope.programTypes}">
+                   <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png">
+                       <a id="wenzidangq" href="pr/xmlxsearch.do?ptid=${pt.ptid}&pageNum=1">${pt.ptypename}</a></li>
+
                 </c:forEach>
             </ul>
+
         </div>
     </div>
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-            <h2>招聘详情</h2>
-            <p>您的位置：招聘信息 > 详情 </p>
+
+            <h2>${programType.ptypename}</h2>
+            <p>您的位置：首页 >
+                ${programType.ptypename}
+
+            </p>
         </div>
         <ul class="skb" style="margin-bottom: 20px;">
             <li style="background: #005bac; width: 12%;"></li>
@@ -63,28 +79,16 @@
 
         <!--内容-->
         <div class="gsjj_nr">
-
-
             <div class="al_biaoti">
-                <h3>${recruit.companyname}</h3>
-                <span>截止时间：<fmt:formatDate value="${recruit.recruitend}" pattern="yyyy-MM-dd"/>　　来源：公司办公室</span>
+                <h3>${programs.pname}</h3>
+                <span>发布时间：2014-7-4　浏览次数：392 次　　来源：公司办公室</span>
             </div>
-            <div class="xian_xw" ></div>
-            <span><font size="3px">招聘职位：${recruit.postname}</font></span><br>
-            <br>
-            <span><font size="3px">招聘要求：${recruit.recruitdes}</font></span><br>
-            <br>
-            <span><font size="3px">岗位职责：${recruit.duty}</font></span><br>
-            <br>
-            <span><font size="3px">薪资待遇：${recruit.salary}</font></span><br>
-            <br>
-            <span><font size="3px">招聘人数：${recruit.recruitnum}</font></span><br>
-            <br>
-            <span><font size="3px">地址：${recruit.address}&nbsp;|&nbsp;联系方式：${recruit.recruitnumber}</font></span><br>
+            <div class="xian_xw"></div>
+            <img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_12.jpg">
             <div class="wzsm">
-
-            </div>
-
+                <p>${programs.pintroduce}</p>
+                <p>${programs.padress}</p>
+             </div>
             <div>
                 <div class="div_list_item">
                     <div class="bdsharebuttonbox">
@@ -128,12 +132,12 @@
                 //插件的JS加载部分
                 with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+ ~(-new Date() / 36e5)];
             </script>
-
-            <div >
-                <%--<div class="fanhui">--%>
-                    <%--<a href="news.html"><img src="images/fanhui_03.png"> <span>返回列表</span></a>--%>
-                <%--</div>--%>
-                <button type="button" class="fanhui" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+            <div class="sx_pian">
+                <a href="#">上一篇：多少个多少个手嘎哈</a>
+                <a href="#">上一篇：哪个快递号刚刚才把你当回事</a>
+            </div>
+            <div class="fanhui">
+                <a href="news.html"><img src="${pageContext.request.contextPath}/pages/gitqian/images/fanhui_03.png"> <span>返回列表</span></a>
             </div>
         </div>
     </div>
@@ -148,9 +152,9 @@
                 电 话：0851-85594612   传 真：0851-85594612<br></p>
             <ul>
                 <li><span>分享到：</span></li>
-                <li><a href="http://connect.qq.com/widget/shareqq/index.html?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-sqq-1-12217-9737f6f9e09dfaf5d3fd14d775bfee85&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&desc=&summary=&site=baidu" target="_black"><img src="pages/gitqian/images/dibu_06.png"></a></li>
-                <li><a href="http://service.weibo.com/share/share.php" target="_black"><img src="pages/gitqian/images/dibu_08.png"></a></li>
-                <li><a href="http://widget.renren.com/dialog/share?resourceUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&srcUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&description=" target="_black"><img src="pages/gitqian/images/dibu_10.png"></a></li>
+                <li><a href="http://connect.qq.com/widget/shareqq/index.html?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-sqq-1-12217-9737f6f9e09dfaf5d3fd14d775bfee85&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&desc=&summary=&site=baidu" target="_black"><img src="${pageContext.request.contextPath}/pages/gitqian/images/dibu_06.png"></a></li>
+                <li><a href="http://service.weibo.com/share/share.php" target="_black"><img src="${pageContext.request.contextPath}/pages/gitqian/images/dibu_08.png"></a></li>
+                <li><a href="http://widget.renren.com/dialog/share?resourceUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&srcUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fadmin%2FDesktop%2F%25E6%25BD%2598%25E4%25B8%25AD%25E5%2585%25A8%2F%25E7%25BD%2591%25E7%25AB%2599%2Fgztnwy_qt%2Fnewlist.html%230-renren-1-63647-98fde57bb3d39343db0f272b38411f3e&title=%E5%A4%A9%E8%83%BD%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86&description=" target="_black"><img src="${pageContext.request.contextPath}/pages/gitqian/images/dibu_10.png"></a></li>
             </ul>
         </div>
         <div class="dibu_you">
@@ -161,7 +165,7 @@
                 <li><a href="#">意见反馈&nbsp;&nbsp;</a>｜</li>
                 <li><a href="#">联系我们</a></li>
             </ul>
-            <img class="dibu_logo" src="pages/gitqian/images/dibu_03.png">
+            <img class="dibu_logo" src="${pageContext.request.contextPath}/pages/gitqian/images/dibu_03.png">
         </div>
     </div>
 </div>
@@ -173,4 +177,3 @@
 
 </body>
 </html>
-
