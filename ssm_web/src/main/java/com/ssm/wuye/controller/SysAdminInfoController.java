@@ -46,10 +46,10 @@ public class SysAdminInfoController {
         System.out.println(infos.size());
         if (infos.isEmpty()){
             m.setViewName("pages/login/denglu");
+            m.addObject("error",1);
         }
         if (!infos.isEmpty()){
             m.addObject("infos",infos);
-
         }
        return m;
     }
