@@ -1,6 +1,5 @@
 package com.ssm.wuye.domain;
 
-import com.ssm.wuye.appcomm.BaseEntity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -15,7 +14,7 @@ import org.apache.ibatis.type.Alias;
 @Table(name = "parking_carinfo")
 @Alias("parkingCarinfo")
 @Data
-public class ParkingCarinfo extends BaseEntity {
+public class ParkingCarinfo {
     /**
      * 
      */
@@ -30,7 +29,7 @@ public class ParkingCarinfo extends BaseEntity {
     private String parkingcards;
 
     /**
-     * 标准费
+     * 总花费
      */
     @Column(name = "Parkingcost")
     private String parkingcost;
@@ -92,16 +91,16 @@ public class ParkingCarinfo extends BaseEntity {
     }
 
     /**
-     * 标准费
-     * @return Parkingcost 标准费
+     * 总花费
+     * @return Parkingcost 总花费
      */
     public String getParkingcost() {
         return parkingcost;
     }
 
     /**
-     * 标准费
-     * @param parkingcost 标准费
+     * 总花费
+     * @param parkingcost 总花费
      */
     public void setParkingcost(String parkingcost) {
         this.parkingcost = parkingcost == null ? null : parkingcost.trim();

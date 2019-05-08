@@ -20,120 +20,8 @@
     </head>
 <body>
 <!--头部-->
-        <div class="top_bg" id="top_bg">
-            <div class="top_gang">
-                <div class="tou_zj">
-                    <div class="hy">
-                        <img src="pages/gitqian/images/tou_tb_03.png">
-                        <span>欢迎来到贵州天能物业管理有限公司</span>
-                    </div>
-                    <div class="soucang">
-                        <a href="#">设为首页&nbsp;</a>｜
-                        <a href="#">&nbsp;加入收藏</a>
-                    </div>
-                </div>
-            </div>
-            <div class="top_main">
-                <div class="top_logo">
-                    <a href='./'><img src="pages/gitqian/images/logo.png"></a>
-                </div>
-        <!--导航-->
-        <div class="daohang">
-            <div class="header_nav">
-                <div class="main clearBoth">
-                    <ul class="nav right">
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="index.html">
-                                网站首页
-                                <b></b>
-                            </a>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="about.html">
-                                关于我们
-                                <b></b>
-                                <div></div>
-                            </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="about.html">公司简介</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司文化</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">领导致辞</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">服务理念</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">企业荣誉</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="products.html">
-                                项目展示
-                                <b></b>
-                                <div></div>
-                            </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="products.html">经典案例</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司项目</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="nt/searchnes.do?ntid=1">
-                                公司动态
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <c:forEach var="news" items="${newsTypes}">
-                                        <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
-                                        </li>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="javascript:;">
-                                人才招聘
-                                <b></b>
-                            </a>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="contact.html">
-                                联系我们
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="contact.html">在线留言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">联系我们</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<%--头部--%>
+<jsp:include page="toubu.jsp"></jsp:include>
 <!--子页-->
 <div class="ziye_bj">
     <div class="ziye_tu">
@@ -158,7 +46,7 @@
         <div class="zy_dh_lb">
             <ul>
                 <c:forEach items="${newsTypes}" var="newsTypes">
-                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}">${newsTypes.ntypename}</a></li>
+                <li id="women"><img src="pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="nt/searchnes.do?ntid=${newsTypes.ntid}&pageNum=1">${newsTypes.ntypename}</a></li>
 
                 </c:forEach>
             </ul>
@@ -182,7 +70,7 @@
 
             <div class="al_biaoti">
                 <h3>${news.nctitle}</h3>
-                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />　　来源：公司办公室</span>
+                <span>发布时间：<fmt:formatDate value="${news.nctime}" pattern="yyyy年MM月dd日" />来源：公司办公室</span>
             </div>
             <div class="xian_xw"></div>
             <img src="pages/gitqian/images/zy1_12.jpg">
@@ -234,13 +122,12 @@
                 with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+ ~(-new Date() / 36e5)];
             </script>
             <div class="sx_pian">
-                <a href="#">上一篇：多少个多少个手嘎哈</a>
-                <a href="#">上一篇：哪个快递号刚刚才把你当回事</a>
+
             </div>
             <div class="fanhui">
 
 
-                <a href="nt/searchnes.do?ntid=${news.nctypeid}"><img src="pages/gitqian/images/fanhui_03.png">
+                <a href="nt/searchnes.do?ntid=${news.nctypeid}&pageNum=1"><img src="pages/gitqian/images/fanhui_03.png">
 
                     <span>返回列表</span>
                 </a>
@@ -278,7 +165,7 @@
     </div>
 </div>
 <div class="dibu_1">
-    <p>版权所有 贵州天能物业管理有限公司 黔ICP备10001741号<br>
+    <p>版权所有 厦门国贸物业管理有限公司 黔ICP备10001741号<br>
         技术支持：WangID 驰通网络</p>
 </div>
 

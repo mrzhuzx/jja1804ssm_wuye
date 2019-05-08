@@ -16,9 +16,9 @@
         <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/script.js"></script>
     </head>
 <body>
+<!--头部-->
 <%--头部--%>
 <jsp:include page="toubu.jsp"></jsp:include>
-<!--子页-->
 <div class="ziye_bj">
     <div class="ziye_tu">
         <img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_02.jpg">
@@ -44,8 +44,8 @@
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a  href="ower/query.do?olid=${ower.olid}">个人信息</a></li>
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/of.do?olid=${ower.olid}">家庭成员</a></li>
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/tzzjof.do?olid=${ower.olid}">增加家人</a></li>
-                <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="parking/pk_list.do?olid=${ower.olid}">车位信息</a></li>
+                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a></li>
+                <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="parking/pk_list.do?olid=${ower.olid}">车位信息</a></li>
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="#">缴费信息</a></li>
             </ul>
         </div>
@@ -53,8 +53,8 @@
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-            <h2>房屋信息</h2>
-            <p>您的位置：首页 > 业主信息 > 房屋信息</p>
+            <h2>车辆信息</h2>
+            <p>您的位置：首页 > 业主信息 > 车辆信息</p>
         </div>
         <ul class="skb" style="margin-bottom: 20px;">
             <li style="background: #005bac; width: 12%;"></li>
@@ -65,25 +65,20 @@
         <!--内容-->
         <div class="gsjj_nr">
             <ul class="xwlb_bj">
-                <c:forEach var="oth" items="${oth}">
+                <c:forEach var="pk" items="${pk_list}">
                     <h3>
-                        房屋编号: ${oth.hnumber}&nbsp;|&nbsp;
-                        楼宇名称：${oth.hbulidingname}&nbsp;|&nbsp;
-                        房屋描述：${oth.hremarks}<br>
-                        楼宇编号：${oth.hunitnumber}&nbsp;|&nbsp;
-                        房屋楼层：${oth.hfloor}&nbsp;|&nbsp;
-                        类型名字：${oth.htypename}&nbsp;|&nbsp;
-                        房屋朝向：${oth.hdirection}&nbsp;|&nbsp;
-                        房屋面积：${oth.harea}&nbsp;|&nbsp;
-                        房屋状态：${oth.hstate}&nbsp;|&nbsp;
-                        出租状态：<c:if test="${oth.loan eq 0}">不租</c:if>
-                                  <c:if test="${oth.loan eq 1}">已租</c:if>
-                                  <c:if test="${oth.loan eq 2}">待租</c:if><br>
-                        <a href="ower/czfw.do?hid=${oth.hid}&&olid=${oth.olid}&&olan=2">出租</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <a href="ower/czfw.do?hid=${oth.hid}&&olid=${oth.olid}&&olan=0">不出租</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <a href="ower/czfw.do?hid=${oth.hid}&&olid=${oth.olid}&&olan=1">已出租</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <a href="ower/csfw.do?hid=${oth.hid}&&olid=${oth.olid}&&hstate=1">出售</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <a href="ower/csfw.do?hid=${oth.hid}&&olid=${oth.olid}&&hstate=2">不出售</a> </h3>
+                        车位编号: ${pk.pid}<br>
+                        <%--业主ID：${pk.olid}<br>--%>
+                        业主姓名：${pk.hname}<br>
+                        业主电话：${pk.hphone}<br>
+                        业主车牌：${pk.hcards}<br>
+                        车位描述：<span style="color: red">${pk.descr}</span><br>
+                        <c:if test="${pk.descr eq 自用}">自用</c:if>
+                        <c:if test="${pk.descr eq 租借}">租借</c:if>
+
+                        <a href="parking/pk_cha.do?hid=${pk.hid}&&olid=${pk.olid}&&descr=租借">租借</a>
+                        <a href="parking/pk_cha.do?hid=${pk.hid}&&olid=${pk.olid}&&descr=自用">自用</a> </h3>
+
                     <hr>
                 </c:forEach>
             </ul>

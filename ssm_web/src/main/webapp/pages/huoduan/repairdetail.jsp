@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt"   uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -30,12 +32,13 @@
     <!--/. NAV TOP  -->
     <%--导航栏--%>
     <jsp:include page="daohanglan.jsp"></jsp:include>
+
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                         <small>客户投诉表添加界面</small>
+                         <small>设备维修详情页</small>
                     </h1>
                 </div>
             </div>
@@ -50,54 +53,61 @@
                             <div class="row">
                                 <div class="col-lg-6">
 
-                                    <form action="${pageContext.request.contextPath}/complain/save.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/repair/findall.do" method="post">
                                         <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
+
                                         <div  >
-                                            <label>ID</label>
-                                            <input class="form-control" placeholder="cid" value="" name="cid" >
-                                        </div>
-                                        <div  >
-                                            <label>标题</label>
-                                            <input class="form-control" placeholder="title"  value="" name="title" >
-                                        </div>
-                                        <div>
-                                            <label> 描述</label>
-                                            <input class="form-control" placeholder="descr" value="" name="descr">
-                                        </div>
-                                        <div>
                                             <label>业主</label>
-                                            <input class="form-control" placeholder="cname" value="" name="cname">
-                                        </div>
-                                        <div>
-                                            <label>业主电话</label>
-                                            <input class="form-control" placeholder="cname" value="" name="cphone">
-                                        </div>
-                                        <div>
-                                            <label>修理员</label>
-                                            <input class="form-control" placeholder="cname" value="" name="rname">
-                                        </div>
-                                        <div>
-                                            <label>是否处理</label>
-                                            <input class="form-control" placeholder="status" value="" name="status">
-                                        </div>
-                                        <div>
-                                            <label>投诉方式</label>
-                                            <input class="form-control" placeholder="means" value="" name="means">
+                                            <input class="form-control" placeholder="repairname"  value="${rep.repairname}" name="repairname" >
                                         </div>
 
                                         <div>
-                                            <label>上报日期</label>
-                                            <input class="form-control" placeholder="cdate" id="dateid" value="" name="cdate">
+                                            <label>问题描述</label>
+                                            <input class="form-control" placeholder="repdesc" value="${rep.repdesc}" name="repdesc">
                                         </div>
                                         <div>
-                                            <label>处理日期</label>
-                                            <input class="form-control" placeholder="dealdescr" value="" name="dealdescr">
+                                            <label>反馈时间</label>
+                                            <input class="form-control" placeholder="reportdate"id="dateid3" value="<fmt:formatDate value='${rep.reportdate}' pattern='yyyy-MM-dd'/>"  name= "reportdate">
+                                        </div>
+
+                                        <div>
+                                            <label>是否处理</label>
+                                            <input class="form-control" placeholder="status" value="${rep.status}" name="status">
+                                        </div>
+
+                                        <div>
+                                            <label>安排维修时间</label>
+                                            <input class="form-control" placeholder="repairdate" id="dateid2" value="<fmt:formatDate value='${rep.repairdate}' pattern='yyyy-MM-dd'/>"  name= "repairdate">
+                                        </div>
+                                        <div>
+                                            <label>修理工</label>
+                                            <input class="form-control" placeholder="principal" value="${rep.principal}" name="principal">
+                                        </div>
+                                        <div>
+                                            <label>材料</label>
+                                            <input class="form-control" placeholder="material" value="${rep.material}" name="material">
+                                        </div>
+                                        <div>
+                                            <label>费用</label>
+                                            <input class="form-control" placeholder="upkeep" value="${rep.upkeep}" name="upkeep">
+                                        </div>
+                                        <div>
+                                            <label>完成日期</label>
+                                            <input class="form-control" placeholder="completedate"id="dateid" value="<fmt:formatDate value='${rep.completedate}' pattern='yyyy-MM-dd'/>"  name= "completedate" >
+                                        </div>
+                                        <div>
+                                            <label>费用是否缴纳</label>
+                                            <input class="form-control" placeholder="ispay" value="${rep.ispay}" name="ispay">
+                                        </div>
+                                        <div>
+                                            <label>费用缴纳日期</label>
+                                            <input class="form-control" placeholder="paydate" id="dateid1" value="<fmt:formatDate value='${rep.paydate}' pattern='yyyy-MM-dd'/>"  name= "paydate">
                                         </div>
                                         <br>
                                         <div>
 
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-save "></i> 保存</button>
+
 
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
@@ -145,6 +155,33 @@
 <script>
     $(document).ready(function() {
         $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid1').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid2').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dateid3').datepicker({
             format : "yyyy-mm-dd",
             autoclose: true,
             language: 'zh-CN'

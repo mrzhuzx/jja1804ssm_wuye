@@ -136,7 +136,7 @@
                                         <div>
                                             <%--<fmt:formatDate value="${upnews.nctime}" pattern="yyyy-MM-dd"/>--%>
                                             <label>年月份</label>
-                                            <input class="form-control" placeholder="年月份" id="dateid" value="${upnews.nctime}" name="nctime">
+                                            <input class="form-control" placeholder="年月份" id="dateid1" value="${upnews.nctime}" name="nctime">
                                         </div>
                                             <div class="form-group" >
                                                 <label>类型ID</label>
@@ -199,6 +199,13 @@
 <script>
     $(document).ready(function() {
         $('#dateid').datepicker({
+            format : "yyyy-mm-dd",
+            autoclose: true,
+            language: 'zh-CN'
+        });
+    });
+    $(document).ready(function() {
+        $('#dateid1').datepicker({
             format : "yyyy-mm-dd",
             autoclose: true,
             language: 'zh-CN'

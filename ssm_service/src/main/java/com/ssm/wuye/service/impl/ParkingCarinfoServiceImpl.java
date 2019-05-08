@@ -86,5 +86,16 @@ public class ParkingCarinfoServiceImpl implements ParkingCarinfoService {
         return parkingCarinfoMapper.updateByPrimaryKeySelective(record);
     }
 
+    /**
+     * 添加
+     *
+     * @param record
+     * @return
+     */
+    @Override
+    public int insertSelective(ParkingCarinfo record) {
+        return parkingCarinfoMapper.insertSelective(record);
+    }
+
 
 }
