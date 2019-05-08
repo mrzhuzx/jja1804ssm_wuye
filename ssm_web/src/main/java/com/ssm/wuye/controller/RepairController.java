@@ -52,6 +52,16 @@ public class RepairController {
         mv.setViewName("pages/huoduan/repairupdate");
         return mv;
     }
+    @RequestMapping("finddetail")
+    public  ModelAndView findetail(@RequestParam Integer id){
+
+        ModelAndView mv = new ModelAndView();
+        RepairInfo rep = repairService.selectByPrimaryKey(id);
+        System.out.println(rep.getRepairname());
+        mv.addObject("rep",rep);
+        mv.setViewName("pages/huoduan/repairdetail");
+        return mv;
+    }
     @RequestMapping("/update")
     public ModelAndView update(@ModelAttribute RepairInfo repairInfo){
         System.out.println("进来update了");
@@ -62,7 +72,7 @@ public class RepairController {
         return mv;
     }
     @RequestMapping("/insert")
-    public ModelAndView insert(@RequestParam RepairInfo repairInfo){
+    public ModelAndView insert(@ModelAttribute RepairInfo repairInfo){
         ModelAndView mv = new ModelAndView();
         int insert = repairService.insert(repairInfo);
         System.out.println("添加成功"+insert+"tiao");

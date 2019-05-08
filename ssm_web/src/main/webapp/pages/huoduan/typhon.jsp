@@ -44,60 +44,48 @@
     <!--/. NAV TOP  -->
     <%--导航栏--%>
     <jsp:include page="daohanglan.jsp"></jsp:include>
-    <div id="page-wrapper" >
-        <div id="page-inner">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-header">
-                         <small></small>
-                    </h1>
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            物资类别名称信息 <small></small>
+                        </h1>
+                    </div>
                 </div>
-            </div>
-            <!-- /. ROW  -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-
-                        </div>
+                <!-- /. ROW  -->
+                <div class="row" style="width: 600px; display: inline">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                物资类别名称详情
+                            </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>合同名字</th>
-                                        <th>合同类型</th>
-                                        <th>起始时间</th>
-                                        <th>终止时间</th>
-                                        <th>合同描述</th>
-                                        <th>合同编号</th>
-                                        <th>签约人</th>
-                                        <th>联系方式</th>
-                                        <th>操作</th>
+                                    <tr><th>物资类别ID</th>
+                                        <th>物资类别名称</th>
 
+                                        <th>编辑</th>
                                     </tr>
                                     </thead>
-
                                     <tbody>
-                            <c:forEach  items="${contractList}" var="sm">
-                                    <tr class="gradeA">
-                                        <td>${sm.contractid}</td>
-                                        <td>${sm.contractname}</td>
-                                        <td>${sm.contracttype}</td>
+                                    <c:forEach var="f" items="${tbMatter_sortList}">
+                                        <tr class="odd gradeX">
+                                            <td>${f.mattersortid}</td>
+                                            <td>${f.mattersort}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy-MM-dd'/></td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy-MM-dd'/></td>
-                                        <td>${sm.contractdes}</td>
-                                        <td>${sm.contractnum}</td>
-                                        <td>${sm.signingpeople}</td>
-                                        <td>${sm.signatorytelephone}</td>
-                                        <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                            <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
-                                    </tr>
+
+
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/type/catch.do?mattersortid=${f.mattersortid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/type/delete.do?mattersortid=${f.mattersortid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                        </tr>
+
+
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>

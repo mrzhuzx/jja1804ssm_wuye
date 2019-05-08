@@ -47,45 +47,55 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            修改合同
+                            修改设备
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/fantai/delete.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/fantai/modify.do" method="post">
 
 
                                         <div  >
-                                            <label>合同ID</label>
-                                            <input class="form-control" placeholder="" value="${tbmatter.contractid}" name="contractid">
+                                            <label>物资ID</label>
+                                            <input class="form-control" placeholder="" value="${tbMatter.matterid}" name="matterid">
                                         </div>
                                         <div  >
-                                            <label>合同编号</label>
-                                            <input class="form-control" placeholder="" value="${tbmatter.contractnum}" name="contractnum" >
+                                            <label>物资名称</label>
+                                            <input class="form-control" placeholder="" value="${tbMatter.mattername}" name="mattername" >
                                         </div>
                                         <div  >
-                                            <label>合同名字</label>
-                                            <input class="form-control" placeholder="" value="${tbmatter.contractname}" name="contractname" >
+                                            <label> 物资数量</label>
+                                            <input class="form-control" placeholder="" value="${tbMatter.matternum}" name="matternum" >
                                         </div>
                                         <div class="form-group">
-                                            <label>合同描述</label>
-                                            <textarea class="form-control" rows="3"  name="contractdes" >${tbmatter.contractdes}</textarea>
+                                            <label>物资价格</label>
+                                            <input class="form-control" placeholder="" value="${tbMatter.matterprice}" name="matterprice" >
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label>物资类别ID</label>
+                                            <select class="form-control" placeholder="" name="mattersortid">
+
+                                                <c:forEach items="${tbMatter_sortList}" var="mht">
+                                                    <option  value="${mht.mattersortid}">${mht.mattersort}</option>
+                                                </c:forEach>
+
+                                            </select>
+                                        </div>
+
+                                        <div>
+
+                                            <label>入库时间</label>
+                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${tbMatter.instoragetime}' pattern='yyyy-MM-dd'/>"name="instoragetime" >
                                         </div>
                                         <div>
-                                            <label>签约人</label>
-                                            <input class="form-control" placeholder="" value="${tbmatter.signingpeople}" name="signingpeople">
-                                        </div>
-                                        <div>
-                                            <label>合同起始时间</label>
-                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${tbmatter.contractstart}' pattern='yyyy-MM-dd'/>"name="contractstart" >
-                                        </div>
-                                        <div>
-                                            <label>合同终止时间</label>
-                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${tbmatter.contractend}' pattern='yyyy-MM-dd'/>"name="contractstart" >
+                                            <label> 出库时间</label>
+                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${tbMatter.outstoragetime}' pattern='yyyy-MM-dd'/>"name="outstoragetime" >
                                         </div>
                                         <div  >
-                                            <label>联系方式</label>
-                                            <input class="form-control" placeholder="" value="${tbmatter.signatorytelephone}" name="signatorytelephone" >
+                                            <label>物资状态</label>
+                                            <input class="form-control" placeholder="" value="${tbMatter.matterstate}" name="matterstate" >
                                         </div>
                                         <br>
                                         <div>
@@ -95,6 +105,7 @@
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
                                         </div>
+
                                     </form>
                                 </div>
 

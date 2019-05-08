@@ -36,13 +36,12 @@ public class NewsController {
         Integer id = Integer.valueOf(ncid);
         News news = newsService.selectByPrimaryKey(id);
         m.addObject("news", news);
-
         //所有新闻类
         List<NewsType> newsTypes = newstypeService.selectByExample(null);
         m.addObject("newsTypes", newsTypes);
         return m;
-    }
 
+    }
     //后台
     @RequestMapping("htnews")
     public ModelAndView htnews() {

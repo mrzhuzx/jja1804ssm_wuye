@@ -28,10 +28,10 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -70,6 +70,15 @@
                                         <div class="form-group">
                                             <label>合同描述</label>
                                             <textarea class="form-control" rows="3"  name="contractdes" >${contract.contractdes}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>合同类型</label>
+                                            <select class="form-control" placeholder="" name="contracttype">
+                                                <option selected="selected" value="${contract.contracttype}">${contract.contracttype}</option>
+                                                <c:forEach var="st" items="${types}">
+                                                    <option value="${st.contypeid}">${st.contypeid}----${st.contracttype}</option>
+                                                </c:forEach>
+                                            </select>
                                         </div>
                                         <div>
                                             <label>签约人</label>

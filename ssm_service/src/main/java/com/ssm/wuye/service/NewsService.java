@@ -16,7 +16,7 @@ public interface NewsService {
     /*
      *查询总 条数
      */
-    long countByExample(NewsExample example);
+    int countByExample(NewsExample example);
     /**
      * 删除数据
      * @param cid

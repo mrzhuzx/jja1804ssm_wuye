@@ -22,7 +22,7 @@ public class NewsServiceImpl implements NewsService {
     /*
      *查询总 条数
      */
-    public long countByExample(NewsExample example) {
+    public int countByExample(NewsExample example) {
         return newsMapper.countByExample(example);
     }
 

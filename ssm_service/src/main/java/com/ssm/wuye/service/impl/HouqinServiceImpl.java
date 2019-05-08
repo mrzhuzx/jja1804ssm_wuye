@@ -24,7 +24,7 @@ public class HouqinServiceImpl implements HouqinService {
 
     /**
      * 带条件查询
-      * @param example
+     * @param example
      * @return
      */
 

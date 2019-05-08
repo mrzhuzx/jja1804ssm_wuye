@@ -1,10 +1,12 @@
 package com.ssm.wuye.controller;
 
-import com.ssm.wuye.domain.Contract;
+import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.Recruit;
+import com.ssm.wuye.domain.RecruitExample;
+import com.ssm.wuye.service.NewsTypeService;
 import com.ssm.wuye.service.RecruitService;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,18 +22,21 @@ import java.util.List;
  * version:1.2.3
  */
 
+
 @Controller
 @RequestMapping("recruit")
 public class RecruitController {
+
     @Resource
     RecruitService recruitService;
-
+    @Resource
+    NewsTypeService newstypeService;
     /**
      * 查询全部
      */
     @RequestMapping("research")
-    public ModelAndView search() {
-        ModelAndView m = new ModelAndView("pages/huoduan/recruit");
+    public ModelAndView research() {
+        ModelAndView m = new ModelAndView("pages/huoduan/zhaopin/recruit");
         List<Recruit> recruitList = recruitService.selectByExample(null);
         for ( Recruit recruit : recruitList) {
             System.out.println(recruit.toString());
@@ -40,13 +45,12 @@ public class RecruitController {
         return m;
     }
 
-
     /**
      * 增加一条数据
      *
      */
     @RequestMapping("resave")
-    public ModelAndView contractsave(@ModelAttribute Recruit re ){
+    public ModelAndView resave(@ModelAttribute Recruit re ){
         ModelAndView m = new ModelAndView("redirect:/recruit/research.do");
         int i=recruitService.insertSelective(re);
         if(i==0){
@@ -65,7 +69,7 @@ public class RecruitController {
      */
     @RequestMapping("reone")
     public ModelAndView searchone(@RequestParam Integer recruitid ){
-        ModelAndView m=new ModelAndView("pages/huoduan/recruitupdate");
+        ModelAndView m=new ModelAndView("pages/huoduan/zhaopin/recruitupdate");
         Recruit recruit = recruitService.selectByPrimaryKey(recruitid);
         m.addObject("recruit",recruit);
         System.out.println("获取到了一条数据-----------");
@@ -77,7 +81,7 @@ public class RecruitController {
      * @return
      */
     @RequestMapping("reupdate")
-    public ModelAndView conupdate(@ModelAttribute Recruit re){
+    public ModelAndView reupdate(@ModelAttribute Recruit re){
         ModelAndView m=new ModelAndView("redirect:/recruit/research.do");
         int i=recruitService.updateByPrimaryKeySelective(re);
         if(i==0){
@@ -94,8 +98,8 @@ public class RecruitController {
      *根据主键ID删除
      * @return
      */
-    @RequestMapping("condelete")
-    public  ModelAndView condelete(@RequestParam Integer recruitid){
+    @RequestMapping("redelete")
+    public  ModelAndView redelete(@RequestParam Integer recruitid){
         ModelAndView m=new ModelAndView("redirect:/recruit/research.do");
         int i=recruitService.deleteByPrimaryKey(recruitid);
         if(i==0){
@@ -105,7 +109,51 @@ public class RecruitController {
         }
         return m;
     }
+    /**
+     * 分页查询(前台)
+     */
+    @RequestMapping("refenye")
+    public ModelAndView qiansearch() {
+        ModelAndView m = new ModelAndView("pages/gitqian/zhaopin");
+//        RecruitExample recruitExample=new RecruitExample();
+//        Integer Size = 3;//条数
+//
+//        long l =recruitService.countByExample(recruitExample);
+//        Integer con =(int)l;
+//        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
+//        if (pageNum<=1){
+//            pageNum = 1;
+//        }
+//        if (pageNum>pageAll){
+//            pageNum=pageAll;
+//        }
+//        Integer Num = Size * (pageNum - 1);//从哪条数据分页
+        List<Recruit> recruitList = recruitService.selectByExample(null);
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
+        for ( Recruit recruit : recruitList) {
+            System.out.println(recruit.toString());
+        }
+        m.addObject("recruitList",recruitList);
+//        m.addObject("pageAll",pageAll);
+//        m.addObject("pageNum",pageNum);
+        return m;
+    }
 
+    /**
+     * 前台获取一条数据
+     * @return
+     */
+    @RequestMapping("qianreone")
+    public ModelAndView qianrene(@RequestParam Integer recruitid ){
+        ModelAndView m=new ModelAndView("pages/gitqian/zhaopinxq");
+        Recruit recruit = recruitService.selectByPrimaryKey(recruitid);
+        List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("newstypeList", newstypeList);
+        m.addObject("recruit",recruit);
+        System.out.println("获取到了一条数据-----------");
+        return  m;
+    }
 
 
 }

@@ -67,5 +67,12 @@ public interface ParkingCarinfoService {
     int updateByPrimaryKeySelective(ParkingCarinfo record);
 
 
+    /**
+     * 添加
+     * @param record
+     * @return
+     */
+    int insertSelective(ParkingCarinfo record);
+
 
 }

@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../../appcomm/basePath.jsp"%>
 <html>
 <head>
@@ -7,144 +8,17 @@
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
     <title>国贸物业管理</title>
     <link rel="stylesheet" href="pages/gitqian/css/index.css" type="text/css">
-
+    <link rel="stylesheet" href="pages/gitqian/css/zym.css" type="text/css">
 
     <script type="text/javascript" src="pages/gitqian/js/jquery.js"></script>
     <script type="text/javascript" src="pages/gitqian/js/global.js"></script>
     <script type="text/javascript" src="pages/gitqian/js/hm.js"></script>
     <script type="text/javascript" src="pages/gitqian/js/script.js"></script>
 </head>
+
 <body>
-<!--头部-->
-<div class="top_bg" id="top_bg">
-    <div class="top_gang">
-        <div class="tou_zj">
-            <div class="hy">
-                <img src="pages/gitqian/images/tou_tb_03.png">
-                <span>欢迎来到贵州国贸物业管理有限公司</span>
-            </div>
-            <div class="soucang">
-                <c:if test="${ower eq null}"><a href="pages/gitqian/login.jsp">业主登入</a></c:if>
-                <c:if test="${ower ne null}"><img src="${ower.olheadimg}">&nbsp;${ower.olname}&nbsp;|&nbsp;<a href="ower/logout.do">注销</a></c:if>
-            </div>
-        </div>
-    </div>
-    <div class="top_main">
-        <div class="top_logo">
-            <a href='./'><img src="pages/gitqian/images/logo.png"></a>
-        </div>
-        <!--导航-->
-        <div class="daohang">
-            <div class="header_nav">
-                <div class="main clearBoth">
-                    <ul class="nav right">
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="#">
-                                网站首页
-                                <b></b>
-                            </a>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/about.html">
-                                房屋租售
-                                <b></b>
-                                <div></div>
-                            </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
-                                    </li>
-                                    <li>
-                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/products.html">
-                                项目展示
-                                <b></b>
-                                <div></div>
-                            </a>
-                            <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="#">经典案例</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司项目</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="javascript:;">
-                                公司动态
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <c:forEach var="news" items="${newstypeList}">
-                                    <li>
-                                        <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
-                                    </li>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="javascript:;">
-                                业主信息
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="ower/query.do?olid=${ower.olid}">个人信息</a>
-                                    </li>
-                                    <li>
-                                        <a href="ower/of.do?olid=${ower.olid}">家庭成员</a>
-                                    </li>
-                                    <li>
-                                        <a href="ower/of.do?olid=${ower.olid}">增加家人</a>
-                                    </li>
-                                    <li>
-                                        <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">车位信息</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">缴费信息</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="narrow_wrap">
-                            <a class="nav_btn" href="javascript:;">
-                                联系我们
-                                <b></b>
-                            </a>
-                            <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
-                                <ul>
-                                    <li>
-                                        <a href="#">在线留言</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">联系我们</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<%--头部--%>
+<jsp:include page="toubu.jsp"></jsp:include>
 <!--大图-->
 <div class="main_yin">
     <div class="mianc" id="mianc">
