@@ -129,8 +129,12 @@
                                         <a href="pages/gitqian/parking_carinfo.jsp">外来车辆</a>
                                     </li>
                                     <li>
-                                        <a href="#">在线留言</a>
+                                        <a href="${pageContext.request.contextPath}/complain/fenye.do?pageNum=1">客户投诉</a>
                                     </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/repair/fenye.do?pageNum=1">设备报修</a>
+                                    </li>
+
                                     <li>
                                         <a href="#">联系我们</a>
                                     </li>
