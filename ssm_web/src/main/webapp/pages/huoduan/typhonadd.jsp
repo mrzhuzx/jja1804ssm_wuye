@@ -45,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一些设备
+                            增加一些设备类型
                         </div>
                         <div class="panel-body">
                             <div class="row">
