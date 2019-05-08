@@ -49,6 +49,9 @@
                     <li>
                         <a href="#">收费标准管理</a>
                     </li>
+                    <li>
+                            <a href="${pageContext.request.contextPath}/list.do">外来车辆收费记录</a>
+                    </li>
 
                 </ul>
             </li>
