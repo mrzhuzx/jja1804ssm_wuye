@@ -181,7 +181,14 @@
                         <a href="${pageContext.request.contextPath}/fantai/search.do">防台物资</a>
                     </li>
                     <li id="signff">
-                        <a href="${pageContext.request.contextPath}/pages/huoduan/typhoonadd.jsp">购买公共用品</a>
+                        <a href="${pageContext.request.contextPath}/fantai/catchadd.do">购买公共用品</a>
+                    </li>
+
+                    <li id="signdde">
+                        <a href="${pageContext.request.contextPath}/type/search.do">物资类型</a>
+                    </li>
+                    <li id="signffe">
+                        <a href="${pageContext.request.contextPath}/pages/huoduan/typhonadd.jsp">增加物资类型</a>
                     </li>
                     <li id="signgg">
                         <a href="${pageContext.request.contextPath}/repair/findall.do">设备维修</a>
