@@ -46,6 +46,7 @@ public class ChElectricSerciceImpl implements ChElectricService {
         List<ChElectricMeter> meterList = chElectricMeterMapper.selectByExample(null);
         List<ElectricAndOwer> electricAndOwers=new ArrayList<ElectricAndOwer>();
         for (ChElectricMeter chElectricMeter : meterList) {
+            System.out.println(chElectricMeter.getHouseid());
             MyHouseExample houseExample=new MyHouseExample();
             SysOwerExample owerExample=new SysOwerExample();
             ElectricAndOwer eao=new ElectricAndOwer();
