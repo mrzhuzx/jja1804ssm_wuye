@@ -14,22 +14,22 @@
     <title></title>
     <!-- Bootstrap Styles-->
 
-    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="./assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="./assets/css/custom-styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./plugins/datepicker3.css">
+    <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../plugins/datepicker3.css">
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -45,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加一条讯息
+                            增加一条招聘讯息
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>薪资待遇</label>
-                                            <textarea class="form-control" rows="3"  name="salary">在大厦上班加班另算、有工龄工资，服装公司提供，8小时待遇2500元--3500元</textarea>
+                                            <textarea class="form-control" rows="5"  name="salary">在大厦上班加班另算、有工龄工资，服装公司提供，8小时待遇2500元--3500元</textarea>
                                         </div>
                                         <div>
                                             <label>截止时间</label>
@@ -126,20 +126,20 @@
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="./assets/js/jquery-1.10.2.js"></script>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
-    <script src="./assets/js/jquery.metisMenu.js"></script>
+    <script src="../assets/js/jquery.metisMenu.js"></script>
     <!-- Custom Js -->
-    <script src="./assets/js/custom-scripts.js"></script>
+    <script src="../assets/js/custom-scripts.js"></script>
     <script src="./assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
     <script src="./assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 
     <script src="./assets/datatables/jquery.dataTables.min.js"></script>
     <script src="./assets/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="./plugins/jquery-2.2.3.min.js"></script>
-    <script src="./plugins/bootstrap-datepicker.js"></script>
+    <script src="../plugins/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap-datepicker.js"></script>
     <script>
         $(document).ready(function() {
             $('#dateid').datepicker({
