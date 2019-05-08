@@ -79,7 +79,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                         <li>
-                                            <a href="${pageContext.request.contextPath}/nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                            <a href="${pageContext.request.contextPath}/nt/searchnes.do?ntid=${news.ntid}&&pageNum=1">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -105,7 +105,7 @@
                                         <a href="${pageContext.request.contextPath}/ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">车位信息</a>
+                                        <a href="${pageContext.request.contextPath}/parking/pk_list.do?olid=${ower.olid}">车位信息</a>
                                     </li>
                                     <li>
                                         <a href="#">缴费信息</a>
@@ -129,6 +129,9 @@
                                     </li>
                                     <li>
                                         <a href="#">联系我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/pages/gitqian/parking_carinfo.jsp">外来车辆</a>
                                     </li>
                                 </ul>
                             </div>

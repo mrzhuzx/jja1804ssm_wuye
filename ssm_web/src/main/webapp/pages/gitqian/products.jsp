@@ -72,7 +72,7 @@
                 <c:forEach var="xiangmus"  items="${xiangmus}">
                     <li>
 
-                        <h1><a href="pr/proidsearch.do?pid=${xiangmus.pid}&&ptid=${xiangmus.ptid}"><img src="pages/gitqian/images/zy1_12.jpg"></a></h1>
+                        <h1><img src="pages/gitqian/images/zy1_12.jpg"></h1>
                         <dl>
 
                             <dt><a href="pr/proidsearch.do?pid=${xiangmus.pid}&&ptid=${xiangmus.ptid}">${xiangmus.pname}</a></dt>

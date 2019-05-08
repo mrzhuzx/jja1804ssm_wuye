@@ -61,9 +61,10 @@ public class ProgramController {
         ModelAndView m = new ModelAndView("pages/gitqian/index");
         ProgramTypeExample programTypeExample=new ProgramTypeExample();
         List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
-        m.addObject("programTypes", programTypes);
+
         return m;
     }
 
@@ -111,11 +112,11 @@ public class ProgramController {
     @RequestMapping("proidsearch")
     public ModelAndView proidsearch(@RequestParam Integer pid,@RequestParam Integer ptid) {
         ModelAndView m = new ModelAndView("pages/gitqian/proxiangqingye");
+        List<ProgramType> programTypes = programTypeService.selectByExample(null);
+        System.out.println(programTypes.size());
         Program program = programService.selectByPrimaryKey(pid);
         ProgramType programType = programTypeService.selectByPrimaryKey(ptid);
         m.addObject("programType",programType);
-        ProgramTypeExample programTypeExample=new ProgramTypeExample();
-        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
         m.addObject("programTypes", programTypes);
