@@ -61,9 +61,10 @@ public class ProgramController {
         ModelAndView m = new ModelAndView("pages/gitqian/index");
         ProgramTypeExample programTypeExample=new ProgramTypeExample();
         List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
-        m.addObject("programTypes", programTypes);
+
         return m;
     }
 

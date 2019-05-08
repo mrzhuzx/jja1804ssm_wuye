@@ -5,6 +5,7 @@ import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
 
+import com.ssm.wuye.service.ProgramTypeService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,6 +31,8 @@ public class NewsTypeController {
     NewsTypeService newstypeService;
     @Resource
     NewsService newsService;
+    @Resource
+    ProgramTypeService programTypeService;
 
 
     public NewsTypeController() {
@@ -44,8 +47,10 @@ public class NewsTypeController {
     @RequestMapping("search")
     public ModelAndView search() {
         ModelAndView m = new ModelAndView();
-
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("programTypes", programTypes);
         m.addObject("newstypeList", newstypeList);
         m.setViewName("pages/gitqian/index");
 
@@ -77,6 +82,9 @@ public class NewsTypeController {
         RowBounds rowBounds = new RowBounds(Num, pageSize);
         List<News> news1 = newsService.selectByExampleWithRowbounds(newsExample,rowBounds);
         newsExample.createCriteria().andNctypeidEqualTo(id);
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
         m.addObject("news1", news1);
         m.addObject("pageAll", pageAll);
         m.addObject("pageNum", pageNum);
