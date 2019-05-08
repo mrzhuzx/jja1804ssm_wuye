@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @Controller
@@ -54,7 +56,11 @@ public class PuWaterController {
 
     @RequestMapping("/updata.do")
     public String updata(PuWater electric){
-
+        Calendar calendar   =   new GregorianCalendar();
+        calendar.setTime(electric.getMonth());
+        calendar.add(calendar.DATE,1);
+//        System.out.println(calendar.getTime());
+        electric.setMonth(calendar.getTime());
         System.out.println(electric.toString());
 //        System.out.println("aaaaa---------");
         waterService.updata(electric);
@@ -75,7 +81,11 @@ public class PuWaterController {
     }
     @RequestMapping("/add.do")
     public String add(PuWater electric){
-
+        Calendar calendar   =   new GregorianCalendar();
+        calendar.setTime(electric.getMonth());
+        calendar.add(calendar.DATE,1);
+//        System.out.println(calendar.getTime());
+        electric.setMonth(calendar.getTime());
         System.out.println(electric.toString());
         waterService.add(electric);
 
