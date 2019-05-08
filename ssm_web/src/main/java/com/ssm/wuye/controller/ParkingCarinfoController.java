@@ -68,14 +68,19 @@ public class ParkingCarinfoController {
         }else {
             System.out.println("添加失败");
         }
-
-
-
-
         m.addObject("money",money);
 
         return m;
     }
 
+    @RequestMapping("list")
+    public ModelAndView list(){
+        ModelAndView m = new ModelAndView("pages/huoduan/parking_carinfo");
 
+        List<ParkingCarinfo> parkingCarinfos = parkingCarinfoMapper.selectByExample(null);
+
+        m.addObject("parkingCarinfos",parkingCarinfos);
+
+        return m;
+    }
 }

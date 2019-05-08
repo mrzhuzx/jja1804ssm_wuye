@@ -7,8 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -47,63 +45,28 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            修改合同
+                            增加一些设备
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/con/conupdate.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/type/add.do" method="post">
+                                        <div  >
+                                            <label> 物资类别名称</label>
+                                            <input class="form-control" placeholder=" 物质类别名称" value="健身器材" name="mattersort" >
+                                        </div>
 
-
-                                        <div  >
-                                            <label>合同ID</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractid}" name="contractid" readonly="readonly" >
-                                        </div>
-                                        <div  >
-                                            <label>合同编号</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractnum}" name="contractnum" >
-                                        </div>
-                                        <div  >
-                                            <label>合同名字</label>
-                                            <input class="form-control" placeholder="" value="${contract.contractname}" name="contractname" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label>合同描述</label>
-                                            <textarea class="form-control" rows="3"  name="contractdes" >${contract.contractdes}</textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>合同类型</label>
-                                            <select class="form-control" placeholder="" name="contracttype">
-                                                <option selected="selected" value="${contract.contracttype}">${contract.contracttype}</option>
-                                                <c:forEach var="st" items="${types}">
-                                                    <option value="${st.contypeid}">${st.contypeid}----${st.contracttype}</option>
-                                                </c:forEach>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label>签约人</label>
-                                            <input class="form-control" placeholder="" value="${contract.signingpeople}" name="signingpeople">
-                                        </div>
-                                        <div>
-                                            <label>合同起始时间</label>
-                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${contract.contractstart}' pattern='yyyy-MM-dd'/>"name="contractstart" >
-                                        </div>
-                                        <div>
-                                            <label>合同终止时间</label>
-                                            <input class="form-control" placeholder="" value="<fmt:formatDate value='${contract.contractend}' pattern='yyyy-MM-dd'/>"name="contractstart" >
-                                        </div>
-                                        <div  >
-                                            <label>联系方式</label>
-                                            <input class="form-control" placeholder="" value="${contract.signatorytelephone}" name="signatorytelephone" >
-                                        </div>
                                         <br>
                                         <div>
 
-                                            <button type="submit" class="btn btn-success"><i class=""></i> 确认修改 </button>
+                                            <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
 
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
                                         </div>
+
+
+
                                     </form>
                                 </div>
 

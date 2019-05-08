@@ -66,11 +66,21 @@
 
 
             <div class="al_biaoti">
-                <h3>${news.nctitle}</h3>
-                <span>发布时间：　　来源：公司办公室</span>
+                <h3>${recruit.companyname}</h3>
+                <span>截止时间：<fmt:formatDate value="${recruit.recruitend}" pattern="yyyy-MM-dd"/>　　来源：公司办公室</span>
             </div>
-            <div class="xian_xw"></div>
-
+            <div class="xian_xw" ></div>
+            <span><font size="3px">招聘职位：${recruit.postname}</font></span><br>
+            <br>
+            <span><font size="3px">招聘要求：${recruit.recruitdes}</font></span><br>
+            <br>
+            <span><font size="3px">岗位职责：${recruit.duty}</font></span><br>
+            <br>
+            <span><font size="3px">薪资待遇：${recruit.salary}</font></span><br>
+            <br>
+            <span><font size="3px">招聘人数：${recruit.recruitnum}</font></span><br>
+            <br>
+            <span><font size="3px">地址：${recruit.address}&nbsp;|&nbsp;联系方式：${recruit.recruitnumber}</font></span><br>
             <div class="wzsm">
 
             </div>
@@ -119,15 +129,11 @@
                 with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+ ~(-new Date() / 36e5)];
             </script>
 
-            <div class="fanhui">
-
-
-                <a href="nt/searchnes.do?ntid=${news.nctypeid}"><img src="pages/gitqian/images/fanhui_03.png">
-
-                    <span>返回列表</span>
-                </a>
-
-
+            <div >
+                <%--<div class="fanhui">--%>
+                    <%--<a href="news.html"><img src="images/fanhui_03.png"> <span>返回列表</span></a>--%>
+                <%--</div>--%>
+                <button type="button" class="fanhui" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
             </div>
         </div>
     </div>

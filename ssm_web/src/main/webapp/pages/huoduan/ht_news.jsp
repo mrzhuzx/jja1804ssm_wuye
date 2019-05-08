@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        表格页面 <small>响应表</small>
+
                     </h1>
                 </div>
             </div>

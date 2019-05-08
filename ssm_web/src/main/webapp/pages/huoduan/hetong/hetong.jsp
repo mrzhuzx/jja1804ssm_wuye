@@ -40,16 +40,16 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        <small></small>
+                         <small></small>
                     </h1>
                 </div>
             </div>
@@ -68,36 +68,36 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>公司名称</th>
-                                        <th>岗位名称</th>
-                                        <th>招聘要求</th>
-                                        <th>岗位职责</th>
-                                        <th>招聘人数</th>
-                                        <th>薪资待遇</th>
-                                        <th>截止时间</th>
-                                        <th>联系电话</th>
-                                        <th>地址</th>
+                                        <th>合同名字</th>
+                                        <th>合同类型</th>
+                                        <th>起始时间</th>
+                                        <th>终止时间</th>
+                                        <th>合同描述</th>
+                                        <th>合同编号</th>
+                                        <th>签约人</th>
+                                        <th>联系方式</th>
                                         <th>操作</th>
 
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                                    <c:forEach  items="${recruitList}" var="re">
-                                        <tr class="gradeA">
-                                            <td>${re.recruitid}</td>
-                                            <td>${re.companyname}</td>
-                                            <td>${re.postname}</td>
-                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.recruitdes}</td>
-                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.duty}</td>
-                                            <td>${re.recruitnum}</td>
-                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.salary}</td>
-                                            <td class="center"><fmt:formatDate value='${re.recruitend}' pattern='yyyy-MM-dd'/></td>
-                                            <td>${re.recruitnumber}</td>
-                                            <td>${re.address}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/recruit/reone.do?recruitid=${re.recruitid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/recruit/redelete.do?recruitid=${re.recruitid}'"><i class="fa fa-pencil"></i> 删除</button></td>
-                                        </tr>
+                            <c:forEach  items="${contractList}" var="sm">
+                                    <tr class="gradeA">
+                                        <td>${sm.contractid}</td>
+                                        <td>${sm.contractname}</td>
+                                        <td>${sm.contracttype}</td>
+
+                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy-MM-dd'/></td>
+
+                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy-MM-dd'/></td>
+                                        <td>${sm.contractdes}</td>
+                                        <td>${sm.contractnum}</td>
+                                        <td>${sm.signingpeople}</td>
+                                        <td>${sm.signatorytelephone}</td>
+                                        <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                            <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                    </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>

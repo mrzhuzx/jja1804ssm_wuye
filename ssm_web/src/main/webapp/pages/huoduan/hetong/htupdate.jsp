@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -30,67 +29,70 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-header">
-                            <small></small>
-                        </h1>
-                    </div>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper" >
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                      <small></small>
+                    </h1>
                 </div>
-                <!-- /. ROW  -->
-                <div class="row" style="width: 600px;">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                添加合同类目
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <form action="${pageContext.request.contextPath}/cont/ctsave.do?" method="post">
-                                            <%--<input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid}" name="electricid"  >--%>
-
-                                            <div>
-                                                <label>类型名字</label>
-                                                <input class="form-control" placeholder="类型名字" value="劳动合同" name="contracttype" >
-                                            </div>
-
-                                            <br>
-                                            <div>
-
-                                                <button type="submit" class="btn btn-success"><i class=" "></i> 确认添加 </button>
-
-                                                <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
-
-                                            </div>
-
-
-
-                                        </form>
-                                    </div>
-
-                                    <!-- /.col-lg-6 (nested) -->
-                                </div>
-                                <!-- /.row (nested) -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-
             </div>
-            <!-- /. PAGE INNER  -->
+            <!-- /. ROW  -->
+            <div class="row" style="width: 600px;">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            添加合同类目
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form action="${pageContext.request.contextPath}/cont/ctupdate.do?" method="post">
+                                        <div>
+                                            <label>类型ID</label>
+                                            <input class="form-control" placeholder="" value="${type.contypeid}" name="contypeid" readonly="readonly" >
+                                        </div>
+
+                                        <div>
+                                            <label>类型名字</label>
+                                            <input class="form-control" placeholder="" value="${type.contracttype}" name="contracttype" >
+                                        </div>
+
+                                        <br>
+                                        <div>
+
+                                            <button type="submit" class="btn btn-success"><i class=" "></i> 确认修改 </button>
+
+                                            <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
+
+                                        </div>
+
+
+
+                                    </form>
+                                </div>
+
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
         </div>
-        <!-- /. PAGE WRAPPER  -->
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
 </div>
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
