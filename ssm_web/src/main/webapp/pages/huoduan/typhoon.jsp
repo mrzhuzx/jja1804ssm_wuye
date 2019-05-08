@@ -49,18 +49,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        <small></small>
+                        物资管理 <small></small>
                     </h1>
                 </div>
             </div>
             <!-- /. ROW  -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
+            <div class="row" style="width: 600px; display: inline">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
+                            物资详情
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -90,8 +88,8 @@
                                             <td><fmt:formatDate value='${f.outstoragetime}' pattern='yyyy-MM-dd'/></td>
 
                                             <td>${f.matterstate}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/fantai/catch.do?matterid=${f.matterid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/fantai/delete.do?matterid=${f.matterid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                         </tr>
 
 
