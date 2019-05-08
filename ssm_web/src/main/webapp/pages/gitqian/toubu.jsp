@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/about.html">
+                            <a class="nav_btn" href="${pageContext.request.contextPath}/pages/gitqian/about.html">
                                 房屋租售
                                 <b></b>
                                 <div></div>
@@ -45,17 +45,17 @@
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
+                                        <a href="${pageContext.request.contextPath}/ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
                                     </li>
                                     <li>
-                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
+                                        <a href="${pageContext.request.contextPath}/ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
                                     </li>
 
                                 </ul>
                             </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/products.html">
+                            <a class="nav_btn" href="${pageContext.request.contextPath}/pages/gitqian/products.html">
                                 项目展示
                                 <b></b>
                                 <div></div>
@@ -80,7 +80,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                         <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                            <a href="${pageContext.request.contextPath}/nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -94,16 +94,16 @@
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="ower/query.do?olid=${ower.olid}">个人信息</a>
+                                        <a href="${pageContext.request.contextPath}/ower/query.do?olid=${ower.olid}">个人信息</a>
                                     </li>
                                     <li>
-                                        <a href="ower/of.do?olid=${ower.olid}">家庭成员</a>
+                                        <a href="${pageContext.request.contextPath}/ower/of.do?olid=${ower.olid}">家庭成员</a>
                                     </li>
                                     <li>
-                                        <a href="ower/of.do?olid=${ower.olid}">增加家人</a>
+                                        <a href="${pageContext.request.contextPath}/ower/of.do?olid=${ower.olid}">增加家人</a>
                                     </li>
                                     <li>
-                                        <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
+                                        <a href="${pageContext.request.contextPath}/ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
                                         <a href="#">车位信息</a>
@@ -123,7 +123,7 @@
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="recruit/refenye.do?">招聘信息</a>
+                                        <a href="${pageContext.request.contextPath}/recruit/refenye.do?">招聘信息</a>
                                     </li>
                                     <li>
                                         <a href="#">在线留言</a>
