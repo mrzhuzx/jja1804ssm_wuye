@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019\4\26 0026
@@ -46,13 +46,13 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            更新新闻详情
+                           修改新闻详情
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                                   <%--${pageContext.request.contextPath}/nt/htnewstypeupda.do?ntid=${newsType.ntid}--%>
-                                    <form action="${pageContext.request.contextPath}/news/htnUpate.do?ncid=${upnews.ncid}" method="post">
+                                    <form action="${pageContext.request.contextPath}/news/htnUpate.do" method="post">
 
                                         <div >
                                             <label>新闻ID</label>
@@ -113,7 +113,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            添加新闻
+                            添加新闻信息
                         </div>
                         <div class="panel-body" >
                             <div class="row">
@@ -136,7 +136,7 @@
                                         <div>
                                             <%--<fmt:formatDate value="${upnews.nctime}" pattern="yyyy-MM-dd"/>--%>
                                             <label>年月份</label>
-                                            <input class="form-control" placeholder="年月份" id="dateid1" value="${upnews.nctime}" name="nctime">
+                                            <input class="form-control"  id="dateid1" value="${date}" name="nctime">
                                         </div>
                                             <div class="form-group" >
                                                 <label>类型ID</label>
