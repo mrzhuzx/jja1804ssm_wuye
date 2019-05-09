@@ -125,8 +125,12 @@
                                         <a href="${pageContext.request.contextPath}/recruit/refenye.do?">招聘信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">在线留言</a>
+                                        <a href="${pageContext.request.contextPath}/complain/fenye.do?pageNum=1">客户投诉</a>
                                     </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/repair/fenye.do?pageNum=1">设备报修</a>
+                                    </li>
+
                                     <li>
                                         <a href="#">联系我们</a>
                                     </li>

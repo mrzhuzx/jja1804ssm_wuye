@@ -2,7 +2,6 @@ package com.ssm.wuye.service;
 
 import com.ssm.wuye.domain.TbCharge;
 import com.ssm.wuye.domain.TbChargeExample;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -34,4 +33,7 @@ public interface TbChargeService {
      * @return
      */
     int updateByExampleSelective( TbCharge tbCharge, TbChargeExample example);
+
+    int insertSelective(TbCharge tbCharge);
+    int updateByPrimaryKeySelective(TbCharge tbCharge);
 }

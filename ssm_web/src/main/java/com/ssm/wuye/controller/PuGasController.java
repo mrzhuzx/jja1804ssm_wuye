@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @Controller
@@ -54,7 +56,11 @@ public class PuGasController {
 
     @RequestMapping("/updata.do")
     public String updata(PuGas electric){
-
+        Calendar calendar   =   new GregorianCalendar();
+        calendar.setTime(electric.getMonth());
+        calendar.add(calendar.DATE,1);
+//        System.out.println(calendar.getTime());
+        electric.setMonth(calendar.getTime());
         System.out.println(electric.toString());
 //        System.out.println("aaaaa---------");
         gasService.updata(electric);
@@ -75,7 +81,11 @@ public class PuGasController {
     }
     @RequestMapping("/add.do")
     public String add(PuGas electric){
-
+        Calendar calendar   =   new GregorianCalendar();
+        calendar.setTime(electric.getMonth());
+        calendar.add(calendar.DATE,1);
+//        System.out.println(calendar.getTime());
+        electric.setMonth(calendar.getTime());
         System.out.println(electric.toString());
         gasService.add(electric);
 

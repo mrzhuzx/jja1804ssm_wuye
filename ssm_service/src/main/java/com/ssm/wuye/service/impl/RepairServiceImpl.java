@@ -23,7 +23,8 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public long countByExample(RepairInfo example) {
-        return 0;
+        RepairInfoExample repairInfoExample = new RepairInfoExample();
+        return repairInfoMapper.countByExample(repairInfoExample);
     }
 
     @Override
@@ -58,7 +59,8 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public List<RepairInfo> selectByExampleWithRowbounds(RepairInfo example, RowBounds rowBounds) {
-        return null;
+        RepairInfoExample repairInfoExample = new RepairInfoExample();
+        return repairInfoMapper.selectByExampleWithRowbounds(repairInfoExample,rowBounds);
     }
 
     /**
