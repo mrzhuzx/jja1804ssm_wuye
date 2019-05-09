@@ -36,11 +36,16 @@ public class SysOwerController {
     @RequestMapping("login")//业主登录
     public ModelAndView login(HttpSession session, @RequestParam String account,@RequestParam String passwd){
         ModelAndView m=new ModelAndView("forward:/nt/search.do");//
-        SysOwer sysOwer = sysOwerService.selectByNamePassword(account, passwd);
+       try{
+           SysOwer sysOwer = sysOwerService.selectByNamePassword(account, passwd);
 
-        if (!sysOwer.equals(null)){
-            session.setAttribute("ower", sysOwer);
-        }
+           if (!sysOwer.equals(null)){
+               session.setAttribute("ower", sysOwer);
+           }
+       }catch (Exception e){
+           m.setViewName("/pages/gitqian/login");
+       }
+
 //        session.setAttribute("ower", sysOwer);
         return m;
     }

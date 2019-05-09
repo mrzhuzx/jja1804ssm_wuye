@@ -9,6 +9,7 @@
         <title>房屋出租</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/index.css" type="text/css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/zym.css" type="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/gitqian/css/bootstrap.min.css" type="text/css">
 
         <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/jquery.js"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/pages/gitqian/js/global.js"></script>
@@ -69,66 +70,79 @@
 
                 <li>
 
-                    <form action="${pageContext.request.contextPath}/searchcar.do" method="post">
-                        <label>查询停车费：</label>
-                        <input type="text" value="请输入车牌号" name="Parkingcards"
-                               style="width:250px; margin:10px;margin-left:20px; line-height:17px;display:inline-block"/>
-                        <input type="submit" value="搜索"/>
-                    </form>
 
+
+                    <form class="form-inline" action="${pageContext.request.contextPath}/searchcar.do" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputName2">查询停车费：</label>
+                            <input type="text" class="form-control" name="Parkingcards" id="exampleInputName2" placeholder="请输入车牌号">
+                        </div>
+                        <button type="submit" class="btn btn-default">查询</button>
+                    </form>
                 </li>
             </ul>
             <br><br>
 
+            <form  class="form-inline" action="${pageContext.request.contextPath}/jine.do?parkingid=${parkingCarinfos.parkingid}" method="post">
 
-
-            <form action="${pageContext.request.contextPath}/jine.do?parkingid=${parkingCarinfos.parkingid}" method="post">
-                <div>
-                    <label>进入时间:</label>
-                    <input placeholder=""
-                           name="parkingintime"
-                           style=" width:250px; margin:10px;margin-left:20px; line-height:17px;display:inline-block"
-                           readonly
-                           value="${parkingCarinfos.parkingintime}">
-                </div>
-                <div>
-                    <label>出去时间:</label>
-                    <input placeholder=""
-                           style=" width:250px; margin:10px;margin-left:20px; line-height:17px;display:inline-block"
-                           name="parkingouttime"
-                           readonly
-                           value="${parkingCarinfos.parkingouttime}"><br/>
+                <div class="form-group" style="clear: left">
+                    <label for="exampleInputEmail2">进入时间：</label>
+                    <input  class="form-control" id="exampleInputEmail2" name="parkingintime" value="${parkingCarinfos.parkingintime} " readonly>
                 </div>
 
-                <div>
-                    <label>支付方式</label>
-                    <select name="paymentmethod" class="form-control" style=" width:250px; margin:10px;margin-left:20px;  line-height:17px;display:inline-block">
+<br><br>
+                <div class="form-group" >
+                    <label for="exampleInputEmail2">驶离时间：</label>
+                    <input  class="form-control" id="exampleInputEmail3"  name="parkingouttime" readonly value="${parkingCarinfos.parkingouttime}" >
+                </div>
+
+                <br><br>
+
+                <div  class="form-group"  >
+                    <label for="exampleInputEmail2">支付方式：</label>
+                    <select name="paymentmethod" class="form-control"  style=" width:195px;">
                         <option value="1">支付宝</option>
                         <option value="2">微信</option>
                         <option value="3">现金</option>
                     </select>
-                    <input type="submit" value="缴费"/>
+                    <button type="submit" class="btn btn-default">缴费</button>
 
-                    <%--<input--%>
-                            <%--style=" width:250px; margin:10px;margin-left:20px;  line-height:17px;display:inline-block"--%>
-                            <%--name="nctitle" readonly--%>
-                            <%--value="<c:if test="${parkingCarinfos.paymentmethod eq 1}">支付宝</c:if><c:if test="${parkingCarinfos.paymentmethod eq 2}">微信</c:if><c:if test="${parkingCarinfos.paymentmethod eq 3}">现金</c:if>--%>
-                       <%--"><br/>--%>
                 </div>
             </form>
-            <div>
-                <label> 总 金 额:</label>
-                <input
-                        style=" width:250px; margin:10px;margin-left:20px; line-height:17px;display:inline-block"
-                        readonly value= "${money}" name="nctime">
-            </div>
-            <div>
-                <label> 总时数:</label>
-                <input
-                        style=" width:250px; margin:10px;margin-left:20px; line-height:17px;display:inline-block"
-                        readonly value= "${mm}">
-            </div>
             <br>
+            <div>
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="exampleInputName2"> 总  金  额  ：</label>
+                        <%--<input type="text" class="form-control"  placeholder="">--%>
+                        <div class="input-group">
+                            <div class="input-group-addon">￥</div>
+                            <input type="text" class="form-control" readonly value= "${money}" name="nctime" id="exampleInputAmount" placeholder="">
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+<br>
+
+
+
+
+
+
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="control-label" for="inputSuccess4">总  时  长  ：</label>
+                    <input type="text" class="form-control" id="inputSuccess4" readonly value= "${mm}${min} 分钟" >
+
+                </div>
+            </form>
+            <br>
+
+
 
             <h3><c:if test="${money ne null}">
                 <span style="color: red">缴费完毕，出入平安！！</span>

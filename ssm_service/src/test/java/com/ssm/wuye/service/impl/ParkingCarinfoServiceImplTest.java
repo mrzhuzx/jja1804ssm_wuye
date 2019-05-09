@@ -132,10 +132,11 @@ public class ParkingCarinfoServiceImplTest {
         long diff = parkingouttime.getTime() -parkingintime.getTime();//这样得到的差值是微秒级别
         long days = diff / (1000 * 60 * 60 * 24);
         long hours = (diff-days*(1000 * 60 * 60 * 24))/(1000* 60 * 60);
-        System.out.println(""+days+"天"+hours+"小时");
+        long min=((diff/(60*1000))-days*24*60-hours*60);
+        System.out.println(""+days+"天"+hours+"小时"+min+"分钟");
         System.out.println(""+((days*24)+hours)+"小时");
         long time=((days*24)+hours);
-        long Parkingcost=6*time;
+        long Parkingcost=3*time;
         System.out.println(Parkingcost);
 
 
