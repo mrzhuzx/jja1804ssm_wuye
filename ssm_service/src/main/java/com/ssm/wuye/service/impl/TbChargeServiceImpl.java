@@ -34,4 +34,10 @@ public class TbChargeServiceImpl implements TbChargeService {
     public int updateByExampleSelective(TbCharge tbCharge, TbChargeExample example) {
         return tbChargeMapper.updateByExampleSelective(tbCharge,example);
     }
+    public int insertSelective(TbCharge tbCharge) {
+        return tbChargeMapper.insertSelective(tbCharge);
+    }
+    public int updateByPrimaryKeySelective(TbCharge tbCharge) {
+        return tbChargeMapper.updateByPrimaryKeySelective(tbCharge);
+    }
 }

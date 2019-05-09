@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -30,6 +31,29 @@ public class SysAdminInfoController {
     HouqinService houqinService;
     @Resource
     SysRoleService sysRoleService;
+
+    /**
+     * 登录
+     */
+    @RequestMapping("login")
+    public ModelAndView login(HttpSession session  ,@RequestParam String usermail ,@RequestParam String userpass){
+        ModelAndView m=new ModelAndView("pages/huoduan/index");
+        SysAdminInfoExample example = new SysAdminInfoExample();
+        example.createCriteria().andUsermailEqualTo(usermail).andUserpassEqualTo(userpass);
+        List<SysAdminInfo> infos = sysAdminInfoService.selectByExample(example);
+        System.out.println(infos.toString()+"-----------------");
+        System.out.println(infos.isEmpty());
+        System.out.println(infos.size());
+        if (infos.isEmpty()){
+            m.setViewName("pages/login/denglu");
+        }
+        if (!infos.isEmpty()){
+            m.addObject("infos",infos);
+
+        }
+       return m;
+    }
+
 
 
     /**

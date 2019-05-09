@@ -228,4 +228,10 @@ public class SysAdminInfo extends BaseEntity {
 
     public SysAdminInfo() {
     }
+
+    public SysAdminInfo(String userpass, String usermail, Integer roleid) {
+        this.userpass = userpass;
+        this.usermail = usermail;
+        this.roleid = roleid;
+    }
 }

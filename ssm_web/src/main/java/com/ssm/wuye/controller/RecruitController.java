@@ -1,9 +1,8 @@
 package com.ssm.wuye.controller;
 
-import com.ssm.wuye.domain.NewsType;
-import com.ssm.wuye.domain.Recruit;
-import com.ssm.wuye.domain.RecruitExample;
+import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsTypeService;
+import com.ssm.wuye.service.ProgramTypeService;
 import com.ssm.wuye.service.RecruitService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
@@ -31,6 +30,8 @@ public class RecruitController {
     RecruitService recruitService;
     @Resource
     NewsTypeService newstypeService;
+    @Resource
+    ProgramTypeService programTypeService;
     /**
      * 查询全部
      */
@@ -130,6 +131,9 @@ public class RecruitController {
 //        Integer Num = Size * (pageNum - 1);//从哪条数据分页
         List<Recruit> recruitList = recruitService.selectByExample(null);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
         m.addObject("newstypeList", newstypeList);
         for ( Recruit recruit : recruitList) {
             System.out.println(recruit.toString());
@@ -149,6 +153,9 @@ public class RecruitController {
         ModelAndView m=new ModelAndView("pages/gitqian/zhaopinxq");
         Recruit recruit = recruitService.selectByPrimaryKey(recruitid);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
         m.addObject("newstypeList", newstypeList);
         m.addObject("recruit",recruit);
         System.out.println("获取到了一条数据-----------");
