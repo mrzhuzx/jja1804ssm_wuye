@@ -52,23 +52,26 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                                   <%--${pageContext.request.contextPath}/nt/htnewstypeupda.do?ntid=${newsType.ntid}--%>
-                                    <form action="${pageContext.request.contextPath}/ower/addower.do?" method="post">
-
+                                    <form action="${pageContext.request.contextPath}/tbch/tbChargeAdd.do?" method="post">
+                                        <div >
+                                            <label>年份</label>
+                                            <input class="form-control"  name="year" >
+                                        </div>
                                         <div >
                                             <label>水费标准</label>
-                                            <input class="form-control"  name="olname" value="游队长">
+                                            <input class="form-control"  name="shui" value="13.12">
                                         </div>
                                         <div>
                                             <label>电费标准</label>
-                                            <input class="form-control"  value="ydz">
+                                            <input class="form-control"  name="dian" value="13.12">
                                         </div>
                                        <div >
                                            <label>燃气费标准</label>
-                                           <input class="form-control"  name="olpasswd" value="123123">
+                                           <input class="form-control"  name="qi" value="13.12">
                                         </div>
                                         <div >
                                             <label>物业费</label>
-                                            <input class="form-control"  name="olpasswd" value="123123">
+                                            <input class="form-control"  name="wuye" value="13.12">
                                         </div>
                                         <br>
                                             <div>

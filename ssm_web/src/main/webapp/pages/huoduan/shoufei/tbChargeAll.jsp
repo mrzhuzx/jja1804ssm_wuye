@@ -45,6 +45,8 @@
     <%--导航栏--%>
     <jsp:include page="../daohanglan.jsp"></jsp:include>
     <!-- /. NAV SIDE  -->
+
+
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
@@ -55,7 +57,19 @@
                 </div>
             </div>
             <!-- /. ROW  -->
-            <a href="${pageContext.request.contextPath}/house/weg.do?op=water" class="btn btn-success">&nbsp抄&nbsp水&nbsp表&nbsp</a>
+            <a href="${pageContext.request.contextPath}/pages/huoduan/shoufei/tbChargeAdd.jsp" class="btn btn-success">&nbsp;添&nbsp;加&nbsp;新&nbsp;收&nbsp;费&nbsp;标&nbsp;准&nbsp;</a>
+
+            <form   style="display: inline-block;" action="${pageContext.request.contextPath}/tbch/searchAll.do">
+                <label style="margin-left: 100px;">年份：</label>
+                <select class="form-control" style="display: inline-block; width: 200px" placeholder="" name="year">
+                    <option value="${createdate}">${createdate}</option>
+                <c:forEach items="${tbCharges}" var="tchs" >
+                <option value="${tchs.chargeyear}">${tchs.chargeyear}</option>
+                </c:forEach>
+                </select>
+
+            <input type="submit" style="margin-left: 20px" value="查询" class="btn btn-success" >
+            </form>
             <div style="padding-top: 20px" class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
@@ -82,8 +96,8 @@
                                         <td>${tc.chargename}</td>
                                         <td>${tc.chargedescription}</td>
 
-                                        <td><button class="btn btn-primary"onclick=" location.href='${pageContext.request.contextPath}/water/searchOne.do?waterid=${wao.waterid}'"><i class="fa fa-edit " ></i> 修改</button>
-                                            <button style="margin-right: 10px" class="btn btn-danger"  onclick="location.href='${pageContext.request.contextPath}/water/deleteOne.do?waterid=${wao.waterid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                        <td><button class="btn btn-primary"onclick=" location.href='${pageContext.request.contextPath}/tbch/searchOne.do?id=${tc.chargeid}'"><i class="fa fa-edit " ></i> 修改</button>
+
                                     </tr>
                                     </c:forEach>
                                     </tbody>
