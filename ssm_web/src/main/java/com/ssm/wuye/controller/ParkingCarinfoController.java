@@ -50,16 +50,31 @@ public class ParkingCarinfoController {
         long days = diff / (1000 * 60 * 60 * 24);
         long hours = (diff-days*(1000 * 60 * 60 * 24))/(1000* 60 * 60);
         System.out.println(""+days+"天"+hours+"小时");
-        String mm=(""+((days*24)+hours)+"小时");
-        String money=((days*24)+hours)*3+"";
-        System.out.println(money);
+        String mm=(((days*24)+hours)+"小时");
+        long min=((diff/(60*1000))-days*24*60-hours*60);
+        System.out.println(min+"分钟");
+
+
+
         m.addObject("mm",mm);
+        m.addObject("min",min);
 
         Integer Paymentmethod = Integer.valueOf(paymentmethod);
 
         ParkingCarinfo  pc = new ParkingCarinfo();
+
+        if (min>30){
+            String money=((days*24)+hours)*3+3+"";
+            pc.setParkingcost(money);
+            m.addObject("money",money);
+        }else {
+            String money=((days*24)+hours)*3+"";
+            pc.setParkingcost(money);
+            m.addObject("money",money);
+        }
+
         pc.setParkingid(parkingid);
-        pc.setParkingcost(money);
+
         pc.setPaymentmethod(Paymentmethod);
         pc.setPaymentstatus(1);
         int i = parkingCarinfoMapper.updateByPrimaryKeySelective(pc);
@@ -68,7 +83,7 @@ public class ParkingCarinfoController {
         }else {
             System.out.println("添加失败");
         }
-        m.addObject("money",money);
+
 
         return m;
     }
