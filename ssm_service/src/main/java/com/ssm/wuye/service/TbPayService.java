@@ -7,4 +7,5 @@ package com.ssm.wuye.service;
  * version:1.3.22
  */
 public interface TbPayService {
+
 }
