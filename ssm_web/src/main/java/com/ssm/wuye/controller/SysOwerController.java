@@ -1,6 +1,5 @@
 package com.ssm.wuye.controller;
 
-
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -38,9 +36,12 @@ public class SysOwerController {
         ModelAndView m=new ModelAndView("forward:/nt/search.do");//
         SysOwer sysOwer = sysOwerService.selectByNamePassword(account, passwd);
 
-        if (!sysOwer.equals(null)){
+        if (sysOwer!=null){
             session.setAttribute("ower", sysOwer);
+        }else {
+
         }
+
 //        session.setAttribute("ower", sysOwer);
         return m;
     }

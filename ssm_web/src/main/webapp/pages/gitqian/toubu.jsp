@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="${pageContext.request.contextPath}/pages/gitqian/about.html">
+                            <a class="nav_btn" href="${pageContext.request.contextPath}/ohtc/qtcxhstate.do?pageNum=1">
                                 房屋租售
                                 <b></b>
                                 <div></div>
@@ -55,7 +55,7 @@
                             </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="${pageContext.request.contextPath}/pages/gitqian/products.html">
+                            <a class="nav_btn" href="">
                                 项目展示
                                 <b></b>
                                 <div></div>
@@ -125,7 +125,7 @@
                                         <a href="${pageContext.request.contextPath}/recruit/refenye.do?">招聘信息</a>
                                     </li>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/complain/fenye.do?pageNum=1">客户投诉</a>
+                                        <a href="${pageContext.request.contextPath}/complain/fenye.do?pageNum=1">客户反馈</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/repair/fenye.do?pageNum=1">设备报修</a>

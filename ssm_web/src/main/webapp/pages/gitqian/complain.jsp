@@ -33,8 +33,8 @@
 		<div class="shang_g"></div>
 		<div class="women">
 			<div class="btmc">
-				<h1>Z</h1>
-				<p>客户投诉<span>hao</span></p>
+				<h1>k</h1>
+				<p>客户反馈<span>e</span></p>
 			</div>
 			<ul class="skb">
 				<li style="background: #005bac; width: 25%;"></li>
@@ -44,7 +44,7 @@
 		</div>
 		<div class="zy_dh_lb">
 			<ul>
-				<li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="${pageContext.request.contextPath}/pages/gitqian/complainsave.jsp">客户进入投诉</a></li>
+				<li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="${pageContext.request.contextPath}/pages/gitqian/complainsave.jsp">反馈意见</a></li>
 			</ul>
 		</div>
 	</div>
