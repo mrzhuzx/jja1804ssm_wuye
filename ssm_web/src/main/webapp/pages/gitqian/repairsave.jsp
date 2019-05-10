@@ -51,8 +51,8 @@
 	<div class="touyin"></div>
 	<div class="zynr_db" style="height: 1000px;">
 		<div class="lujing">
-			<h2>设备维修</h2>
-			<p>您的位置：联系我们 > 设备维修详情页</p>
+			<h2>设备报修</h2>
+			<p>您的位置：联系我们 > 设备报修</p>
 		</div>
 		<ul class="skb" style="margin-bottom: 20px;">
 			<li style="background: #005bac; width: 12%;"></li>

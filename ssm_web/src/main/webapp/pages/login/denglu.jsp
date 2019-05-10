@@ -71,6 +71,9 @@
         }
     </style>
 <body>
+<script>
+    if (${error==1}){alert("您输入的密码或账号有误！请确认后重新输入")}
+</script>
 <div class="tyg-div">
     <ul>
         <li>让</li>
