@@ -38,6 +38,7 @@ public class RecruitController {
     @RequestMapping("research")
     public ModelAndView research() {
         ModelAndView m = new ModelAndView("pages/huoduan/zhaopin/recruit");
+
         List<Recruit> recruitList = recruitService.selectByExample(null);
         for ( Recruit recruit : recruitList) {
             System.out.println(recruit.toString());
@@ -71,8 +72,8 @@ public class RecruitController {
     @RequestMapping("reone")
     public ModelAndView searchone(@RequestParam Integer recruitid ){
         ModelAndView m=new ModelAndView("pages/huoduan/zhaopin/recruitupdate");
-        Recruit recruit = recruitService.selectByPrimaryKey(recruitid);
-        m.addObject("recruit",recruit);
+        Recruit re = recruitService.selectByPrimaryKey(recruitid);
+        m.addObject("re",re);
         System.out.println("获取到了一条数据-----------");
         return  m;
     }
@@ -82,9 +83,10 @@ public class RecruitController {
      * @return
      */
     @RequestMapping("reupdate")
-    public ModelAndView reupdate(@ModelAttribute Recruit re){
+    public ModelAndView reupdate(@ModelAttribute Recruit recruitid){
         ModelAndView m=new ModelAndView("redirect:/recruit/research.do");
-        int i=recruitService.updateByPrimaryKeySelective(re);
+        System.out.println(recruitid.toString()+"1111111111111111111110000000000000");
+        int i=recruitService.updateByPrimaryKeySelective(recruitid);
         if(i==0){
             System.out.println("修改失败");
         }else {
