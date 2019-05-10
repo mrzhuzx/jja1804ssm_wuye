@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.sound.midi.Soundbank;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -54,14 +52,11 @@ public class ChElectricController {
     }
 
     @RequestMapping("insertOne")
-    public ModelAndView insertOne(@RequestParam Integer houseid, @RequestParam double electric, @RequestParam Date month){
+    public ModelAndView insertOne(@ModelAttribute ChElectricMeter electric){
         ModelAndView view=new ModelAndView("redirect:/ele/searchAll.do");
-        ChElectricMeter chElectricMeter=new ChElectricMeter();
-        chElectricMeter.setHouseid(houseid);
-        chElectricMeter.setElectric(electric);
-        chElectricMeter.setMonth(month);
-        chElectricMeter.setEnumber("electric"+houseid);
-        int i = chElectricSercice.insertSelective(chElectricMeter);
+
+        electric.setEnumber("electric"+electric.getHouseid());
+        int i = chElectricSercice.insertSelective(electric);
         if (i>=0){
             System.out.println("添加成功！！");
         }else {

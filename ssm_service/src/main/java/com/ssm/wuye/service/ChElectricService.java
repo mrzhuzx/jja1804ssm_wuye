@@ -4,8 +4,6 @@ import com.ssm.wuye.domain.ChElectricMeter;
 import com.ssm.wuye.domain.ChElectricMeterExample;
 import com.ssm.wuye.vo.ElectricAndOwer;
 
-
-
 import java.util.List;
 
 /**
