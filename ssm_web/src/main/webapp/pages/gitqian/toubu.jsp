@@ -64,7 +64,7 @@
                                 <ul>
                                     <c:forEach var="protype" items="${programTypes}">
                                         <li>
-                                            <a href="pr/xmlxsearch.do?ptid=${protype.ptid}&pageNum=1">${protype.ptypename}</a>
+                                            <a href="${pageContext.request.contextPath}/pr/xmlxsearch.do?ptid=${protype.ptid}&pageNum=1">${protype.ptypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
