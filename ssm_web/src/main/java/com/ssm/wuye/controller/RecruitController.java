@@ -114,22 +114,22 @@ public class RecruitController {
      * 分页查询(前台)
      */
     @RequestMapping("refenye")
-    public ModelAndView qiansearch() {
+    public ModelAndView qiansearch(@RequestParam Integer pageNum) {
         ModelAndView m = new ModelAndView("pages/gitqian/zhaopin");
-//        RecruitExample recruitExample=new RecruitExample();
-//        Integer Size = 3;//条数
-//
-//        long l =recruitService.countByExample(recruitExample);
-//        Integer con =(int)l;
-//        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
-//        if (pageNum<=1){
-//            pageNum = 1;
-//        }
-//        if (pageNum>pageAll){
-//            pageNum=pageAll;
-//        }
-//        Integer Num = Size * (pageNum - 1);//从哪条数据分页
-        List<Recruit> recruitList = recruitService.selectByExample(null);
+       RecruitExample recruitExample=new RecruitExample();
+        Integer Size = 3;//条数
+
+        long l =recruitService.countByExample(recruitExample);
+        Integer con =(int)l;
+        Integer pageAll= con%Size==0?con/Size:con/Size+1 ;
+        if (pageNum<=1){
+            pageNum = 1;
+        }
+        if (pageNum>pageAll){
+            pageNum=pageAll;
+        }
+        Integer Num = Size * (pageNum - 1);//从哪条数据分页
+        List<Recruit> recruitList = recruitService.selectByExampleWithRowbounds(null,new RowBounds(Num,Size));
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         ProgramTypeExample programTypeExample=new ProgramTypeExample();
         List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
@@ -139,8 +139,8 @@ public class RecruitController {
             System.out.println(recruit.toString());
         }
         m.addObject("recruitList",recruitList);
-//        m.addObject("pageAll",pageAll);
-//        m.addObject("pageNum",pageNum);
+        m.addObject("pageAll",pageAll);
+        m.addObject("pageNum",pageNum);
         return m;
     }
 

@@ -122,7 +122,7 @@
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/recruit/refenye.do?">招聘信息</a>
+                                        <a href="${pageContext.request.contextPath}/recruit/refenye.do?pageNum=1">招聘信息</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/complain/fenye.do?pageNum=1">客户反馈</a>
