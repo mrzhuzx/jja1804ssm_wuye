@@ -1,8 +1,10 @@
 package com.ssm.wuye.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ssm.wuye.appcomm.BaseEntity;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -14,7 +16,6 @@ import java.util.Date;
  */
 @Table(name = "tb_matter")
 @Alias("tbMatter")
-
 public class TbMatter extends BaseEntity {
     /**
      * 物资ID(P)
@@ -50,12 +51,18 @@ public class TbMatter extends BaseEntity {
     /**
      * 入库时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")
+
     @Column(name = "inStorageTime")
     private Date instoragetime;
 
     /**
      * 出库时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")
+
     @Column(name = "outStorageTime")
     private Date outstoragetime;
 

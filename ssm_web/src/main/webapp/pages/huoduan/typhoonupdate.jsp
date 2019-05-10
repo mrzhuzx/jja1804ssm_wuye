@@ -52,7 +52,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="${pageContext.request.contextPath}/fantai/modify.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/fantai/modify.do?matterid=${tbMatter.matterid}" method="post">
 
 
                                         <div  >
