@@ -83,11 +83,6 @@
                                             <input class="form-control"  placeholder="房屋描述" name="hremarks"  value="沙漠海景房">
                                         </div>
 
-                                        <div>
-                                            <label>房屋出租</label>
-                                            <input class="form-control" placeholder="房屋出租" name="loan" value="1">
-                                        </div>
-
                                         <div class="form-group" >
                                             <label>房屋状态</label>
                                             <select class="form-control" name="hstate" >
