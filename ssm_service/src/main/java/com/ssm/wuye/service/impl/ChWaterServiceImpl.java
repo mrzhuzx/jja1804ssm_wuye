@@ -1,14 +1,13 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.ChWaterMeterMapper;
-import com.ssm.wuye.dao.MyHouseMapper;
-import com.ssm.wuye.dao.SysOwerMapper;
+import com.ssm.wuye.dao.*;
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.ChWaterService;
 import com.ssm.wuye.vo.WaterAndOwer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +25,10 @@ public class ChWaterServiceImpl implements ChWaterService {
     MyHouseMapper myHouseMapper;
     @Resource
     SysOwerMapper sysOwerMapper;
+    @Resource
+    TbPayMapper payMapper;
+    @Resource
+    TbChargeMapper tbChargeMapper;
 
 
     public List<ChWaterMeter> selectByExample(ChWaterMeterExample example) {
@@ -74,6 +77,24 @@ public class ChWaterServiceImpl implements ChWaterService {
     }
 
     public int insertSelective(ChWaterMeter record) {
+        TbPay tbPay=new TbPay();
+        TbChargeExample tbChargeExample=new TbChargeExample();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        String year=sdf.format(record.getMonth());
+        tbChargeExample.createCriteria().andChargenameEqualTo("水费").andChargeyearEqualTo(year);
+        List<TbCharge> tbCharges = tbChargeMapper.selectByExample(tbChargeExample);
+        TbCharge tbCharge=new TbCharge();
+        for (TbCharge charge : tbCharges) {
+            tbCharge=charge;
+        }
+        tbPay.setChargeid(tbCharge.getChargeid());
+        tbPay.setChargestandard(tbCharge.getChargestandard()*record.getWatervolume());
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM");
+        String month=sdf1.format(record.getMonth());
+        tbPay.setPaymonth(month);
+        tbPay.setHouseid(record.getHouseid());
+        tbPay.setPaystate(0);
+        payMapper.insertSelective(tbPay);
         return chWaterMeterMapper.insertSelective(record);
     }
 

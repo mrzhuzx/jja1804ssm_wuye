@@ -108,7 +108,7 @@
                                         <a href="${pageContext.request.contextPath}/parking/pk_list.do?olid=${ower.olid}">车位信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">缴费信息</a>
+                                        <a href="${pageContext.request.contextPath}/tbpa/searchFei.do?olid=${ower.olid}">缴费信息</a>
                                     </li>
 
                                 </ul>

@@ -1,8 +1,13 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.*;
-import com.ssm.wuye.domain.*;
+import com.ssm.wuye.dao.PayChargeMapper;
+import com.ssm.wuye.dao.TbPayMapper;
+import com.ssm.wuye.domain.PayCharge;
+import com.ssm.wuye.domain.PayChargeExample;
+import com.ssm.wuye.domain.TbPay;
+import com.ssm.wuye.service.TbPayService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -13,40 +18,28 @@ import java.util.List;
  * version:1.3.22
  */
 @Service
-public class TbPayServiceImpl {
-    @Resource
-    HouseGasVoMapper houseGasVoMapper;
-    @Resource
-    HouseElectricVoMapper houseElectricVoMapper;
-    @Resource
-    HouseWaterVoMapper houseWaterVoMapper;
-    @Resource
-    TbChargeMapper tbChargeMapper;
-    @Resource
-    TbPayMapper tbPayMapper;
+public class TbPayServiceImpl implements TbPayService {
 
-    public List<HouseWaterVo> searchWaterByHid(Integer hid){
-        HouseWaterVoExample example=new HouseWaterVoExample();
+    @Resource
+    TbPayMapper payMapper;
+    @Resource
+    PayChargeMapper payChargeMapper;
 
-        example.createCriteria().andHidEqualTo(hid);
-        List<HouseWaterVo> houseWaterVos = houseWaterVoMapper.selectByExample(example);
+    public List<PayCharge> selectByExample(Integer houseid,String chargename,Integer paystate){
+        PayChargeExample payChargeExample=new PayChargeExample();
 
-        return houseWaterVos;
+
+        payChargeExample.createCriteria().andHouseidEqualTo(houseid).andChargenameEqualTo(chargename).andPaystateEqualTo(paystate);
+        List<PayCharge> payCharges = payChargeMapper.selectByExample(payChargeExample);
+        return payCharges;
     }
 
-    public List<HouseGasVo> searchGasByHid(Integer hid){
-        HouseGasVoExample example=new HouseGasVoExample();
-        example.createCriteria().andHidEqualTo(hid);
-        List<HouseGasVo> houseGasVos = houseGasVoMapper.selectByExample(example);
-        return houseGasVos;
+    public int updateByPrimaryKeySelective(TbPay tbPay){
+        return payMapper.updateByPrimaryKeySelective(tbPay);
+
     }
 
-    public List<HouseElectricVo> searchElectricByHid(Integer hid){
-        HouseElectricVoExample example=new HouseElectricVoExample();
-        example.createCriteria().andHidEqualTo(hid);
-        List<HouseElectricVo> houseElectricVos = houseElectricVoMapper.selectByExample(example);
-        return houseElectricVos;
-    }
+
 
 
 }
