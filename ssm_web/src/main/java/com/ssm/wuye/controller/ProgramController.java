@@ -128,8 +128,8 @@ public class ProgramController {
      * @param pg
      * @return
      */
-    @RequestMapping("xiangmusave")
-    public ModelAndView save(@ModelAttribute Program pg) {
+    @RequestMapping("xiangmusave") // " " 用于添加JSP页面的链接
+      public ModelAndView save(@ModelAttribute Program pg) {
         ModelAndView m = new ModelAndView("redirect:/pr/xiangmusearch.do");//添加完跳到查询页面
         int i = programService.insertSelective(pg);
         System.out.println(i);
@@ -145,7 +145,7 @@ public class ProgramController {
      * 添加方法的迭代项目类型（获取一条数据）
      * @return
      */
-    @RequestMapping("typesearch")
+    @RequestMapping("typesearch") // " " 里面导航栏链接jsp页面
     public ModelAndView search(){
 
         ModelAndView m=new ModelAndView("pages/huoduan/programtianjia");//获取一条数据跳到添加的JSP页面

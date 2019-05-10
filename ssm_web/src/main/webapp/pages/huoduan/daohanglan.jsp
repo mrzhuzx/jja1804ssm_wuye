@@ -144,39 +144,14 @@
                 <a href="#"><i class="fa fa-desktop"></i> 项目管理 <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li id="signtt">
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pr/xiangmusearch.do">项目查询</a>
                     </li>
                     <li id="signyy">
-                        <a href="#">Second Level Link</a>
+                        <a href="${pageContext.request.contextPath}/pr/typesearch.do">新增项目</a>
                     </li>
-                    <li id="signuu">
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li id="signii">
-                        <a href="#">Second Level Link</a>
-                    </li>
-
                 </ul>
             </li>
 
-            <li>
-                <a href="#"><i class="fa fa-desktop"></i> 后勤管理 <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li id="signoo">
-                        <a href="${pageContext.request.contextPath}/ai/houqinsearch.do">后勤人员</a>
-                    </li>
-                    <li id="signpp">
-                        <a href="${pageContext.request.contextPath}/pages/huoduan/adniminfotianjia.jsp">人员添加</a>
-                    </li>
-                    <li id="signaa">
-                        <a href="#">Second Level Link</a>
-                    </li>
-                    <li id="signss">
-                        <a href="#">Second Level Link</a>
-                    </li>
-
-                </ul>
-            </li>
 
             <li>
                 <a href="#"><i class="fa fa-desktop"></i> 设备管理 <span class="fa arrow"></span></a>
