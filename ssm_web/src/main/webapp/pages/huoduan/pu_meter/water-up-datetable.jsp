@@ -50,7 +50,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/puwater/updata.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/puwater/updata.do" method="post">
                                         <input  type="hidden" class="form-control" placeholder="水表编号" value="${electrics.waterid}" name="waterid"  >
 
                                         <div  >
