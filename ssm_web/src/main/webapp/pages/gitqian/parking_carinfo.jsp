@@ -47,14 +47,14 @@
             <ul>
 
                 <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a
-                        id="wenzidangq" href="ohtc/qtcxloan.do?pageNum=1">外来车辆</a></li>
+                        id="wenzidangq" href="pages/gitqian/parking_carinfo.jsp">外来车辆</a></li>
             </ul>
         </div>
     </div>
     <div class="touyin"></div>
     <div class="zynr_db" style="height: 1000px;">
         <div class="lujing">
-            <h2>房屋信息</h2>
+            <h2>外来车辆</h2>
             <p>您的位置：首页 > 外来人员 > 外来车辆</p>
         </div>
         <ul class="skb" style="margin-bottom: 20px;">
@@ -86,20 +86,20 @@
             <form  class="form-inline" action="${pageContext.request.contextPath}/jine.do?parkingid=${parkingCarinfos.parkingid}" method="post">
 
                 <div class="form-group" style="clear: left">
-                    <label for="exampleInputEmail2">进入时间：</label>
+                    <label for="exampleInputEmail2">进 入 时 间 ：</label>
                     <input  class="form-control" id="exampleInputEmail2" name="parkingintime" value="${parkingCarinfos.parkingintime} " readonly>
                 </div>
 
 <br><br>
                 <div class="form-group" >
-                    <label for="exampleInputEmail2">驶离时间：</label>
+                    <label for="exampleInputEmail2">驶 离 时 间 ：</label>
                     <input  class="form-control" id="exampleInputEmail3"  name="parkingouttime" readonly value="${parkingCarinfos.parkingouttime}" >
                 </div>
 
                 <br><br>
 
                 <div  class="form-group"  >
-                    <label for="exampleInputEmail2">支付方式：</label>
+                    <label for="exampleInputEmail2">支 付 方 式 ：</label>
                     <select name="paymentmethod" class="form-control"  style=" width:195px;">
                         <option value="1">支付宝</option>
                         <option value="2">微信</option>
@@ -114,7 +114,7 @@
 
                 <form class="form-inline">
                     <div class="form-group">
-                        <label for="exampleInputName2"> 总  金  额  ：</label>
+                        <label for="exampleInputName2">总 &nbsp; 金  &nbsp;额  &nbsp;：</label>
                         <%--<input type="text" class="form-control"  placeholder="">--%>
                         <div class="input-group">
                             <div class="input-group-addon">￥</div>
@@ -135,7 +135,7 @@
 
             <form class="form-inline">
                 <div class="form-group">
-                    <label class="control-label" for="inputSuccess4">总  时  长  ：</label>
+                    <label class="control-label" for="inputSuccess4">总 &nbsp; 时 &nbsp; 长&nbsp;：</label>
                     <input type="text" class="form-control" id="inputSuccess4" readonly value= "${mm}${min} 分钟" >
 
                 </div>
