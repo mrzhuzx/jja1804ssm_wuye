@@ -88,7 +88,7 @@
                                         <tr class="odd gradeX">
                                             <td>${sai.userid}</td>
                                             <td>${sai.username}</td>
-                                            <td>${sai.userpass}</td>
+                                            <td>******</td>
                                             <td>${sai.userphone}</td>
                                             <td>${sai.usermail}</td>
                                             <td>${sai.userqqface}</td>

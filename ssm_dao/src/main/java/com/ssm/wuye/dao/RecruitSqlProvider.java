@@ -169,6 +169,7 @@ public class RecruitSqlProvider {
     }
 
     public String updateByPrimaryKeySelective(Recruit record) {
+        System.out.println(record.toString()+"////////////////////////////////");
         SQL sql = new SQL();
         sql.UPDATE("recruit");
         
