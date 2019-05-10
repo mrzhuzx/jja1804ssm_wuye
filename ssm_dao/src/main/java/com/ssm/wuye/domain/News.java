@@ -8,13 +8,14 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import org.apache.ibatis.type.Alias;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * news
  */
 @Table(name = "news")
 @Alias("news")
-//@Data
+@Data
 public class News extends BaseEntity {
     /**
      * 
@@ -38,6 +39,7 @@ public class News extends BaseEntity {
     /**
      * 发布时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "nctime")
     private Date nctime;
 

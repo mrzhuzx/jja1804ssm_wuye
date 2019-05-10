@@ -1,14 +1,13 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.ChGasMeterMapper;
-import com.ssm.wuye.dao.MyHouseMapper;
-import com.ssm.wuye.dao.SysOwerMapper;
+import com.ssm.wuye.dao.*;
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.ChGasService;
 import com.ssm.wuye.vo.GasAndOwer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +25,10 @@ public class ChGasServiceImpl implements ChGasService {
     MyHouseMapper myHouseMapper;
     @Resource
     SysOwerMapper sysOwerMapper;
+    @Resource
+    TbPayMapper payMapper;
+    @Resource
+    TbChargeMapper tbChargeMapper;
 
     public List<ChGasMeter> selectByExample(ChGasMeterExample example) {
         return chGasMeterMapper.selectByExample(example);
@@ -69,6 +72,24 @@ public class ChGasServiceImpl implements ChGasService {
     }
 
     public int insertSelective(ChGasMeter record) {
+        TbPay tbPay=new TbPay();
+        TbChargeExample tbChargeExample=new TbChargeExample();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        String year=sdf.format(record.getMonth());
+        tbChargeExample.createCriteria().andChargenameEqualTo("燃气费").andChargeyearEqualTo(year);
+        List<TbCharge> tbCharges = tbChargeMapper.selectByExample(tbChargeExample);
+        TbCharge tbCharge=new TbCharge();
+        for (TbCharge charge : tbCharges) {
+            tbCharge=charge;
+        }
+        tbPay.setChargeid(tbCharge.getChargeid());
+        tbPay.setChargestandard(tbCharge.getChargestandard()*record.getGas());
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM");
+        String month=sdf1.format(record.getMonth());
+        tbPay.setPaymonth(month);
+        tbPay.setHouseid(record.getHouseid());
+        tbPay.setPaystate(0);
+        payMapper.insertSelective(tbPay);
         return chGasMeterMapper.insertSelective(record);
     }
 
