@@ -1,8 +1,6 @@
 package com.ssm.wuye.service;
 
 
-import com.ssm.wuye.domain.TbCharge;
-import com.ssm.wuye.domain.TbChargeExample;
 import com.ssm.wuye.vo.ElectricAndOwer;
 import com.ssm.wuye.vo.GasAndOwer;
 import org.junit.Test;
@@ -11,12 +9,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * time：2019/4/25--15:59
@@ -36,8 +31,18 @@ public class TbChargeServiceTest {
     ChWaterService chWaterService;
     @Resource
     ChGasService chGasServicel;
+    @Resource
+    TbPayService tbPayService;
 
 
+//    @Test
+//    public void tbPayServicetest5(){
+//
+//        List<PayCharge> payCharges = tbPayService.selectByExample(11111, "水费");
+//        for (PayCharge payCharge : payCharges) {
+//            System.out.println(payCharge.getPayid());
+//        }
+//    }
 //    @Test
 //    public void test1(){
 //        TbChargeExample tbChargeExample=new TbChargeExample();

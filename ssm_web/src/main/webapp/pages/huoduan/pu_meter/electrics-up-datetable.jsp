@@ -50,7 +50,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="/puelectric/updata.do" method="post">
+                                    <form action="${pageContext.request.contextPath}/puelectric/updata.do" method="post">
                                         <input  type="hidden" class="form-control" placeholder="电表编号" value="${electrics.electricid}" name="electricid"  >
 
                                         <div  >

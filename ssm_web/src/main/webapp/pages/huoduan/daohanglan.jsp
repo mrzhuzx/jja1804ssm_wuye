@@ -51,7 +51,7 @@
                         <a href="${pageContext.request.contextPath}/tbch/searchAll.do?year=1">收费标准管理</a>
                     </li>
                     <li id="signo">
-                        <a href="#">收费管理</a>
+                        <a href="${pageContext.request.contextPath}/tbpa/selectHouse.do">收费管理</a>
                     </li>
                     <li>
                             <a href="${pageContext.request.contextPath}/list.do">外来车辆收费记录</a>

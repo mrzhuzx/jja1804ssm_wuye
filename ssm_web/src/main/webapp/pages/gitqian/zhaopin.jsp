@@ -79,6 +79,12 @@
 				</c:forEach>
 
 			</ul>
+			<div class="webdiyerCss">
+				<a href="${pageContext.request.contextPath}/recruit/refenye.do?pageNum=1"  style="margin-right:5px;">首页</a>
+				<a href="${pageContext.request.contextPath}/recruit/refenye.do?pageNum=${pageNum-1}"  style="margin-right:5px;">上一页</a>
+				<a href="${pageContext.request.contextPath}/recruit/refenye.do?pageNum=${pageNum+1}" style="margin-right:5px;">下一页</a>
+				<a href="${pageContext.request.contextPath}/recruit/refenye.do?pageNum=${pageAll}" style="margin-right:5px;">尾页</a>
+			</div>
 		</div>
 
 	</div>
