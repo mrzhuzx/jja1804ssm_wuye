@@ -4,6 +4,8 @@ import com.ssm.wuye.appcomm.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
 /**
@@ -11,6 +13,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Table(name = "program")
 @Alias("program")
+//@Data
 public class Program extends BaseEntity {
     /**
      * 
@@ -142,6 +145,18 @@ public class Program extends BaseEntity {
      * @param ptid 
      */
     public void setPtid(Integer ptid) {
+        this.ptid = ptid;
+    }
+
+    public Program() {
+    }
+
+    public Program(Integer pid, String pname, String ppicture, String pintroduce, String padress, Integer ptid) {
+        this.pid = pid;
+        this.pname = pname;
+        this.ppicture = ppicture;
+        this.pintroduce = pintroduce;
+        this.padress = padress;
         this.ptid = ptid;
     }
 }

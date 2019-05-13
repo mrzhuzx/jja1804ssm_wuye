@@ -38,7 +38,7 @@ public class ContractController {
      */
     @RequestMapping("consearch")
     public ModelAndView search() {
-        ModelAndView m = new ModelAndView("pages/huoduan/hetong");
+        ModelAndView m = new ModelAndView("pages/huoduan/hetong/hetong");
         List<Contract> contractList = contractService.selectByExample(null);
         for (Contract contract : contractList) {
             System.out.println(contract.toString());
@@ -56,7 +56,7 @@ public class ContractController {
     public ModelAndView contractsave(@ModelAttribute Contract con ){
         ModelAndView m = new ModelAndView("redirect:/con/consearch.do");
         int i=contractService.insertSelective(con);
-       if(i==0){
+        if(i==0){
             System.out.println("增加失败");
         }else {
             System.out.println("增加成功:"+i+"条数据");
@@ -72,7 +72,7 @@ public class ContractController {
      */
     @RequestMapping("searchone")
     public ModelAndView searchone(@RequestParam Integer contractid ){
-        ModelAndView m=new ModelAndView("pages/huoduan/hetongupdate");
+        ModelAndView m=new ModelAndView("pages/huoduan/hetong/hetongupdate");
         Contract contract = contractService.selectByPrimaryKey(contractid);
         List<ContractType> types = contractTypeService.selectByExample(null);
         m.addObject("types",types);
@@ -88,7 +88,7 @@ public class ContractController {
      */
     @RequestMapping("searchType")
     public ModelAndView searchType( ){
-        ModelAndView m=new ModelAndView("pages/huoduan/hetongadd");
+        ModelAndView m=new ModelAndView("pages/huoduan/hetong/hetongadd");
         List<ContractType> types = contractTypeService.selectByExample(null);
         m.addObject("types",types);
         System.out.println("获取到了一条数据-----------");
@@ -117,7 +117,7 @@ public class ContractController {
      * @return
      */
     @RequestMapping("condelete")
-     public  ModelAndView condelete(@RequestParam Integer contractid){
+    public  ModelAndView condelete(@RequestParam Integer contractid){
         ModelAndView m=new ModelAndView("redirect:/con/consearch.do");
         int i=contractService.deleteByPrimaryKey(contractid);
         if(i==0){

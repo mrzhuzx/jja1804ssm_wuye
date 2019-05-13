@@ -4,8 +4,10 @@ package com.ssm.wuye.controller;
 import com.ssm.wuye.domain.NewsType;
 import com.ssm.wuye.domain.OwerHouseType;
 import com.ssm.wuye.domain.OwerHouseTypeExample;
+import com.ssm.wuye.domain.ProgramType;
 import com.ssm.wuye.service.NewsTypeService;
 import com.ssm.wuye.service.OwerHouseTypeService;
+import com.ssm.wuye.service.ProgramTypeService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,8 @@ public class OwerHouseTypeController {
     OwerHouseTypeService oHTService;
     @Autowired
     NewsTypeService newsTypeService;
+    @Resource
+    ProgramTypeService programTypeService;
 
 
     public OwerHouseTypeController(){
@@ -49,6 +53,8 @@ public class OwerHouseTypeController {
         Integer Num =Size*(pageNum-1);
         List<OwerHouseType> owerHouseTypes = oHTService.selectByExampleWithRowbounds(ohte,new RowBounds(Num, Size));
         List<NewsType> newstypeList = newsTypeService.selectByExample(null);
+        List<ProgramType> programTypes = programTypeService.selectByExample(null);
+        m.addObject("programTypes", programTypes);
         m.addObject("newstypeList", newstypeList);
         m.addObject("pageAll", pageAll);
         m.addObject("pageNum", pageNum);
@@ -74,6 +80,8 @@ public class OwerHouseTypeController {
         Integer Num =Size*(pageNum-1);
         List<OwerHouseType> owerHouseTypes = oHTService.selectByExampleWithRowbounds(ohte,new RowBounds(Num, Size));
         List<NewsType> newstypeList = newsTypeService.selectByExample(null);
+        List<ProgramType> programTypes = programTypeService.selectByExample(null);
+        m.addObject("programTypes", programTypes);
         m.addObject("newstypeList", newstypeList);
         m.addObject("pageAll", pageAll);
         m.addObject("pageNum", pageNum);

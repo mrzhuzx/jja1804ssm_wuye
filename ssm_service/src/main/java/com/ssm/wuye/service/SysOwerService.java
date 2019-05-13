@@ -33,5 +33,6 @@ public interface SysOwerService {
      *主键修改
      */
     int updateByPrimaryKeySelective(SysOwer record);
+
     SysOwer selectByNamePassword(String olaccount,String olpasswd);
 }

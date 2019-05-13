@@ -5,6 +5,8 @@ import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.NewsService;
 import com.ssm.wuye.service.NewsTypeService;
 
+import com.ssm.wuye.service.ProgramTypeService;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +31,8 @@ public class NewsTypeController {
     NewsTypeService newstypeService;
     @Resource
     NewsService newsService;
+    @Resource
+    ProgramTypeService programTypeService;
 
 
     public NewsTypeController() {
@@ -43,34 +47,70 @@ public class NewsTypeController {
     @RequestMapping("search")
     public ModelAndView search() {
         ModelAndView m = new ModelAndView();
-
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
+        m.addObject("programTypes", programTypes);
         m.addObject("newstypeList", newstypeList);
         m.setViewName("pages/gitqian/index");
+
+
+
+
         return m;
     }
 
     @RequestMapping("searchnes")
-    public ModelAndView searchnews(@RequestParam String ntid) {
+    public ModelAndView searchnews(@RequestParam String ntid,@RequestParam Integer pageNum) {
         ModelAndView m = new ModelAndView();
-
-
         System.out.println(ntid);
         Integer id = Integer.valueOf(ntid);
-        //根据typeid查询news类下的所有内容
+        //根据typeid查询news类下的所有内容,带分页
+
         NewsExample newsExample = new NewsExample();
         newsExample.createCriteria().andNctypeidEqualTo(id);
-        List<News> news1 = newsService.selectByExample(newsExample);
+        Integer countAll = newsService.countByExample(newsExample);
+        Integer pageSize = 3;
+        Integer pageAll = countAll % pageSize == 0 ? countAll / pageSize : countAll / pageSize + 1;
+        if (pageNum<=0) {
+            pageNum=1;
+        }
+        if (pageNum>pageAll) {
+            pageNum=pageAll;
+        }
+        Integer Num =pageSize*(pageNum-1);
+        RowBounds rowBounds = new RowBounds(Num, pageSize);
+        List<News> news1 = newsService.selectByExampleWithRowbounds(newsExample,rowBounds);
+        newsExample.createCriteria().andNctypeidEqualTo(id);
+        ProgramTypeExample programTypeExample=new ProgramTypeExample();
+        List<ProgramType> programTypes = programTypeService.selectByExample(programTypeExample);
+        m.addObject("programTypes", programTypes);
         m.addObject("news1", news1);
+        m.addObject("pageAll", pageAll);
+        m.addObject("pageNum", pageNum);
+
+
 
         //根据typeid查询typename（来源：）
         NewsTypeExample newsTypeExample = new NewsTypeExample();
         newsTypeExample.createCriteria().andNtidEqualTo(id);
         List<NewsType> newsTypes = newstypeService.selectByExample(newsTypeExample);
         m.addObject("newst", newsTypes);
-
         List<NewsType> newstypeList = newstypeService.selectByExample(null);
         m.addObject("newstypeList", newstypeList);
+
+
+
+        NewsType newsType1 = new NewsType();
+        for (NewsType newsType : newstypeList) {
+            newsType1=newsType;
+        }
+        String Ntid=ntid;
+        m.addObject("Ntid", Ntid);
+
+
+
+
 
         m.setViewName("pages/gitqian/news");
         return m;

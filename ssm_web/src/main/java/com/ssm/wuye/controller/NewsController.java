@@ -36,13 +36,12 @@ public class NewsController {
         Integer id = Integer.valueOf(ncid);
         News news = newsService.selectByPrimaryKey(id);
         m.addObject("news", news);
-
         //所有新闻类
         List<NewsType> newsTypes = newstypeService.selectByExample(null);
         m.addObject("newsTypes", newsTypes);
         return m;
-    }
 
+    }
     //后台
     @RequestMapping("htnews")
     public ModelAndView htnews() {
@@ -75,25 +74,29 @@ public class NewsController {
         News upnews = newsService.selectByPrimaryKey(id);
         m.addObject("upnews", upnews);
 
+        Date date = new Date();
         List<NewsType> newsTypes = newstypeService.selectByExample(null);
         m.addObject("newsTypes", newsTypes);
+        m.addObject("date", date);
+
         return m;
 
     }
 
     @RequestMapping("htnUpate")
-    public ModelAndView htn_update(@RequestParam String ncid,@RequestParam String nctitle, @RequestParam String nccontent,@RequestParam Date nctime,@RequestParam String ntid){
+    public ModelAndView htn_update(@ModelAttribute News  news1){
         ModelAndView m = new ModelAndView("pages/huoduan/ht_news");
-        Integer id = Integer.valueOf(ncid);
-        Integer tid = Integer.valueOf(ntid);
-        System.out.println(tid + "777777777777777777777777777777777");
-        News news = new News();
-        news.setNcid(id);
-        news.setNctitle(nctitle);
-        news.setNccontent(nccontent);
-        news.setNctime(nctime);
-        news.setNctypeid(tid);
-        int i = newsService.updateByPrimaryKeySelective(news);
+//        Integer id = Integer.valueOf(ncid);
+//        Integer tid = Integer.valueOf(ntid);
+//        Date date = new Date(nctime);
+//        System.out.println(tid + "777777777777777777777777777777777");
+//        News news = new News();
+//        news.setNcid(id);
+//        news.setNctitle(nctitle);
+//        news.setNccontent(nccontent);
+//        news.setNctime(nctime);
+//        news.setNctypeid(tid);
+        int i = newsService.updateByPrimaryKeySelective(news1);
         if (i==1){
             System.out.println("更新成功");
         }else {

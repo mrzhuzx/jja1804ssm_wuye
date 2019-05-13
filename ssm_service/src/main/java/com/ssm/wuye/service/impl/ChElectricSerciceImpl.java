@@ -1,8 +1,6 @@
 package com.ssm.wuye.service.impl;
 
-import com.ssm.wuye.dao.ChElectricMeterMapper;
-import com.ssm.wuye.dao.MyHouseMapper;
-import com.ssm.wuye.dao.SysOwerMapper;
+import com.ssm.wuye.dao.*;
 import com.ssm.wuye.domain.*;
 
 import com.ssm.wuye.service.ChElectricService;
@@ -10,6 +8,7 @@ import com.ssm.wuye.vo.ElectricAndOwer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +27,10 @@ public class ChElectricSerciceImpl implements ChElectricService {
     MyHouseMapper myHouseMapper;
     @Resource
     SysOwerMapper sysOwerMapper;
+    @Resource
+    TbPayMapper payMapper;
+    @Resource
+    TbChargeMapper tbChargeMapper;
 
     public List<ChElectricMeter> selectByExample(ChElectricMeterExample example) {
         return chElectricMeterMapper.selectByExample(example);
@@ -38,6 +41,25 @@ public class ChElectricSerciceImpl implements ChElectricService {
     }
 
     public int insertSelective(ChElectricMeter record) {
+        TbPay tbPay=new TbPay();
+        TbChargeExample tbChargeExample=new TbChargeExample();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        String year=sdf.format(record.getMonth());
+        tbChargeExample.createCriteria().andChargenameEqualTo("电费").andChargeyearEqualTo(year);
+        List<TbCharge> tbCharges = tbChargeMapper.selectByExample(tbChargeExample);
+        TbCharge tbCharge=new TbCharge();
+        for (TbCharge charge : tbCharges) {
+            tbCharge=charge;
+        }
+        tbPay.setChargeid(tbCharge.getChargeid());
+        tbPay.setChargestandard(tbCharge.getChargestandard()*record.getElectric());
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM");
+        String month=sdf1.format(record.getMonth());
+        tbPay.setPaymonth(month);
+        tbPay.setHouseid(record.getHouseid());
+        tbPay.setPaystate(0);
+        payMapper.insertSelective(tbPay);
+
         return chElectricMeterMapper.insertSelective(record);
     }
 
@@ -46,6 +68,7 @@ public class ChElectricSerciceImpl implements ChElectricService {
         List<ChElectricMeter> meterList = chElectricMeterMapper.selectByExample(null);
         List<ElectricAndOwer> electricAndOwers=new ArrayList<ElectricAndOwer>();
         for (ChElectricMeter chElectricMeter : meterList) {
+            System.out.println(chElectricMeter.getHouseid());
             MyHouseExample houseExample=new MyHouseExample();
             SysOwerExample owerExample=new SysOwerExample();
             ElectricAndOwer eao=new ElectricAndOwer();

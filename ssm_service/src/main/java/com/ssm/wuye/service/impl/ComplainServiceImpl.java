@@ -28,7 +28,8 @@ public class ComplainServiceImpl implements ComplainService {
      * @return
      */
     public long countByExample(ComplainInfo example) {
-        return 0;
+        ComplainInfoExample complainInfoExample = new ComplainInfoExample();
+        return complainInfoMapper.countByExample(complainInfoExample);
     }
 
     /**
@@ -75,7 +76,8 @@ public class ComplainServiceImpl implements ComplainService {
      */
 
     public List<ComplainInfo> selectByExampleWithRowbounds(ComplainInfo example, RowBounds rowBounds) {
-        return null;
+        ComplainInfoExample complainInfoExample = new ComplainInfoExample();
+        return complainInfoMapper.selectByExampleWithRowbounds(complainInfoExample,rowBounds);
     }
 
     /**

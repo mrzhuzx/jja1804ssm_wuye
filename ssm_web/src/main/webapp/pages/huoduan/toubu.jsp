@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-default top-navbar" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -14,7 +15,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+        <a class="navbar-brand" href="#"><i class="fa fa-gear"></i> <strong>管理系统</strong></a>
     </div>
 
     <ul class="nav navbar-top-links navbar-right">
@@ -213,12 +214,12 @@
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+<c:forEach items="${infos}" var="in">
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> ${in.username}</a>
                 </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                </li>
+</c:forEach>
                 <li class="divider"></li>
-                <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 注销 </a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->

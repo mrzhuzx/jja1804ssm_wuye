@@ -45,7 +45,7 @@
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/of.do?olid=${ower.olid}">家庭成员</a></li>
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="ower/tzzjof.do?olid=${ower.olid}">增加家人</a></li>
                 <li id="women"><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08.png"><a id="wenzidangq" href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a></li>
-                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="#">车位信息</a></li>
+                <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="parking/pk_list.do?olid=${ower.olid}">车位信息</a></li>
                 <li><img src="${pageContext.request.contextPath}/pages/gitqian/images/zy1_08_z.png"><a href="#">缴费信息</a></li>
             </ul>
         </div>

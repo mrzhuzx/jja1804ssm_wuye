@@ -88,13 +88,13 @@
                                         <tr class="odd gradeX">
                                             <td>${sai.userid}</td>
                                             <td>${sai.username}</td>
-                                            <td>${sai.userpass}</td>
+                                            <td>******</td>
                                             <td>${sai.userphone}</td>
                                             <td>${sai.usermail}</td>
                                             <td>${sai.userqqface}</td>
                                             <td>${sai.userflag}</td>
                                             <td style="max-width: 7em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${sai.userstyle}</td>
-                                            <td>${sai.rolename}</td>0
+                                            <td>${sai.rolename}</td>
                                             <td><button class="btn btn-primary">
                                                 <i class="fa fa-edit " onclick="location.href='${pageContext.request.contextPath}/ai/infosearchone.do?userid=${sai.userid}'"></i> 修改</button>
                                                 <button class="btn btn-danger">

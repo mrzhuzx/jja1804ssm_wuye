@@ -40,10 +40,13 @@
 <body>
 <div id="wrapper">
     <%--头部--%>
-    <jsp:include page="toubu.jsp"></jsp:include>
+    <jsp:include page="../toubu.jsp"></jsp:include>
     <!--/. NAV TOP  -->
     <%--导航栏--%>
-    <jsp:include page="daohanglan.jsp"></jsp:include>
+    <jsp:include page="../daohanglan.jsp"></jsp:include>
+    <!-- /. NAV SIDE  -->
+
+
     <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
@@ -54,8 +57,20 @@
                 </div>
             </div>
             <!-- /. ROW  -->
+            <a href="${pageContext.request.contextPath}/pages/huoduan/shoufei/tbChargeAdd.jsp" class="btn btn-success">&nbsp;添&nbsp;加&nbsp;新&nbsp;收&nbsp;费&nbsp;标&nbsp;准&nbsp;</a>
 
-            <div class="row">
+            <form   style="display: inline-block;" action="${pageContext.request.contextPath}/tbch/searchAll.do">
+                <label style="margin-left: 100px;">年份：</label>
+                <select class="form-control" style="display: inline-block; width: 200px" placeholder="" name="year">
+                    <option value="${createdate}">${createdate}</option>
+                <c:forEach items="${tbCharges}" var="tchs" >
+                <option value="${tchs.chargeyear}">${tchs.chargeyear}</option>
+                </c:forEach>
+                </select>
+
+            <input type="submit" style="margin-left: 20px" value="查询" class="btn btn-success" >
+            </form>
+            <div style="padding-top: 20px" class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
@@ -64,39 +79,25 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" STYLE="text-align: center" id="dataTables-example">
                                     <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>合同名字</th>
-                                        <th>合同类型</th>
-                                        <th>起始时间</th>
-                                        <th>终止时间</th>
-                                        <th>合同描述</th>
-                                        <th>合同编号</th>
-                                        <th>签约人</th>
-                                        <th>联系方式</th>
+                                    <tr >
+                                        <th>收费名</th>
+                                        <th>收费标准</th>
+
                                         <th>操作</th>
 
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                            <c:forEach  items="${contractList}" var="sm">
-                                    <tr class="gradeA">
-                                        <td>${sm.contractid}</td>
-                                        <td>${sm.contractname}</td>
-                                        <td>${sm.contracttype}</td>
+                            <c:forEach  items="${tbChargessearch}" var="tc">
+                                    <tr class="gradeA" STYLE="text-align: center">
+                                        <td>${tc.chargename}</td>
+                                        <td>${tc.chargedescription}</td>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractstart}' pattern='yyyy-MM-dd'/></td>
+                                        <td><button class="btn btn-primary"onclick=" location.href='${pageContext.request.contextPath}/tbch/searchOne.do?id=${tc.chargeid}'"><i class="fa fa-edit " ></i> 修改</button>
 
-                                        <td class="center"><fmt:formatDate value='${sm.contractend}' pattern='yyyy-MM-dd'/></td>
-                                        <td>${sm.contractdes}</td>
-                                        <td>${sm.contractnum}</td>
-                                        <td>${sm.signingpeople}</td>
-                                        <td>${sm.signatorytelephone}</td>
-                                        <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/con/searchone.do?contractid=${sm.contractid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                            <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/con/condelete.do?contractid=${sm.contractid}'"><i class="fa fa-pencil"></i> 删除</button></td>
                                     </tr>
                                     </c:forEach>
                                     </tbody>
@@ -107,8 +108,12 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
+
+
+
+</body>
+
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -129,7 +134,5 @@
 <!-- Custom Js -->
 <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
 
-
-</body>
 </html>
 

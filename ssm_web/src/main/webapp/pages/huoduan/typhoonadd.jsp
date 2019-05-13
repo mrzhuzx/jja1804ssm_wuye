@@ -14,12 +14,12 @@
     <title></title>
     <!-- Bootstrap Styles-->
 
-    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="./assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="./assets/css/custom-styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./plugins/datepicker3.css">
+    <link href="${pageContext.request.contextPath}/pages/huoduan/assets/css/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/huoduan/plugins/datepicker3.css">
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                         <small></small>
+                        <small></small>
                     </h1>
                 </div>
             </div>
@@ -45,60 +45,52 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            增加工具
+                            增加一些设备
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form action="${pageContext.request.contextPath}/fantai/add.do" method="post">
-
                                         <div  >
-                                            <label>物资名称</label>
-                                            <input class="form-control" placeholder="物资名称" value="扫把" name="mattername" >
+                                            <label> 物资名称</label>
+                                            <input class="form-control" placeholder=" 物资名称" value="桌子" name="mattername" >
                                         </div>
-
                                         <div  >
                                             <label>物资数量</label>
                                             <input class="form-control" placeholder="物资数量" value="10" name="matternum" >
                                         </div>
                                         <div  >
                                             <label>物资价格</label>
-                                            <input class="form-control" placeholder="物资价格" value="5" name="matterprice" >
+                                            <input class="form-control" placeholder="物资价格" value="10.00" name="matterprice" >
                                         </div>
                                         <div class="form-group">
-                                            <label>物资类别</label>
+
+                                            <label>物资类别ID</label>
                                             <select class="form-control" placeholder="" name="mattersortid">
-                                                <option>1001</option>
-                                                <option>1002</option>
-                                                <option>1003</option>
-                                                <option>1004</option>
-                                                <option>1005</option>
+
+                                                <c:forEach items="${tbMatter_sortList}" var="mht">
+                                                    <option  value="${mht.mattersortid}">${mht.mattersort}</option>
+                                                </c:forEach>
+
                                             </select>
                                         </div>
-                                        <div  >
+
+                                        <div>
                                             <label>入库时间</label>
                                             <input class="form-control" placeholder="年月日" id="dateid" value="2019-10-10" name="instoragetime">
-
                                         </div>
                                         <div>
                                             <label>出库时间</label>
                                             <input class="form-control" placeholder="年月日" id="date" value="2019-10-10" name="outstoragetime">
-
                                         </div>
-                                        <div>
+                                        <div  >
                                             <label>物资状态</label>
-                                            <select class="form-control" placeholder="" name="matterstate">
-                                                <option>可用</option>
-                                                <option>不可用</option>
-
-                                            </select>
-
+                                            <input class="form-control" placeholder="联系方式" value="可用" name="matterstate" >
                                         </div>
-
                                         <br>
                                         <div>
 
-                                           <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
+                                            <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
 
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
@@ -119,28 +111,28 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-        <!-- /. PAGE INNER  -->
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
     </div>
-    <!-- /. PAGE WRAPPER  -->
-</div>
-<!-- /. WRAPPER  -->
-<!-- JS Scripts-->
-<!-- jQuery Js -->
-<script src="./assets/js/jquery-1.10.2.js"></script>
-<!-- Bootstrap Js -->
-<script src="./assets/js/bootstrap.min.js"></script>
-<!-- Metis Menu Js -->
-<script src="./assets/js/jquery.metisMenu.js"></script>
-<!-- Custom Js -->
-<script src="./assets/js/custom-scripts.js"></script>
-<script src="./assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-<script src="./assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/jquery.metisMenu.js"></script>
+    <!-- Custom Js -->
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/js/custom-scripts.js"></script>
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 
-<script src="./assets/datatables/jquery.dataTables.min.js"></script>
-<script src="./assets/datatables/dataTables.bootstrap.min.js"></script>
-<script src="./plugins/jquery-2.2.3.min.js"></script>
-<script src="./plugins/bootstrap-datepicker.js"></script>
-<script>
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="${pageContext.request.contextPath}/pages/huoduan/assets/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/pages/huoduan/plugins/jquery-2.2.3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/pages/huoduan/plugins/bootstrap-datepicker.js"></script>
+    <script>
         $(document).ready(function() {
             $('#dateid').datepicker({
                 format : "yyyy-mm-dd",
@@ -149,15 +141,15 @@
             });
         });
     </script>
-        <script>
-            $(document).ready(function() {
-                $('#date').datepicker({
-                    format : "yyyy-mm-dd",
-                    autoclose: true,
-                    language: 'zh-CN'
-                });
+    <script>
+        $(document).ready(function() {
+            $('#date').datepicker({
+                format : "yyyy-mm-dd",
+                autoclose: true,
+                language: 'zh-CN'
             });
-        </script>
+        });
+    </script>
 
 
 

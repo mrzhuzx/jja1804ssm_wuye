@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/about.html">
+                            <a class="nav_btn" href="${pageContext.request.contextPath}/ohtc/qtcxhstate.do?pageNum=1">
                                 房屋租售
                                 <b></b>
                                 <div></div>
@@ -45,29 +45,28 @@
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
+                                        <a href="${pageContext.request.contextPath}/ohtc/qtcxhstate.do?pageNum=1">房屋出售</a>
                                     </li>
                                     <li>
-                                        <a href="ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
+                                        <a href="${pageContext.request.contextPath}/ohtc/qtcxloan.do?pageNum=1">房屋出租</a>
                                     </li>
 
                                 </ul>
                             </div>
                         </li>
                         <li class="narrow_wrap">
-                            <a class="nav_btn" href="pages/gitqian/products.html">
+                            <a class="nav_btn" href="">
                                 项目展示
                                 <b></b>
                                 <div></div>
                             </a>
                             <div class="service_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
-                                    <li>
-                                        <a href="#">经典案例</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">公司项目</a>
-                                    </li>
+                                    <c:forEach var="protype" items="${programTypes}">
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/pr/xmlxsearch.do?ptid=${protype.ptid}&pageNum=1">${protype.ptypename}</a>
+                                        </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </li>
@@ -80,7 +79,7 @@
                                 <ul>
                                     <c:forEach var="news" items="${newstypeList}">
                                         <li>
-                                            <a href="nt/searchnes.do?ntid=${news.ntid}">${news.ntypename}</a>
+                                            <a href="${pageContext.request.contextPath}/nt/searchnes.do?ntid=${news.ntid}&&pageNum=1">${news.ntypename}</a>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -94,22 +93,22 @@
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="ower/query.do?olid=${ower.olid}">个人信息</a>
+                                        <a href="${pageContext.request.contextPath}/ower/query.do?olid=${ower.olid}">个人信息</a>
                                     </li>
                                     <li>
-                                        <a href="ower/of.do?olid=${ower.olid}">家庭成员</a>
+                                        <a href="${pageContext.request.contextPath}/ower/of.do?olid=${ower.olid}">家庭成员</a>
                                     </li>
                                     <li>
-                                        <a href="ower/of.do?olid=${ower.olid}">增加家人</a>
+                                        <a href="${pageContext.request.contextPath}/ower/of.do?olid=${ower.olid}">增加家人</a>
                                     </li>
                                     <li>
-                                        <a href="ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
+                                        <a href="${pageContext.request.contextPath}/ower/ckhouse.do?olid=${ower.olid}">房屋信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">车位信息</a>
+                                        <a href="${pageContext.request.contextPath}/parking/pk_list.do?olid=${ower.olid}">车位信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">缴费信息</a>
+                                        <a href="${pageContext.request.contextPath}/tbpa/searchFei.do?olid=${ower.olid}">缴费信息</a>
                                     </li>
 
                                 </ul>
@@ -123,13 +122,20 @@
                             <div class="about_us_nav hide_nav hide_nav_narrow none" style="opacity: 0;">
                                 <ul>
                                     <li>
-                                        <a href="recruit/refenye.do?">招聘信息</a>
+                                        <a href="${pageContext.request.contextPath}/recruit/refenye.do?pageNum=1">招聘信息</a>
                                     </li>
                                     <li>
-                                        <a href="#">在线留言</a>
+                                        <a href="${pageContext.request.contextPath}/complain/fenye.do?pageNum=1">客户反馈</a>
                                     </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/repair/fenye.do?pageNum=1">设备报修</a>
+                                    </li>
+
                                     <li>
                                         <a href="#">联系我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/pages/gitqian/parking_carinfo.jsp">外来车辆</a>
                                     </li>
                                 </ul>
                             </div>

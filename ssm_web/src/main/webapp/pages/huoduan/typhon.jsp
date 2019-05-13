@@ -44,59 +44,47 @@
     <!--/. NAV TOP  -->
     <%--导航栏--%>
     <jsp:include page="daohanglan.jsp"></jsp:include>
-    <div id="page-wrapper" >
-        <div id="page-inner">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-header">
-                        <small></small>
-                    </h1>
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            物资类别名称信息 <small></small>
+                        </h1>
+                    </div>
                 </div>
-            </div>
-            <!-- /. ROW  -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-
-                        </div>
+                <!-- /. ROW  -->
+                <div class="row" style="width: 600px; display: inline">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                物资类别名称详情
+                            </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>公司名称</th>
-                                        <th>岗位名称</th>
-                                        <th>招聘要求</th>
-                                        <th>岗位职责</th>
-                                        <th>招聘人数</th>
-                                        <th>薪资待遇</th>
-                                        <th>截止时间</th>
-                                        <th>联系电话</th>
-                                        <th>地址</th>
-                                        <th>操作</th>
+                                    <tr><th>物资类别ID</th>
+                                        <th>物资类别名称</th>
 
+                                        <th>编辑</th>
                                     </tr>
                                     </thead>
-
                                     <tbody>
-                                    <c:forEach  items="${recruitList}" var="re">
-                                        <tr class="gradeA">
-                                            <td>${re.recruitid}</td>
-                                            <td>${re.companyname}</td>
-                                            <td>${re.postname}</td>
-                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.recruitdes}</td>
-                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.duty}</td>
-                                            <td>${re.recruitnum}</td>
-                                            <td style="max-width: 13em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">${re.salary}</td>
-                                            <td class="center"><fmt:formatDate value='${re.recruitend}' pattern='yyyy-MM-dd'/></td>
-                                            <td>${re.recruitnumber}</td>
-                                            <td>${re.address}</td>
-                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/recruit/reone.do?recruitid=${re.recruitid}'"><i class="fa fa-edit " ></i> 修改 </button>
-                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/recruit/redelete.do?recruitid=${re.recruitid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                    <c:forEach var="f" items="${tbMatter_sortList}">
+                                        <tr class="odd gradeX">
+                                            <td>${f.mattersortid}</td>
+                                            <td>${f.mattersort}</td>
+
+
+
+
+                                            <td><button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/type/catch.do?mattersortid=${f.mattersortid}'"><i class="fa fa-edit " ></i> 修改 </button>
+                                                <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/type/delete.do?mattersortid=${f.mattersortid}'"><i class="fa fa-pencil"></i> 删除</button></td>
+                                        </tr>
+
+
                                         </tr>
                                     </c:forEach>
                                     </tbody>

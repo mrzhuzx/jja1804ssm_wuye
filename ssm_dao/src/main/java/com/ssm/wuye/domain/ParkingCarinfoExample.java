@@ -74,7 +74,7 @@ public class ParkingCarinfoExample {
     }
 
     /**
-     * parking_carinfo 2019-04-23
+     * parking_carinfo 2019-05-05
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -576,7 +576,7 @@ public class ParkingCarinfoExample {
     }
 
     /**
-     * parking_carinfo 2019-04-23
+     * parking_carinfo 2019-05-05
      */
     public static class Criterion {
         private String condition;

@@ -53,14 +53,21 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
+
                                     <form action="${pageContext.request.contextPath}/water/updateOne.do?waterid=${chWaterMeter.waterid}" method="post">
+
+                                    <form action="${pageContext.request.contextPath}/water/insertOne.do" method="post">
+
                                         <input  type="hidden" class="form-control" placeholder="" value="" name=""  >
 
 
                                         <div class="form-group">
                                             <label>房屋ID</label>
                                             <select class="form-control" placeholder="" name="houseid">
+
                                                 <option selected="selected" value="${chWaterMeter.houseid}">${chWaterMeter.houseid}</option>
+
+
                                                 <c:forEach items="${myHouseList}" var="mh" >
                                                     <option value="${mh.hid}">${mh.hid}----${mh.hbulidingname}</option>
                                                 </c:forEach>
@@ -69,13 +76,21 @@
                                         <span style="position: absolute;padding-left: 260px;padding-top: 30px">吨</span>
                                         <div  >
                                             <label>用水量</label>
+
                                             <input class="form-control" placeholder="用水量" value="${chWaterMeter.watervolume}" name="watervolume" >
+
+                                            <input class="form-control" placeholder="用水量" value="139" name="watervolume" >
+
 
                                         </div>
 
                                         <div  >
                                             <label>抄表时间</label>
+
                                             <input class="form-control" value="<fmt:formatDate value='${chWaterMeter.month}' pattern='yyyy-MM-dd'/>" placeholder="年月份" id="dateid"  name="month">
+
+                                            <input class="form-control" placeholder="年月份" id="dateid"  name="month">
+
                                         </div>
 
 
@@ -84,7 +99,11 @@
                                         <br>
                                         <div>
 
+
                                            <button type="submit" class="btn btn-success"><i class=""></i> 确认修改 </button>
+
+                                           <button type="submit" class="btn btn-success"><i class=""></i> 确认增加 </button>
+
 
                                             <button type="button" class="btn btn-primary" onclick="history.back(-1);"><i class="fa fa-reply "></i>返回</button>
 
@@ -148,5 +167,6 @@
 
 
 </body>
+
 </html>
 

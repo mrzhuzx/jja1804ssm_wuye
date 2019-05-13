@@ -1,9 +1,6 @@
 package com.ssm.wuye.controller;
 
 
-
-
-
 import com.ssm.wuye.domain.*;
 import com.ssm.wuye.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +36,17 @@ public class SysOwerController {
     @RequestMapping("login")//业主登录
     public ModelAndView login(HttpSession session, @RequestParam String account,@RequestParam String passwd){
         ModelAndView m=new ModelAndView("forward:/nt/search.do");//
-        SysOwer sysOwer = sysOwerService.selectByNamePassword(account, passwd);
-       session.setAttribute("ower", sysOwer);
+       try{
+           SysOwer sysOwer = sysOwerService.selectByNamePassword(account, passwd);
+
+           if (!sysOwer.equals(null)){
+               session.setAttribute("ower", sysOwer);
+           }
+       }catch (Exception e){
+           m.setViewName("/pages/gitqian/login");
+       }
+
+//        session.setAttribute("ower", sysOwer);
         return m;
     }
     @RequestMapping("logout")//业主退出
@@ -177,6 +183,7 @@ public class SysOwerController {
         m.addObject("ower", sysOwer);
         return m;
     }
+
     @RequestMapping("czfw")//房屋租借
     public ModelAndView czfwolan(@RequestParam Integer hid,@RequestParam Integer olid ,@RequestParam Integer olan){
         ModelAndView m=new ModelAndView("forward:/ower/ckhouse.do");
