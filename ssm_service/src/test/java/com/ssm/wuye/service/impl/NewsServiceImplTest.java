@@ -29,11 +29,10 @@ public class NewsServiceImplTest {
 
     @Test
     public void search() {
-        NewsExample newsExample = new NewsExample();
-        newsExample.createCriteria().andNctypeidEqualTo(2);
-        List<News> news = newsService.selectByExample(newsExample);
+
+        List<News> news = newsService.selectByExample(null);
         for (News news1 : news) {
-            System.out.println(news1.getNctypeid());
+            System.out.println(news1.toString());
         }
 
     }
